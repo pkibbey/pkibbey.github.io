@@ -6,7 +6,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:4321/',
+  site: 'https://phineas-dev.github.io',
+  base: 'blog',
   integrations: [mdx(), sitemap()],
   devToolbar: {
     enabled: false,

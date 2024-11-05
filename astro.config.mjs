@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  site: 'http://localhost:4321/',
+  integrations: [mdx(), sitemap()],
+  devToolbar: {
+    enabled: false,
+  },
 });

@@ -14,10 +14,10 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
-				max-width: 720px;
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
 				padding: 3em 1em;
-				margin: 0 auto;
 			}
 		</style>
 	</head>

@@ -1,32 +1,16 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍💻 You are here.</h1>
-			<p>
-				So you decided to view my web site. Congratulations! 🎉
-			</p>
-			<p>
-				Allow me to direct your attention to some of the areas of this site that you may be interested in.
-			</p>
-			<ul>
-				<li>Discover the plethora of <a href="/useful-skills">useful skills</a> 🎯 and <a href="/not-so-useful-skills">not so useful skills</a> 🦖</li>
-				<li>Download my <a href="/resume">resume</a> ⤵</li>
-				<li>Watch some <a href="/videos">videos</a> 📼</li>
-				<li>Look at some project ideas that I never <a href="/unfinished-projects">finished</a> 🏁</li>
-			</ul>
-		</main>
-		<Footer />
-	</body>
-</html>
+<DefaultLayout>
+	<h1 class="mb-6">🧑‍💻 You are here.</h1>
+	<p>
+		Allow me to direct your attention to some areas of interest:
+	</p>
+	<ul class="list-disc list-inside">
+		<li>Discover the plethora of <a href="/useful-skills">useful skills</a> 🎯 and <a href="/not-so-useful-skills">not so useful skills</a> 🦖</li>
+		<li>Download my <a href="/resume">resume</a> ⤵</li>
+		<li>Watch some <a href="/videos">videos</a> 📼</li>
+		<li>Look at some project ideas that I never <a href="/unfinished-projects">finished</a> 🏁</li>
+	</ul>
+</DefaultLayout>

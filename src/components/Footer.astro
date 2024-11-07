@@ -1,18 +1,18 @@
 ---
-import SocialLinks from "./SocialLinks.astro";
+import SocialLinks from './SocialLinks.astro';
 
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} Phineas Kibbey. All rights reserved.
-	<SocialLinks />
+<footer class="px-4 pt-8 pb-24 text-center">
+	<div class="mb-4">
+		&copy; {today.getFullYear()} Phineas Kibbey. All rights reserved.
+	</div>
+	<SocialLinks />	
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
-		text-align: center;
 	}
 </style>

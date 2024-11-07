@@ -1,1 +1,1 @@
-# Blog : built with Astro
+# Personal Blog : built with Astro

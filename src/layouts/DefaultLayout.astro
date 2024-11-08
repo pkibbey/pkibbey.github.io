@@ -12,19 +12,11 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 3em 1em;
-			}
-		</style>
 	</head>
 
 	<body>
 		<Header />
-		<main>
+		<main class="w-[720px] max-w-[calc(100%-2em)] mx-auto py-12 px-4">
 			<slot />
 		</main>
 		<Footer />

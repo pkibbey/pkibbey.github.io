@@ -10,20 +10,12 @@ const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === `/${subpath?.[0]}`;
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={
+	[
+		'inline-block no-underline border-b-4 border-solid border-transparent py-4 px-2 text-gray-600',
+		isActive && 'border-gray-900 text-black',
+	]}
+	{...props}
+>
 	<slot />
 </a>
-<style>
-	a {
-		color: var(--gray-dark);
-		display: inline-block;
-		text-decoration: none;
-		border-bottom: 4px solid transparent;
-		padding: 1em 0.5em;
-	}
-	a.active {
-		color: var(--black);
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-</style>

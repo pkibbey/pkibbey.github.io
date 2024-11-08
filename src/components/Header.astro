@@ -3,9 +3,9 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<nav>
-		<a href="/">{SITE_TITLE}</a>
+<header class="shadow-md px-4">
+	<nav class="flex items-center justify-between">
+		<a href="/" class="no-underline">{SITE_TITLE}</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/resume">Resume</HeaderLink>
@@ -13,21 +13,3 @@ import { SITE_TITLE } from '../consts';
 		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	a,
-	a.active {
-		color: var(--gray-dark);
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-</style>

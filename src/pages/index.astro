@@ -1,16 +1,17 @@
 ---
+import Link from '../components/Link.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
 <DefaultLayout title="Home" description='home page'>
-	<h1 class="text-5xl mb-6">🧑‍💻 You are here.</h1>
+	<h1 class="text-5xl mb-6">Home</h1>
 	<p>
 		Allow me to direct your attention to some areas of interest:
 	</p>
 	<ul class="list-disc list-inside">
-		<li>Discover the plethora of <a href="/useful-skills">useful skills</a> 🎯 and <a href="/not-so-useful-skills">not so useful skills</a> 🦖</li>
-		<li>Download my <a href="/resume">resume</a> ⤵</li>
-		<li>Watch some <a href="/videos">videos</a> 📼</li>
-		<li>Look at some project ideas that I never <a href="/unfinished-projects">finished</a> 🏁</li>
+		<li>Discover the plethora of <Link href="/useful-skills">useful skills</Link> 🎯 and <Link href="/not-so-useful-skills">not so useful skills</Link> 🦖</li>
+		<li>Download my <Link href="/resume">resume</Link> ⤵</li>
+		<li>Watch some <Link href="/videos">videos</Link> 📼</li>
+		<li>Look at some project ideas that I never <Link href="/unfinished-projects">finished</Link> 🏁</li>
 	</ul>
 </DefaultLayout>

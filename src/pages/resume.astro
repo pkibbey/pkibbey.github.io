@@ -1,16 +1,158 @@
 ---
+import Link from '../components/Link.astro';
+import WorkExperienceDate from '../components/WorkExperienceDate.astro';
+import WorkExperienceTitle from '../components/WorkExperienceTitle.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
 <DefaultLayout title='Resume' description='resume page'>
 	<h1 class="text-5xl mb-6">Resume</h1>
+	<h2>Phineas Kibbey – Seattle, WA</h2>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+		<Link href="https://linkedin.com/in/phineaskibbey" target="_blank">linkedin.com/in/phineaskibbey</Link>
+	</p>
+
+	<h2 class="text-3xl mt-6 mb-4">SUMMARY</h2>
+	<p>
+		Highly motivated and detail-oriented frontend developer seeking a role in a
+		fast-paced, collaborative environment. Extensive experience architecting and
+		building frontend solutions for web, mobile and TV platforms. Thrives in a team of
+		high achievers who value continuous learning and mutual growth.	
+	</p>
+
+	<h2 class="text-3xl mt-6 mb-4">SKILLS</h2>
+	<p class="text-xl">React, TypeScript, JS, CSS, HTML, Jest, NodeJS, GraphQL, UI/UX Design</p>
+
+	<h2 class="text-3xl mt-6 mb-4">WORK EXPERIENCE</h2>
+	<WorkExperienceDate start="Mar 2022" end="Aug 2024" />
+	<WorkExperienceTitle company="Level Home" role="Senior Software Engineer" />
+	<p>
+		Architected a monorepo of apps to control devices in smart apartments. The apps were a
+		combination of NodeJS, NextJS and Remix apps, so that we could deliver the best possible user
+		experience while maintaining a scalable UI. Collaborated closely with the UX team to create a
+		Design System using Figma and React. Mentored junior team members to enhance code quality
+		and promote a growth mindset.
+	</p>
+
+	<WorkExperienceDate start="Jun 2022" end="Mar 2023" />
+	<WorkExperienceTitle company="CodePath" role="Senior Full Stack Engineer" />
+	<p>
+		Teaching HTML, CSS, JS and React to interns at Meta University. Developed and maintained
+		web applications using React and NodeJS. Collaborated with other instructors to improve
+		course content and delivery.
+	</p>
+
+
+	<WorkExperienceDate start="Oct 2018" end="Jun 2022" />
+	<WorkExperienceTitle company="LivePerson" role="Senior Fullstack Engineer" />
+	<p>
+		Brainstormed and developed 3 web apps to allow a legacy app to support AI generated
+		responses using React and NodeJS. Built a Design System and Component Library using
+		Storybook, React and Web Components. Demonstrated leadership skills by mentoring several
+		team members to promotion. Wrote documentation on type checking, automation, and branch
+		strategies.
+	</p>
+
+	<WorkExperienceDate start="Sep 2017" end="Oct 2018" />
+	<WorkExperienceTitle company="Vizio" role="Senior Fullstack Engineer" />
+	<p>
+		Solved video streaming bugs in the React/NodeJS powered TV platform. I proposed and led the
+		effort to replace the core video player, so that we could improve performance across the entire
+		range of supported devices.
+	</p>
+
+	<WorkExperienceDate start="Feb 2017" end="Sep 2017" />
+	<WorkExperienceTitle company="Cisco" role="Senior Javascript Developer" />
+	<p>
+		Developed and maintained web applications using JavaScript and React. Collaborated with
+		cross-functional teams to ensure seamless integration with backend services. Implemented
+		best practices for performance optimization and accessibility.
+	</p>
+
+	<WorkExperienceDate start="Feb 2015" end="Feb 2016" />
+	<WorkExperienceTitle company="Lennd" role="Senior Fullstack Engineer" />
+	<p>
+		At this incubator sponsored startup, I ported an existing web app into React, and created a
+		companion mobile app using React Native and GraphQL.
+	</p>
+
+	<WorkExperienceDate start="Oct 2013" end="Feb 2015" />
+	<WorkExperienceTitle company="Mirum" role="Frontend Engineer" />
+	<p>
+		Responsible for managing multiple projects at the same time in this design agency. After
+		receiving praise for my contributions to the Qualcomm rebrand, I was given all projects that
+		required complex JavaScript animation or unique out-of-the-box thinking.
+	</p>
+
+	<WorkExperienceDate start="Feb 2012" end="Oct 2013" />
+	<WorkExperienceTitle company="Airlock" role="Frontend Engineer" />
+	<p>
+		Created responsive HTML web apps using an XML powered CMS. Mainly focused on creating
+		the online presence for a lifestyle magazine which needed a meticulous eye for detail.
+	</p>
+
+	<WorkExperienceDate start="Sep 2011" end="Jan 2012" />
+	<WorkExperienceTitle company="Capablue Ltd" role="Connected TV Developer" />
+	<p>
+		JavaScript Developer working on an Internet Connected TV Set top box.
+	</p>
+
+	<WorkExperienceDate start="Aug 2011" end="Sep 2011" />
+	<WorkExperienceTitle company="Illustrated London News" role="Wordpress Developer" />
+	<p>
+		Developed and maintained WordPress websites for various clients.
+	</p>
+
+	<WorkExperienceDate start="Oct 2008" end="Oct 2010" />
+	<WorkExperienceTitle company="AdjustYourSet" role="Web Developer" />
+	<p>
+		Created custom HTML5 video players for large retail brands such as British Airways and Marks
+		& Spencer. Specialized in complex JavaScript animation. Responsible for converting daily
+		news feeds into streaming video.
+	</p>
+
+	<WorkExperienceDate start="Aug 2004" end="Oct 2008" />
+	<WorkExperienceTitle company="Self-employed" role="Portrait Photographer" />
+	<p>
+		Studied filmmaking and studio lighting in Montreal, then setup and ran a portrait photography
+		studio for 4 years.
+	</p>
+
+	<WorkExperienceDate start="Jul 2000" end="Aug 2004" />
+	<WorkExperienceTitle company="Faceparty" role="Business Owner" />
+	<p>
+		I co-founded and built one of the first online social networks with a friend. At its peak, we
+		served 3 million users and was one of the UK&apos;s highest traffic websites. At the time, we were
+		pioneers in dealing with such a large amount of traffic, and we faced multiple hardware related
+		hurdles. Through hard work and determination we overcame them all, to produce a performant
+		scalable distributed network that distributed capacity and provided failover redundancy.
+	</p>
+
+	<WorkExperienceDate start="Jun 1997" end="Jul 2000" />
+	<WorkExperienceTitle company="Dyson | Maserati | Virgin | Vodafone UK" role="Junior Web Developer" />
+	<p>
+		Whilst studying at University, I worked part-time contracting a web design agency.
+		Daily responsibilities would be to convert Photoshop documents into responsive
+		HTML/CSS/JavaScript micro-sites.
+	</p>
+
+
+	<h2 class="text-3xl mt-6 mb-4">EDUCATION</h2>
+	<WorkExperienceDate start="Sep 1996" end="Jun 1999" />
+	<p>Leicester University, Leicester</p>
+	<p>Computer Science</p>
+
+	<h2 class="text-3xl mt-6 mb-4">NOTABLE WORK</h2>
+	<p class="text-xl">
+		<Link href="https://www.qualcomm.com" target="_blank">Qualcomm</Link> - a global technology company
+	</p>
+	<p class="text-xl">
+		<Link href="https://www.monocle.com" target="_blank">Monocle</Link> - a global design magazine
+	</p>
+	<p class="text-xl">
+		<Link href="https://www.lennd.com" target="_blank">Lennd</Link> - an event management system
 	</p>
 </DefaultLayout>
+
+
+

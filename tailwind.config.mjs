@@ -6,6 +6,9 @@ export default {
       flex: {
         '2': '2 2 0%',
         '3': '3 3 0%'
+      },
+      minHeight: {
+        'stretch': 'calc(100vh - 196px)',
       }
     },
   },

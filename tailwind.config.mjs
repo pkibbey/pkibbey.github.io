@@ -2,7 +2,12 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      flex: {
+        '2': '2 2 0%',
+        '3': '3 3 0%'
+      }
+    },
   },
   plugins: [],
 };

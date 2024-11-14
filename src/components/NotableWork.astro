@@ -1,0 +1,17 @@
+---
+import Link from './Link.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props {
+  imageProps: HTMLAttributes<'img'>;
+}
+
+const { imageProps } = Astro.props;
+---
+
+<section class="text-xl grid grid-cols-3 gap-8 mb-8">
+	<div class="col-span-2">
+		<slot />
+	</div>
+	<img {...imageProps} class="flex-1 inline-block shrink col-span-1" />
+</section>

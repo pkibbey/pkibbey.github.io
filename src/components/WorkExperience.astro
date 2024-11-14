@@ -1,0 +1,20 @@
+---
+import WorkExperienceDate from './WorkExperienceDate.astro';
+import WorkExperienceTitle from './WorkExperienceTitle.astro';
+
+interface Props {
+  start: string;
+  end: string;
+  company: string;
+  role: string;
+}
+
+const { company, role, start, end } = Astro.props;
+---
+
+
+<section class="mb-8">
+	<WorkExperienceDate start={start} end={end} />
+	<WorkExperienceTitle company={company} role={role} />
+	<p><slot/></p>
+</section>

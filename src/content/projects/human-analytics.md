@@ -1,6 +1,6 @@
 ---
-title: 'Tech moves fast'
-description: 'a blog post about the speed of the development process'
+title: 'Human Analytics'
+description: 'A project about using the data that we collect about ourselves'
 pubDate: 'Nov 13 2024'
 ---
 

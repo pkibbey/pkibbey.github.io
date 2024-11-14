@@ -1,6 +1,6 @@
 ---
-title: 'Tech moves fast'
-description: 'a blog post about the speed of the development process'
+title: 'Game show app'
+description: 'A project about a game show'
 pubDate: 'Nov 13 2024'
 ---
 

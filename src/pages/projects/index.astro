@@ -16,7 +16,6 @@ const posts = (await getCollection('projects')).sort(
 				posts.map((post, index) => (
 					<li class={`${index === 0 ? 'w-full mb-[1rem] text-center' : 'w-[calc(50%-1rem)]'}`}>
 						<a href={`/projects/${post.slug}/`} class="block no-underline transition-[0.2s_ease]">
-							<img width={720} height={360} src={post.data.heroImage} alt="" class={`${index === 0 ? 'w-full' : 'mb-[0.5rem] rounded-[12px]'}`} />
 							<h4 class={`title m-0 text-[rgb(var(--black))] leading-[1] ${index === 0 ? 'text-[2.369rem]' : ''}`}>{post.data.title}</h4>
 							<p class="date m-0 text-[rgb(var(--gray))]">
 								<FormattedDate date={post.data.pubDate} />

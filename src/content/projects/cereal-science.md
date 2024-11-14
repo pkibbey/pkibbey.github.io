@@ -1,6 +1,6 @@
 ---
-title: 'Tech moves fast'
-description: 'a blog post about the speed of the development process'
+title: 'Cereal Science'
+description: 'A project about cereal'
 pubDate: 'Nov 13 2024'
 ---
 

@@ -4,19 +4,19 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<h1 class="text-5xl mb-8">Blog</h1>
+	<h1 class="text-5xl mb-8">Projects</h1>
 	<section>
 		<ul class="flex flex-wrap gap-[2rem] list-none m-0 p-0">
 			{
 				posts.map((post, index) => (
 					<li class={`${index === 0 ? 'w-full mb-[1rem] text-center' : 'w-[calc(50%-1rem)]'}`}>
-						<a href={`/blog/${post.slug}/`} class="block no-underline transition-[0.2s_ease]">
+						<a href={`/projects/${post.slug}/`} class="block no-underline transition-[0.2s_ease]">
 							<img width={720} height={360} src={post.data.heroImage} alt="" class={`${index === 0 ? 'w-full' : 'mb-[0.5rem] rounded-[12px]'}`} />
 							<h4 class={`title m-0 text-[rgb(var(--black))] leading-[1] ${index === 0 ? 'text-[2.369rem]' : ''}`}>{post.data.title}</h4>
 							<p class="date m-0 text-[rgb(var(--gray))]">

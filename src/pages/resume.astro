@@ -7,13 +7,13 @@ import NotableWork from '../components/NotableWork.astro';
 ---
 
 <DefaultLayout title='Resume' description='resume page'>
-	<h1 class="text-5xl mb-6">Resume</h1>
+	<h1 class="text-5xl mb-8">Resume</h1>
 	<h2>Phineas Kibbey – Seattle, WA</h2>
 	<p>
 		<Link href="https://linkedin.com/in/phineaskibbey" target="_blank">linkedin.com/in/phineaskibbey</Link>
 	</p>
 
-	<h2 class="text-3xl mt-6 mb-4">SUMMARY</h2>
+	<h2 class="text-3xl mt-8 mb-4">SUMMARY</h2>
 	<p>
 		Highly motivated and detail-oriented frontend developer seeking a role in a
 		fast-paced, collaborative environment. Extensive experience architecting and
@@ -21,10 +21,10 @@ import NotableWork from '../components/NotableWork.astro';
 		high achievers who value continuous learning and mutual growth.	
 	</p>
 
-	<h2 class="text-3xl mt-6 mb-4">SKILLS</h2>
+	<h2 class="text-3xl mt-8 mb-4">SKILLS</h2>
 	<p class="text-xl">React, TypeScript, JS, CSS, HTML, Jest, NodeJS, GraphQL, UI/UX Design</p>
 
-	<h2 class="text-3xl mt-6 mb-4">WORK EXPERIENCE</h2>
+	<h2 class="text-3xl mt-8 mb-4">WORK EXPERIENCE</h2>
 	<WorkExperience start="Mar 2022" end="Aug 2024" company="Level Home" role="Senior Software Engineer">
 		Architected a monorepo of apps to control devices in smart apartments. The apps were a
 		combination of NodeJS, NextJS and Remix apps, so that we could deliver the best possible user
@@ -75,7 +75,7 @@ import NotableWork from '../components/NotableWork.astro';
 		the online presence for a lifestyle magazine which needed a meticulous eye for detail.
 	</WorkExperience>
 
-	<WorkExperience start="Sep 2011" end="Jan 2012" company="Capablue Ltd" role="Connected TV Developer">
+	<WorkExperience start="Sep 2011" end="Jan 2012" company="Capablue Ltd" role="TV Developer">
 		JavaScript Developer working on an Internet Connected TV Set top box.
 	</WorkExperience>
 
@@ -87,11 +87,6 @@ import NotableWork from '../components/NotableWork.astro';
 		Created custom HTML5 video players for large retail brands such as British Airways and Marks
 		& Spencer. Specialized in complex JavaScript animation. Responsible for converting daily
 		news feeds into streaming video.
-	</WorkExperience>
-
-	<WorkExperience start="Aug 2004" end="Oct 2008" company="Self-employed" role="Portrait Photographer">
-		Studied filmmaking and studio lighting in Montreal, then setup and ran a portrait photography
-		studio for 4 years.
 	</WorkExperience>
 
 	<WorkExperience start="Jul 2000" end="Aug 2004" company="Faceparty" role="Business Owner">
@@ -108,25 +103,25 @@ import NotableWork from '../components/NotableWork.astro';
 		HTML/CSS/JavaScript micro-sites.
 	</WorkExperience>
 
-	<h2 class="text-3xl mt-6 mb-4">EDUCATION</h2>
+	<h2 class="text-3xl mt-8 mb-4">EDUCATION</h2>
 	<WorkExperienceDate start="Sep 1996" end="Jun 1999" />
-	<p>Leicester University, Leicester</p>
-	<p>Computer Science</p>
+	<p class="text-2xl">Leicester University, Leicester</p>
+	<p class="text-2xl">Computer Science</p>
 
-	<h2 class="text-3xl mt-6 mb-4">NOTABLE WORK</h2>
-	<NotableWork imageProps={{ src:"/public/qualcomm.jpg" }}>
+	<h2 class="text-3xl mt-8 mb-4">NOTABLE WORK</h2>
+	<NotableWork imageProps={{ src:"/qualcomm.jpg" }}>
 		<p>
 			Complete redesign for a global technology brand <Link target="_blank" href="https://www.qualcomm.com">Qualcomm</Link>. Unified 6 different sites into a single React app
 		</p>
 	</NotableWork>
 		
-	<NotableWork imageProps={{ src:"/public/lennd.png" }}>
+	<NotableWork imageProps={{ src:"/lennd.png" }}>
 		<p>
 			React and React Native app for the event management platform <Link target="_blank" href="https://www.lennd.com">Lennd</Link>, powered with GraphQL
 		</p>
 	</NotableWork>
 
-	<NotableWork imageProps={{ src:"/public/monocle.jpg" }}>
+	<NotableWork imageProps={{ src:"/monocle.jpg" }}>
 		<p>
 			Pixel perfect layouts for the global design magazine <Link target="_blank" href="https://www.monocle.com">Monocle</Link>
 		</p>

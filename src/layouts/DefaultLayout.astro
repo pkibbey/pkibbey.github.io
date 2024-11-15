@@ -17,6 +17,7 @@ const { title, description } = Astro.props;
 	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50">
 		<Header />
 		<main class="w-[720px] max-w-[calc(100%-2em)] mx-auto py-12 px-4 min-h-stretch">
+			<h1 class="text-3xl mb-6 text-orange-200 dark:text-yellow-600">{title}</h1>
 			<slot />
 		</main>
 		<Footer />

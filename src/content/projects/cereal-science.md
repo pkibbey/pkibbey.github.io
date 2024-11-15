@@ -1,15 +1,27 @@
 ---
-title: 'Cereal Science'
-description: 'A project about cereal'
-pubDate: 'Nov 13 2024'
+title: 'Cereal Science: Fun and Flavorful Cereal Reviews'
+description: 'A playful and detailed approach to reviewing cereals'
+pubDate: '2020-10-28'
+tags: ['cereal', 'reviews', 'food']
+author: 'Phineas'
+color: 'linear-gradient(to bottom right, #F1C40F, #E67E22)'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+If you’ve ever found yourself staring at a wall of cereal boxes in the grocery store, wondering which one to pick for your next breakfast, I’ve got something for you! I’m excited to introduce my latest project—Cereal Science, a website dedicated to the delightful (and sometimes quirky) world of cereal reviews.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+At Cereal Science, we take the science of cereal seriously—while also having a little fun with it. The idea came to me as I realized that choosing the perfect cereal is about more than just taste. There’s texture, nutritional value, nostalgia factor, and even how well the cereal holds up in milk. So, I decided to break it all down and rate cereals based on a variety of factors that every cereal lover (or skeptic) can appreciate.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Each cereal is given a fun yet detailed review that includes:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Taste & Flavor: How does it hold up in the taste department? Sweet, savory, or somewhere in between?
+Crunch Factor: Does it stay crunchy in milk, or does it turn into a soggy mess after five minutes?
+Nutritional Value: I’m not a nutritionist, but I do weigh in on the health aspects (or lack thereof).
+Nostalgia Rating: Some cereals just hit different when you eat them as an adult, right? I give a nod to the power of childhood favorites.
+Overall Science Score: This is where it all comes together. The Cereal Science score is a fun yet scientific breakdown that evaluates the cereal’s overall performance in all categories.
+It’s not all about the serious stuff, though! The website has a playful vibe with quirky graphics, polls, and even a community section where visitors can submit their own reviews and suggest cereals for me to try next.
+
+Whether you’re a cereal aficionado or just looking for something new to start your morning, Cereal Science is here to help you make a better choice. Who knew that a box of cereal could be so... scientific?
+
+Check it out, rate your favorite cereals, and maybe discover a new breakfast obsession!

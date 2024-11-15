@@ -1,5 +1,4 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
@@ -9,15 +8,16 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<section>
+<DefaultLayout title="Blog" description="blog entries">
+	<section class="p-4">
 		<ul class="flex flex-wrap gap-[2rem] list-none m-0 p-0">
 			{
 				posts.map((post, index) => (
-					<li class={`${index === 0 ? 'w-full mb-[1rem] text-center' : 'w-[calc(50%-1rem)]'}`}>
-						<a href={`/blog/${post.slug}/`} class="block no-underline transition-[0.2s_ease]">
-							<h4 class={`title m-0 text-[rgb(var(--black))] leading-[1] ${index === 0 ? 'text-[2.369rem]' : ''}`}>{post.data.title}</h4>
-							<p class="date m-0 text-[rgb(var(--gray))]">
+					<li class={`${index === 0 ? 'w-full mb-[1rem]' : 'w-[calc(50%-1rem)]'}`}>
+						<a href={`/blog/${post.slug}/`} class="block no-underline transition-[0.2s_ease]">						
+							<h4 class={`title m-0 ${index === 0 ? 'text-[2.369rem] leading-10' : 'leading-5'}`}>{post.data.title}</h4>
+							<div class="inline-block w-full h-[1px] my-2" style={`background: ${post.data.color};`}></div>
+							<p class="date m-0 text-gray-500">
 								<FormattedDate date={post.data.pubDate} />
 							</p>
 						</a>

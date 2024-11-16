@@ -1,10 +1,11 @@
 ---
 title: 'Faceparty: Pioneering the Early Days of Social Networking'
 description: 'My journey as a co-founder of Faceparty, one of the first social networks'
-pubDate: '2016-02-11'
+pubDate: '2008-02-11'
 tags: ['social networking', 'Faceparty', 'history']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #3498DB, #2ECC71)'
+heroImage: '/public/faceparty.jpeg'
 ---
 
 # The Early Days of Social Networking: My Journey as a Co-Founder of Faceparty

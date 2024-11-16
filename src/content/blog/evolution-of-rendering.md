@@ -1,10 +1,11 @@
 ---
-title: 'Evolution of Web Rendering: From PHP to React and Back Again'
+title: 'Web Rendering: From PHP to React; SSR & CSR.'
 description: 'A journey through the evolution of web rendering strategies and what we learned along the way'
 author: 'Phineas'
 pubDate: 'Oct 22 2023'
 tags: ['web rendering', 'SSR', 'React', 'Next.js']
 color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'
+heroImage: '/public/rendering.jpg'
 ---
 
 In the early days of web development, server-side rendering (SSR) was the norm. We started with PHP, where the server generated HTML and sent it to the client. This approach was simple and effective, but as web applications grew more complex, we sought ways to improve performance and user experience.

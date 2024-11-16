@@ -1,10 +1,11 @@
 ---
 title: 'Cereal Science: Fun and Flavorful Cereal Reviews'
 description: 'A playful and detailed approach to reviewing cereals'
-pubDate: '2020-10-28'
+pubDate: '2010-07-01'
 tags: ['cereal', 'reviews', 'food']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #F1C40F, #E67E22)'
+heroImage: '/public/cereal-science.png'
 ---
 
 # Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!

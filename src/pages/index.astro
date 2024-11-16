@@ -1,12 +1,47 @@
 ---
+import { getCollection } from 'astro:content';
 import Link from '../components/Link.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+const blogPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const projectPosts = (await getCollection('projects')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <DefaultLayout title="Home" description='home page'>
-	<ul class="grid gap-2 py-2 text-xl">
-		<li>View my <Link href="/resume">Resume</Link></li>
-		<li>Look at <Link href="/projects">Project concepts</Link></li>
-		<li>Read <Link href="/blog">Blog</Link> entries</li>
-	</ul>
+	<div class="container mx-auto px-4 py-8">
+		<section class="introduction mb-8">
+			<h2 class="text-2xl font-bold mb-4">Hello, I'm Phineas</h2>
+			<p>I'm a frontend engineer with a passion for creating beautiful and functional web applications.</p>
+		</section>
+		<ul class="grid gap-4 text-xl mb-12">
+			<li>View my <Link href="/resume">Resume</Link>. I am available for hire.</li>
+		</ul>
+		<div class="flex flex-col gap-12 sm:flex-row">
+			<section class="projects mb-8">
+				<h2 class="text-2xl font-bold mb-4">Recent Projects</h2>
+				<ul class="grid gap-4">
+					{projectPosts.slice(0, 3).map(project => (
+						<li>
+							<Link href={`/projects/${project.slug}`}>{project.data.title}</Link> - {project.data.description}
+						</li>
+					))}
+				</ul>
+			</section>
+			<section class="tech-blog">
+				<h2 class="text-2xl font-bold mb-4">Latest Blog Entries</h2>
+				<ul class="grid gap-4">
+					{blogPosts.slice(0, 3).map(post => (
+						<li>
+							<Link href={`/tech-blog/${post.slug}`}>{post.data.title}</Link> - {post.data.description}
+						</li>
+					))}
+				</ul>
+			</section>
+		</div>
+	</div>
 </DefaultLayout>

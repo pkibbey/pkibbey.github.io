@@ -5,12 +5,11 @@ import { SITE_TITLE } from '../consts';
 
 <header class="shadow-md px-4 bg-gray-500 bg-opacity-15">
 	<nav class="flex items-center justify-between">
-		<a href="/" class="no-underline">{SITE_TITLE}</a>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/" class="no-underline overflow-hidden text-ellipsis text-nowrap">{SITE_TITLE}</HeaderLink>
+		<div class="internal-links shrink-0">
 			<HeaderLink href="/resume">Resume</HeaderLink>
 			<HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/tech-blog">Tech Blog</HeaderLink>
 		</div>
 	</nav>
 </header>

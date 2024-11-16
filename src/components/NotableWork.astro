@@ -9,9 +9,9 @@ interface Props {
 const { imageProps } = Astro.props;
 ---
 
-<section class="text-lg grid grid-cols-3 gap-8 mb-8">
-	<div class="col-span-2">
+<section>
+	<div class="col-span-1 mb-4">
+    <img {...imageProps} class="flex-1 mb-4 inline-block shrink" />
 		<slot />
 	</div>
-	<img {...imageProps} class="flex-1 inline-block shrink col-span-1" />
 </section>

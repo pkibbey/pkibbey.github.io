@@ -11,7 +11,7 @@ const posts = (await getCollection('blog')).sort(
 
 <DefaultLayout title="Tech Blog" description="blog entries">
 	<section class="p-4">
-		<ul class="grid sm:grid-cols-2 xl:grid-cols-4 gap-[2rem] list-none m-0 p-0">
+		<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem] list-none m-0 p-0">
 			{
 				posts.map((post, index) => (
 					<li>

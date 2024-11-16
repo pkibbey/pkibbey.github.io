@@ -4,7 +4,7 @@ description: 'An in-depth look at the rapid evolution of web development and the
 pubDate: 'Nov 15 2024'
 tags: ['web development', 'AI', 'technology', 'coding', 'programming']
 color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
-heroImage: '/public/development.jpg'
+heroImage: '/development.jpg'
 ---
 
 In the ever-evolving world of web development, change is not just a constant; it's an overwhelming force. With new frameworks, libraries, and tools emerging regularly, the landscape can feel like a race you can't quite keep up with. And now, with the addition of Artificial Intelligence (AI) tools to the mix, this acceleration has only increased, transforming how developers build, debug, and deploy websites.

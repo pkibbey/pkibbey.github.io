@@ -1,10 +1,16 @@
 ---
-title: 'From Code to Camera: My Journey as a Professional Portrait Photographer'
-description: 'Exploring My Creative Side as a Professional Portrait Photographer'
-pubDate: 'Jul 19 2017'
-tags: ['photography', 'creative', 'hiatus']
-author: 'Phineas'
-color: 'linear-gradient(to bottom right, #8E44AD, #3498DB)'
+title: "Digital Photography Portfolio"
+description: "A showcase of my journey through digital photography, featuring landscape, portrait, and street photography with technical insights."
+author: "Phineas"
+pubDate: "2024-01-10"
+tags: ["Photography", "Digital Art", "Portfolio", "Creative", "Visual Design"]
+color: "linear-gradient(to bottom right, #2ECC71, #27AE60)"
+image:
+  src: "/projects/photography.jpg"
+  alt: "Photography Portfolio Showcase"
+equipment: ["Sony A7 III", "24-70mm f/2.8", "50mm f/1.8", "85mm f/1.4"]
+specialties: ["Landscape", "Portrait", "Street Photography"]
+exhibitions: ["Local Art Gallery 2023", "Digital Arts Festival 2024"]
 ---
 
 # My 4-Year Hiatus from Web Development: Exploring My Creative Side as a Professional Portrait Photographer
@@ -59,8 +65,12 @@ My four-year hiatus from web development taught me many valuable lessons:
 
 ## Conclusion: Full Circle
 
-Looking back, I’m grateful for my four-year detour into professional portrait photography. It was a necessary pause that allowed me to step away from the static nature of early web development and explore my creative side. In the end, it was not just a break from coding—it was a time for growth, learning, and self-reflection.
+Looking back, I’m grateful for my four-year detour into professional portrait photography. It was a necessary pause that allowed me to step away from the static nature of early web development and explore my creative side. In the end, it was not just a break from coding—it was an important chapter that helped me grow as both a developer and a creator. 
 
 Today, I’m back in web development, but I’m a different kind of developer. I bring a creative approach to everything I do, from coding to design. And while the web has changed dramatically since I first began, the lessons I learned as a photographer continue to influence my work in ways I never imagined.
 
 If there’s one thing I’ve learned from my hiatus, it’s this: sometimes, you need to step away in order to come back better than before. And who knows? Maybe your next detour will lead you down a path you never expected.
+
+### The Art of Visual Storytelling
+
+My journey into digital photography began with a simple desire to capture moments, but it evolved into a passion for visual storytelling and technical mastery.

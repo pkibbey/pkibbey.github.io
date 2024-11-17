@@ -1,9 +1,16 @@
 ---
-title: 'Speed of Change: The Rapid Evolution of Web Development and AI Tools'
-description: 'An in-depth look at the rapid evolution of web development and the impact of AI tools.'
-pubDate: 'Nov 15 2024'
-tags: ['web development', 'AI', 'technology', 'coding', 'programming']
-color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
+title: "Staying Current in a Fast-Moving Tech Landscape"
+description: "Strategies and insights for keeping up with rapidly evolving technology while maintaining productivity and avoiding burnout."
+author: "Phineas"
+pubDate: "Jan 5 2024"
+tags: ["Career Development", "Technology Trends", "Learning", "Professional Growth", "Software Engineering", "Work-Life Balance"]
+color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
+image:
+  src: "/hero/tech-moves-fast.jpg"
+  alt: "Fast-paced technology evolution visualization"
+wordCount: 1900
+timeToRead: 10
+canonicalURL: "https://phineas.io/tech-blog/tech-moves-fast"
 ---
 
 In the ever-evolving world of web development, change is not just a constant; it's an overwhelming force. With new frameworks, libraries, and tools emerging regularly, the landscape can feel like a race you can't quite keep up with. And now, with the addition of Artificial Intelligence (AI) tools to the mix, this acceleration has only increased, transforming how developers build, debug, and deploy websites.

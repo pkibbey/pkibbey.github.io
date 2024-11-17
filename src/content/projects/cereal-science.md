@@ -1,10 +1,16 @@
 ---
-title: 'Cereal Science: Fun and Flavorful Cereal Reviews'
-description: 'A playful and detailed approach to reviewing cereals'
-pubDate: '2010-07-01'
-tags: ['cereal', 'reviews', 'food']
-author: 'Phineas'
-color: 'linear-gradient(to bottom right, #F1C40F, #E67E22)'
+title: "Cereal Science: Data-Driven Breakfast Analysis"
+description: "A comprehensive analysis of breakfast cereals using data science and machine learning to uncover nutrition patterns and consumer preferences."
+author: "Phineas"
+pubDate: "2023-12-01"
+tags: ["Data Science", "Machine Learning", "Data Visualization", "Nutrition Analysis", "Python"]
+color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
+image:
+  src: "/projects/cereal-science.jpg"
+  alt: "Cereal Data Analysis Dashboard"
+technologies: ["Python", "Pandas", "Scikit-learn", "Plotly", "Jupyter"]
+metrics: ["500+ Cereals Analyzed", "50+ Nutritional Factors", "10 Predictive Models"]
+findings: ["Nutrition Trends", "Consumer Preferences", "Market Patterns"]
 ---
 
 # Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!
@@ -25,3 +31,7 @@ It’s not all about the serious stuff, though! The website has a playful vibe w
 Whether you’re a cereal aficionado or just looking for something new to start your morning, Cereal Science is here to help you make a better choice. Who knew that a box of cereal could be so... scientific?
 
 Check it out, rate your favorite cereals, and maybe discover a new breakfast obsession!
+
+### Project Overview
+
+Applied data science techniques to analyze breakfast cereals, revealing insights about nutrition, consumer behavior, and market trends.

@@ -1,10 +1,16 @@
 ---
-title: "Micro-Frontends: Scaling Frontend Development"
-description: "A comprehensive guide to implementing micro-frontend architecture, its benefits, challenges, and real-world implementation strategies."
-author: 'Phineas'
-pubDate: 'Jan 18 2024'
-tags: [Frontend Architecture, Micro-Frontends, Scalability, Development, Team Organization]
-color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
+title: "Scaling with Micro-Frontends: A Real-World Implementation"
+description: "An in-depth exploration of implementing micro-frontends at scale, including architecture decisions, performance considerations, and team organization."
+author: "Phineas"
+pubDate: "2024-01-20"
+tags: ["Architecture", "Micro-Frontends", "JavaScript", "Team Organization", "Performance", "DevOps"]
+color: "linear-gradient(to bottom right, #2ECC71, #27AE60)"
+image:
+  src: "/blog/micro-frontends.jpg"
+  alt: "Micro-Frontends Architecture Diagram"
+wordCount: 2500
+timeToRead: 12
+canonicalURL: "https://phineas.io/blog/micro-frontends"
 ---
 
 ### Understanding Micro-Frontends

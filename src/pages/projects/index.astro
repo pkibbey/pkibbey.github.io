@@ -1,22 +1,32 @@
 ---
 import { getCollection } from 'astro:content';
+import PostCard from '../../components/PostCard.astro';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-import PostItem from '../../components/PostItem.astro';
-import PostFeaturedItem from '../../components/PostFeaturedItem.astro';
 
 const posts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const [featuredPost, ...otherPosts] = posts;	
+const [featuredPost, ...otherPosts] = posts;
 ---
 
-<DefaultLayout title="Projects" description="all my projects">
-	<section class="px-4 py-8">
-		<PostFeaturedItem post={featuredPost} baseUrl="/projects/" />
-		
-		<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 list-none m-0 p-0">
-			{otherPosts.map((post) => <PostItem post={post} baseUrl="/projects/" />)}
-		</ul>
-	</section>
+<DefaultLayout 
+  title="Projects" 
+  description="A showcase of my latest projects and work"
+>
+  <section class="max-w-7xl mx-auto">
+    <div class="mb-16">
+      <PostCard post={featuredPost} baseUrl="/projects/" variant="featured" />
+    </div>
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold mb-8 text-gray-900 dark:text-gray-100">More Projects</h2>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
+        {otherPosts.map((post) => (
+          <li>
+            <PostCard post={post} baseUrl="/projects/" variant="default" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 </DefaultLayout>

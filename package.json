@@ -2,6 +2,7 @@
   "name": "phineas-dev.github.io",
   "type": "module",
   "version": "0.0.2",
+  "url": "https://phineas-dev.github.io",
   "scripts": {
     "dev": "astro sync && astro dev",
     "start": "astro sync && astro dev",
@@ -10,7 +11,6 @@
     "astro": "astro",
     "images": "node --no-warnings scripts/generate-hero-images.js && node --no-warnings scripts/generate-images.js",
     "format": "biome format --write src",
-    "format:check": "biome format src",
     "lint": "biome lint src",
     "check": "biome check src"
   },

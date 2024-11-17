@@ -1,18 +1,21 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import Education from './Education.astro';
 import Introduction from './Introduction.astro';
+import NotableWork from './NotableWork.astro';
 import Skills from './Skills.astro';
 import WorkExperience from './WorkExperience.astro';
-import Education from './Education.astro';
-import NotableWork from './NotableWork.astro';
 ---
 
-<DefaultLayout title="Resume" description="resume page">
-	<div class="container mx-auto px-4 py-8">
-		<Introduction />
-		<Skills />
-		<WorkExperience />
-		<Education />
-		<NotableWork />
-	</div>
+<DefaultLayout 
+  title="Resume" 
+  description="Phineas's professional experience, skills, and notable work"
+>
+  <div class="max-w-7xl mx-auto">
+    <Introduction />
+    <Skills />
+    <WorkExperience />
+    <Education />
+    <NotableWork />
+  </div>
 </DefaultLayout>

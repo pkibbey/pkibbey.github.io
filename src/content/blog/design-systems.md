@@ -1,10 +1,16 @@
 ---
-title: "Building a Design System: Lessons in Success and Failure"
-description: "An in-depth look at the journey of building a design system, the successes, failures, and lessons learned along the way."
-author: 'Phineas'
-pubDate: 'Oct 22 2021'
-tags: [Design Systems, Frontend Engineering, Lessons Learned, UX, Collaboration]
-color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
+title: "Building Scalable Design Systems for Modern Web Applications"
+description: "A comprehensive guide to creating, implementing, and maintaining design systems that scale across large applications and teams."
+author: "Phineas"
+pubDate: "Jan 15 2024"
+tags: ["Design Systems", "Frontend Development", "UI/UX", "React", "Component Libraries", "Design Tokens"]
+color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
+image:
+  src: "/hero/design-systems.jpg"
+  alt: "Design System components and patterns visualization"
+wordCount: 1800
+timeToRead: 9
+canonicalURL: "https://phineas.io/tech-blog/design-systems"
 ---
 
 ### The Dream of a Unified Design System  
@@ -65,4 +71,4 @@ Reflecting on the experience, I’ve come to realize a few hard truths about bui
    Teams need to see the immediate value in using the system. If it’s not faster or easier than creating bespoke solutions, they’ll ignore it.  
 
 4. **You Can’t Outrun Culture**  
-   If the company’s culture prioritizes speed over process, even the
+   If the company’s culture prioritizes speed over process, even the best-designed system will struggle to gain traction.

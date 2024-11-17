@@ -1,10 +1,10 @@
-import { createClient } from 'pexels';
-import fs from 'node:fs/promises';
 import { createWriteStream } from 'node:fs';
-import path from 'node:path';
+import fs from 'node:fs/promises';
 import https from 'node:https';
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createClient } from 'pexels';
 import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);

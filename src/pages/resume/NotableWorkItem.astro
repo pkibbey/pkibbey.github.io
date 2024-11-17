@@ -8,9 +8,10 @@ interface Props {
 const { imageProps } = Astro.props;
 ---
 
-<section>
-	<div class="col-span-1 mb-4">
-    <img {...imageProps} class="flex-1 mb-4 inline-block shrink" />
-		<slot />
-	</div>
-</section>
+<div>
+  <img 
+    {...imageProps} 
+    class="w-full h-32 object-contain mb-6 rounded" 
+  />
+  <slot />
+</div>

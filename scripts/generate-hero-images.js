@@ -1,7 +1,7 @@
-import sharp from 'sharp';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import fs from 'node:fs';
+import sharp from 'sharp';
 import { parse as parseYaml } from 'yaml';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -67,7 +67,7 @@ async function generateHeroImage({ name, gradient, text }) {
   // Create the hero directory if it doesn't exist
   const heroDir = path.join(__dirname, '..', 'public', 'hero');
   await fs.promises.mkdir(heroDir, { recursive: true });
-  
+
   const outputPath = path.join(heroDir, `${name}.jpg`);
 
   const svg = `

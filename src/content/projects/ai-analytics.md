@@ -5,6 +5,13 @@ pubDate: '2023-11-29'
 tags: ['AI', 'data', 'dashboard']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #4A90E2, #9013FE)'
+image:
+  src: "/projects/ai-analytics.jpg"
+  alt: "AI Analytics Platform Dashboard"
+technologies: ["Python", "TensorFlow", "Apache Kafka", "PostgreSQL", "React", "TypeScript"]
+role: "Lead Developer"
+duration: "18 months"
+team: "6 developers"
 ---
 
 # The Future of Personal Data: Why Saving Everything Could Lead to Your Own AI-Powered Life Dashboard

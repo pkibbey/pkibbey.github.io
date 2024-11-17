@@ -1,10 +1,16 @@
 ---
-title: "Scaling Early Social Networks: Lessons from the Frontlines"
-description: "Insights from co-founding and scaling one of the UK's first social networks to serve millions of users."
-author: 'Phineas'
-pubDate: 'Jan 21 2024'
-tags: [Scaling, Architecture, Performance, Social Networks]
-color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'
+title: "Scaling Social Networks: Lessons from the Trenches"
+description: "Technical insights and architectural strategies for scaling social networks, based on real-world experience building and maintaining large-scale platforms."
+author: "Phineas"
+pubDate: "2024-01-12"
+tags: ["System Design", "Scalability", "Social Networks", "Architecture", "Backend", "Performance"]
+color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
+image:
+  src: "/blog/scaling-social.jpg"
+  alt: "Social Network Architecture Diagram"
+wordCount: 2800
+timeToRead: 14
+canonicalURL: "https://phineas.io/blog/scaling-social-networks"
 ---
 
 ### The Early Days of Social Networks

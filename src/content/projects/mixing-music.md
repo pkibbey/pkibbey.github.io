@@ -1,10 +1,16 @@
 ---
-title: 'Finding Harmony: Therapeutic Art of Mixing Music'
-description: 'Discovering the therapeutic benefits of music production with Ableton'
-pubDate: '2019-09-05'
-tags: ['music', 'therapy', 'Ableton']
-author: 'Phineas'
-color: 'linear-gradient(to bottom right, #3498DB, #000000)'
+title: "Digital Music Production Studio"
+description: "Building a professional-grade digital music production environment with custom software integrations and audio processing tools."
+author: "Phineas"
+pubDate: "2024-01-05"
+tags: ["Music Production", "Audio Engineering", "Digital Audio Workstation", "Sound Design"]
+color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
+image:
+  src: "/projects/music-studio.jpg"
+  alt: "Digital Music Production Setup"
+equipment: ["Ableton Live", "Native Instruments Komplete", "Universal Audio Interface", "MIDI Controllers"]
+genres: ["Electronic", "Ambient", "House", "Experimental"]
+features: ["Custom VST Plugins", "Automated Mixing", "Real-time Collaboration"]
 ---
 
 # The Therapy of Mixing Music
@@ -16,3 +22,7 @@ What I love most is the interplay of these elements. Each part of a track has it
 Ableton makes this process even more rewarding with its intuitive tools. Whether it’s warping a vocal sample to perfectly fit the tempo or experimenting with transitions between tracks, it always feels fresh and exciting. And the best part? There are no rules—just endless possibilities.
 
 Mixing dance music isn’t just a hobby for me; it’s a form of therapy. It’s a reminder to listen, to find harmony in the chaos, and to celebrate the small moments when everything comes together just right.
+
+### Project Overview
+
+Created a comprehensive digital music production environment that combines hardware and software solutions for professional audio production.

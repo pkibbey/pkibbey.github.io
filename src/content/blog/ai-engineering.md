@@ -1,10 +1,16 @@
 ---
 title: "AI-Driven Software Engineering: A New Era of Development"
 description: "How AI is transforming software development practices, from code generation to testing, and what it means for the future of engineering."
-author: 'Phineas'
-pubDate: 'Jan 17 2024'
-tags: [Artificial Intelligence, Software Engineering, Development, Machine Learning, Productivity]
-color: 'linear-gradient(to bottom right, #E74C3C, #C0392B)'
+author: "Phineas"
+pubDate: "Jan 17 2024"
+tags: ["Artificial Intelligence", "Software Engineering", "Development", "Machine Learning", "Productivity"]
+color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
+image: 
+  src: "/hero/ai-engineering.jpg"
+  alt: "Artificial Intelligence transforming software development"
+wordCount: 1250
+timeToRead: 6
+canonicalURL: "https://phineas.io/tech-blog/ai-engineering"
 ---
 
 ### The AI Revolution in Software Engineering

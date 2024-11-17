@@ -1,10 +1,17 @@
 ---
-title: 'Arduino Robot Football: Building an Autonomous Player'
-description: 'Creating a remote-controlled Arduino robot that automatically scores goals using computer vision'
-pubDate: '2024-01-15'
-tags: ['arduino', 'robotics', 'react-native', 'websockets', 'computer-vision']
-author: 'Phineas'
-color: 'linear-gradient(to bottom right, #4CAF50, #2196F3)'
+title: "Arduino Robot Football League"
+description: "Building and programming autonomous soccer-playing robots using Arduino, complete with computer vision and real-time strategy."
+author: "Phineas"
+pubDate: "2023-11-15"
+tags: ["Robotics", "Arduino", "Computer Vision", "IoT", "Embedded Systems", "AI"]
+color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
+image:
+  src: "/projects/robot-football.jpg"
+  alt: "Arduino Robot Football Competition"
+technologies: ["Arduino", "C++", "Python", "OpenCV", "3D Printing", "Sensors"]
+teamSize: "4 members"
+duration: "6 months"
+achievements: ["1st Place Regional Competition", "Best Technical Implementation Award"]
 ---
 
 # Building an Autonomous Football-Playing Arduino Robot
@@ -161,7 +168,10 @@ void executeCommand(String command) {
     turnLeft();
   } // ... more movement commands
 }
-```
+
+### Project Overview
+
+Created an autonomous robot football team using Arduino-based robots with advanced computer vision capabilities and real-time strategy algorithms.
 
 ## The Result
 

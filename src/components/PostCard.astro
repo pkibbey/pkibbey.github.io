@@ -1,0 +1,81 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BlendedImage from './BlendedImage.astro';
+import FormattedDate from './FormattedDate.astro';
+
+type PostType = CollectionEntry<'blog'> | CollectionEntry<'projects'>;
+
+interface Props {
+  post: PostType;
+  baseUrl: string;
+  variant?: 'default' | 'featured' | 'compact';
+}
+
+const { post, baseUrl, variant = 'default' } = Astro.props;
+const { title, pubDate, description } = post.data;
+
+const containerClasses = {
+  default: 'block',
+  featured: 'mb-16 max-w-2xl mx-auto',
+  compact: '',
+}[variant];
+
+const titleClasses = {
+  default:
+    'font-semibold my-1 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+  featured:
+    'text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+  compact:
+    'title m-0 min-h-10 leading-5 mb-1 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+}[variant];
+
+const imageProps = {
+  default: { aspectRatio: 40, hover: true },
+  featured: { aspectRatio: 40, hover: true },
+  compact: { hover: true },
+}[variant];
+
+const descriptionClasses = {
+  default: 'text-gray-700 dark:text-gray-300 text-sm line-clamp-2',
+  featured: 'text-gray-700 dark:text-gray-300 text-lg line-clamp-3',
+  compact: '',
+}[variant];
+---
+
+<div class={containerClasses}>
+  <a href={`${baseUrl}${post.slug}`} class="group block no-underline">
+    <div class="relative mb-3">
+      <BlendedImage 
+        slug={post.slug}
+        title={title}
+        rounded={true}
+        {...imageProps}
+      />
+    </div>
+    <div>
+      <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+        <FormattedDate date={pubDate} />
+      </div>
+      <h2 class={titleClasses}>{title}</h2>
+      {(variant === 'default' || variant === 'featured') && 
+        <p class={descriptionClasses}>{description}</p>
+      }
+    </div>
+  </a>
+</div>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

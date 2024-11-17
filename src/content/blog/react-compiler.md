@@ -1,10 +1,16 @@
 ---
-title: "React Compiler: The Future of React Performance"
-description: "An in-depth look at React's new compiler, how it transforms React development, and what it means for the future of web applications."
-author: 'Phineas'
-pubDate: 'Jan 20 2024'
-tags: [React, Compiler, Performance, JavaScript, Frontend Development]
-color: 'linear-gradient(to bottom right, #4834d4, #686de0)'
+title: "Building a React Compiler: Deep Dive into Performance"
+description: "A technical exploration of building a custom React compiler, optimizing bundle size and runtime performance, with practical examples and benchmarks."
+author: "Phineas"
+pubDate: "2024-01-08"
+tags: ["React", "Compilers", "JavaScript", "Performance", "Build Tools", "Optimization"]
+color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
+image:
+  src: "/blog/react-compiler.jpg"
+  alt: "React Compiler Architecture"
+wordCount: 3500
+timeToRead: 18
+canonicalURL: "https://phineas.io/blog/react-compiler"
 ---
 
 ### The React Compiler Revolution

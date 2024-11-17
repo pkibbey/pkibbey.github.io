@@ -1,15 +1,21 @@
 ---
-title: "WebAssembly: Revolutionizing Web Performance"
-description: "An exploration of how WebAssembly is transforming web applications, enabling near-native performance and opening new possibilities for web development."
-author: 'Phineas'
-pubDate: 'Jan 19 2024'
-tags: [WebAssembly, Performance, Web Development, Systems Programming, Future Tech]
-color: 'linear-gradient(to bottom right, #F39C12, #D35400)'
+title: "WebAssembly: The Future of Web Performance"
+description: "Exploring WebAssembly's impact on web applications, from high-performance computing to gaming, with practical implementation examples and performance benchmarks."
+author: "Phineas"
+pubDate: "2024-01-15"
+tags: ["WebAssembly", "Performance", "JavaScript", "C++", "Rust", "Web Development"]
+color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
+image:
+  src: "/blog/webassembly.jpg"
+  alt: "WebAssembly Performance Comparison"
+wordCount: 3000
+timeToRead: 15
+canonicalURL: "https://phineas.io/blog/webassembly"
 ---
 
-### The WebAssembly Revolution
+### The Promise of WebAssembly
 
-WebAssembly (Wasm) represents one of the most significant advances in web technology since JavaScript. It brings near-native performance to the web platform, enabling complex applications that were previously impossible or impractical in the browser.
+WebAssembly (Wasm) represents a paradigm shift in web development, bringing near-native performance to web applications.
 
 ### Why WebAssembly Matters
 

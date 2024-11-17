@@ -12,10 +12,10 @@ interface Props {
   description: string;
   pubDate: Date;
   updatedDate?: Date;
-  heroImage?: string;
   color: string;
   backLink: string;
   backText: string;
+  slug: string;
 }
 
 const {
@@ -23,10 +23,9 @@ const {
   description,
   pubDate,
   updatedDate,
-  heroImage,
-  color,
   backLink,
   backText,
+  slug
 } = Astro.props;
 ---
 
@@ -37,7 +36,7 @@ const {
 
   <body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50">
     <Header />
-    <main class="container mx-auto py-12 px-4">
+    <main class="container mx-auto px-4 py-8">
       <Link href={backLink}>
         <h1 class="text-xl mb-6">{backText}</h1>
       </Link>
@@ -45,7 +44,10 @@ const {
         <div class="prose max-w-4xl mx-auto p-4 text-gray-800 dark:text-gray-200">
           <div class="title mb-4 py-2 leading-none">
             <h1 class="text-5xl m-0 mb-6">{title}</h1>
-            <div style={`background: ${color}`} class="h-20 w-full mb-6 rounded-t-lg rounded-e-lg shadow-md" />
+            <div class="relative">
+              <Image src={`/images/${slug}.jpg`} alt={`${title} overlay`} class="absolute top-0 left-0 w-full h-full opacity-20 z-10 mix-blend-color-burn" />
+              <Image src={`/hero/${slug}.jpg`} alt={title} class="w-full rounded-t-lg rounded-e-lg shadow-md" />
+            </div>
             <div class="date mb-2 text-gray-500">
               <FormattedDate date={pubDate} />
               {

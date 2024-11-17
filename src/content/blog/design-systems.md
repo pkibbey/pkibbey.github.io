@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Oct 22 2021'
 tags: [Design Systems, Frontend Engineering, Lessons Learned, UX, Collaboration]
 color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
-heroImage: '/design-systems.jpg'
 ---
 
 ### The Dream of a Unified Design System  

@@ -5,7 +5,6 @@ pubDate: '2018-07-01'
 tags: ['unit testing', 'e2e testing', 'software development']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #3498DB, #2ECC71)'
-heroImage: '/testing.jpg'
 ---
 
 # The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls

@@ -1,11 +1,10 @@
 ---
-title: "Edge Computing: The Next Frontier of Web Architecture"
-description: "Exploring how edge computing is revolutionizing web applications with faster response times, reduced latency, and improved user experiences."
+title: "Edge Computing: The Next Frontier of Web Performance"
+description: "Exploring how edge computing is revolutionizing web performance and user experience through distributed computing at the network edge."
 author: 'Phineas'
 pubDate: 'Jan 16 2024'
-tags: [Edge Computing, Architecture, Performance, Cloud Computing, Infrastructure]
-color: 'linear-gradient(to bottom right, #8E44AD, #9B59B6)'
-heroImage: '/edge-computing.jpg'
+tags: [Edge Computing, Web Development, Performance, CDN, Distributed Systems]
+color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
 ---
 
 ### The Rise of Edge Computing

@@ -13,9 +13,9 @@ function extractFrontmatter(content) {
   return match ? parseYaml(match[1]) : null;
 }
 
-// Function to get image name from heroImage path
-function getImageName(heroImage) {
-  return heroImage.replace(/^\/hero\//, '').replace(/\.jpg$/, '');
+// Function to get slug from filename
+function getSlug(filename) {
+  return filename.replace(/\.md$/, '');
 }
 
 // Function to get gradient colors from color string
@@ -42,8 +42,8 @@ async function generateImageConfigs() {
         );
         const frontmatter = extractFrontmatter(content);
 
-        if (frontmatter?.heroImage && frontmatter.color) {
-          const name = getImageName(frontmatter.heroImage);
+        if (frontmatter?.color) {
+          const name = getSlug(file);
           const gradient = getGradientColors(frontmatter.color);
 
           configs.push({
@@ -94,7 +94,7 @@ async function generateHeroImage({ name, gradient, text }) {
 
   await sharp(Buffer.from(svg)).jpeg().toFile(outputPath);
 
-  console.log(`Generated hero/${name}.jpg`);
+  console.log(`Generated hero image: ${name}.jpg`);
 }
 
 async function generateAllImages() {

@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 19 2024'
 tags: [WebAssembly, Performance, Web Development, Systems Programming, Future Tech]
 color: 'linear-gradient(to bottom right, #F39C12, #D35400)'
-heroImage: '/webassembly.jpg'
 ---
 
 ### The WebAssembly Revolution

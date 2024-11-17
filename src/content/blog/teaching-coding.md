@@ -4,7 +4,6 @@ description: "Reflections on teaching coding at Meta, the challenges faced, and 
 pubDate: 'Jan 16 2022'
 tags: [Teaching, Coding, Meta, Mentorship, Personal Growth]
 color: 'linear-gradient(to bottom right, #FF5733, #C70039)'
-heroImage: "/meta.jpg"
 ---
 
 This past summer, I had the incredible opportunity to work at Meta, where I taught a class of 40 students how to code. It was an experience that pushed me to my limits and taught me lessons I never expected. While I walked into the role with excitement and a love for coding, I left with a profound respect for the art of teaching—and the realization that it’s not a path I’d choose to take again.

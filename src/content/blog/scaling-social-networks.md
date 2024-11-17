@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 21 2024'
 tags: [Scaling, Architecture, Performance, Social Networks]
 color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'
-heroImage: '/scaling-social.jpg'
 ---
 
 ### The Early Days of Social Networks

@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 20 2024'
 tags: [IoT, Smart Home, React, NodeJS, Architecture]
 color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
-heroImage: '/smart-home-development.jpg'
 ---
 
 ### The Challenge of Smart Home Development

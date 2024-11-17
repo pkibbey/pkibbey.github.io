@@ -5,7 +5,6 @@ pubDate: '2019-09-05'
 tags: ['music', 'therapy', 'Ableton']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #3498DB, #000000)'
-heroImage: '/ableton.jpg'
 ---
 
 # The Therapy of Mixing Music

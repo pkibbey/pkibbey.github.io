@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 20 2024'
 tags: [React, Compiler, Performance, JavaScript, Frontend Development]
 color: 'linear-gradient(to bottom right, #4834d4, #686de0)'
-heroImage: '/react-compiler.jpg'
 ---
 
 ### The React Compiler Revolution

@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 18 2024'
 tags: [Frontend Architecture, Micro-Frontends, Scalability, Development, Team Organization]
 color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
-heroImage: '/micro-frontends.jpg'
 ---
 
 ### Understanding Micro-Frontends

@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 15 2024'
 tags: [Web Performance, Frontend Engineering, User Experience, Technical Architecture, Optimization]
 color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'
-heroImage: '/web-performance.jpg'
 ---
 
 ### The Critical Role of Web Performance

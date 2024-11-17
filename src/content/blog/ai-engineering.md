@@ -5,7 +5,6 @@ author: 'Phineas'
 pubDate: 'Jan 17 2024'
 tags: [Artificial Intelligence, Software Engineering, Development, Machine Learning, Productivity]
 color: 'linear-gradient(to bottom right, #E74C3C, #C0392B)'
-heroImage: '/ai-engineering.jpg'
 ---
 
 ### The AI Revolution in Software Engineering

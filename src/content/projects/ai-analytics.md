@@ -5,7 +5,6 @@ pubDate: '2023-11-29'
 tags: ['AI', 'data', 'dashboard']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #4A90E2, #9013FE)'
-heroImage: '/analytics.jpg'
 ---
 
 # The Future of Personal Data: Why Saving Everything Could Lead to Your Own AI-Powered Life Dashboard

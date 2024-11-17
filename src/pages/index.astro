@@ -6,6 +6,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 const blogPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
 const projectPosts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );

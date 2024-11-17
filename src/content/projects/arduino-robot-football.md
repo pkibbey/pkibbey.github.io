@@ -5,7 +5,6 @@ pubDate: '2024-01-15'
 tags: ['arduino', 'robotics', 'react-native', 'websockets', 'computer-vision']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #4CAF50, #2196F3)'
-heroImage: '/arduino-robot-football.jpg'
 ---
 
 # Building an Autonomous Football-Playing Arduino Robot

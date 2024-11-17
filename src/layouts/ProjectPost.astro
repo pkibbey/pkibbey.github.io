@@ -4,7 +4,7 @@ import Post from './Post.astro';
 
 type Props = CollectionEntry<'projects'>['data'] & { slug: string };
 
-const { title, description, pubDate, updatedDate, color, slug } =
+const { title, description, pubDate, updatedDate, color, slug, tags } =
   Astro.props;
 ---
 
@@ -17,6 +17,7 @@ const { title, description, pubDate, updatedDate, color, slug } =
   backLink="/projects"
   backText="Projects"
   slug={slug}
+  tags={tags}
 >
   <slot />
 </Post>

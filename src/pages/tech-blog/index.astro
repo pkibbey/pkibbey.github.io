@@ -19,7 +19,7 @@ const [featuredPost, ...otherPosts] = posts;
       <PostCard post={featuredPost} baseUrl="/tech-blog/" variant="featured" />
     </div>
     <div class="mb-8">
-      <h2 class="text-2xl font-semibold mb-8 text-gray-900 dark:text-gray-100">Recent Posts</h2>
+      <h2 class="text-lg font-semibold mb-8 text-gray-900 dark:text-gray-100">Recent Entries</h2>
       <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
         {otherPosts.map((post) => (
           <li>

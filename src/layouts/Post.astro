@@ -8,9 +8,14 @@ import BlendedImage from '../components/BlendedImage.astro';
 import Link from '../components/Link.astro';
 import LinkButton from '../components/LinkButton.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { slug: string; backLink: string; backText: string };
+type Props = CollectionEntry<'blog'>['data'] & {
+  slug: string;
+  backLink: string;
+  backText: string;
+};
 
-const { title, description, pubDate, updatedDate, slug, backLink, backText } = Astro.props;
+const { title, description, pubDate, updatedDate, slug, backLink, backText } =
+  Astro.props;
 ---
 
 <!doctype html>

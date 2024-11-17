@@ -1,5 +1,5 @@
 ---
-title: "Building a Smart Home System from Scratch"
+title: "IOT in the real world: Building a Smart Home System"
 description: "A comprehensive guide to developing a custom smart home system using open-source technologies and IoT devices."
 pubDate: "Jan 22 2024"
 tags: ["IoT", "Smart Home", "Automation", "Embedded Systems", "Home Assistant"]

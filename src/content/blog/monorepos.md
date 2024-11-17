@@ -1,5 +1,5 @@
 ---
-title: 'Scaling Development with Monorepos'
+title: 'Monorepos: a Practical Guide for Large-Scale Development'
 description: 'A practical guide to implementing and managing monorepos for large-scale development projects.'
 pubDate: 'Feb 08 2024'
 color: 'linear-gradient(to bottom right, #2980B9, #3498DB)'

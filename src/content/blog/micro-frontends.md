@@ -1,5 +1,5 @@
 ---
-title: "Scaling Frontend Development with Micro-Frontends"
+title: "Micro-Frontends: Scaling Frontend Development with Modular Architecture"
 description: "A deep dive into micro-frontend architecture, exploring patterns, tools, and real-world implementation strategies."
 pubDate: "Jan 05 2024"
 color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"

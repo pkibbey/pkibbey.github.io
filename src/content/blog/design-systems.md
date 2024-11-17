@@ -1,5 +1,5 @@
 ---
-title: "Building Scalable Design Systems for Modern Web Applications"
+title: "Design Systems: Building Scalable Design Systems for Modern Web Applications"
 description: "A comprehensive guide to creating, implementing, and maintaining design systems that scale across large applications and teams."
 pubDate: "Jan 15 2024"
 color: "linear-gradient(to bottom right, #3498DB, #2980B9)"

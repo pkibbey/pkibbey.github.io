@@ -1,5 +1,5 @@
 ---
-title: "The Rapid Evolution of Web Technology"
+title: "Development Strategies: The Rapid Evolution of Web Technology"
 description: "Reflections on the fast-paced changes in web development and strategies for staying current while maintaining stability."
 pubDate: "Feb 01 2024"
 color: "linear-gradient(to bottom right, #E67E22, #D35400)"

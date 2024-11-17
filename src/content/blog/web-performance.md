@@ -1,5 +1,5 @@
 ---
-title: "Advanced Web Performance Optimization Techniques"
+title: "Advanced Web Performance: The Power of Optimization Techniques"
 description: "Deep dive into modern web performance optimization strategies, from code splitting to resource prioritization, with real-world examples and metrics."
 pubDate: "Jan 10 2024"
 color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"

@@ -9,7 +9,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "images": "node --no-warnings scripts/generate-hero-images.js && node --no-warnings scripts/generate-images.js",
+    "images": "rm -rf public/hero public/images && node --no-warnings scripts/generate-hero-images.js && node --no-warnings scripts/generate-images.js",
     "format": "biome format --write src",
     "lint": "biome lint src",
     "check": "biome check src"

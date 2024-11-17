@@ -3,10 +3,17 @@ import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
 
-const { class: className, ...props } = Astro.props;
+const { href, class: className, ...props } = Astro.props;
 ---
 
 <a 
-    class:list={['text-cyan-600 hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-600', className]}
-    {...Astro.props}
+    href={href}
+    class:list={[
+        "text-cyan-700 dark:text-cyan-300 hover:text-cyan-900 dark:hover:text-cyan-100",
+        "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px]",
+        "after:bg-current after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100",
+        "after:transition-transform after:duration-300 after:ease-in-out",
+        className
+    ]}
+    {...props}
 ><slot /></a>

@@ -7,7 +7,7 @@ interface Props {
 const { title = '', skills = [] } = Astro.props;
 ---
 
-<div class="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+<div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
   <h3 class="text-lg font-semibold mb-2">{title}</h3>
   <p class="text-lg">{skills.join(', ')}</p>
 </div>

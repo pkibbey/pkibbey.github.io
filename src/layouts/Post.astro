@@ -1,62 +1,84 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Image from '../components/Image.astro';
+import BlendedImage from '../components/BlendedImage.astro';
 import Link from '../components/Link.astro';
 import LinkButton from '../components/LinkButton.astro';
 
-interface Props {
-  title: string;
-  description: string;
-  pubDate: Date;
-  updatedDate?: Date;
-  color: string;
-  backLink: string;
-  backText: string;
-  slug: string;
-}
+type Props = CollectionEntry<'blog'>['data'] & { slug: string; backLink: string; backText: string };
 
-const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  backLink,
-  backText,
-  slug
-} = Astro.props;
+const { title, description, pubDate, updatedDate, slug, backLink, backText } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <style is:global>
+      .prose {
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .prose .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        line-height: 1;
+      }
+      .prose .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .prose pre {
+        overflow-x: auto;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: rgb(243 244 246);
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin: 1.5rem 0;
+      }
+      :global(.dark) .prose pre {
+        background-color: rgba(31, 41, 55, 0.5);
+      }
+      .prose pre code {
+        background: none;
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+      }
+    </style>
   </head>
 
   <body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50">
     <Header />
-    <main class="container mx-auto px-4 py-8">
+    <main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-8 px-4 min-h-stretch">
       <Link href={backLink}>
         <h1 class="text-xl mb-6">{backText}</h1>
       </Link>
       <article>
-        <div class="prose max-w-4xl mx-auto p-4 text-gray-800 dark:text-gray-200">
+        <div class="prose container mx-auto p-4 text-gray-800 dark:text-gray-200">
           <div class="title mb-4 py-2 leading-none">
             <h1 class="text-5xl m-0 mb-6">{title}</h1>
-            <div class="relative">
-              <Image src={`/images/${slug}.jpg`} alt={`${title} overlay`} class="absolute top-0 left-0 w-full h-full opacity-20 z-10 mix-blend-color-burn" />
-              <Image src={`/hero/${slug}.jpg`} alt={title} class="w-full rounded-t-lg rounded-e-lg shadow-md" />
-            </div>
-            <div class="date mb-2 text-gray-500">
+            <div class="mb-8 text-gray-500">
               <FormattedDate date={pubDate} />
               {
                 updatedDate && (
-                  <div class="last-updated-on italic">
+                  <div class="italic">
                     Last updated on <FormattedDate date={updatedDate} />
                   </div>
                 )
               }
+            </div>
+            <div class="relative mb-8">
+              <BlendedImage 
+                slug={slug}
+                title={title}
+                aspectRatio={26}
+                rounded={true}
+                overlay={false}              
+              />
             </div>
           </div>
           <slot />

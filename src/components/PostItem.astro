@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
-import Image from './Image.astro';
+import BlendedImage from './BlendedImage.astro';
 
 interface Props {
   post: CollectionEntry<'blog'> | CollectionEntry<'projects'>;
@@ -9,19 +9,22 @@ interface Props {
 }
 
 const { post, baseUrl } = Astro.props;
-const { title, pubDate, color } = post.data;
+const { title, pubDate } = post.data;
 ---
 
 <li>
-  <a href={`${baseUrl}${post.slug}/`} class="block no-underline transition duration-200 ease-in-out rounded-lg relative">
+  <a href={`${baseUrl}${post.slug}/`} class="group block no-underline transition duration-200 ease-in-out rounded-lg relative">
     <div class="relative mb-3">
-      <Image src={`/images/${post.slug}.jpg`} alt={`${title} thumbnail overlay`} class="absolute top-0 left-0 w-full h-full opacity-20 z-10 mix-blend-color-burn" />
-      <Image src={`/hero/${post.slug}.jpg`} alt={`${title} thumbnail`} />
+      <BlendedImage 
+        slug={post.slug}
+        title={title}
+        hover={true}
+        rounded={true}
+      />
     </div>
     <h4 class="title m-0 min-h-10 leading-5 mb-1">{title}</h4>
     <p class="date m-0 text-gray-400 text-sm">
       <FormattedDate date={pubDate} />
     </p>
-    <div class="block w-full h-[1px] mt-3 mb-1" style={`background: ${color};`}></div>
   </a>
 </li>

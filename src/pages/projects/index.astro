@@ -2,16 +2,21 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import PostItem from '../../components/PostItem.astro';
+import PostFeaturedItem from '../../components/PostFeaturedItem.astro';
 
 const posts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const [featuredPost, ...otherPosts] = posts;	
 ---
 
 <DefaultLayout title="Projects" description="all my projects">
-	<section>
-		<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2rem] list-none m-0 p-0">
-			{posts.map((post) => <PostItem post={post} baseUrl="/projects/" />)}
+	<section class="px-4 py-8">
+		<PostFeaturedItem post={featuredPost} baseUrl="/projects/" />
+		
+		<ul class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 list-none m-0 p-0">
+			{otherPosts.map((post) => <PostItem post={post} baseUrl="/projects/" />)}
 		</ul>
 	</section>
 </DefaultLayout>

@@ -1,0 +1,45 @@
+---
+import Image from './Image.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  aspectRatio?: number;
+  rounded?: boolean;
+  hover?: boolean;
+  overlay?: boolean;
+}
+
+const { 
+  slug, 
+  title, 
+  aspectRatio = 56.25,
+  rounded = false,
+  hover = false,
+  overlay = true
+} = Astro.props;
+---
+
+<div class:list={[
+  "relative",
+  rounded && "rounded-lg overflow-hidden"
+]}>
+  <div class="w-full relative" style={`padding-bottom: ${aspectRatio}%`}>
+    <Image 
+      src={`/images/${slug}.jpg`} 
+      alt={`${title} thumbnail overlay`} 
+      class:list={[
+        "absolute top-0 left-0 w-full h-full z-10 object-cover",
+        overlay ? "opacity-20 mix-blend-plus-darker" : "opacity-100"
+      ]}
+    />
+    <Image 
+      src={`/hero/${slug}.jpg`} 
+      alt={`${title} thumbnail`} 
+      class:list={[
+        "absolute top-0 left-0 w-full h-full object-cover",
+        hover && "transition-transform duration-300 group-hover:scale-105"
+      ]}
+    />
+  </div>
+</div>

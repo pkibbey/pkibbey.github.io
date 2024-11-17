@@ -1,0 +1,18 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import Introduction from './Introduction.astro';
+import Skills from './Skills.astro';
+import WorkExperience from './WorkExperience.astro';
+import Education from './Education.astro';
+import NotableWork from './NotableWork.astro';
+---
+
+<DefaultLayout title="Resume" description="resume page">
+	<div class="container mx-auto max-w-[1200px]">
+		<Introduction />
+		<Skills />
+		<WorkExperience />
+		<Education />
+		<NotableWork />
+	</div>
+</DefaultLayout>

@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+import Image from './Image.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'> | CollectionEntry<'projects'>;
+  baseUrl: string;
+}
+
+const { post, baseUrl } = Astro.props;
+const { title, pubDate, heroImage, color } = post.data;
+---
+
+<li>
+  <a href={`${baseUrl}${post.slug}/`} class="block no-underline transition duration-200 ease-in-out rounded-lg">
+    {heroImage && <Image src={heroImage} alt={`${title} thumbnail`} class='mb-3' />}
+    <h4 class="title m-0 min-h-10 leading-5 mb-1">{title}</h4>
+    <p class="date m-0 text-gray-400 text-sm">
+      <FormattedDate date={pubDate} />
+    </p>
+    <div class="block w-full h-[1px] mt-3 mb-1" style={`background: ${color};`}></div>
+  </a>
+</li>

@@ -3,28 +3,13 @@ export interface Props {
   src: string;
   alt: string;
   ratio?: string; // New property for custom ratio
+  class?: string;
 }
 
-const { src, alt, ratio = '56.25%' } = Astro.props; // Default to 16:9 aspect ratio
+const { src, alt, ratio = '56.25%', class: className } = Astro.props; // Default to 16:9 aspect ratio
 ---
 
-<div class="aspect-ratio-box" style={`padding-top: ${ratio};`}>
-  <img src={src} alt={alt} class="aspect-ratio-content" />
+<div class:list={['relative w-full object-cover', className]}
+   style={`padding-top: ${ratio};`}>
+  <img src={src} alt={alt} class="absolute top-0 left-0 w-full h-full object-cover shadow-md rounded" />
 </div>
-
-<style>
-.aspect-ratio-box {
-  position: relative;
-  width: 100%;
-  /* padding-top is now set dynamically via inline style */
-}
-
-.aspect-ratio-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>

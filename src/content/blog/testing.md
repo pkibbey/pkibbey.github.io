@@ -1,11 +1,11 @@
 ---
-title: 'The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls'
+title: 'The Importance of UI Testing: Avoiding the Pitfalls'
 description: 'An in-depth look at the benefits and pitfalls of unit testing and end-to-end testing in software development'
 pubDate: '2018-07-01'
 tags: ['unit testing', 'e2e testing', 'software development']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #3498DB, #2ECC71)'
-heroImage: '/testing.png'
+heroImage: '/testing.jpg'
 ---
 
 # The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls

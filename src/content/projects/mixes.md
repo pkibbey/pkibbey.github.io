@@ -1,5 +1,5 @@
 ---
-title: 'Therapeutic Art of Mixing Music: Finding Harmony in Sound'
+title: 'Finding Harmony: Therapeutic Art of Mixing Music'
 description: 'Discovering the therapeutic benefits of music production with Ableton'
 pubDate: '2019-09-05'
 tags: ['music', 'therapy', 'Ableton']

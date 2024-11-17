@@ -5,7 +5,7 @@ pubDate: 'Jul 19 2017'
 tags: ['photography', 'creative', 'hiatus']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #8E44AD, #3498DB)'
-heroImage: '/photography.jpeg'
+heroImage: '/photography.jpg'
 ---
 
 # My 4-Year Hiatus from Web Development: Exploring My Creative Side as a Professional Portrait Photographer

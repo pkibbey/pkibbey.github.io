@@ -5,7 +5,7 @@ pubDate: '2008-02-11'
 tags: ['social networking', 'Faceparty', 'history']
 author: 'Phineas'
 color: 'linear-gradient(to bottom right, #3498DB, #2ECC71)'
-heroImage: '/faceparty.jpeg'
+heroImage: '/faceparty.jpg'
 ---
 
 # The Early Days of Social Networking: My Journey as a Co-Founder of Faceparty

@@ -6,42 +6,45 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 const blogPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
 const projectPosts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <DefaultLayout title="Home" description='home page'>
-	<div class="container mx-auto px-4 py-8">
-		<section class="introduction mb-8">
-			<h2 class="text-2xl font-bold mb-4">Hello, I'm Phineas</h2>
+	<main class="container mx-auto px-4 py-8">
+		<section class="mb-12">
+			<h1 class="text-4xl font-bold mb-4">Hi, I'm Phineas</h1>
 			<p>I'm a frontend engineer with a passion for creating beautiful and functional web applications.</p>
 		</section>
 		<ul class="grid gap-4 text-xl mb-12">
 			<li>View my <Link href="/resume">Resume</Link>. I am available for hire.</li>
 		</ul>
-		<div class="flex flex-col gap-12 sm:flex-row">
-			<section class="projects mb-8">
+		<div class="flex flex-col gap-12 lg:flex-row">
+			<section class="flex-1">
 				<h2 class="text-2xl font-bold mb-4">Recent Projects</h2>
 				<ul class="grid gap-4">
 					{projectPosts.slice(0, 3).map(project => (
 						<li>
-							<Link href={`/projects/${project.slug}`}>{project.data.title}</Link> - {project.data.description}
+							<div class="text-sm text-gray-600 dark:text-gray-400">{new Date(project.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</div>
+							<Link href={`/projects/${project.slug}`} class="font-semibold my-1 block">{project.data.title}</Link>
+							<div class="text-gray-700 dark:text-gray-300">{project.data.description}</div>
 						</li>
 					))}
 				</ul>
 			</section>
-			<section class="tech-blog">
+			<section class="flex-1">
 				<h2 class="text-2xl font-bold mb-4">Latest Blog Entries</h2>
 				<ul class="grid gap-4">
 					{blogPosts.slice(0, 3).map(post => (
 						<li>
-							<Link href={`/tech-blog/${post.slug}`}>{post.data.title}</Link> - {post.data.description}
+							<div class="text-sm text-gray-600 dark:text-gray-400 mb-1">{new Date(post.data.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</div>
+							<Link href={`/tech-blog/${post.slug}`} class="font-semibold mb-1 block">{post.data.title}</Link>
+							<div class="text-gray-700 dark:text-gray-300">{post.data.description}</div>
 						</li>
 					))}
 				</ul>
 			</section>
 		</div>
-	</div>
+	</main>
 </DefaultLayout>

@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       flex: {
-        '2': '2 2 0%',
-        '3': '3 3 0%'
+        2: '2 2 0%',
+        3: '3 3 0%',
       },
       minHeight: {
-        'stretch': 'calc(100vh - 196px)',
-      }
+        stretch: 'calc(100vh - 196px)',
+      },
     },
   },
   plugins: [],

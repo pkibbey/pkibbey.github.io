@@ -1,0 +1,27 @@
+---
+import Section from '../../components/Section.astro';
+import NotableWorkItem from '../../components/NotableWork.astro';
+import Link from '../../components/Link.astro';
+---
+
+<Section title="Notable Work">
+  <div class="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 mb-8">
+    <NotableWorkItem imageProps={{ src:"/qualcomm.jpg" }}>
+      <p>
+        Complete redesign for a global technology brand <Link target="_blank" href="https://www.qualcomm.com">Qualcomm</Link>. Unified 6 different sites into a single React app
+      </p>
+    </NotableWorkItem>
+      
+    <NotableWorkItem imageProps={{ src:"/lennd.png" }}>
+      <p>
+        React and React Native app for the event management platform <Link target="_blank" href="https://www.lennd.com">Lennd</Link>, powered with GraphQL
+      </p>
+    </NotableWorkItem>
+
+    <NotableWorkItem imageProps={{ src:"/monocle.jpg" }}>
+      <p>
+        Pixel perfect layouts for the global design magazine <Link target="_blank" href="https://www.monocle.com">Monocle</Link>
+      </p>
+    </NotableWorkItem>
+  </div>
+</Section>

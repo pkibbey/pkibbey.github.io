@@ -1,5 +1,5 @@
 ---
-title: 'Rapid Evolution of Web Development and AI Tools'
+title: 'Speed of Change: The Rapid Evolution of Web Development and AI Tools'
 description: 'An in-depth look at the rapid evolution of web development and the impact of AI tools.'
 pubDate: 'Nov 15 2024'
 tags: ['web development', 'AI', 'technology', 'coding', 'programming']

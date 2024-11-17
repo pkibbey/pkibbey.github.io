@@ -1,0 +1,10 @@
+---
+interface Props {
+  company: string;
+  role: string;
+}
+
+const { company, role } = Astro.props;
+---
+
+<h3 class="text-lg font-semibold">{company} - {role}</span></h3>

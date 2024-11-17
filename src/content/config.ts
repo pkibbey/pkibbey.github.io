@@ -3,9 +3,6 @@ import { defineCollection, z } from 'astro:content';
 // Define a linear gradient type
 const linearGradient = z.string().regex(/^linear-gradient\((.+)\)$/);
 
-// Define a hex color type
-const hexColor = z.string().regex(/^#([0-9A-Fa-f]{3}){1,2}$/);
-
 const blog = defineCollection({
   type: 'content',
   // Type-check frontmatter using a schema
@@ -15,8 +12,8 @@ const blog = defineCollection({
     // Transform string to Date object
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    heroImage: z.string().optional(),  
-    color: z.union([linearGradient, hexColor]).optional(),
+    heroImage: z.string().optional(),
+    color: linearGradient,
   }),
 });
 
@@ -30,7 +27,7 @@ const projects = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
-    color: z.union([linearGradient, hexColor]).optional(),
+    color: linearGradient,
   }),
 });
 

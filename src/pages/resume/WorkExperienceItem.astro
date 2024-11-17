@@ -13,8 +13,8 @@ const { company, role, start, end } = Astro.props;
 ---
 
 
-<section class="mb-8">
+<section class="h-full flex flex-1 flex-col bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
   <WorkExperienceDate start={start} end={end} />
   <WorkExperienceTitle company={company} role={role} />
-	<p class="pt-1 text-lg"><slot/></p>
+  <p class="pt-2 text-lg flex-grow"><slot/></p>
 </section>

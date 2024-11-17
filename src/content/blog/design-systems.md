@@ -1,16 +1,9 @@
 ---
 title: "Building Scalable Design Systems for Modern Web Applications"
 description: "A comprehensive guide to creating, implementing, and maintaining design systems that scale across large applications and teams."
-author: "Phineas"
 pubDate: "Jan 15 2024"
-tags: ["Design Systems", "Frontend Development", "UI/UX", "React", "Component Libraries", "Design Tokens"]
 color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
-image:
-  src: "/hero/design-systems.jpg"
-  alt: "Design System components and patterns visualization"
-wordCount: 1800
-timeToRead: 9
-canonicalURL: "https://phineas.io/tech-blog/design-systems"
+tags: ["Design Systems", "Frontend Development", "UI/UX", "React", "Component Libraries", "Design Tokens"]
 ---
 
 ### The Dream of a Unified Design System  

@@ -1,16 +1,9 @@
 ---
 title: "WebAssembly: The Future of Web Performance"
-description: "Exploring WebAssembly's impact on web applications, from high-performance computing to gaming, with practical implementation examples and performance benchmarks."
-author: "Phineas"
-pubDate: "2024-01-15"
-tags: ["WebAssembly", "Performance", "JavaScript", "C++", "Rust", "Web Development"]
-color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
-image:
-  src: "/blog/webassembly.jpg"
-  alt: "WebAssembly Performance Comparison"
-wordCount: 3000
-timeToRead: 15
-canonicalURL: "https://phineas.io/blog/webassembly"
+description: "Exploring how WebAssembly is revolutionizing web applications with near-native performance and cross-language support."
+pubDate: "Jan 08 2024"
+color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
+tags: ["WebAssembly", "Performance", "Web Development", "Rust", "C++"]
 ---
 
 ### The Promise of WebAssembly

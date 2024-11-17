@@ -1,10 +1,9 @@
 ---
 title: "Edge Computing: The Next Frontier of Web Performance"
-description: "Exploring how edge computing is revolutionizing web performance and user experience through distributed computing at the network edge."
-author: 'Phineas'
-pubDate: 'Jan 16 2024'
-tags: [Edge Computing, Web Development, Performance, CDN, Distributed Systems]
-color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
+description: "Understanding edge computing architectures and their impact on web application performance and user experience."
+pubDate: "Feb 05 2024"
+color: "linear-gradient(to bottom right, #2C3E50, #34495E)"
+tags: ["Edge Computing", "Performance", "Architecture", "CDN", "Serverless"]
 ---
 
 ### The Rise of Edge Computing

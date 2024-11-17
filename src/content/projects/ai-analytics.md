@@ -2,16 +2,8 @@
 title: 'Future of Personal Data: Creating an AI-Powered Life Dashboard'
 description: 'Exploring the potential of using personal data to build an AI-powered life dashboard'
 pubDate: '2023-11-29'
-tags: ['AI', 'data', 'dashboard']
-author: 'Phineas'
 color: 'linear-gradient(to bottom right, #4A90E2, #9013FE)'
-image:
-  src: "/projects/ai-analytics.jpg"
-  alt: "AI Analytics Platform Dashboard"
-technologies: ["Python", "TensorFlow", "Apache Kafka", "PostgreSQL", "React", "TypeScript"]
-role: "Lead Developer"
-duration: "18 months"
-team: "6 developers"
+tags: ['AI', 'data', 'dashboard']
 ---
 
 # The Future of Personal Data: Why Saving Everything Could Lead to Your Own AI-Powered Life Dashboard

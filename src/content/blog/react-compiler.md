@@ -1,16 +1,9 @@
 ---
-title: "Building a React Compiler: Deep Dive into Performance"
-description: "A technical exploration of building a custom React compiler, optimizing bundle size and runtime performance, with practical examples and benchmarks."
-author: "Phineas"
-pubDate: "2024-01-08"
-tags: ["React", "Compilers", "JavaScript", "Performance", "Build Tools", "Optimization"]
-color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-image:
-  src: "/blog/react-compiler.jpg"
-  alt: "React Compiler Architecture"
-wordCount: 3500
-timeToRead: 18
-canonicalURL: "https://phineas.io/blog/react-compiler"
+title: "Building a React Compiler: From JSX to Optimized JavaScript"
+description: "A technical deep dive into creating a custom React compiler that transforms JSX into optimized JavaScript code."
+pubDate: "Jan 18 2024"
+color: "linear-gradient(to bottom right, #2980B9, #3498DB)"
+tags: ["React", "Compilers", "JavaScript", "Optimization", "Build Tools"]
 ---
 
 ### The React Compiler Revolution

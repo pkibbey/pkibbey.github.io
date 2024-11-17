@@ -1,16 +1,9 @@
 ---
 title: "Advanced Web Performance Optimization Techniques"
 description: "Deep dive into modern web performance optimization strategies, from code splitting to resource prioritization, with real-world examples and metrics."
-author: "Phineas"
 pubDate: "Jan 10 2024"
-tags: ["Web Performance", "Frontend Development", "Optimization", "JavaScript", "Core Web Vitals", "User Experience"]
 color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"
-image:
-  src: "/hero/web-performance.jpg"
-  alt: "Web performance metrics and optimization visualization"
-wordCount: 2200
-timeToRead: 11
-canonicalURL: "https://phineas.io/tech-blog/web-performance"
+tags: ["Web Performance", "Frontend Development", "Optimization", "JavaScript", "Core Web Vitals", "User Experience"]
 ---
 
 ### The Critical Role of Web Performance

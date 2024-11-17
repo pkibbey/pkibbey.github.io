@@ -1,16 +1,9 @@
 ---
-title: "FaceParty: Social Event Photo Sharing"
-description: "A real-time social platform for sharing and discovering event photos using facial recognition and location-based features."
-author: "Phineas"
-pubDate: "2023-10-20"
-tags: ["Mobile Development", "React Native", "AWS", "Machine Learning", "Social Platform"]
-color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-image:
-  src: "/projects/faceparty.jpg"
-  alt: "FaceParty App Interface"
-technologies: ["React Native", "Node.js", "AWS Rekognition", "MongoDB", "WebSocket"]
-features: ["Facial Recognition", "Real-time Updates", "Location Services", "Event Creation"]
-metrics: ["50K+ Downloads", "4.8 App Store Rating", "15K+ Active Users"]
+title: "FaceParty: Real-Time Face Detection Party Game"
+description: "A multiplayer party game using real-time face detection and augmented reality to create interactive experiences."
+pubDate: "2023-12-20"
+color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
+tags: ["Computer Vision", "Game Development", "AR", "Real-time", "WebGL"]
 ---
 
 # The Early Days of Social Networking: My Journey as a Co-Founder of Faceparty

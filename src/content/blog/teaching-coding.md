@@ -1,9 +1,9 @@
 ---
-title: "Teaching Coding: The Mental Load and the Joy of Learning"
-description: "Reflections on teaching coding at Meta, the challenges faced, and the rewarding moments of student progress."
-pubDate: 'Jan 16 2022'
-tags: [Teaching, Coding, Meta, Mentorship, Personal Growth]
-color: 'linear-gradient(to bottom right, #FF5733, #C70039)'
+title: "Teaching Programming: Lessons from the Trenches"
+description: "Insights and strategies for effectively teaching programming, based on years of experience mentoring new developers."
+pubDate: "Jan 25 2024"
+color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
+tags: ["Education", "Programming", "Teaching", "Learning", "Mentorship"]
 ---
 
 This past summer, I had the incredible opportunity to work at Meta, where I taught a class of 40 students how to code. It was an experience that pushed me to my limits and taught me lessons I never expected. While I walked into the role with excitement and a love for coding, I left with a profound respect for the art of teaching—and the realization that it’s not a path I’d choose to take again.

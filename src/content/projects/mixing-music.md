@@ -1,16 +1,9 @@
 ---
-title: "Digital Music Production Studio"
-description: "Building a professional-grade digital music production environment with custom software integrations and audio processing tools."
-author: "Phineas"
-pubDate: "2024-01-05"
-tags: ["Music Production", "Audio Engineering", "Digital Audio Workstation", "Sound Design"]
-color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
-image:
-  src: "/projects/music-studio.jpg"
-  alt: "Digital Music Production Setup"
-equipment: ["Ableton Live", "Native Instruments Komplete", "Universal Audio Interface", "MIDI Controllers"]
-genres: ["Electronic", "Ambient", "House", "Experimental"]
-features: ["Custom VST Plugins", "Automated Mixing", "Real-time Collaboration"]
+title: "Digital Music Mixing: The Art and Science"
+description: "Exploring the technical aspects of digital music production and mixing, from signal processing to psychoacoustics."
+pubDate: "2023-12-25"
+tags: ["Music Production", "Audio Engineering", "DSP", "Sound Design", "Digital Audio"]
+color: "linear-gradient(to bottom right, #8E44AD, #9B59B6)"
 ---
 
 # The Therapy of Mixing Music

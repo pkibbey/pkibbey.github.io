@@ -1,16 +1,9 @@
 ---
 title: "Digital Photography Portfolio"
 description: "A showcase of my journey through digital photography, featuring landscape, portrait, and street photography with technical insights."
-author: "Phineas"
 pubDate: "2024-01-10"
-tags: ["Photography", "Digital Art", "Portfolio", "Creative", "Visual Design"]
 color: "linear-gradient(to bottom right, #2ECC71, #27AE60)"
-image:
-  src: "/projects/photography.jpg"
-  alt: "Photography Portfolio Showcase"
-equipment: ["Sony A7 III", "24-70mm f/2.8", "50mm f/1.8", "85mm f/1.4"]
-specialties: ["Landscape", "Portrait", "Street Photography"]
-exhibitions: ["Local Art Gallery 2023", "Digital Arts Festival 2024"]
+tags: ["Photography", "Digital Art", "Portfolio", "Creative", "Visual Design"]
 ---
 
 # My 4-Year Hiatus from Web Development: Exploring My Creative Side as a Professional Portrait Photographer

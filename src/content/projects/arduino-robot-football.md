@@ -1,17 +1,9 @@
 ---
-title: "Arduino Robot Football League"
-description: "Building and programming autonomous soccer-playing robots using Arduino, complete with computer vision and real-time strategy."
-author: "Phineas"
-pubDate: "2023-11-15"
-tags: ["Robotics", "Arduino", "Computer Vision", "IoT", "Embedded Systems", "AI"]
-color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
-image:
-  src: "/projects/robot-football.jpg"
-  alt: "Arduino Robot Football Competition"
-technologies: ["Arduino", "C++", "Python", "OpenCV", "3D Printing", "Sensors"]
-teamSize: "4 members"
-duration: "6 months"
-achievements: ["1st Place Regional Competition", "Best Technical Implementation Award"]
+title: "Building an Arduino-Powered Robot Football Team"
+description: "Creating autonomous soccer-playing robots using Arduino, computer vision, and real-time control systems."
+pubDate: "2023-12-15"
+color: "linear-gradient(to bottom right, #E67E22, #D35400)"
+tags: ["Robotics", "Arduino", "Computer Vision", "Electronics", "Engineering"]
 ---
 
 # Building an Autonomous Football-Playing Arduino Robot

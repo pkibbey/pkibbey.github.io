@@ -1,10 +1,9 @@
 ---
-title: 'Code Organisation: The Benefits of Using a Monorepo for Your Web Application'
-description: 'Exploring the advantages of managing your web application with a monorepo'
-pubDate: 'Jul 08 2021'
-color: 'linear-gradient(to bottom right, #27AE60, #2ECC71)'
-tags: ['monorepo', 'web development', 'dependency management']
-author: 'Phineas'
+title: 'Scaling Development with Monorepos'
+description: 'A practical guide to implementing and managing monorepos for large-scale development projects.'
+pubDate: 'Feb 08 2024'
+color: 'linear-gradient(to bottom right, #2980B9, #3498DB)'
+tags: ['Monorepo', 'Development', 'DevOps', 'Version Control', 'Tooling']
 ---
 
 In the world of web development, managing multiple projects and dependencies can quickly become a complex task. One solution that has gained popularity among developers is the use of a monorepo—a single repository that houses all the code for multiple projects. Here are some of the key benefits of using a monorepo to manage your web application.

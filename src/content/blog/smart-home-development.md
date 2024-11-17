@@ -1,10 +1,9 @@
 ---
-title: "Web Architecture: Building Modern Smart Home Applications"
-description: "Insights and lessons learned from architecting smart apartment control systems using modern web technologies."
-author: 'Phineas'
-pubDate: 'Jan 20 2024'
-tags: [IoT, Smart Home, React, NodeJS, Architecture]
-color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
+title: "Building a Smart Home System from Scratch"
+description: "A comprehensive guide to developing a custom smart home system using open-source technologies and IoT devices."
+pubDate: "Jan 22 2024"
+tags: ["IoT", "Smart Home", "Automation", "Embedded Systems", "Home Assistant"]
+color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"
 ---
 
 ### The Challenge of Smart Home Development

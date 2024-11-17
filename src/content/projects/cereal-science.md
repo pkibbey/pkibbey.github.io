@@ -1,16 +1,9 @@
 ---
-title: "Cereal Science: Data-Driven Breakfast Analysis"
-description: "A comprehensive analysis of breakfast cereals using data science and machine learning to uncover nutrition patterns and consumer preferences."
-author: "Phineas"
-pubDate: "2023-12-01"
-tags: ["Data Science", "Machine Learning", "Data Visualization", "Nutrition Analysis", "Python"]
-color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
-image:
-  src: "/projects/cereal-science.jpg"
-  alt: "Cereal Data Analysis Dashboard"
-technologies: ["Python", "Pandas", "Scikit-learn", "Plotly", "Jupyter"]
-metrics: ["500+ Cereals Analyzed", "50+ Nutritional Factors", "10 Predictive Models"]
-findings: ["Nutrition Trends", "Consumer Preferences", "Market Patterns"]
+title: "The Science of Breakfast: A Deep Dive into Cereal Engineering"
+description: "An exploration into the fascinating world of cereal manufacturing, from grain selection to the perfect crunch factor."
+pubDate: "2024-01-05"
+tags: ["Food Science", "Engineering", "Manufacturing", "Research", "Innovation"]
+color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
 ---
 
 # Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!

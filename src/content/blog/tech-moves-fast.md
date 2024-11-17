@@ -1,16 +1,9 @@
 ---
-title: "Staying Current in a Fast-Moving Tech Landscape"
-description: "Strategies and insights for keeping up with rapidly evolving technology while maintaining productivity and avoiding burnout."
-author: "Phineas"
-pubDate: "Jan 5 2024"
-tags: ["Career Development", "Technology Trends", "Learning", "Professional Growth", "Software Engineering", "Work-Life Balance"]
-color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-image:
-  src: "/hero/tech-moves-fast.jpg"
-  alt: "Fast-paced technology evolution visualization"
-wordCount: 1900
-timeToRead: 10
-canonicalURL: "https://phineas.io/tech-blog/tech-moves-fast"
+title: "The Rapid Evolution of Web Technology"
+description: "Reflections on the fast-paced changes in web development and strategies for staying current while maintaining stability."
+pubDate: "Feb 01 2024"
+color: "linear-gradient(to bottom right, #E67E22, #D35400)"
+tags: ["Web Development", "Technology", "Career", "Learning", "Innovation"]
 ---
 
 In the ever-evolving world of web development, change is not just a constant; it's an overwhelming force. With new frameworks, libraries, and tools emerging regularly, the landscape can feel like a race you can't quite keep up with. And now, with the addition of Artificial Intelligence (AI) tools to the mix, this acceleration has only increased, transforming how developers build, debug, and deploy websites.

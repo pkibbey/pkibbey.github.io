@@ -1,9 +1,17 @@
 ---
-title: "Creative Break: Four Years as a Portrait Photographer"
-description: "My journey stepping away from web development to pursue professional portrait photography, and how it shaped my perspective on creativity and technology."
-pubDate: "2016-02-01"
-color: "linear-gradient(to bottom right, #2ECC71, #27AE60)"
-tags: ["Photography", "Digital Art", "Portfolio", "Creative", "Visual Design"]
+title: 'Creative Break: Four Years as a Portrait Photographer'
+description: >-
+  My journey stepping away from web development to pursue professional portrait
+  photography, and how it shaped my perspective on creativity and technology.
+pubDate: '2016-02-01T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #2ECC71, #27AE60)'
+tags:
+  - Photography
+  - Digital Art
+  - Portfolio
+  - Creative
+  - Visual Design
+author: Phineas
 ---
 
 # My 4-Year Hiatus from Web Development: Exploring My Creative Side as a Professional Portrait Photographer

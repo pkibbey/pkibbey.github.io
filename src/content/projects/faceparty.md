@@ -1,9 +1,17 @@
 ---
-title: "Social Pioneer: Co-Founding Faceparty"
-description: "My journey co-founding one of the UK's first social networks in 2000, reaching millions of users and pioneering features that shaped modern social media."
-pubDate: "2022-08-15"
-color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
-tags: ["Computer Vision", "Game Development", "AR", "Real-time", "WebGL"]
+title: 'Social Pioneer: Co-Founding Faceparty'
+description: >-
+  My journey co-founding one of the UK's first social networks in 2000, reaching
+  millions of users and pioneering features that shaped modern social media.
+pubDate: '2022-08-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
+tags:
+  - Computer Vision
+  - Game Development
+  - AR
+  - Real-time
+  - WebGL
+author: Phineas
 ---
 
 # The Early Days of Social Networking: My Journey as a Co-Founder of Faceparty

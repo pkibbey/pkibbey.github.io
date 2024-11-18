@@ -1,9 +1,15 @@
 ---
-title: "Tech Change: Navigating Rapid Evolution"
-description: "Strategies for keeping up with the fast-paced tech industry"
-pubDate: "2023-03-15"
-color: "linear-gradient(to bottom right, #E67E22, #D35400)"
-tags: ["Career", "Technology", "Learning", "Growth", "Development"]
+title: 'Tech Change: Navigating Rapid Evolution'
+description: Strategies for keeping up with the fast-paced tech industry
+pubDate: '2023-03-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #E67E22, #D35400)'
+tags:
+  - Career
+  - Technology
+  - Learning
+  - Growth
+  - Development
+author: Phineas
 ---
 
 In the ever-evolving world of web development, change is not just a constant; it's an overwhelming force. With new frameworks, libraries, and tools emerging regularly, the landscape can feel like a race you can't quite keep up with. And now, with the addition of Artificial Intelligence (AI) tools to the mix, this acceleration has only increased, transforming how developers build, debug, and deploy websites.

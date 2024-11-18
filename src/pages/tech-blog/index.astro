@@ -9,11 +9,15 @@ const allPosts = (await getCollection('blog')).sort(
 );
 
 // Count posts per tag and only include tags with more than one post
-const tagCounts = allPosts.flatMap(post => post.data.tags)
-  .reduce((acc, tag) => {
-    acc[tag] = (acc[tag] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+const tagCounts = allPosts
+  .flatMap((post) => post.data.tags)
+  .reduce(
+    (acc, tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
 
 const allTags = Object.entries(tagCounts)
   .map(([tag]) => tag)

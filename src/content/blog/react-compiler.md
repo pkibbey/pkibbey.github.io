@@ -1,9 +1,17 @@
 ---
-title: "React Compiler: Building for Performance"
-description: "A deep dive into creating a custom React compiler, exploring compile-time optimizations, code transformations, and real-world performance improvements."
-pubDate: "2023-07-01"
-color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
-tags: ["React", "Compiler", "Performance", "JavaScript", "Optimization"]
+title: 'React Compiler: Building for Performance'
+description: >-
+  A deep dive into creating a custom React compiler, exploring compile-time
+  optimizations, code transformations, and real-world performance improvements.
+pubDate: '2023-07-01T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
+tags:
+  - React
+  - Compiler
+  - Performance
+  - JavaScript
+  - Optimization
+author: Phineas
 ---
 
 ### The React Compiler Revolution

@@ -7,19 +7,24 @@ type Props = {
   title: string;
   pubDate: Date;
   updatedDate?: Date;
+  author: string;
   slug: string;
 };
 
-const { title, pubDate, updatedDate, slug } = Astro.props;
+const { title, pubDate, updatedDate, author, slug } = Astro.props;
 ---
 
 <div class="title mb-4 py-2 leading-none">
   <h1 class="text-5xl m-0 mb-6">{title}</h1>
   <div class="mb-8 text-gray-500">
-    <FormattedDate date={pubDate} />
+    <div class="flex items-center gap-2">
+      <span>By {author}</span>
+      <span class="text-gray-300 dark:text-gray-700">•</span>
+      <FormattedDate date={pubDate} />
+    </div>
     {
       updatedDate && (
-        <div class="italic">
+        <div class="italic mt-1">
           Last updated on <FormattedDate date={updatedDate} />
         </div>
       )

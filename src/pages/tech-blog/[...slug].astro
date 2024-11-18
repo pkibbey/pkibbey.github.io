@@ -5,22 +5,24 @@ import type { Post } from '../../content/types';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
   return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
-    props: { 
+    props: {
       post,
-      prevPost: sortedPosts[index + 1] || null,
-      nextPost: sortedPosts[index - 1] || null
+      prevPost: sortedPosts[index + 1] || sortedPosts[sortedPosts.length - 1],
+      nextPost: sortedPosts[index - 1] || sortedPosts[0],
     },
   }));
 }
 
 type Props = {
   post: Post;
-  prevPost: Post | null;
-  nextPost: Post | null;
+  prevPost: Post;
+  nextPost: Post;
 };
 
 const { post, prevPost, nextPost }: Props = Astro.props;

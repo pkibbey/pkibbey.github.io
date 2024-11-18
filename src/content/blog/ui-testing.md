@@ -1,9 +1,15 @@
 ---
-title: "UI Tests: Modern Testing Strategies"
-description: "Effective approaches to testing modern user interfaces"
-pubDate: "2023-04-01"
-color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
-tags: ["Testing", "UI", "Automation", "Frontend", "QA"]
+title: 'UI Tests: Modern Testing Strategies'
+description: Effective approaches to testing modern user interfaces
+pubDate: '2023-04-01T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'
+tags:
+  - Testing
+  - UI
+  - Automation
+  - Frontend
+  - QA
+author: Phineas
 ---
 
 # The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls

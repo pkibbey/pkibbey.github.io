@@ -2,22 +2,32 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Link from '../components/Link.astro';
 import Markdown from '../components/Markdown.astro';
 import PostTitle from '../components/PostTitle.astro';
-import PostNavigation from '../components/PostNavigation.astro';
 import type { Post } from '../content/types';
+
+import PostNavigation from '../components/PostNavigation.astro';
 
 type Props = Post['data'] & {
   slug: string;
-  backLink: string;
   backText: string;
+  baseUrl: string;
   prevPost: Post | null;
   nextPost: Post | null;
 };
 
-const { title, description, pubDate, updatedDate, slug, backLink, backText, prevPost, nextPost } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author,
+  slug,
+  backText,
+  baseUrl,
+  prevPost,
+  nextPost,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -60,22 +70,19 @@ const { title, description, pubDate, updatedDate, slug, backLink, backText, prev
   <body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50">
     <Header />
     <main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-8 px-4 min-h-stretch">
-      <Link href={backLink}>
-        <h1 class="text-xl mb-6 inline-block">{backText}</h1>
-      </Link>
-      <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={backLink} />
+      <PostNavigation baseUrl={baseUrl} backText={backText} prevPost={prevPost} nextPost={nextPost} />
       <article>
         <div class="prose container mx-auto p-4 text-gray-800 dark:text-gray-200">
           <PostTitle 
             title={title}
             pubDate={pubDate}
             updatedDate={updatedDate}
+            author={author}
             slug={slug}
           />
           <Markdown>
             <slot />
           </Markdown>
-          <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={backLink} />
         </div>
       </article>
     </main>

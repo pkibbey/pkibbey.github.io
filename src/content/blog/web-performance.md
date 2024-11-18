@@ -1,9 +1,17 @@
 ---
-title: "Web Vitals: A Practical Optimization Guide"
-description: "Real-world strategies for improving Core Web Vitals, with proven techniques for resource, runtime, and network optimization."
-pubDate: "2023-06-15"
-color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"
-tags: ["Performance", "Web Vitals", "Optimization", "Frontend", "UX"]
+title: 'Web Vitals: A Practical Optimization Guide'
+description: >-
+  Real-world strategies for improving Core Web Vitals, with proven techniques
+  for resource, runtime, and network optimization.
+pubDate: '2023-06-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #27AE60, #2ECC71)'
+tags:
+  - Performance
+  - Web Vitals
+  - Optimization
+  - Frontend
+  - UX
+author: Phineas
 ---
 
 ### The Critical Role of Web Performance

@@ -1,9 +1,17 @@
 ---
-title: "Data Journey: Building a Personal Life Dashboard"
-description: "Exploring how collecting and analyzing personal data with AI can unlock powerful insights and help predict future patterns in our lives."
-pubDate: "2023-11-29"
-color: "linear-gradient(to bottom right, #4A90E2, #9013FE)"
-tags: ["AI", "Data Analytics", "Personal Development", "Machine Learning", "Life Tracking"]
+title: 'Data Journey: Building a Personal Life Dashboard'
+description: >-
+  Exploring how collecting and analyzing personal data with AI can unlock
+  powerful insights and help predict future patterns in our lives.
+pubDate: '2023-11-29T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #4A90E2, #9013FE)'
+tags:
+  - AI
+  - Data Analytics
+  - Personal Development
+  - Machine Learning
+  - Life Tracking
+author: Phineas
 ---
 
 # Data Journey: Building a Personal Life Dashboard

@@ -1,9 +1,18 @@
 ---
-title: "The Future of AI Engineering: Building Intelligent Systems at Scale"
-description: "Exploring the challenges and best practices in building production-ready AI systems that can scale effectively."
-pubDate: "Jan 20 2024"
-color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-tags: ["AI", "Machine Learning", "Engineering", "Scalability", "MLOps", "Production Systems"]
+title: 'The Future of AI Engineering: Building Intelligent Systems at Scale'
+description: >-
+  Exploring the challenges and best practices in building production-ready AI
+  systems that can scale effectively.
+pubDate: '2024-01-20T08:00:00.000Z'
+color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'
+tags:
+  - AI
+  - Machine Learning
+  - Engineering
+  - Scalability
+  - MLOps
+  - Production Systems
+author: Phineas
 ---
 
 ### The AI Revolution in Software Engineering

@@ -1,9 +1,17 @@
 ---
-title: "AI Code Review: Beyond the Hype"
-description: "Lessons learned from implementing AI code generation, and why thorough human review remains critical for catching hallucinations and ensuring quality."
-pubDate: "2023-07-30"
-color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-tags: ["AI", "Code Review", "Automation", "DevOps", "Quality"]
+title: 'AI Code Review: Beyond the Hype'
+description: >-
+  Lessons learned from implementing AI code generation, and why thorough human
+  review remains critical for catching hallucinations and ensuring quality.
+pubDate: '2023-07-30T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'
+tags:
+  - AI
+  - Code Review
+  - Automation
+  - DevOps
+  - Quality
+author: Phineas
 ---
 
 ### The Initial AI Optimism

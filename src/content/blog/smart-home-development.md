@@ -1,9 +1,17 @@
 ---
-title: "Smart Apartments: Building at Level Home"
-description: "Architecting a monorepo solution for smart apartment control, focusing on real-time communication, design systems, and scalable deployment."
-pubDate: "2023-05-20"
-color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"
-tags: ["IoT", "Smart Home", "Security", "Embedded", "Automation"]
+title: 'Smart Apartments: Building at Level Home'
+description: >-
+  Architecting a monorepo solution for smart apartment control, focusing on
+  real-time communication, design systems, and scalable deployment.
+pubDate: '2023-05-20T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #27AE60, #2ECC71)'
+tags:
+  - IoT
+  - Smart Home
+  - Security
+  - Embedded
+  - Automation
+author: Phineas
 ---
 
 ### The Challenge of Smart Home Development

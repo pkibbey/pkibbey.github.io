@@ -3,13 +3,23 @@ import PostLayout from './PostLayout.astro';
 import type { Post } from '../content/types';
 
 type Props = Post['data'] & {
-  slug: string,
+  slug: string;
   prevPost: Post | null;
   nextPost: Post | null;
 };
 
-const { title, description, author, pubDate, updatedDate, color, slug, tags, prevPost, nextPost } =
-  Astro.props;
+const {
+  title,
+  description,
+  author,
+  pubDate,
+  updatedDate,
+  color,
+  slug,
+  tags,
+  prevPost,
+  nextPost,
+} = Astro.props;
 ---
 
 <PostLayout
@@ -19,7 +29,7 @@ const { title, description, author, pubDate, updatedDate, color, slug, tags, pre
   pubDate={pubDate}
   updatedDate={updatedDate}  
   color={color}
-  backLink="/tech-blog"
+  baseUrl="/tech-blog"
   backText="Tech Blog"
   slug={slug}
   tags={tags}

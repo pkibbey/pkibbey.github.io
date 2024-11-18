@@ -1,9 +1,15 @@
 ---
-title: "Edge Apps: The Future of Computing"
-description: "Building and deploying applications at the network edge"
-pubDate: "2023-03-01"
-color: "linear-gradient(to bottom right, #2C3E50, #34495E)"
-tags: ["Edge Computing", "Performance", "Architecture", "Cloud", "Networks"]
+title: 'Edge Apps: The Future of Computing'
+description: Building and deploying applications at the network edge
+pubDate: '2023-03-01T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #2C3E50, #34495E)'
+tags:
+  - Edge Computing
+  - Performance
+  - Architecture
+  - Cloud
+  - Networks
+author: Phineas
 ---
 
 ### The Rise of Edge Computing

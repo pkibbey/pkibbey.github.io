@@ -1,9 +1,17 @@
 ---
-title: "Robot Football: Building an Autonomous Arduino Player"
-description: "Creating a football-playing robot with Arduino, computer vision, and a React Native control app that can play autonomously or be manually controlled."
-pubDate: "2023-03-15"
-color: "linear-gradient(to bottom right, #E67E22, #D35400)"
-tags: ["Robotics", "Arduino", "Computer Vision", "Electronics", "Engineering"]
+title: 'Robot Football: Building an Autonomous Arduino Player'
+description: >-
+  Creating a football-playing robot with Arduino, computer vision, and a React
+  Native control app that can play autonomously or be manually controlled.
+pubDate: '2023-03-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #E67E22, #D35400)'
+tags:
+  - Robotics
+  - Arduino
+  - Computer Vision
+  - Electronics
+  - Engineering
+author: Phineas
 ---
 
 # Building an Autonomous Football-Playing Arduino Robot

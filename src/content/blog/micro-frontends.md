@@ -1,9 +1,17 @@
 ---
-title: "Micro-Frontends: Scaling Team Architecture"
-description: "A comprehensive guide to implementing micro-frontend architecture for better team autonomy, scalability, and maintainability in large applications."
-pubDate: "2023-11-15"
-color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
-tags: ["Architecture", "Frontend", "Micro-Frontends", "React", "JavaScript"]
+title: 'Micro-Frontends: Scaling Team Architecture'
+description: >-
+  A comprehensive guide to implementing micro-frontend architecture for better
+  team autonomy, scalability, and maintainability in large applications.
+pubDate: '2023-11-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'
+tags:
+  - Architecture
+  - Frontend
+  - Micro-Frontends
+  - React
+  - JavaScript
+author: Phineas
 ---
 
 ### Understanding Micro-Frontends

@@ -1,9 +1,17 @@
 ---
 title: 'Monorepos: a Practical Guide for Large-Scale Development'
-description: 'A practical guide to implementing and managing monorepos for large-scale development projects.'
-pubDate: 'Feb 08 2024'
+description: >-
+  A practical guide to implementing and managing monorepos for large-scale
+  development projects.
+pubDate: '2024-02-08T08:00:00.000Z'
 color: 'linear-gradient(to bottom right, #2980B9, #3498DB)'
-tags: ['Monorepo', 'Development', 'DevOps', 'Version Control', 'Tooling']
+tags:
+  - Monorepo
+  - Development
+  - DevOps
+  - Version Control
+  - Tooling
+author: Phineas
 ---
 
 In the world of web development, managing multiple projects and dependencies can quickly become a complex task. One solution that has gained popularity among developers is the use of a monorepo—a single repository that houses all the code for multiple projects. Here are some of the key benefits of using a monorepo to manage your web application.

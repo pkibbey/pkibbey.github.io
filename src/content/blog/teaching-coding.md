@@ -1,9 +1,15 @@
 ---
-title: "Code Teaching: Modern Learning Methods"
-description: "Effective strategies for teaching programming in the modern era"
-pubDate: "2023-05-01"
-color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
-tags: ["Education", "Programming", "Teaching", "Learning", "Mentorship"]
+title: 'Code Teaching: Modern Learning Methods'
+description: Effective strategies for teaching programming in the modern era
+pubDate: '2023-05-01T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #F1C40F, #F39C12)'
+tags:
+  - Education
+  - Programming
+  - Teaching
+  - Learning
+  - Mentorship
+author: Phineas
 ---
 
 This past summer, I had the incredible opportunity to work at Meta, where I taught a class of 40 students how to code. It was an experience that pushed me to my limits and taught me lessons I never expected. While I walked into the role with excitement and a love for coding, I left with a profound respect for the art of teaching—and the realization that it’s not a path I’d choose to take again.

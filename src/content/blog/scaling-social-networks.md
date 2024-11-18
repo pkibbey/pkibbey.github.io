@@ -1,9 +1,17 @@
 ---
-title: "Early Social: Lessons in Scaling Faceparty"
-description: "Technical insights and hard-learned lessons from scaling one of the UK's first social networks to millions of users in the early 2000s."
-pubDate: "2023-09-20"
-color: "linear-gradient(to bottom right, #F39C12, #D35400)"
-tags: ["Scalability", "Architecture", "Social Networks", "Backend", "Infrastructure"]
+title: 'Early Social: Lessons in Scaling Faceparty'
+description: >-
+  Technical insights and hard-learned lessons from scaling one of the UK's first
+  social networks to millions of users in the early 2000s.
+pubDate: '2023-09-20T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #F39C12, #D35400)'
+tags:
+  - Scalability
+  - Architecture
+  - Social Networks
+  - Backend
+  - Infrastructure
+author: Phineas
 ---
 
 ### The Early Days of Social Networks

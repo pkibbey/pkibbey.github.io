@@ -1,9 +1,18 @@
 ---
-title: "WebAssembly Guide: From Theory to Practice"
-description: "A practical exploration of WebAssembly's capabilities, from performance benefits to real-world implementations in gaming, image processing, and data analysis."
-pubDate: "2023-10-15"
-color: "linear-gradient(to bottom right, #8E44AD, #9B59B6)"
-tags: ["WebAssembly", "Performance", "Web Development", "Rust", "C++"]
+title: 'WebAssembly Guide: From Theory to Practice'
+description: >-
+  A practical exploration of WebAssembly's capabilities, from performance
+  benefits to real-world implementations in gaming, image processing, and data
+  analysis.
+pubDate: '2023-10-15T00:00:00.000Z'
+color: 'linear-gradient(to bottom right, #8E44AD, #9B59B6)'
+tags:
+  - WebAssembly
+  - Performance
+  - Web Development
+  - Rust
+  - C++
+author: Phineas
 ---
 
 ### The Promise of WebAssembly

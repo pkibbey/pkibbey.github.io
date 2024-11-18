@@ -9,15 +9,15 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50">
+	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50 antialiased transition-colors duration-300">
 		<Header />
-		<main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-8 px-4 min-h-stretch">
-			<h1 class="text-2xl font-semibold mb-8 text-gray-900 dark:text-gray-100">{title}</h1>
+		<main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-12 px-4 min-h-stretch">
+			<h1 class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100 tracking-tight">{title}</h1>
 			<slot />
 		</main>
 		<Footer />

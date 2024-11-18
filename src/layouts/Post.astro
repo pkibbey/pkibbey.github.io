@@ -7,6 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import BlendedImage from '../components/BlendedImage.astro';
 import Link from '../components/Link.astro';
 import LinkButton from '../components/LinkButton.astro';
+import Markdown from '../components/Markdown.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   slug: string;
@@ -25,7 +26,6 @@ const { title, description, pubDate, updatedDate, slug, backLink, backText } =
     <style is:global>
       .prose {
         padding: 1em;
-        color: rgb(var(--gray-dark));
       }
       .prose .title {
         margin-bottom: 1em;
@@ -60,7 +60,7 @@ const { title, description, pubDate, updatedDate, slug, backLink, backText } =
     <Header />
     <main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-8 px-4 min-h-stretch">
       <Link href={backLink}>
-        <h1 class="text-xl mb-6">{backText}</h1>
+        <h1 class="text-xl mb-6 inline-block">{backText}</h1>
       </Link>
       <article>
         <div class="prose container mx-auto p-4 text-gray-800 dark:text-gray-200">
@@ -86,7 +86,10 @@ const { title, description, pubDate, updatedDate, slug, backLink, backText } =
               />
             </div>
           </div>
-          <slot />
+          <Markdown>
+            <slot />
+          </Markdown>
+          
           <div class="text-center mt-8">
             <LinkButton href={backLink}>Back to {backText}</LinkButton>
           </div>

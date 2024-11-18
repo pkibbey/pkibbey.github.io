@@ -1,9 +1,9 @@
 ---
-title: "Edge Computing: The Next Frontier of Web Performance"
-description: "Understanding edge computing architectures and their impact on web application performance and user experience."
-pubDate: "Feb 05 2024"
+title: "Edge Apps: The Future of Computing"
+description: "Building and deploying applications at the network edge"
+pubDate: "2023-03-01"
 color: "linear-gradient(to bottom right, #2C3E50, #34495E)"
-tags: ["Edge Computing", "Performance", "Architecture", "CDN", "Serverless"]
+tags: ["Edge Computing", "Performance", "Architecture", "Cloud", "Networks"]
 ---
 
 ### The Rise of Edge Computing

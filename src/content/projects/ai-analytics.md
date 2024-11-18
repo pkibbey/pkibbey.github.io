@@ -1,12 +1,12 @@
 ---
-title: 'Future of Personal Data: Creating an AI-Powered Life Dashboard'
-description: 'Exploring the potential of using personal data to build an AI-powered life dashboard'
-pubDate: '2023-11-29'
-color: 'linear-gradient(to bottom right, #4A90E2, #9013FE)'
-tags: ['AI', 'data', 'dashboard']
+title: "Data Journey: Building a Personal Life Dashboard"
+description: "Exploring how collecting and analyzing personal data with AI can unlock powerful insights and help predict future patterns in our lives."
+pubDate: "2023-11-29"
+color: "linear-gradient(to bottom right, #4A90E2, #9013FE)"
+tags: ["AI", "Data Analytics", "Personal Development", "Machine Learning", "Life Tracking"]
 ---
 
-# The Future of Personal Data: Why Saving Everything Could Lead to Your Own AI-Powered Life Dashboard
+# Data Journey: Building a Personal Life Dashboard
 
 We live in an era where our digital footprint is constantly growing. Every email we send, every photo we take, every message we send, and even every place we visit leaves behind a trace of data. For most people, this data accumulates in various apps, cloud services, and social media platforms—often without much thought. But what if we could harness all this data, centralize it, and analyze it in ways that could give us powerful insights into our own lives? What if one day, we could create an AI-powered personal dashboard that not only tracks our journey but helps us make better decisions, understand our patterns, and even predict our future?
 

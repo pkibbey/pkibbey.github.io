@@ -1,0 +1,52 @@
+---
+import type { Post } from '../content/types';
+
+interface Props {
+  prevPost: Post | null;
+  nextPost: Post | null;
+  baseUrl: string;
+}
+
+const { prevPost, nextPost, baseUrl } = Astro.props;
+
+export function generateShortTitle(title: string) {
+  return title.split(':')[0].trim();
+}
+
+---
+
+<nav class="flex justify-between items-center py-4">
+  {prevPost ? (
+    <a
+      href={`${baseUrl}/${prevPost.slug}`}
+      class="group flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:-translate-x-1">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      <span class="text-sm">
+        <span class="block text-xs text-gray-500 dark:text-gray-500">Previous</span>
+        {generateShortTitle(prevPost.data.title)}
+      </span>
+    </a>
+  ) : (
+    <div></div>
+  )}
+  
+  {nextPost ? (
+    <a
+      href={`${baseUrl}/${nextPost.slug}`}
+      class="group flex items-center gap-2 text-right text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+    >
+      <span class="text-sm">
+        <span class="block text-xs text-gray-500 dark:text-gray-500">Next</span>
+        {generateShortTitle(nextPost.data.title)}
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </a>
+  ) : (
+    <div></div>
+  )}
+</nav>

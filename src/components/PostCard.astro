@@ -1,22 +1,21 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BlendedImage from './BlendedImage.astro';
 import FormattedDate from './FormattedDate.astro';
-
-type PostType = CollectionEntry<'blog'> | CollectionEntry<'projects'>;
+import Tag from './Tag.astro';
+import type { Post } from '../content/types';
 
 interface Props {
-  post: PostType;
+  post: Post;
   baseUrl: string;
   variant?: 'default' | 'featured' | 'compact';
 }
 
 const { post, baseUrl, variant = 'default' } = Astro.props;
-const { title, pubDate, description } = post.data;
+const { title, pubDate, description, tags } = post.data;
 
 const containerClasses = {
   default: 'block',
-  featured: 'mb-16 max-w-2xl mx-auto',
+  featured: 'mb-16',
   compact: '',
 }[variant];
 
@@ -26,12 +25,12 @@ const titleClasses = {
   featured:
     'text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
   compact:
-    'title m-0 min-h-10 leading-5 mb-1 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+    'text-lg font-semibold m-0 leading-5 mb-4 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
 }[variant];
 
 const imageProps = {
-  default: { aspectRatio: 40, hover: true },
-  featured: { aspectRatio: 40, hover: true },
+  default: { aspectRatio: 30, hover: true },
+  featured: { aspectRatio: 20, hover: true },
   compact: { hover: true },
 }[variant];
 
@@ -59,9 +58,16 @@ const descriptionClasses = {
       <h2 class={titleClasses}>{title}</h2>
       {(variant === 'default' || variant === 'featured') && 
         <p class={descriptionClasses}>{description}</p>
-      }
+      }     
     </div>
   </a>
+  {tags && tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mt-3">
+      {tags.filter(tag => tag && tag.length > 0).map(tag => (
+        <Tag tag={tag} baseUrl={baseUrl} />
+      ))}
+    </div>
+  )}
 </div>
 
 <style>

@@ -14,7 +14,7 @@ function extractFrontmatter(content) {
 }
 
 // Function to get slug from filename
-function getSlug(filename) {
+export function getSlug(filename) {
   return filename.replace(/\.md$/, '');
 }
 
@@ -49,7 +49,7 @@ async function generateImageConfigs() {
           configs.push({
             name,
             gradient,
-            text: frontmatter.title.split(':')[0].trim(),
+            text: generateShortTitle(frontmatter.title),
           });
         }
       }
@@ -81,7 +81,7 @@ async function generateHeroImage({ name, gradient, text }) {
       <rect width="100%" height="100%" fill="url(#grad)"/>
       <text
         x="50%"
-        y="50%"
+        y="53%"
         font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
         font-size="72"
         font-weight="bold"

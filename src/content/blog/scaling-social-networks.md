@@ -1,9 +1,9 @@
 ---
-title: "Scaling Social Networks: Lessons from the Early Days"
-description: "Technical insights and architectural decisions from scaling early social networks to millions of users."
-pubDate: "Jan 12 2024"
+title: "Early Social: Lessons in Scaling Faceparty"
+description: "Technical insights and hard-learned lessons from scaling one of the UK's first social networks to millions of users in the early 2000s."
+pubDate: "2023-09-20"
 color: "linear-gradient(to bottom right, #F39C12, #D35400)"
-tags: ["Scalability", "Architecture", "Distributed Systems", "Database", "Infrastructure"]
+tags: ["Scalability", "Architecture", "Social Networks", "Backend", "Infrastructure"]
 ---
 
 ### The Early Days of Social Networks

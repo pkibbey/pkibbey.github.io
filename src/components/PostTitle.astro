@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+import BlendedImage from './BlendedImage.astro';
+
+type Props = {
+  title: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  slug: string;
+};
+
+const { title, pubDate, updatedDate, slug } = Astro.props;
+---
+
+<div class="title mb-4 py-2 leading-none">
+  <h1 class="text-5xl m-0 mb-6">{title}</h1>
+  <div class="mb-8 text-gray-500">
+    <FormattedDate date={pubDate} />
+    {
+      updatedDate && (
+        <div class="italic">
+          Last updated on <FormattedDate date={updatedDate} />
+        </div>
+      )
+    }
+  </div>
+  <div class="relative mb-8">
+    <BlendedImage 
+      slug={slug}
+      title={title}
+      aspectRatio={26}
+      rounded={true}
+      overlay={false}              
+    />
+  </div>
+</div>

@@ -1,8 +1,8 @@
 ---
-title: "WebAssembly: The Future of Web Performance"
-description: "Exploring how WebAssembly is revolutionizing web applications with near-native performance and cross-language support."
-pubDate: "Jan 08 2024"
-color: "linear-gradient(to bottom right, #E74C3C, #C0392B)"
+title: "WebAssembly Guide: From Theory to Practice"
+description: "A practical exploration of WebAssembly's capabilities, from performance benefits to real-world implementations in gaming, image processing, and data analysis."
+pubDate: "2023-10-15"
+color: "linear-gradient(to bottom right, #8E44AD, #9B59B6)"
 tags: ["WebAssembly", "Performance", "Web Development", "Rust", "C++"]
 ---
 

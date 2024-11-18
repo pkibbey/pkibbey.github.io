@@ -1,9 +1,9 @@
 ---
-title: "Micro-Frontends: Scaling Frontend Development with Modular Architecture"
-description: "A deep dive into micro-frontend architecture, exploring patterns, tools, and real-world implementation strategies."
-pubDate: "Jan 05 2024"
+title: "Micro-Frontends: Scaling Team Architecture"
+description: "A comprehensive guide to implementing micro-frontend architecture for better team autonomy, scalability, and maintainability in large applications."
+pubDate: "2023-11-15"
 color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
-tags: ["Frontend", "Architecture", "Micro-frontends", "JavaScript", "DevOps"]
+tags: ["Architecture", "Frontend", "Micro-Frontends", "React", "JavaScript"]
 ---
 
 ### Understanding Micro-Frontends

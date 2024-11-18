@@ -1,23 +1,30 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Post from './Post.astro';
+import PostLayout from './PostLayout.astro';
+import type { Post } from '../content/types';
 
-type Props = CollectionEntry<'projects'>['data'] & { slug: string };
+type Props = Post['data'] & {
+  slug: string,
+  prevPost: Post | null;
+  nextPost: Post | null;
+};
 
-const { title, description, pubDate, updatedDate, color, slug, tags } =
+const { title, description, author, pubDate, updatedDate, color, slug, tags, prevPost, nextPost } =
   Astro.props;
 ---
 
-<Post
+<PostLayout
   title={title}
   description={description}
   pubDate={pubDate}
   updatedDate={updatedDate}
   color={color}
+  author={author}
   backLink="/projects"
   backText="Projects"
   slug={slug}
   tags={tags}
+  prevPost={prevPost}
+  nextPost={nextPost}
 >
   <slot />
-</Post>
+</PostLayout>

@@ -1,9 +1,9 @@
 ---
-title: "AI Code Generation: The Critical Role of Human Review"
-description: "Reflections on the evolution from AI optimism to understanding the crucial importance of thorough code review in catching hallucinations."
-pubDate: "Feb 10 2024"
+title: "AI Code Review: Beyond the Hype"
+description: "Lessons learned from implementing AI code generation, and why thorough human review remains critical for catching hallucinations and ensuring quality."
+pubDate: "2023-07-30"
 color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-tags: ["AI", "Code Review", "Software Development", "Best Practices", "Quality Assurance"]
+tags: ["AI", "Code Review", "Automation", "DevOps", "Quality"]
 ---
 
 ### The Initial AI Optimism

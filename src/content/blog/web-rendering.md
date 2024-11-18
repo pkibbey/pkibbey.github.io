@@ -1,9 +1,9 @@
 ---
-title: "Modern Web Rendering: From Server to Browser"
-description: "A comprehensive look at modern web rendering strategies, from server-side rendering to client-side hydration."
-pubDate: "Jan 28 2024"
+title: "Web Render: Modern Browser Techniques"
+description: "Understanding modern web rendering techniques and optimizations"
+pubDate: "2023-04-15"
 color: "linear-gradient(to bottom right, #9B59B6, #8E44AD)"
-tags: ["Web Development", "Rendering", "Performance", "SSR", "React"]
+tags: ["Rendering", "Performance", "Browser", "Web", "JavaScript"]
 ---
 
 In the early days of web development, server-side rendering (SSR) was the norm. We started with PHP, where the server generated HTML and sent it to the client. This approach was simple and effective, but as web applications grew more complex, we sought ways to improve performance and user experience.

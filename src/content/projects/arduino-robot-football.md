@@ -1,7 +1,7 @@
 ---
-title: "Building an Arduino-Powered Robot Football Team"
-description: "Creating autonomous soccer-playing robots using Arduino, computer vision, and real-time control systems."
-pubDate: "2023-12-15"
+title: "Robot Football: Building an Autonomous Arduino Player"
+description: "Creating a football-playing robot with Arduino, computer vision, and a React Native control app that can play autonomously or be manually controlled."
+pubDate: "2023-03-15"
 color: "linear-gradient(to bottom right, #E67E22, #D35400)"
 tags: ["Robotics", "Arduino", "Computer Vision", "Electronics", "Engineering"]
 ---

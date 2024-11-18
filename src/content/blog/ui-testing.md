@@ -1,9 +1,9 @@
 ---
-title: "Modern UI Testing: Beyond Unit Tests"
-description: "Exploring comprehensive UI testing strategies, from component testing to end-to-end automation."
-pubDate: "Jan 30 2024"
+title: "UI Tests: Modern Testing Strategies"
+description: "Effective approaches to testing modern user interfaces"
+pubDate: "2023-04-01"
 color: "linear-gradient(to bottom right, #16A085, #1ABC9C)"
-tags: ["Testing", "UI", "Automation", "Quality Assurance", "Frontend"]
+tags: ["Testing", "UI", "Automation", "Frontend", "QA"]
 ---
 
 # The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls

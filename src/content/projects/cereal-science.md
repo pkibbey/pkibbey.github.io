@@ -1,9 +1,9 @@
 ---
-title: "The Science of Breakfast: A Deep Dive into Cereal Engineering"
-description: "An exploration into the fascinating world of cereal manufacturing, from grain selection to the perfect crunch factor."
-pubDate: "2024-01-05"
-tags: ["Food Science", "Engineering", "Manufacturing", "Research", "Innovation"]
+title: "Cereal Reviews: A Data-Driven Breakfast Guide"
+description: "Building a fun and scientific cereal review platform that analyzes taste, texture, nutrition, and nostalgia factors of breakfast cereals."
+pubDate: "2018-05-15"
 color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
+tags: ["Food Science", "Engineering", "Manufacturing", "Research", "Innovation"]
 ---
 
 # Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!

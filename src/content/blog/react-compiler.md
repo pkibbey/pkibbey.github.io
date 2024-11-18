@@ -1,9 +1,9 @@
 ---
-title: "Building a React Compiler: From JSX to Optimized JavaScript"
-description: "A technical deep dive into creating a custom React compiler that transforms JSX into optimized JavaScript code."
-pubDate: "Jan 18 2024"
-color: "linear-gradient(to bottom right, #2980B9, #3498DB)"
-tags: ["React", "Compilers", "JavaScript", "Optimization", "Build Tools"]
+title: "React Compiler: Building for Performance"
+description: "A deep dive into creating a custom React compiler, exploring compile-time optimizations, code transformations, and real-world performance improvements."
+pubDate: "2023-07-01"
+color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
+tags: ["React", "Compiler", "Performance", "JavaScript", "Optimization"]
 ---
 
 ### The React Compiler Revolution

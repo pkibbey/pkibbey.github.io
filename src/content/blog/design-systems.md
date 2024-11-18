@@ -1,9 +1,9 @@
 ---
-title: "Design Systems: Building Scalable Design Systems for Modern Web Applications"
-description: "A comprehensive guide to creating, implementing, and maintaining design systems that scale across large applications and teams."
-pubDate: "Jan 15 2024"
+title: "Design Systems: From Chaos to Consistency"
+description: "A journey through creating a unified design system from scratch, tackling challenges of framework compatibility, team adoption, and scalability."
+pubDate: "2023-08-25"
 color: "linear-gradient(to bottom right, #3498DB, #2980B9)"
-tags: ["Design Systems", "Frontend Development", "UI/UX", "React", "Component Libraries", "Design Tokens"]
+tags: ["Design Systems", "UI", "Frontend", "React", "Components"]
 ---
 
 ### The Dream of a Unified Design System  

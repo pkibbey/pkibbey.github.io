@@ -1,9 +1,9 @@
 ---
-title: "Digital Music Mixing: The Art and Science"
-description: "Exploring the technical aspects of digital music production and mixing, from signal processing to psychoacoustics."
-pubDate: "2023-12-25"
-tags: ["Music Production", "Audio Engineering", "DSP", "Sound Design", "Digital Audio"]
+title: "Music Therapy: Finding Peace in Mixing"
+description: "How mixing music with Ableton became a therapeutic escape, blending technical precision with creative expression."
+pubDate: "2021-05-15"
 color: "linear-gradient(to bottom right, #8E44AD, #9B59B6)"
+tags: ["Music Production", "Audio Engineering", "DSP", "Sound Design", "Digital Audio"]
 ---
 
 # The Therapy of Mixing Music

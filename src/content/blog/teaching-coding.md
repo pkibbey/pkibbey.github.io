@@ -1,7 +1,7 @@
 ---
-title: "Teaching Programming: Lessons from the Trenches"
-description: "Insights and strategies for effectively teaching programming, based on years of experience mentoring new developers."
-pubDate: "Jan 25 2024"
+title: "Code Teaching: Modern Learning Methods"
+description: "Effective strategies for teaching programming in the modern era"
+pubDate: "2023-05-01"
 color: "linear-gradient(to bottom right, #F1C40F, #F39C12)"
 tags: ["Education", "Programming", "Teaching", "Learning", "Mentorship"]
 ---

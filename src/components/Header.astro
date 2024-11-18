@@ -1,11 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import Link from './Link.astro';
 ---
 
 <header class="sticky top-0 z-10 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
 	<nav class="container mx-auto px-4 flex items-center justify-between">
-		<p class="text-cyan-900 dark:text-cyan-400">Phineas Kibbey</p>
-		<div class="internal-links flex items-center gap-2 md:gap-4">
+		<Link href="/">Phineas Kibbey</Link>
+		<div class="flex items-center gap-2 md:gap-4">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/resume">Resume</HeaderLink>
 			<HeaderLink href="/tech-blog">Tech Blog</HeaderLink>

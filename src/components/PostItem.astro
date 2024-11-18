@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BlendedImage from './BlendedImage.astro';
 import FormattedDate from './FormattedDate.astro';
+import type { Post } from '../content/types';
 
 interface Props {
-  post: CollectionEntry<'blog'> | CollectionEntry<'projects'>;
+  post: Post;
   baseUrl: string;
 }
 

@@ -1,9 +1,9 @@
 ---
-title: "Advanced Web Performance: The Power of Optimization Techniques"
-description: "Deep dive into modern web performance optimization strategies, from code splitting to resource prioritization, with real-world examples and metrics."
-pubDate: "Jan 10 2024"
+title: "Web Vitals: A Practical Optimization Guide"
+description: "Real-world strategies for improving Core Web Vitals, with proven techniques for resource, runtime, and network optimization."
+pubDate: "2023-06-15"
 color: "linear-gradient(to bottom right, #27AE60, #2ECC71)"
-tags: ["Web Performance", "Frontend Development", "Optimization", "JavaScript", "Core Web Vitals", "User Experience"]
+tags: ["Performance", "Web Vitals", "Optimization", "Frontend", "UX"]
 ---
 
 ### The Critical Role of Web Performance

@@ -32,12 +32,23 @@ const [featuredPost, ...otherPosts] = allPosts;
   description="Articles about software development, tech, and my experiences"
 >
   <section class="max-w-7xl mx-auto">
+    <div class="mb-16">
+      <div class="prose dark:prose-invert mb-12">
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Articles and insights that I have written about software development, engineering practices, and web technologies, 
+          with a focus on frontend development and modern architectural patterns.
+        </p>
+      </div>
+    </div>
+
     {featuredPost && (
       <div class="mb-16">
+        <h2 class="text-lg font-semibold mb-4 text-gray-500">Featured Post</h2>
         <PostCard post={featuredPost} variant="featured" baseUrl='/tech-blog/'/>
       </div>
     )}
 
+    <h2 class="text-lg font-semibold mb-4 text-gray-500">More Posts</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {otherPosts.map((post) => (
         <PostCard post={post} variant="compact"	baseUrl='/tech-blog/'/>

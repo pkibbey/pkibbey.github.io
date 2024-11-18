@@ -22,14 +22,14 @@ const {
 
 <div class:list={[
   "relative",
-  rounded && "rounded-lg overflow-hidden"
+  rounded && "rounded-t-lg overflow-hidden"
 ]}>
   <div class="w-full relative" style={`padding-bottom: ${aspectRatio}%`}>
     <Image 
       src={`/images/${slug}.jpg`} 
       alt={`${title} thumbnail overlay`} 
       class:list={[
-        "absolute top-0 left-0 w-full h-full z-10 object-cover",
+        "absolute top-0 left-0 w-full h-full z-10 object-cover shadow-md",
         overlay ? "opacity-20 mix-blend-plus-darker" : "opacity-100"
       ]}
     />
@@ -37,7 +37,7 @@ const {
       src={`/hero/${slug}.jpg`} 
       alt={`${title} thumbnail`} 
       class:list={[
-        "absolute top-0 left-0 w-full h-full object-cover",
+        "absolute top-0 left-0 w-full h-full object-cover shadow-md",
         hover && "transition-transform duration-300 group-hover:scale-105"
       ]}
     />

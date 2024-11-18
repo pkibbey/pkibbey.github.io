@@ -1,6 +1,8 @@
 ---
 import PostLayout from './PostLayout.astro';
 import type { Post } from '../content/types';
+import PostNavigation from '../components/PostNavigation.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
 
 type Props = Post['data'] & {
   slug: string;
@@ -25,10 +27,10 @@ const {
 <PostLayout
   title={title}
   description={description}
+  author={author}
   pubDate={pubDate}
   updatedDate={updatedDate}
   color={color}
-  author={author}
   baseUrl="/projects"
   backText="Projects"
   slug={slug}
@@ -36,5 +38,6 @@ const {
   prevPost={prevPost}
   nextPost={nextPost}
 >
+  <ScrollProgress />
   <slot />
 </PostLayout>

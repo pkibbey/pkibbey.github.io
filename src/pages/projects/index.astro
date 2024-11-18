@@ -34,17 +34,25 @@ const [featuredPost, ...otherPosts] = allPosts;
 
 <section class="max-w-7xl mx-auto">
     <div class="mb-16">
+      <div class="prose dark:prose-invert mb-12">
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          A curated portfolio of my technical projects showcasing expertise in frontend development, 
+          user experience design, and software architecture.
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-16">
+      <h2 class="text-lg font-semibold mb-4 text-gray-500">Featured Post</h2>
       <PostCard post={featuredPost} baseUrl="/projects/" variant="featured" />
     </div>
     <div class="mb-8">
-      <h2 class="text-lg font-semibold mb-8 text-gray-900 dark:text-gray-100">More Projects</h2>
-      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
+      <h2 class="text-lg font-semibold mb-4 text-gray-500">More Posts</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
         {otherPosts.map((post) => (
-          <li>
             <PostCard post={post} baseUrl="/projects/" variant="compact" />
-          </li>
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 </DefaultLayout>

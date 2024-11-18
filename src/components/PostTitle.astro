@@ -9,12 +9,13 @@ type Props = {
   updatedDate?: Date;
   author: string;
   slug: string;
+  color: string;
 };
 
-const { title, pubDate, updatedDate, author, slug } = Astro.props;
+const { title, pubDate, updatedDate, author, slug, color } = Astro.props;
 ---
 
-<div class="title mb-4 py-2 leading-none">
+<div class="title mb-4 pb-2 leading-none">
   <h1 class="text-5xl m-0 mb-6">{title}</h1>
   <div class="mb-8 text-gray-500">
     <div class="flex items-center gap-2">
@@ -30,7 +31,7 @@ const { title, pubDate, updatedDate, author, slug } = Astro.props;
       )
     }
   </div>
-  <div class="relative mb-8">
+  <div class="relative">
     <BlendedImage 
       slug={slug}
       title={title}
@@ -39,4 +40,5 @@ const { title, pubDate, updatedDate, author, slug } = Astro.props;
       overlay={false}              
     />
   </div>
+  <div class="color-accent h-8 mb-8 rounded-b-lg opacity-50" style={`background: ${color}`}></div>
 </div>

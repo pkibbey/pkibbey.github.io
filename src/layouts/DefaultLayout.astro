@@ -12,13 +12,29 @@ const { title, description } = Astro.props;
 <html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
+		<script is:inline>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      function getInitialTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || savedTheme === 'light') {
+          return savedTheme;
+        }
+        // If no saved preference, use system default
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      const theme = getInitialTheme();
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
 	</head>
 
 	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50 antialiased transition-colors duration-300">
 		<Header />
 		<main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-12 px-4 min-h-stretch">
-			<h1 class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100 tracking-tight">{title}</h1>
-			<slot />
+			<h1 class="text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100 tracking-tight mt-4 leading-tight max-w-3xl">{title}</h1>
+			<div class="container mx-auto prose-lg">
+				<slot />
+			</div>
 		</main>
 		<Footer />
 	</body>

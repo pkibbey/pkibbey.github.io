@@ -7,6 +7,7 @@ import PostTitle from '../components/PostTitle.astro';
 import type { Post } from '../content/types';
 
 import PostNavigation from '../components/PostNavigation.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
 
 type Props = Post['data'] & {
   slug: string;
@@ -27,6 +28,7 @@ const {
   baseUrl,
   prevPost,
   nextPost,
+  color,
 } = Astro.props;
 ---
 
@@ -40,7 +42,6 @@ const {
       }
       .prose .title {
         margin-bottom: 1em;
-        padding: 1em 0;
         line-height: 1;
       }
       .prose .title h1 {
@@ -64,6 +65,9 @@ const {
         font-size: inherit;
         color: inherit;
       }
+      .prose :global(.title) {
+        position: relative;
+      }
     </style>
   </head>
 
@@ -71,7 +75,8 @@ const {
     <Header />
     <main class="w-[720px] lg:w-[1024px] xl:w-[1280px] max-w-[calc(100%-2em)] mx-auto py-8 px-4 min-h-stretch">
       <PostNavigation baseUrl={baseUrl} backText={backText} prevPost={prevPost} nextPost={nextPost} />
-      <article>
+      <ScrollProgress />
+      <article class="relative">
         <div class="prose container mx-auto p-4 text-gray-800 dark:text-gray-200">
           <PostTitle 
             title={title}
@@ -79,12 +84,16 @@ const {
             updatedDate={updatedDate}
             author={author}
             slug={slug}
+            color={color}
           />
           <Markdown>
             <slot />
           </Markdown>
         </div>
       </article>
+      <div class="mt-16">
+        <PostNavigation baseUrl={baseUrl} backText={backText} prevPost={prevPost} nextPost={nextPost} />
+      </div>
     </main>
     <Footer />
   </body>

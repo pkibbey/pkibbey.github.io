@@ -16,7 +16,7 @@ function generateShortTitle(title: string) {
 const isNext = direction === 'next';
 const isBack = direction === 'back';
 const label = isNext ? 'Next post' : isBack ? 'Back to' : 'Previous post';
-const classes = `group flex items-center gap-2 ${isNext ? 'text-right' : ''} text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors`;
+const classes = `group flex items-center gap-2 ${isNext ? 'text-right' : ''} text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-all duration-200 ease-in-out`;
 
 const href = post ? `${baseUrl}/${post.slug}` : baseUrl;
 ---

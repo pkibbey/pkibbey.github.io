@@ -4,9 +4,11 @@ import SocialLinks from './SocialLinks.astro';
 const today = new Date();
 ---
 
-<footer class="px-4 py-8 text-center bg-gray-500 bg-opacity-10 text-gray-400 dark:text-gray-400">
-	<div class="mb-4">
-		&copy; {today.getFullYear()} Phineas Kibbey. All rights reserved.
+<footer class="mt-auto px-4 py-12 text-center border-t border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-950/50 text-gray-500 dark:text-gray-400">
+	<div class="max-w-7xl mx-auto">
+		<SocialLinks />
+		<div class="mt-8 text-sm">
+			&copy; {today.getFullYear()} Phineas Kibbey. All rights reserved.
+		</div>
 	</div>
-	<SocialLinks />	
 </footer>

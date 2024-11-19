@@ -1,36 +1,36 @@
 ---
-import { getCollection } from "astro:content";
-import PostCard from "../../components/PostCard.astro";
-import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import Link from "../../components/Link.astro";
+import { getCollection } from 'astro:content';
+import PostCard from '../../components/PostCard.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import Link from '../../components/Link.astro';
 
 // Get all posts and sort by date
-const allPosts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 // Count posts per tag and only include tags with more than one post
 const tagCounts = allPosts
-	.flatMap((post) => post.data.tags)
-	.reduce(
-		(acc, tag) => {
-			acc[tag] = (acc[tag] || 0) + 1;
-			return acc;
-		},
-		{} as Record<string, number>,
-	);
+  .flatMap((post) => post.data.tags)
+  .reduce(
+    (acc, tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
 
 const allTags = Object.entries(tagCounts)
-	.map(([tag]) => tag)
-	.sort();
+  .map(([tag]) => tag)
+  .sort();
 
 // Split into featured and other posts
 const [featuredPost, ...otherPosts] = allPosts;
 
 // Split other posts into those with and without images
 const [postsWithImages, postsWithoutImages] = [
-	otherPosts.slice(0, 4),
-	otherPosts.slice(4),
+  otherPosts.slice(0, 4),
+  otherPosts.slice(4),
 ];
 ---
 

@@ -4,7 +4,7 @@ interface Props {
   className?: string;
 }
 
-const { content, className = "" } = Astro.props;
+const { content, className = '' } = Astro.props;
 
 function calculateReadingTime(text: string): number {
   const wordsPerMinute = 200;

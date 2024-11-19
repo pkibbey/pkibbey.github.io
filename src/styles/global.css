@@ -81,8 +81,9 @@ body {
     * {
       border-color: ButtonText;
     }
-    
-    button, a {
+
+    button,
+    a {
       forced-color-adjust: none;
     }
   }
@@ -111,7 +112,7 @@ body {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     @apply text-black bg-white;
   }

@@ -11,17 +11,19 @@ export async function getStaticPaths() {
 
   return sortedPosts.map((post, index) => {
     // For previous post: if we're not at the last post, get next one, otherwise wrap to first
-    const prevPost = index < sortedPosts.length - 1 ? sortedPosts[index + 1] : sortedPosts[0];
-    
+    const prevPost =
+      index < sortedPosts.length - 1 ? sortedPosts[index + 1] : sortedPosts[0];
+
     // For next post: if we're not at the first post, get previous one, otherwise wrap to last
-    const nextPost = index > 0 ? sortedPosts[index - 1] : sortedPosts[sortedPosts.length - 1];
+    const nextPost =
+      index > 0 ? sortedPosts[index - 1] : sortedPosts[sortedPosts.length - 1];
 
     return {
       params: { slug: post.slug },
       props: {
         post,
         prevPost,
-        nextPost
+        nextPost,
       },
     };
   });

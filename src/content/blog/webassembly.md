@@ -1,5 +1,6 @@
 ---
-title: 'WebAssembly Guide: From Theory to Practice'
+title: 'WebAssembly Guide'
+subtitle: 'From Theory to Practice'
 description: >-
   A practical exploration of WebAssembly's capabilities, from performance
   benefits to real-world implementations in gaming, image processing, and data

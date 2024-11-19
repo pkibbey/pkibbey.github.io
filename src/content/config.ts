@@ -5,6 +5,7 @@ const linearGradient = z.string().regex(/^linear-gradient\((.+)\)$/);
 
 const postSchema = z.object({
   title: z.string(),
+  subtitle: z.string(),
   description: z.string(),
   author: z.string(),
   pubDate: z.coerce.date(),

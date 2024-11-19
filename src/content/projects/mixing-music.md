@@ -1,5 +1,6 @@
 ---
-title: 'Music Therapy: Finding Peace in Mixing'
+title: 'Music Therapy'
+subtitle: 'Finding Peace in Mixing'
 description: >-
   How mixing music with Ableton became a therapeutic escape, blending technical
   precision with creative expression.

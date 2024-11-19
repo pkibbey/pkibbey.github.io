@@ -1,5 +1,6 @@
 ---
-title: 'Code Teaching: Modern Learning Methods'
+title: 'Code Teaching'
+subtitle: 'Modern Learning Methods'
 description: Effective strategies for teaching programming in the modern era
 pubDate: '2023-05-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #F1C40F, #F39C12)'

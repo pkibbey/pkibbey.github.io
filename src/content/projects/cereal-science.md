@@ -1,5 +1,6 @@
 ---
-title: 'Cereal Reviews: A Data-Driven Breakfast Guide'
+title: 'Cereal Reviews'
+subtitle: 'A Data-Driven Breakfast Guide'
 description: >-
   Building a fun and scientific cereal review platform that analyzes taste,
   texture, nutrition, and nostalgia factors of breakfast cereals.

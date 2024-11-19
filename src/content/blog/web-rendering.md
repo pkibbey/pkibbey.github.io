@@ -1,5 +1,6 @@
 ---
-title: 'Web Render: Modern Browser Techniques'
+title: 'Web Render'
+subtitle: 'Modern Browser Techniques'
 description: Understanding modern web rendering techniques and optimizations
 pubDate: '2023-04-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #9B59B6, #8E44AD)'

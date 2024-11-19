@@ -1,5 +1,6 @@
 ---
-title: 'Smart Apartments: Building at Level Home'
+title: 'Smart Apartments'
+subtitle: 'Building at Level Home'
 description: >-
   Architecting a monorepo solution for smart apartment control, focusing on
   real-time communication, design systems, and scalable deployment.

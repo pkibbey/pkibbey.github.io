@@ -7,7 +7,7 @@ import type { Post } from '../content/types';
 interface Props {
   post: Post;
   baseUrl: string;
-  variant?: 'default' | 'featured' | 'compact';
+  variant?: 'default' | 'featured' | 'compact' | 'no-image';
 }
 
 const { post, baseUrl, variant = 'default' } = Astro.props;
@@ -17,6 +17,7 @@ const containerClasses = {
   default: 'block',
   featured: 'mb-16',
   compact: '',
+  'no-image': 'block',
 }[variant];
 
 const titleClasses = {
@@ -26,12 +27,15 @@ const titleClasses = {
     'text-[2rem] font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight leading-tight',
   compact:
     'text-[1.125rem] font-semibold m-0 leading-snug mb-4 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
+  'no-image':
+    'text-[1.125rem] font-semibold my-1 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
 }[variant];
 
 const imageProps = {
   default: { aspectRatio: 30, hover: true },
   featured: { aspectRatio: 20, hover: true },
   compact: { hover: true },
+  'no-image': null,
 }[variant];
 
 const descriptionClasses = {
@@ -40,23 +44,29 @@ const descriptionClasses = {
   featured:
     'text-gray-600 dark:text-gray-400 text-[1.0625rem] leading-[1.75] tracking-[-0.01em] line-clamp-3',
   compact: '',
+  'no-image':
+    'text-gray-600 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
 }[variant];
 ---
 
 <div class={containerClasses}>
   <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-all duration-300">
-    <BlendedImage 
-      slug={post.slug}
-      title={title}
-      rounded={true}
-      {...imageProps}
-    />
-    <div class="mt-6 space-y-1">
+    {imageProps && (
+      <div class="mb-3">
+        <BlendedImage 
+          slug={post.slug}
+          title={title}
+          rounded={true}
+          {...imageProps}
+        />
+      </div>
+    )}
+    <div class="space-y-1">
       <div class="text-[0.8125rem] font-medium text-gray-500 dark:text-gray-400 tracking-wide">
         <FormattedDate date={pubDate} />
       </div>
       <h2 class={titleClasses}>{title}</h2>
-      {(variant === 'default' || variant === 'featured') && 
+      {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
         <p class={descriptionClasses}>{description}</p>
       }
     </div>

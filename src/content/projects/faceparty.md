@@ -1,5 +1,6 @@
 ---
-title: 'Social Pioneer: Co-Founding Faceparty'
+title: 'Social Pioneer'
+subtitle: 'Co-Founding Faceparty'
 description: >-
   My journey co-founding one of the UK's first social networks in 2000, reaching
   millions of users and pioneering features that shaped modern social media.

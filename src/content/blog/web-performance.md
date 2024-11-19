@@ -1,5 +1,6 @@
 ---
-title: 'Web Vitals: A Practical Optimization Guide'
+title: 'Web Vitals'
+subtitle: 'A Practical Optimization Guide'
 description: >-
   Real-world strategies for improving Core Web Vitals, with proven techniques
   for resource, runtime, and network optimization.

@@ -1,5 +1,6 @@
 ---
-title: 'Creative Break: Four Years as a Portrait Photographer'
+title: 'Creative Break'
+subtitle: 'Four Years as a Portrait Photographer'
 description: >-
   My journey stepping away from web development to pursue professional portrait
   photography, and how it shaped my perspective on creativity and technology.

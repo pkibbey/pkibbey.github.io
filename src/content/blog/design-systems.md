@@ -1,5 +1,6 @@
 ---
-title: 'Design Systems: From Chaos to Consistency'
+title: 'Design Systems'
+subtitle: 'From Chaos to Consistency'
 description: >-
   A journey through creating a unified design system from scratch, tackling
   challenges of framework compatibility, team adoption, and scalability.

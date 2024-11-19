@@ -3,15 +3,25 @@ import type { HTMLAttributes } from 'astro/types';
 
 interface Props {
   imageProps: HTMLAttributes<'img'>;
+  title: string;
 }
 
-const { imageProps } = Astro.props;
+const { imageProps, title } = Astro.props;
 ---
 
-<div>
-  <img 
-    {...imageProps} 
-    class="w-full h-32 object-contain mb-6 rounded" 
-  />
-  <slot />
+<div class="group relative p-4 transition-all duration-300 hover:shadow-lg focus-within:ring-1 focus-within:ring-cyan-500">
+  <div class="relative h-40 mb-6 overflow-hidden rounded-md bg-white dark:bg-gray-800 flex items-center justify-center p-4">
+    <img 
+      {...imageProps} 
+      class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" 
+      alt={`${title} project screenshot`}
+      loading="lazy"
+    />
+  </div>
+  <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">
+    {title}
+  </h3>
+  <div class="prose prose-gray dark:prose-invert">
+    <slot />
+  </div>
 </div>

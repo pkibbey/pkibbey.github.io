@@ -20,3 +20,107 @@ body {
 /* * {
   outline: 1px solid orangered;
 } */
+
+/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  /* Focus outline for interactive elements */
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  /* Base text styles for better readability */
+  body {
+    @apply text-base leading-relaxed antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Improved link styles */
+  .prose a {
+    @apply underline decoration-cyan-500 decoration-2 underline-offset-2 transition-colors hover:decoration-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-sm;
+  }
+
+  /* Better contrast for code blocks */
+  .prose pre {
+    @apply bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg;
+  }
+
+  /* Improved heading hierarchy */
+  .prose {
+    h1 {
+      @apply text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100;
+    }
+    h2 {
+      @apply text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-800 pb-2;
+    }
+    h3 {
+      @apply text-xl font-medium mb-4 text-gray-800 dark:text-gray-200;
+    }
+    h4 {
+      @apply text-lg font-medium mb-3 text-gray-800 dark:text-gray-200;
+    }
+  }
+}
+
+/* Accessibility improvements */
+@layer utilities {
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      @apply !transition-none !animate-none;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode improvements */
+  @media (forced-colors: active) {
+    * {
+      border-color: ButtonText;
+    }
+    
+    button, a {
+      forced-color-adjust: none;
+    }
+  }
+
+  /* Skip link styles */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 bg-white dark:bg-gray-900 px-4 py-2 rounded-md text-cyan-600 dark:text-cyan-400 z-50;
+  }
+}
+
+/* Notable Work specific styles */
+.notable-work-grid {
+  @apply grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.notable-work-item {
+  @apply bg-gray-50 dark:bg-gray-900 rounded-lg p-6 transition-all duration-300;
+}
+
+.notable-work-image {
+  @apply relative h-40 mb-6 overflow-hidden rounded-md bg-white dark:bg-gray-800 flex items-center justify-center p-4;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .prose {
+    max-width: none !important;
+  }
+}

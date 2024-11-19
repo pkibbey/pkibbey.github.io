@@ -1,15 +1,13 @@
 ---
 interface Props {
   tag: string;
-  baseUrl: string;
 }
 
-const { tag, baseUrl } = Astro.props;
+const { tag } = Astro.props;
 ---
 
-<a
-  href={`${baseUrl}tag/${encodeURIComponent(tag)}`}
-  class="text-xs px-1.5 py-[1px] rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors no-underline whitespace-nowrap"
+<span
+  class="text-[0.75rem] px-2.5 py-0.5 rounded-md bg-gray-100 text-gray-600 dark:text-gray-400 dark:bg-gray-800/70 transition-all duration-300 no-underline whitespace-nowrap font-medium tracking-wide"
 >
   {tag}
-</a>
+</span>

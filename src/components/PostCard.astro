@@ -21,11 +21,11 @@ const containerClasses = {
 
 const titleClasses = {
   default:
-    'font-semibold my-1 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+    'text-[1.125rem] font-semibold my-1 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
   featured:
-    'text-3xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+    'text-[2rem] font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight leading-tight',
   compact:
-    'text-lg font-semibold m-0 leading-5 mb-4 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors',
+    'text-[1.125rem] font-semibold m-0 leading-snug mb-4 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
 }[variant];
 
 const imageProps = {
@@ -35,34 +35,34 @@ const imageProps = {
 }[variant];
 
 const descriptionClasses = {
-  default: 'text-gray-700 dark:text-gray-300 text-sm line-clamp-2',
-  featured: 'text-gray-700 dark:text-gray-300 text-lg line-clamp-3',
+  default: 'text-gray-600 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
+  featured: 'text-gray-600 dark:text-gray-400 text-[1.0625rem] leading-[1.75] tracking-[-0.01em] line-clamp-3',
   compact: '',
 }[variant];
 ---
 
 <div class={containerClasses}>
-  <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-opacity duration-200">
+  <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-all duration-300">
     <BlendedImage 
       slug={post.slug}
       title={title}
       rounded={true}
       {...imageProps}
     />
-    <div class="mt-4 space-y-2">
-      <div class="text-sm text-gray-600 dark:text-gray-400">
+    <div class="mt-6 space-y-1">
+      <div class="text-[0.8125rem] font-medium text-gray-500 dark:text-gray-400 tracking-wide">
         <FormattedDate date={pubDate} />
       </div>
       <h2 class={titleClasses}>{title}</h2>
       {(variant === 'default' || variant === 'featured') && 
-        <p class="text-gray-600 dark:text-gray-400 line-clamp-2">{description}</p>
+        <p class={descriptionClasses}>{description}</p>
       }
     </div>
   </a>
   {tags && tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mt-3">
+    <div class="flex flex-wrap gap-2 mt-4">
       {tags.filter(tag => tag && tag.length > 0).map(tag => (
-        <Tag tag={tag} baseUrl={baseUrl} />
+        <Tag tag={tag} />
       ))}
     </div>
   )}

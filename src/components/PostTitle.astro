@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
 import BlendedImage from './BlendedImage.astro';
 
@@ -31,14 +30,13 @@ const { title, pubDate, updatedDate, author, slug, color } = Astro.props;
       )
     }
   </div>
-  <div class="relative">
-    <BlendedImage 
-      slug={slug}
-      title={title}
-      aspectRatio={26}
-      rounded={true}
-      overlay={false}              
-    />
-  </div>
+  <BlendedImage 
+    slug={slug}
+    title={title}
+    aspectRatio={26}
+    rounded={true}
+    overlay={false}              
+  />
   <div class="color-accent h-8 mb-8 rounded-b-lg opacity-50" style={`background: ${color}`}></div>
+  <slot />
 </div>

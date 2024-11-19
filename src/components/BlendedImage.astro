@@ -20,11 +20,8 @@ const {
 } = Astro.props;
 ---
 
-<div class:list={[
-  "relative",
-  rounded && "rounded-t-lg overflow-hidden"
-]}>
-  <div class="w-full relative" style={`padding-bottom: ${aspectRatio}%`}>
+<div class:list={[ rounded && "rounded-t-lg overflow-hidden" ]}>
+  <div class="w-full relative z-0" style={`padding-bottom: ${aspectRatio}%`}>
     <Image 
       src={`/images/${slug}.jpg`} 
       alt={`${title} thumbnail overlay`} 

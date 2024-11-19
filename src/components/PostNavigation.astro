@@ -10,10 +10,6 @@ interface Props {
 }
 
 const { prevPost, nextPost, baseUrl, backText } = Astro.props;
-
-export function generateShortTitle(title: string) {
-  return title.split(':')[0].trim();
-}
 ---
 
 <nav class="flex justify-between items-center gap-8 h-9 mb-8 mt-4">

@@ -1,6 +1,6 @@
 ---
-title: 'Early Social'
-subtitle: 'Lessons in Scaling Faceparty'
+title: Networks That Scale
+subtitle: Lessons in Scaling Faceparty
 description: >-
   Technical insights and hard-learned lessons from scaling one of the UK's first
   social networks to millions of users in the early 2000s.

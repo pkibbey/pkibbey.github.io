@@ -1,6 +1,6 @@
 ---
-title: 'React Compiler'
-subtitle: 'Building for Performance'
+title: Optimizing React
+subtitle: Building for Performance
 description: >-
   A deep dive into creating a custom React compiler, exploring compile-time
   optimizations, code transformations, and real-world performance improvements.

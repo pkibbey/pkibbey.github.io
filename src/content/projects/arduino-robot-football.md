@@ -1,6 +1,6 @@
 ---
-title: 'Robot Football'
-subtitle: 'Building an Autonomous Arduino Player'
+title: Robot Soccer
+subtitle: Building an Autonomous Arduino Player
 description: >-
   Creating a football-playing robot with Arduino, computer vision, and a React
   Native control app that can play autonomously or be manually controlled.

@@ -1,6 +1,6 @@
 ---
-title: 'The Future of AI Engineering'
-subtitle: 'Building Intelligent Systems at Scale'
+title: Engineering Intelligence
+subtitle: Building Intelligent Systems at Scale
 description: >-
   Exploring the challenges and best practices in building production-ready AI
   systems that can scale effectively.

@@ -19,6 +19,7 @@ const {
   tags,
   prevPost,
   nextPost,
+  subtitle
 } = Astro.props;
 ---
 
@@ -35,6 +36,7 @@ const {
   tags={tags}
   prevPost={prevPost}
   nextPost={nextPost}
+  subtitle={subtitle}
 >
   <slot />
 </PostLayout>

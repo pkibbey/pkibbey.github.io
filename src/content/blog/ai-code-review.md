@@ -1,6 +1,6 @@
 ---
-title: 'AI Code Review'
-subtitle: 'Beyond the Hype'
+title: AI Reviews Code
+subtitle: Beyond the Hype
 description: >-
   Lessons learned from implementing AI code generation, and why thorough human
   review remains critical for catching hallucinations and ensuring quality.

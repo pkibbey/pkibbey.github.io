@@ -1,6 +1,6 @@
 ---
-title: 'Micro-Frontends'
-subtitle: 'Scaling Team Architecture'
+title: Breaking Monoliths
+subtitle: Scaling Team Architecture
 description: >-
   A comprehensive guide to implementing micro-frontend architecture for better
   team autonomy, scalability, and maintainability in large applications.

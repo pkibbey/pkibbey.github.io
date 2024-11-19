@@ -1,6 +1,6 @@
 ---
-title: 'Tech Change'
-subtitle: 'Navigating Rapid Evolution'
+title: Technology Never Sleeps
+subtitle: Navigating Rapid Evolution
 description: Strategies for keeping up with the fast-paced tech industry
 pubDate: '2023-03-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #E67E22, #D35400)'

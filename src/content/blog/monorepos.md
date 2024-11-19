@@ -1,6 +1,6 @@
 ---
-title: 'Monorepos'
-subtitle: 'a Practical Guide for Large-Scale Development'
+title: Monorepo Magic
+subtitle: a Practical Guide for Large-Scale Development
 description: >-
   A practical guide to implementing and managing monorepos for large-scale
   development projects.

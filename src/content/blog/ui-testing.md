@@ -1,6 +1,6 @@
 ---
-title: 'UI Tests'
-subtitle: 'Modern Testing Strategies'
+title: Better Testing
+subtitle: Modern Testing Strategies
 description: Effective approaches to testing modern user interfaces
 pubDate: '2023-04-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'

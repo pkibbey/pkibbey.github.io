@@ -6,6 +6,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createClient } from 'pexels';
 import 'dotenv/config';
+import matter from 'gray-matter';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -45,17 +46,7 @@ async function getContentFiles(directory) {
     .filter((file) => file.endsWith('.md'))
     .map(async (file) => {
       const content = await fs.readFile(path.join(contentDir, file), 'utf-8');
-      const frontmatter = content.split('---')[1];
-      const data = {};
-      for (const line of frontmatter.split('\n')) {
-        if (line.includes(':')) {
-          const [key, ...value] = line.split(':');
-          data[key.trim()] = value
-            .join(':')
-            .trim()
-            .replace(/^['"]|['"]$/g, '');
-        }
-      }
+      const { data } = matter(content);
       return {
         slug: file.replace('.md', ''),
         data,
@@ -74,22 +65,26 @@ async function generateImages() {
     const imagesDir = path.join(process.cwd(), 'public', 'images');
     await fs.mkdir(imagesDir, { recursive: true });
 
+    console.log(`Found ${allContent.length} content files to process...`);
+
     for (const content of allContent) {
       const { slug, data } = content;
-      const tags = data.tags
-        ? data.tags
-            .replace(/[\[\]']/g, '')
-            .split(',')
-            .map((t) => t.trim())
-        : [];
+      
+      if (!data.tags || !Array.isArray(data.tags) || data.tags.length === 0) {
+        console.log(`⚠️ No tags found for ${slug}, skipping...`);
+        continue;
+      }
 
-      // Skip if no tags
-      if (!tags || tags.length === 0) continue;
-
-      // Create search query from tags
-      const searchQuery = tags.join(' ');
+      // Create search query from tags and title
+      const searchTerms = [...data.tags];
+      if (data.title) {
+        searchTerms.push(data.title);
+      }
+      const searchQuery = searchTerms.join(' ');
 
       try {
+        console.log(`🔍 Searching for image: ${searchQuery}`);
+        
         // Search for an image
         const searchResult = await client.photos.search({
           query: searchQuery,
@@ -107,8 +102,6 @@ async function generateImages() {
           await downloadImage(imageUrl, imagePath);
           console.log(`✓ Downloaded image for ${slug}`);
 
-          // Optional: Update the markdown file to use the new image path
-          // This would require parsing and modifying the frontmatter
         } else {
           console.log(`✗ No image found for ${slug}`);
         }
@@ -116,13 +109,14 @@ async function generateImages() {
         // Respect rate limiting
         await new Promise((resolve) => setTimeout(resolve, 250));
       } catch (error) {
-        console.error(`Error processing ${slug}:`, error);
+        console.error(`❌ Error processing ${slug}:`, error);
       }
     }
 
-    console.log('Image generation complete!');
+    console.log('✨ Image generation complete!');
   } catch (error) {
     console.error('Failed to generate images:', error);
+    process.exit(1);
   }
 }
 

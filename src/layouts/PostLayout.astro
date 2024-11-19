@@ -17,10 +17,12 @@ type Props = Post['data'] & {
   prevPost: Post | null;
   nextPost: Post | null;
   headings?: { depth: number; slug: string; text: string }[];
+  subtitle: string;
 };
 
 const {
   title,
+  subtitle,
   description,
   pubDate,
   updatedDate,
@@ -67,7 +69,7 @@ const rawContent = await Astro.slots.render('default');
       <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={baseUrl} backText={backText} />
       
       <article class="py-8">
-        <PostTitle title={title} pubDate={pubDate} updatedDate={updatedDate} author={author} slug={slug} color={color}>
+        <PostTitle title={title} subtitle={subtitle} pubDate={pubDate} updatedDate={updatedDate} author={author} slug={slug} color={color}>
           <ReadingTime content={rawContent} className="mt-2" />
         </PostTitle>
     

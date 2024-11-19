@@ -18,6 +18,10 @@ export function getSlug(filename) {
   return filename.replace(/\.md$/, '');
 }
 
+function generateShortTitle(title) {
+  return title.split(':')[0].trim();
+}
+
 // Function to get gradient colors from color string
 function getGradientColors(color) {
   const match = color.match(/linear-gradient\(to .+?, (.+?), (.+?)\)/);

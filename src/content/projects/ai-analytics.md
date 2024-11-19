@@ -1,6 +1,6 @@
 ---
-title: 'Data Journey'
-subtitle: 'Building a Personal Life Dashboard'
+title: Data Stories
+subtitle: Building a Personal Life Dashboard
 description: >-
   Exploring how collecting and analyzing personal data with AI can unlock
   powerful insights and help predict future patterns in our lives.

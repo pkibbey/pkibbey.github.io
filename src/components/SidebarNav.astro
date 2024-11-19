@@ -1,0 +1,60 @@
+---
+interface Props {
+  sections: Array<{
+    id: string;
+    title: string;
+  }>;
+}
+
+const { sections } = Astro.props;
+---
+
+<nav class="hidden lg:block fixed right-[max(2rem,calc((100vw-80rem)/2+2rem))] top-32 space-y-2 w-48">
+  <div class="rounded-lg bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 ring-1 ring-gray-900/5 dark:ring-white/5">
+    <h2 class="font-medium text-sm text-gray-900 dark:text-gray-100 mb-4">On this page</h2>
+    {sections.map(section => (
+      <a
+        href={`#${section.id}`}
+        data-section-link={section.id}
+        class="block py-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+      >
+        {section.title}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const sectionLinks = document.querySelectorAll('[data-section-link]');
+  const sections = document.querySelectorAll('[id]');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -80% 0px',
+    threshold: 0
+  };
+
+  function updateActiveSection(entries: IntersectionObserverEntry[]) {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector(`[data-section-link="${id}"]`);
+      
+      if (entry.isIntersecting) {
+        // Remove active class from all links
+        sectionLinks.forEach(link => {
+          link.classList.remove('text-gray-900', 'dark:text-gray-100', 'font-medium');
+          link.classList.add('text-gray-600', 'dark:text-gray-400');
+        });
+        
+        // Add active class to current link
+        if (link) {
+          link.classList.remove('text-gray-600', 'dark:text-gray-400');
+          link.classList.add('text-gray-900', 'dark:text-gray-100', 'font-medium');
+        }
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(updateActiveSection, observerOptions);
+  sections.forEach(section => observer.observe(section));
+</script>

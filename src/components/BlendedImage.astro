@@ -16,20 +16,11 @@ const {
   aspectRatio = 56.25,
   rounded = false,
   hover = false,
-  overlay = true,
 } = Astro.props;
 ---
 
 <div class:list={[ rounded && "rounded-t-lg overflow-hidden" ]}>
-  <div class="w-full relative z-0" style={`padding-bottom: ${aspectRatio}%`}>
-    <Image 
-      src={`/images/${slug}.jpg`} 
-      alt={`${title} thumbnail overlay`} 
-      class:list={[
-        "absolute top-0 left-0 w-full h-full z-10 object-cover shadow-md",
-        overlay ? "opacity-20 mix-blend-plus-darker" : "opacity-100"
-      ]}
-    />
+  <div class="w-full relative z-0" style={`padding-bottom: ${aspectRatio}%`}>    
     <Image 
       src={`/hero/${slug}.jpg`} 
       alt={`${title} thumbnail`} 

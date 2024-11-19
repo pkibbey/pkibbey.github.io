@@ -5,17 +5,36 @@ import Introduction from './Introduction.astro';
 import NotableWork from './NotableWork.astro';
 import Skills from './Skills.astro';
 import WorkExperience from './WorkExperience.astro';
+import SidebarNav from '../../components/SidebarNav.astro';
+
+const sections = [
+  { id: 'introduction', title: 'Introduction' },
+  { id: 'skills', title: 'Skills' },
+  { id: 'experience', title: 'Experience' },
+  { id: 'notable-work', title: 'Notable Work' },
+];
 ---
 
 <DefaultLayout 
   title="Resume" 
   description="Phineas's professional experience, skills, and notable work"
 >
-  <div class="max-w-4xl mx-auto">
-    <Introduction />
-    <Skills />
-    <WorkExperience />
-    <NotableWork />
-    <!-- <Education /> -->
+  <div class="relative">
+    <div class="max-w-3xl mx-auto">
+      <div id="introduction">
+        <Introduction />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="experience">
+        <WorkExperience />
+      </div>
+      <div id="notable-work">
+        <NotableWork />
+      </div>
+      <!-- <Education /> -->
+    </div>
+    <SidebarNav sections={sections} />
   </div>
 </DefaultLayout>

@@ -43,11 +43,11 @@ const [featuredPost, ...otherPosts] = allPosts;
     </div>
 
     <div class="mb-16">
-      <h2 class="text-lg font-semibold mb-4 text-gray-500">Featured Post</h2>
+      <h2 class="text-lg font-semibold mb-4">Featured</h2>
       <PostCard post={featuredPost} baseUrl="/projects/" variant="featured" />
     </div>
     <div class="mb-8">
-      <h2 class="text-lg font-semibold mb-4 text-gray-500">More Posts</h2>
+      <h2 class="text-lg font-semibold mb-4">More Posts</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
         {otherPosts.map((post) => (
             <PostCard post={post} baseUrl="/projects/" variant="compact" />

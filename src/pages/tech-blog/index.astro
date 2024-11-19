@@ -43,12 +43,12 @@ const [featuredPost, ...otherPosts] = allPosts;
 
     {featuredPost && (
       <div class="mb-16">
-        <h2 class="text-lg font-semibold mb-4 text-gray-500">Featured Post</h2>
+        <h2 class="text-lg font-semibold mb-4">Featured</h2>
         <PostCard post={featuredPost} variant="featured" baseUrl='/tech-blog/'/>
       </div>
     )}
 
-    <h2 class="text-lg font-semibold mb-4 text-gray-500">More Posts</h2>
+    <h2 class="text-lg font-semibold mb-4">More Posts</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {otherPosts.map((post) => (
         <PostCard post={post} variant="compact"	baseUrl='/tech-blog/'/>

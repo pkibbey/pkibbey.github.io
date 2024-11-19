@@ -1,147 +1,143 @@
 ---
 ---
 
-<div class="relative">
-  <button
-    id="theme-toggle"
-    type="button"
-    class="flex items-center justify-center w-8 h-8 rounded-lg text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
-    aria-label="Toggle theme"
+<button
+  id="theme-toggle"
+  type="button"
+  class="inline-flex items-center justify-center w-10 h-10 rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+  aria-label="Toggle theme"
+>
+  <!-- sun -->
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    class="h-5 w-5 theme-light" 
+    viewBox="0 0 20 20" 
+    fill="currentColor"
+    aria-hidden="true"
   >
-    <!-- Sun icon -->
-    <svg
-      id="theme-toggle-light-icon"
-      class="hidden w-5 h-5"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-      />
-    </svg>
-    <!-- Moon icon -->
-    <svg
-      id="theme-toggle-dark-icon"
-      class="hidden w-5 h-5"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg>
-    <!-- System icon -->
-    <svg
-      id="theme-toggle-system-icon"
-      class="hidden w-5 h-5"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z"
-        clip-rule="evenodd"
-      />
-    </svg>
-  </button>
-  <div id="theme-dropdown" class="hidden absolute right-0 mt-2 w-48 py-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-    <button class="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="light">
-      Light
-    </button>
-    <button class="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="dark">
-      Dark
-    </button>
-    <button class="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="system">
-      System
-    </button>
-  </div>
-</div>
+    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+  </svg>
+  <!-- moon -->
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    class="h-5 w-5 theme-dark" 
+    viewBox="0 0 20 20" 
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+  </svg>
+  <!-- monitor -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 theme-system"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+  </svg>
+  <span class="sr-only" id="theme-toggle-label">
+    Use light theme
+  </span>
+</button>
 
 <script>
-  const themeToggleBtn = document.getElementById('theme-toggle') as HTMLButtonElement;
-  const themeDropdown = document.getElementById('theme-dropdown') as HTMLDivElement;
-  const lightIcon = document.getElementById('theme-toggle-light-icon') as HTMLElement;
-  const darkIcon = document.getElementById('theme-toggle-dark-icon') as HTMLElement;
-  const systemIcon = document.getElementById('theme-toggle-system-icon') as HTMLElement;
-
   type Theme = 'light' | 'dark' | 'system';
 
-  // Function to get system theme
-  function getSystemTheme(): Theme {
+  function getSystemTheme(): 'light' | 'dark' {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  // Function to apply theme
-  function applyTheme(theme: Theme): void {
-    const isDark = theme === 'dark' || (theme === 'system' && getSystemTheme() === 'dark');
-    document.documentElement.classList.toggle('dark', isDark);
+  function getStoredTheme(): Theme {
+    return localStorage.getItem('theme') as Theme || 'system';
   }
 
-  // Function to set theme
-  function setTheme(theme: Theme): void {
-    if (theme === 'system') {
+  function setTheme(newTheme: Theme) {
+    const root = document.documentElement;
+    const isDark = newTheme === 'dark' || (newTheme === 'system' && getSystemTheme() === 'dark');
+    
+    root.classList.toggle('dark', isDark);
+    
+    if (newTheme === 'system') {
       localStorage.removeItem('theme');
     } else {
-      localStorage.theme = theme;
+      localStorage.setItem('theme', newTheme);
     }
-    applyTheme(theme);
-    updateIcon(theme);
+
+    // Update icons visibility
+    document.querySelector('.theme-light')?.classList.toggle('hidden', newTheme !== 'light');
+    document.querySelector('.theme-dark')?.classList.toggle('hidden', newTheme !== 'dark');
+    document.querySelector('.theme-system')?.classList.toggle('hidden', newTheme !== 'system');
+
+    // Update aria-label
+    const label = document.getElementById('theme-toggle-label');
+    if (label) {
+      const labels = {
+        light: 'Use dark theme',
+        dark: 'Use system theme',
+        system: 'Use light theme'
+      };
+      label.textContent = labels[newTheme];
+    }
+
+    // Announce theme change to screen readers
+    const messages = {
+      light: 'Light theme enabled',
+      dark: 'Dark theme enabled',
+      system: 'System theme enabled'
+    };
+    const announcement = document.createElement('div');
+    announcement.setAttribute('role', 'status');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.textContent = messages[newTheme];
+    document.body.appendChild(announcement);
+    setTimeout(() => announcement.remove(), 1000);
   }
 
-  // Function to get current theme
-  function getCurrentTheme(): Theme {
-    const theme = localStorage.theme;
-    if (theme === 'dark' || theme === 'light') return theme;
-    return 'system';
-  }
+  // Initialize theme
+  const currentTheme = getStoredTheme();
+  setTheme(currentTheme);
 
-  // Function to update icon
-  function updateIcon(theme: Theme): void {
-    [lightIcon, darkIcon, systemIcon].forEach(icon => icon.classList.add('hidden'));
-    
-    if (theme === 'light') {
-      lightIcon.classList.remove('hidden');
-    } else if (theme === 'dark') {
-      darkIcon.classList.remove('hidden');
-    } else {
-      systemIcon.classList.remove('hidden');
-    }
-  }
-
-  // Toggle dropdown
-  themeToggleBtn.addEventListener('click', () => {
-    themeDropdown.classList.toggle('hidden');
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    if (!themeToggleBtn.contains(target)) {
-      themeDropdown.classList.add('hidden');
-    }
-  });
-
-  // Handle theme selection
-  document.querySelectorAll<HTMLButtonElement>('[data-theme]').forEach(button => {
-    button.addEventListener('click', () => {
-      const theme = button.dataset.theme as Theme;
-      if (theme) {
-        setTheme(theme);
-        themeDropdown.classList.add('hidden');
-      }
-    });
+  // Handle theme toggle click
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const currentTheme = getStoredTheme();
+    const nextTheme: Record<Theme, Theme> = {
+      light: 'dark',
+      dark: 'system',
+      system: 'light'
+    };
+    setTheme(nextTheme[currentTheme]);
   });
 
   // Listen for system theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e: MediaQueryListEvent) => {
-    if (getCurrentTheme() === 'system') {
-      applyTheme('system');
-      updateIcon('system');
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (getStoredTheme() === 'system') {
+      setTheme('system');
     }
   });
 
-  // Initialize theme
-  const currentTheme = getCurrentTheme();
-  setTheme(currentTheme);
+  // Handle keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (e.altKey && e.key === 't') {
+      e.preventDefault();
+      const currentTheme = getStoredTheme();
+      const nextTheme: Record<Theme, Theme> = {
+        light: 'dark',
+        dark: 'system',
+        system: 'light'
+      };
+      setTheme(nextTheme[currentTheme]);
+    }
+  });
 </script>
+
+<style>
+  /* Show only the icon for the current theme */
+  .theme-light:not(.hidden) ~ .theme-dark,
+  .theme-light:not(.hidden) ~ .theme-system,
+  .theme-dark:not(.hidden) ~ .theme-system {
+    display: none;
+  }
+</style>

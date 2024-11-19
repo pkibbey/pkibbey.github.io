@@ -12,30 +12,53 @@ const { title, description } = Astro.props;
 <html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 		<script is:inline>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
       function getInitialTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || savedTheme === 'light') {
           return savedTheme;
         }
-        // If no saved preference, use system default
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        // If no saved preference or system theme, use system preference
+        return getSystemTheme();
       }
 
-      const theme = getInitialTheme();
-      document.documentElement.classList.toggle('dark', theme === 'dark');
+      function setTheme(theme) {
+        const isDark = theme === 'dark' || (theme === 'system' && getSystemTheme() === 'dark');
+        document.documentElement.classList.toggle('dark', isDark);
+      }
+
+      // Set initial theme
+      setTheme(getInitialTheme());
+
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (!localStorage.getItem('theme')) {
+          setTheme('system');
+        }
+      });
     </script>
 	</head>
 
 	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50 antialiased transition-colors duration-300">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white dark:bg-gray-900 px-4 py-2 rounded-md text-cyan-600 dark:text-cyan-400">
+			Skip to main content
+		</a>
+
 		<Header />
-		<main class="mx-auto p-8 min-h-stretch">
+		
+		<main id="main-content" class="mx-auto p-8 min-h-stretch" tabindex="-1">
 			<div class="container max-w-4xl mx-auto prose-lg px-8">
 				<h1 class="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100 tracking-tight mt-4 leading-tight max-w-3xl">{title}</h1>
 				<slot />
 			</div>
 		</main>
+
 		<Footer />
 	</body>
 </html>

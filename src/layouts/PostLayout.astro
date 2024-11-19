@@ -8,7 +8,6 @@ import type { Post } from '../content/types';
 import PostNavigation from '../components/PostNavigation.astro';
 import ScrollProgress from '../components/ScrollProgress.astro';
 import ReadingTime from '../components/ReadingTime.astro';
-import TableOfContents from '../components/TableOfContents.astro';
 
 type Props = Post['data'] & {
   slug: string;
@@ -64,33 +63,23 @@ const rawContent = await Astro.slots.render('default');
     <ScrollProgress />
     <Header />
     
-    <main class="flex-1 w-full pt-8">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={baseUrl} backText={backText} />
-        </div>
-      </div>
-
-      <article class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-          <PostTitle title={title} pubDate={pubDate} updatedDate={updatedDate} author={author} slug={slug} color={color}>
-            <ReadingTime content={rawContent} className="mt-2" />
-          </PostTitle>
-        </div>
-
+    <main class="flex-1 w-full p-8 container max-w-4xl mx-auto">
+      <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={baseUrl} backText={backText} />
+      
+      <article class="py-8">
+        <PostTitle title={title} pubDate={pubDate} updatedDate={updatedDate} author={author} slug={slug} color={color}>
+          <ReadingTime content={rawContent} className="mt-2" />
+        </PostTitle>
+    
         <div class="relative flex justify-between gap-8">
-          <div class="prose prose-cyan dark:prose-invert max-w-4xl mx-auto">
-            <Markdown>
-              <slot />
-            </Markdown>
-          </div>
+          <Markdown>
+            <slot />
+          </Markdown>
         </div>
       </article>
 
-      <div class="container mx-auto px-4 py-8">
-        <div class="max-w-4xl mx-auto">
-          <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={baseUrl} backText={backText} />
-        </div>
+      <div class="py-8">
+        <PostNavigation prevPost={prevPost} nextPost={nextPost} baseUrl={baseUrl} backText={backText} />
       </div>
     </main>
 

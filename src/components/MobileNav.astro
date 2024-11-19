@@ -1,0 +1,46 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<div id="mobile-nav" class="fixed inset-0 bg-white dark:bg-black transform translate-x-full transition-transform duration-300 ease-in-out z-50 sm:hidden">
+  <div class="flex flex-col h-full">
+    <div class="flex justify-end p-4">
+      <button id="close-nav" class="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 p-2 -m-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col items-center gap-6 px-4 py-8">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/resume">Resume</HeaderLink>
+      <HeaderLink href="/tech-blog">Tech Blog</HeaderLink>
+      <HeaderLink href="/projects">Projects</HeaderLink>
+      <div class="mt-4">
+        <ThemeToggle />
+      </div>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const mobileNav = document.getElementById('mobile-nav');
+  const openNavButton = document.getElementById('open-nav');
+  const closeNavButton = document.getElementById('close-nav');
+
+  function toggleNav() {
+    mobileNav?.classList.toggle('translate-x-full');
+    document.body.classList.toggle('overflow-hidden');
+  }
+
+  openNavButton?.addEventListener('click', toggleNav);
+  closeNavButton?.addEventListener('click', toggleNav);
+
+  // Close menu when clicking on a link
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggleNav();
+    });
+  });
+</script>

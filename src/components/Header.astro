@@ -2,19 +2,24 @@
 import HeaderLink from './HeaderLink.astro';
 import Link from './Link.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import MobileNav from './MobileNav.astro';
 ---
 
 <header class="sticky top-0 z-10 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-	<nav class="container mx-auto px-4 sm:flex items-center justify-between">
-		<Link href="/" class="flex items-center gap-2 py-4">Phineas Kibbey</Link>
-		<div class="flex items-center sm:gap-2 md:gap-8 justify-end">
+	<nav class="container max-w-4xl mx-auto px-4 flex items-center justify-between gap-8">
+		<button id="open-nav" class="sm:hidden text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 py-4">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+			</svg>
+		</button>
+		<div class="hidden sm:flex items-center sm:gap-2 md:gap-4">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/resume">Resume</HeaderLink>
 			<HeaderLink href="/tech-blog">Tech Blog</HeaderLink>
 			<HeaderLink href="/projects">Projects</HeaderLink>
-			<div class="border-l border-gray-200 dark:border-gray-700 hidden sm:block pl-8 ml-10 md:ml-0">
-				<ThemeToggle />
-			</div>
 		</div>
+		<ThemeToggle />
 	</nav>
 </header>
+
+<MobileNav />

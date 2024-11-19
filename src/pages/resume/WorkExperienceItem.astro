@@ -12,8 +12,10 @@ interface Props {
 const { company, role, start, end } = Astro.props;
 ---
 
-<section class="h-full flex flex-1 flex-col p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 transition-colors">
+<section class="group h-full flex flex-1 flex-col p-6 bg-opacity-50 rounded-lg border border-gray-50 dark:border-gray-900 hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-300">
   <WorkExperienceDate start={start} end={end} />
   <WorkExperienceTitle company={company} role={role} />
-  <p class="pt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed"><slot/></p>
+  <p class="pt-4 text-[1.0625rem] text-gray-600 dark:text-gray-400 leading-[1.75] tracking-[-0.01em] font-normal group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors">
+    <slot/>
+  </p>
 </section>

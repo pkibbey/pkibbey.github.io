@@ -1,16 +1,17 @@
 ---
-import BlendedImage from './BlendedImage.astro';
 import FormattedDate from './FormattedDate.astro';
 import Tag from './Tag.astro';
 import type { Post } from '../content/types';
+import TechIcon from './TechIcon.astro';
 
 interface Props {
   post: Post;
   baseUrl: string;
   variant?: 'default' | 'featured' | 'compact' | 'no-image';
+  color: string;
 }
 
-const { post, baseUrl, variant = 'default' } = Astro.props;
+const { post, baseUrl, variant = 'default', color = 'linear-gradient(to right, #16a34a, #1d4ed8)' } = Astro.props;
 const { title, subtitle, pubDate, description, tags } = post.data;
 
 const containerClasses = {
@@ -38,13 +39,6 @@ const subtitleClasses = {
   'no-image': 'text-[0.9375rem] text-gray-600 dark:text-gray-400 line-clamp-1',
 }[variant];
 
-const imageProps = {
-  default: { aspectRatio: 30, hover: true },
-  featured: { aspectRatio: 20, hover: true },
-  compact: { hover: true },
-  'no-image': null,
-}[variant];
-
 const descriptionClasses = {
   default:
     'text-gray-600 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
@@ -58,22 +52,15 @@ const descriptionClasses = {
 
 <div class={containerClasses}>
   <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-all duration-300">
-    {imageProps && (
-      <div class="mb-3">
-        <BlendedImage 
-          slug={post.slug}
-          title={title}
-          rounded={true}
-          {...imageProps}
-        />
-      </div>
-    )}
     <div class="space-y-2">
       <div class="text-[0.8125rem] font-medium text-gray-500 dark:text-gray-400 tracking-wide">
         <FormattedDate date={pubDate} />
       </div>
       <div class="space-y-0.5">
-        <h2 class={titleClasses}>{title}</h2>
+        <h2 class={`flex gap-2 items-center ${titleClasses}`}>
+          <div>{title}</div>
+          <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16" : "h-8 w-8"} />
+        </h2>
         {subtitle && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
       {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 

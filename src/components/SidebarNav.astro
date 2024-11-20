@@ -9,7 +9,7 @@ interface Props {
 const { sections } = Astro.props;
 ---
 
-<nav class="hidden lg:block fixed right-[max(2rem,calc((100vw-80rem)/2+2rem))] top-32 space-y-2 w-48">
+<nav class="hidden xl:block fixed right-[max(2rem,calc((100vw-80rem)/2+2rem))] top-32 space-y-2 w-48">
   <div class="rounded-lg bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 ring-1 ring-gray-900/5 dark:ring-white/5">
     <h2 class="font-medium text-sm text-gray-900 dark:text-gray-100 mb-4">On this page</h2>
     {sections.map(section => (

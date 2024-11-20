@@ -29,8 +29,8 @@ const latestPost = blogPosts[0];
       <div class="text-[1.125rem] max-w-4xl">
         <p class="text-gray-700 dark:text-gray-300 mb-6 leading-[1.75] tracking-[-0.01em]">
           I specialize in creating modern web applications using <Highlight>React</Highlight>, <Highlight>TypeScript</Highlight>, and <Highlight>Node.js</Highlight>. 
-          I've built everything from <Highlight type="achievement">high-traffic social networks</Highlight> to 
-          <Highlight type="achievement">enterprise-scale applications</Highlight>.
+          I've built everything from <Highlight>high-traffic social networks</Highlight> to 
+          <Highlight>enterprise-scale applications</Highlight>.
         </p>
         <p class="leading-[1.75] tracking-[-0.01em] text-gray-600 dark:text-gray-400">
           Currently available for new opportunities. View my <Link href="/resume" class="font-medium">Resume</Link> or check out my recent work below.
@@ -46,7 +46,7 @@ const latestPost = blogPosts[0];
             View all projects →
           </Link>
         </div>
-        <PostCard post={latestProject} baseUrl="/projects/" variant="default" />
+        <PostCard post={latestProject} baseUrl="/projects/" variant="default" color={latestProject.data.color} />
       </section>
 
       <section class="group">
@@ -56,7 +56,7 @@ const latestPost = blogPosts[0];
             Read more posts →
           </Link>
         </div>
-        <PostCard post={latestPost} baseUrl="/tech-blog/" variant="default" />
+        <PostCard post={latestPost} baseUrl="/tech-blog/" variant="default" color={latestPost.data.color} />
       </section>
     </div>
   </div>

@@ -55,7 +55,7 @@ const [postsWithImages, postsWithoutImages] = [
       <div class="mb-24">
         <h2 class="text-[1.75rem] font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-8">Featured Project</h2>
         <div class="space-y-3">
-          <PostCard post={featuredPost} variant="featured" baseUrl='/projects/'/>
+          <PostCard post={featuredPost} variant="featured" baseUrl='/projects/' color={featuredPost.data.color} />
         </div>
       </div>
     )}
@@ -65,12 +65,12 @@ const [postsWithImages, postsWithoutImages] = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
         {postsWithImages.map((post) => (
           <div class="space-y-3">
-            <PostCard post={post} variant="default" baseUrl='/projects/'/>
+            <PostCard post={post} variant="default" baseUrl='/projects/' color={post.data.color} />
           </div>
         ))}
         {postsWithoutImages.map((post) => (
           <div class="space-y-3">
-            <PostCard post={post} variant="no-image" baseUrl='/projects/'/>
+            <PostCard post={post} variant="no-image" baseUrl='/projects/' color={post.data.color}/>
           </div>
         ))}
       </div>

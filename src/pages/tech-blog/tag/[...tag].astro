@@ -65,13 +65,13 @@ const [featuredPost, ...otherPosts] = filteredPosts;
 
     {featuredPost && (
       <div class="mb-16">
-        <PostCard post={featuredPost} variant='featured' baseUrl='/tech-blog/'/>
+        <PostCard post={featuredPost} variant='featured' baseUrl='/tech-blog/' color={featuredPost.data.color} />
       </div>
     )}
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {otherPosts.map((post) => (
-        <PostCard post={post} variant='compact' baseUrl='/tech-blog/'/>
+        <PostCard post={post} variant='compact' baseUrl='/tech-blog/' color={post.data.color}/>
       ))}
     </div>
   </section>

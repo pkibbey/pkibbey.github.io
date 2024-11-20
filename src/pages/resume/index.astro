@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-import Education from './Education.astro';
+// import Education from './Education.astro';
 import Introduction from './Introduction.astro';
 import NotableWork from './NotableWork.astro';
 import Skills from './Skills.astro';
@@ -18,12 +18,14 @@ const sections = [
 <DefaultLayout 
   title="Resume" 
   description="Phineas's professional experience, skills, and notable work"
+  slug='resume'
+  showArt={true}
 >
   <div class="relative">
     <div class="max-w-3xl mx-auto">
       <div id="introduction">
         <Introduction />
-      </div>
+    </div>
       <div id="skills">
         <Skills />
       </div>

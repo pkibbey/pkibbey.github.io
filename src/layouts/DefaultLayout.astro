@@ -1,11 +1,42 @@
 ---
+import ASCIIArt from '../components/ASCIIArt.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
-type Props = { title: string; description: string };
+type Props = { title: string; description: string, showArt?: boolean, slug: string };
 
-const { title, description } = Astro.props;
+const { title, description, slug, showArt = false } = Astro.props;
+
+const catArt = [
+  {
+    name: '',
+    art: `    |\\__/,|   (\`\\
+  _.|o o  |_   ) )
+-(((---(((--------`
+  },
+  {
+    name: 'resume',
+    art: `       /\`)    |,\\__/|    
+      ( (    _|  o o|._  
+---------------)))---)))-`
+  },
+  {
+    name: 'tech-blog',
+    art: `             /\`)    |,\\__/|    
+            ( (    _|  o o|._  
+---------------------)))---)))-`
+  },
+  {
+    name: 'projects',
+    art: `                            |\\__/,|   (\`\\
+                          _.|o o  |_   ) )
+-------------------------(((---(((--------`
+  }
+];
+
+const selectedArt = catArt.find(a => a.name === slug)?.art || catArt[0].art;
+
 ---
 
 <!doctype html>
@@ -45,15 +76,24 @@ const { title, description } = Astro.props;
     </script>
 	</head>
 
-	<body class="bg-white text-gray-950 dark:bg-black dark:text-gray-50 antialiased transition-colors duration-300">
-		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white dark:bg-gray-900 px-4 py-2 rounded-md text-cyan-600 dark:text-cyan-400">
-			Skip to main content
-		</a>
+	<body class="bg-white dark:bg-gray-900 text-gray-950 dark:text-gray-50 antialiased transition-colors duration-300">
+		<div class="sr-only focus-not-sr-only">
+			<a
+				href="#main-content"
+				class="absolute top-0 left-0 w-full py-4 text-center text-white bg-cyan-500 focus:outline-none"
+			>
+				Skip to content
+			</a>
+		</div>
 
 		<Header />
 		
 		<main id="main-content" class="mx-auto p-8 min-h-stretch" tabindex="-1">
 			<div class="container max-w-4xl mx-auto prose-lg px-8">
+        {showArt && <ASCIIArt 
+          art={selectedArt}
+          class="font-mono text-gray-600 dark:text-gray-400 text-sm mt-6 leading-tight select-none" 
+        />}
 				<h1 class="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100 tracking-tight mt-4 leading-tight max-w-3xl">{title}</h1>
 				<slot />
 			</div>

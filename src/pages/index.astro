@@ -15,11 +15,14 @@ const projectPosts = (await getCollection('projects')).sort(
 
 const latestProject = projectPosts[0];
 const latestPost = blogPosts[0];
+
 ---
 
 <DefaultLayout 
   title="Hi, I'm Phineas"
   description="Frontend engineer with a passion for creating beautiful and functional web applications"
+  slug=''
+  showArt={true}
 >
   <div class="max-w-4xl mx-auto">
     <section class="mb-32">

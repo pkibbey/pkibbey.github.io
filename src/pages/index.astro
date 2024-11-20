@@ -1,20 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Link from '../components/Link.astro';
-import PostCard from '../components/PostCard.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Highlight from '../components/Highlight.astro';
-
-const blogPosts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const projectPosts = (await getCollection('projects')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const latestProject = projectPosts[0];
-const latestPost = blogPosts[0];
+import MoreContent from '../components/MoreContent.astro';
 
 ---
 
@@ -38,26 +27,5 @@ const latestPost = blogPosts[0];
       </div>
     </section>
 
-    <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
-      <section class="group">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-[1.75rem] font-bold text-gray-900 dark:text-gray-100 tracking-tight">Latest Project</h2>
-          <Link href="/projects" class="text-[0.9375rem] hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-300">
-            View all projects →
-          </Link>
-        </div>
-        <PostCard post={latestProject} baseUrl="/projects/" variant="default" color={latestProject.data.color} />
-      </section>
-
-      <section class="group">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-[1.75rem] font-bold text-gray-900 dark:text-gray-100 tracking-tight">Latest Blog Post</h2>
-          <Link href="/tech-blog" class="text-[0.9375rem] hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-300">
-            Read more posts →
-          </Link>
-        </div>
-        <PostCard post={latestPost} baseUrl="/tech-blog/" variant="default" color={latestPost.data.color} />
-      </section>
-    </div>
-  </div>
+    <MoreContent />
 </DefaultLayout>

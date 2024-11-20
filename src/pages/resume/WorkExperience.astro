@@ -2,10 +2,11 @@
 import Section from '../../components/Section.astro';
 import WorkExperienceItem from './WorkExperienceItem.astro';
 import Highlight from '../../components/Highlight.astro';
+import Separator from '../../components/Separator.astro';
 ---
 
 <Section title="Work Experience">
-  <div class="grid gap-8">
+  <div class="grid gap-8 mb-24 p-8 bg-white/50 border rounded-md dark:bg-gray-800 dark:border-gray-700">
     <WorkExperienceItem start="Mar 2022" end="Aug 2024" company="Level Home" role="Senior Software Engineer">
       Architected a <Highlight type="achievement" spacing={false}>monorepo</Highlight> of apps to control devices in smart apartments. The apps were a
       combination of <Highlight type="tech" spacing={false}>NodeJS</Highlight>, <Highlight type="tech" spacing={false}>NextJS</Highlight> and <Highlight type="tech" spacing={false}>Remix</Highlight> apps, so that we could deliver the best possible user
@@ -14,11 +15,15 @@ import Highlight from '../../components/Highlight.astro';
       and promote a growth mindset.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Jun 2022" end="Mar 2023" company="CodePath" role="Senior Fullstack Engineer">
       Teaching <Highlight type="tech" spacing={false}>HTML</Highlight>, <Highlight type="tech" spacing={false}>CSS</Highlight>, <Highlight type="tech" spacing={false}>JS</Highlight> and <Highlight type="tech" spacing={false}>React</Highlight> to interns at Meta University. Developed and maintained
       web applications using <Highlight type="tech" spacing={false}>React</Highlight> and <Highlight type="tech" spacing={false}>NodeJS</Highlight>. Collaborated with other instructors to improve
       course content and delivery.
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Oct 2018" end="Jun 2022" company="LivePerson" role="Senior Fullstack Engineer">
       <Highlight type="achievement" spacing={false}>Brainstormed and developed 3 web apps</Highlight> to allow a legacy app to support <Highlight type="achievement" spacing={false}>AI generated
@@ -28,11 +33,15 @@ import Highlight from '../../components/Highlight.astro';
       strategies.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Sep 2017" end="Oct 2018" company="Vizio" role="Senior Fullstack Engineer">
       Solved <Highlight type="achievement" spacing={false}>video streaming bugs</Highlight> in the <Highlight type="tech" spacing={false}>React</Highlight>/<Highlight type="tech" spacing={false}>NodeJS</Highlight> powered TV platform. I proposed and led the
       effort to <Highlight type="achievement" spacing={false}>replace the core video player</Highlight>, so that we could improve performance across the entire
       range of supported devices.
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Feb 2017" end="Sep 2017" company="Cisco" role="Senior Javascript Developer">
       Developed and maintained web applications using <Highlight type="tech" spacing={false}>JavaScript</Highlight> and <Highlight type="tech" spacing={false}>React</Highlight>. Collaborated with
@@ -40,10 +49,14 @@ import Highlight from '../../components/Highlight.astro';
       best practices for performance optimization and accessibility.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Feb 2015" end="Feb 2016" company="Lennd" role="Senior Fullstack Engineer">
       At this incubator sponsored startup, I <Highlight type="achievement" spacing={false}>ported an existing web app</Highlight> into <Highlight type="tech" spacing={false}>React</Highlight>, and created a
       companion mobile app using <Highlight type="tech" spacing={false}>React Native</Highlight> and <Highlight type="tech" spacing={false}>GraphQL</Highlight>.
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Oct 2013" end="Feb 2015" company="Mirum" role="Frontend Engineer">
       Responsible for managing multiple projects at the same time in this design agency. After
@@ -51,24 +64,34 @@ import Highlight from '../../components/Highlight.astro';
       required complex JavaScript animation or unique out-of-the-box thinking.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Feb 2012" end="Oct 2013" company="Airlock" role="Frontend Engineer">
       Created responsive HTML web apps using an <Highlight type="tech" spacing={false}>XML</Highlight> powered CMS. Mainly focused on creating
       the online presence for a lifestyle magazine which needed a meticulous eye for detail.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Sep 2011" end="Jan 2012" company="Capablue Ltd" role="TV Developer">
       <Highlight type="tech" spacing={false}>JavaScript</Highlight> Developer working on an Internet Connected TV Set top box.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Aug 2011" end="Sep 2011" company="Illustrated London News" role="Wordpress Developer">
       Developed and maintained <Highlight type="tech" spacing={false}>WordPress</Highlight> websites for various clients such as Maserati, Virgin and Vodafone UK.
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Oct 2008" end="Oct 2010" company="AdjustYourSet" role="Web Developer">
       Created <Highlight type="achievement" spacing={false}>custom HTML5 video players</Highlight> for large retail brands such as British Airways and Marks
       & Spencer. Specialized in complex JavaScript animation. Responsible for converting daily
       news feeds into streaming video.
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Jul 2000" end="Aug 2004" company="Faceparty" role="Business Owner">
       I <Highlight type="achievement" spacing={false}>co-founded and built one of the first online social networks</Highlight> with a friend. At its peak, we
@@ -78,9 +101,13 @@ import Highlight from '../../components/Highlight.astro';
       scalable distributed network</Highlight> that distributed capacity and provided failover redundancy.
     </WorkExperienceItem>
 
+    <Separator />
+
     <WorkExperienceItem start="Aug 2011" end="Oct 2011" company="Dyson" role="Web Developer">
       Worked as a web developer at the Dyson research lab
     </WorkExperienceItem>
+
+    <Separator />
 
     <WorkExperienceItem start="Jun 1997" end="Jul 2000" company="Contract" role="Junior Web Developer">
       Whilst studying at University, I worked part-time contracting a web design agency.

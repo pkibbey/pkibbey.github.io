@@ -7,6 +7,10 @@ type Props = Post['data'] & {
   slug: string;
   prevPost: Post | null;
   nextPost: Post | null;
+  sections:  Array<{
+    id: string;
+    title: string;
+  }>;
 };
 
 const {
@@ -21,6 +25,7 @@ const {
   prevPost,
   nextPost,
   subtitle,
+  sections
 } = Astro.props;
 ---
 
@@ -38,6 +43,7 @@ const {
   prevPost={prevPost}
   nextPost={nextPost}
   subtitle={subtitle}
+  sections={sections}
 >
   <ScrollProgress />
   <slot />

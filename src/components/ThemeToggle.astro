@@ -64,17 +64,17 @@
     if (!messageEl) return;
 
     // Clear any existing timeout
-    if (hideMessageTimeout) {
-      clearTimeout(hideMessageTimeout);
-    }
+    // if (hideMessageTimeout) {
+    //   clearTimeout(hideMessageTimeout);
+    // }
 
     messageEl.textContent = message;
     messageEl.style.opacity = '1';
 
-    hideMessageTimeout = window.setTimeout(() => {
-      messageEl.style.opacity = '0';
-      hideMessageTimeout = undefined;
-    }, 2000);
+    // hideMessageTimeout = window.setTimeout(() => {
+    //   messageEl.style.opacity = '0';
+    //   hideMessageTimeout = undefined;
+    // }, 2000);
   }
 
   function setTheme(newTheme: Theme, showMessage = false) {
@@ -127,7 +127,7 @@
 
   // Initialize theme without showing message
   const currentTheme = getStoredTheme();
-  setTheme(currentTheme, false);
+  setTheme(currentTheme, true);
 
   // Handle theme toggle click
   const toggle = document.getElementById('theme-toggle');

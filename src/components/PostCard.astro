@@ -15,66 +15,68 @@ const { post, baseUrl, variant = 'default', color = 'linear-gradient(to right, #
 const { title, subtitle, pubDate, description, tags } = post.data;
 
 const containerClasses = {
-  default: 'block',
-  featured: 'mb-16',
+  default: 'block bg-white dark:bg-gray-950/50 rounded-lg p-6',
+  featured: 'bg-white dark:bg-gray-950/50 rounded-lg p-6',
   compact: '',
   'no-image': 'block',
 }[variant];
 
 const titleClasses = {
   default:
-    'text-[1.125rem] font-semibold text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
+    'text-[1.125rem] font-semibold text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
   featured:
-    'text-[2rem] font-bold text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight leading-tight',
+    'text-[2rem] font-bold text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight leading-tight',
   compact:
-    'text-[1.125rem] font-semibold leading-snug mb-4 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
+    'text-[1.125rem] font-semibold leading-snug mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
   'no-image':
-    'text-[1.125rem] font-semibold text-gray-900 dark:text-gray-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
+    'text-[1.125rem] font-semibold text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300 tracking-tight',
 }[variant];
 
 const subtitleClasses = {
-  default: 'text-[0.9375rem] text-gray-600 dark:text-gray-400 line-clamp-1',
-  featured: 'text-[1.25rem] text-gray-600 dark:text-gray-400 line-clamp-1',
+  default: 'text-[0.9375rem] text-gray-500 dark:text-gray-400 line-clamp-1',
+  featured: 'text-[1.25rem] text-gray-500 dark:text-gray-400 line-clamp-1',
   compact: 'hidden',
-  'no-image': 'text-[0.9375rem] text-gray-600 dark:text-gray-400 line-clamp-1',
+  'no-image': 'text-[0.9375rem] text-gray-500 dark:text-gray-400 line-clamp-1',
 }[variant];
 
 const descriptionClasses = {
   default:
-    'text-gray-600 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
+    'text-gray-500 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
   featured:
-    'text-gray-600 dark:text-gray-400 text-[1.0625rem] leading-[1.75] tracking-[-0.01em] line-clamp-3',
-  compact: '',
+    'text-gray-500 dark:text-gray-400 text-[1.0625rem] leading-[1.75] tracking-[-0.01em] line-clamp-3',
+  compact: 'hidden',
   'no-image':
-    'text-gray-600 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
+    'text-gray-500 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
 }[variant];
 ---
 
 <div class={containerClasses}>
   <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-all duration-300">
     <div class="space-y-2">
-      <div class="text-[0.8125rem] font-medium text-gray-500 dark:text-gray-400 tracking-wide">
+      <div class="text-[0.8125rem] font-medium text-gray-400 dark:text-gray-400 tracking-wide">
         <FormattedDate date={pubDate} />
       </div>
-      <div class="space-y-0.5">
-        <h2 class={`flex gap-2 items-center ${titleClasses}`}>
-          <div>{title}</div>
-          <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16" : "h-8 w-8"} />
-        </h2>
-        {subtitle && <p class={subtitleClasses}>{subtitle}</p>}
+      <div class="flex gap-4 mb-2 items-center space-y-0.5">
+        <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16" : "h-8 w-8"} />
+        <div>
+          <h2 class={`${titleClasses}`}>
+            <div>{title}</div>
+          </h2>
+          <!-- {subtitle && <p class={subtitleClasses}>{subtitle}</p>} -->
+        </div>
       </div>
       {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
         <p class={descriptionClasses}>{description}</p>
       }
     </div>
+    {tags && tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-4">
+        {tags.filter(tag => tag && tag.length > 0).map(tag => (
+          <Tag tag={tag} />
+        ))}
+      </div>
+    )}
   </a>
-  {tags && tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mt-4">
-      {tags.filter(tag => tag && tag.length > 0).map(tag => (
-        <Tag tag={tag} />
-      ))}
-    </div>
-  )}
 </div>
 
 <style>

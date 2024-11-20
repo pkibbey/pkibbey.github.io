@@ -4,6 +4,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        accent: {
+          light: 'rgb(242, 244, 248)',
+          DEFAULT: 'rgb(19, 23, 31)',
+        },
+      },
       flex: {
         2: '2 2 0%',
         3: '3 3 0%',

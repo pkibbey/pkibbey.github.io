@@ -25,12 +25,6 @@ const allTags = Object.entries(tagCounts)
 
 // Split into featured and other posts
 const [featuredPost, ...otherPosts] = allPosts;
-
-// Split other posts into those with and without images
-const [postsWithImages, postsWithoutImages] = [
-  otherPosts.slice(0, 4),
-  otherPosts.slice(4),
-];
 ---
 
 <DefaultLayout 
@@ -40,7 +34,7 @@ const [postsWithImages, postsWithoutImages] = [
   showArt={true}
 >
   <section class="max-w-4xl mx-auto">
-    <div class="mb-24">
+    <div class="mb-12">
       <div class="text-[1.125rem] max-w-3xl">
         <p class="text-gray-700 dark:text-gray-300 mb-6 leading-[1.75] tracking-[-0.01em]">
           A curated portfolio showcasing my work in frontend development, 
@@ -52,7 +46,7 @@ const [postsWithImages, postsWithoutImages] = [
     </div>
 
     {featuredPost && (
-      <div class="mb-24">
+      <div class="mb-12">
         <h2 class="text-[1.75rem] font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-8">Featured Project</h2>
         <div class="space-y-3">
           <PostCard post={featuredPost} variant="featured" baseUrl='/projects/' color={featuredPost.data.color} />
@@ -62,15 +56,10 @@ const [postsWithImages, postsWithoutImages] = [
 
     <div class="mb-8">
       <h2 class="text-[1.75rem] font-bold text-gray-900 dark:text-gray-100 tracking-tight mb-8">More Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-        {postsWithImages.map((post) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {otherPosts.map((post) => (
           <div class="space-y-3">
             <PostCard post={post} variant="default" baseUrl='/projects/' color={post.data.color} />
-          </div>
-        ))}
-        {postsWithoutImages.map((post) => (
-          <div class="space-y-3">
-            <PostCard post={post} variant="no-image" baseUrl='/projects/' color={post.data.color}/>
           </div>
         ))}
       </div>

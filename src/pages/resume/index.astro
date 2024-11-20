@@ -6,6 +6,7 @@ import NotableWork from './NotableWork.astro';
 import Skills from './Skills.astro';
 import WorkExperience from './WorkExperience.astro';
 import SidebarNav from '../../components/SidebarNav.astro';
+import MoreContent from '../../components/MoreContent.astro';
 
 const sections = [
   { id: 'introduction', title: 'Introduction' },
@@ -22,10 +23,10 @@ const sections = [
   showArt={true}
 >
   <div class="relative">
-    <div class="max-w-3xl mx-auto">
+    <div>
       <div id="introduction">
         <Introduction />
-    </div>
+      </div>
       <div id="skills">
         <Skills />
       </div>
@@ -39,4 +40,5 @@ const sections = [
     </div>
     <SidebarNav sections={sections} />
   </div>
+  <MoreContent />
 </DefaultLayout>

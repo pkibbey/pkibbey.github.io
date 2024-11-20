@@ -1,6 +1,5 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-import BlendedImage from './BlendedImage.astro';
 
 type Props = {
   title: string;
@@ -16,17 +15,18 @@ const { title, subtitle, pubDate, updatedDate, author, slug, color } =
   Astro.props;
 ---
 
-<div class="title mb-4 pb-2 leading-none">
+<div class="title pb-2 pt-4 leading-none">
   <h1 class="text-5xl m-0 mb-2">{title}</h1>
   {subtitle && (
-    <h2 class="text-2xl text-gray-600 dark:text-gray-400 font-normal mb-6">{subtitle}</h2>
+    <h2 class="text-2xl text-gray-600 dark:text-gray-400 font-normal mb-4">{subtitle}</h2>
   )}
-  <div class="mb-8 text-gray-500">
+  <div class="mb-2 text-gray-500">
     <div class="flex items-center gap-2">
       <span>By {author}</span>
       <span class="text-gray-300 dark:text-gray-700">•</span>
       <FormattedDate date={pubDate} />
     </div>
+    <div class="color-accent h-8 my-4 rounded-b-lg opacity-50" style={`background: ${color}`}></div>
     {
       updatedDate && (
         <div class="italic mt-1">
@@ -35,13 +35,5 @@ const { title, subtitle, pubDate, updatedDate, author, slug, color } =
       )
     }
   </div>
-  <BlendedImage 
-    slug={slug}
-    title={title}
-    aspectRatio={26}
-    rounded={true}
-    overlay={false}              
-  />
-  <div class="color-accent h-8 mb-8 rounded-b-lg opacity-50" style={`background: ${color}`}></div>
   <slot />
 </div>

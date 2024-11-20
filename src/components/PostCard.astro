@@ -15,10 +15,10 @@ const { post, baseUrl, variant = 'default', color = 'linear-gradient(to right, #
 const { title, subtitle, pubDate, description, tags } = post.data;
 
 const containerClasses = {
-  default: 'block bg-white dark:bg-gray-950/50 rounded-lg p-6',
-  featured: 'bg-white dark:bg-gray-950/50 rounded-lg p-6',
-  compact: '',
-  'no-image': 'block',
+  default: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-6',
+  featured: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-6',
+  compact: 'group block',
+  'no-image': 'group block',
 }[variant];
 
 const titleClasses = {
@@ -50,34 +50,32 @@ const descriptionClasses = {
 }[variant];
 ---
 
-<div class={containerClasses}>
-  <a href={`${baseUrl}${post.slug}`} class="group block no-underline hover:opacity-95 transition-all duration-300">
-    <div class="space-y-2">
-      <div class="text-[0.8125rem] font-medium text-gray-400 dark:text-gray-400 tracking-wide">
-        <FormattedDate date={pubDate} />
-      </div>
-      <div class="flex gap-4 mb-2 items-center space-y-0.5">
-        <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16" : "h-8 w-8"} />
-        <div>
-          <h2 class={`${titleClasses}`}>
-            <div>{title}</div>
-          </h2>
-          <!-- {subtitle && <p class={subtitleClasses}>{subtitle}</p>} -->
-        </div>
-      </div>
-      {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
-        <p class={descriptionClasses}>{description}</p>
-      }
+<a href={`${baseUrl}${post.slug}`} class={containerClasses}>
+  <div class="space-y-2">
+    <div class="text-[0.8125rem] font-medium text-gray-400 dark:text-gray-400 tracking-wide">
+      <FormattedDate date={pubDate} />
     </div>
-    {tags && tags.length > 0 && (
-      <div class="flex flex-wrap gap-2 mt-4">
-        {tags.filter(tag => tag && tag.length > 0).map(tag => (
-          <Tag tag={tag} />
-        ))}
+    <div class="flex mb-2 items-center space-y-0.5">
+      <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16 mr-4" : "h-8 w-8 mr-2"} />
+      <div>
+        <h2 class={`${titleClasses}`}>
+          <div>{title}</div>
+        </h2>
+        {subtitle && variant === 'featured' && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
-    )}
-  </a>
-</div>
+    </div>
+    {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
+      <p class={descriptionClasses}>{description}</p>
+    }
+  </div>
+  {tags && tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mt-4">
+      {tags.filter(tag => tag && tag.length > 0).map(tag => (
+        <Tag tag={tag} />
+      ))}
+    </div>
+  )}
+</a>
 
 <style>
   .line-clamp-1 {

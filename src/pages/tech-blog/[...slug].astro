@@ -36,28 +36,17 @@ type Props = {
 };
 
 const { post, prevPost, nextPost } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
-// Function to generate URL-friendly ID from heading text
-function generateId(text: string) {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
-// Automatically generate sections from post
-const sections = post.body.split('\n')
-  .map((line) => line.trim())
-  .filter((line) => line.startsWith('#'))
-  .filter((line) => !line.startsWith('###'))
-  .map((line) => {
-    const title = line.replaceAll('#', '').trim();
+// Automatically generate sections from headings
+const sections = headings
+  .filter(({depth}) => depth < 4)
+  .map((heading) => {
     return {
-      id: generateId(title),
-      title: title
+      id: heading.slug,
+      title: heading.text
     };
-  }) || [];
+  });
 ---
 
 <BlogPost {...post.data} slug={post.slug} prevPost={prevPost} nextPost={nextPost} sections={sections}>  

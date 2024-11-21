@@ -1,20 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
 import PostCard from '../../components/PostCard.astro';
-import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import Highlight from '../../components/Highlight.astro';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import PostGrid from '../../components/PostGrid.astro';
 
 // Get all posts and sort by date
-const posts = (await getCollection('blog')).sort(
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 // Select a random post as featured
-const randomIndex = Math.floor(Math.random() * posts.length);
-const featuredPost = posts[randomIndex];
+const [featuredPost, ...otherPosts] = sortedPosts;
 
 // Filter out the featured post from other posts
-const otherPosts = posts.filter((_, index) => index !== randomIndex);
 ---
 
 <DefaultLayout 
@@ -30,7 +30,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
           A collection of articles about <Highlight>web development</Highlight>, <Highlight>software architecture</Highlight>, 
           and <Highlight>user experience</Highlight>. I write about my experiences building 
           <Highlight>high-performance applications</Highlight> and share insights about 
-          <Highlight>modern development practices</Highlight>.
+          <Highlight>emerging technologies</Highlight>.
         </p>
       </div>
     </div>
@@ -46,13 +46,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
 
     <div class="mb-8">
       <h2 class="heading-2 mb-4">More Posts</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
-        {otherPosts.map((post) => (
-          <div class="space-y-3">
-            <PostCard post={post} variant="default" baseUrl='/tech-blog/' color={post.data.color} />
-          </div>
-        ))}
-      </div>
+      <PostGrid posts={otherPosts} baseUrl='/tech-blog/' />
     </div>
   </section>
 </DefaultLayout>

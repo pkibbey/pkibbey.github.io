@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Link from './Link.astro';
 import PostCard from './PostCard.astro';
+import PostGrid from './PostGrid.astro';
 
 const blogPosts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -21,32 +22,24 @@ const randomProjects = getRandomPosts(projectPosts, 2);
 const randomPosts = getRandomPosts(blogPosts, 2);
 ---
 
-<div class="grid sm:grid-cols-2 gap-8 md:gap-12 mb-12">
+<div class="grid sm:grid-cols-2 gap-2 md:gap-4 mb-12">
   <section class="group">
     <div class="flex items-center justify-between mb-4">
       <h2 class="heading-2">Projects</h2>
-      <Link href="/projects" class="text-content-sm transition-colors duration-300">
-        View all projects →
+      <Link href="/projects" class="mr-4 text-content-sm transition-colors duration-300">
+        View all projects
       </Link>
     </div>
-    <div class="flex flex-col gap-6">
-      {randomProjects.map((project) => (
-        <PostCard post={project} baseUrl="/projects/" variant="default" color={project.data.color} />
-      ))}
-    </div>
+    <PostGrid posts={randomProjects} baseUrl='/projects/' class="flex-col !grid-cols-1 !gap-4" />
   </section>
 
   <section class="group">
     <div class="flex items-center justify-between mb-4">
       <h2 class="heading-2">Blog Posts</h2>
-      <Link href="/tech-blog" class="text-content-sm transition-colors duration-300">
-        Read more posts →
+      <Link href="/tech-blog" class="mr-4 text-content-sm transition-colors duration-300">
+        View all blogs
       </Link>
     </div>
-    <div class="flex flex-col gap-6">
-      {randomPosts.map((post) => (
-        <PostCard post={post} baseUrl="/tech-blog/" variant="default" color={post.data.color} />
-      ))}
-    </div>
+    <PostGrid posts={randomPosts} baseUrl='/tech-blog/' class="flex-col !grid-cols-1 !gap-4" />
   </section>
 </div>

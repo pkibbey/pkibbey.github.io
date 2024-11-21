@@ -1,6 +1,7 @@
 # Personal Blog & Portfolio
 
-My personal website built with [Astro](https://astro.build), featuring my blog posts, projects, and resume. Visit the live site at [phineas-dev.github.com](https://phineas-dev.github.com).
+My personal website built with [Astro](https://astro.build), featuring my blog posts, projects, and resume.
+Visit the live site at [phineas-dev.github.com](https://phineas-dev.github.com).
 
 ## Features
 

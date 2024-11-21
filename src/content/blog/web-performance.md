@@ -1,6 +1,6 @@
 ---
 title: Performance Matters
-subtitle: A Practical Optimization Guide
+subtitle: The Critical Role of Web Performance
 description: >-
   Real-world strategies for improving Core Web Vitals, with proven techniques
   for resource, runtime, and network optimization.
@@ -8,16 +8,13 @@ pubDate: '2023-06-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #27AE60, #2ECC71)'
 tags:
   - Performance
-  - Web Vitals
-  - Optimization
+  - Web Development
   - Frontend
   - UX
 author: Phineas
 ---
 
-### The Critical Role of Web Performance
-
-In today's digital landscape, web performance isn't just a technical metric—it's a fundamental aspect of user experience that directly impacts business success. Users expect instant gratification; a delay of even a few seconds can lead to significant drops in engagement and conversion rates.
+_In today's digital landscape, web performance isn't just a technical metric—it's a fundamental aspect of user experience that directly impacts business success. Users expect instant gratification; a delay of even a few seconds can lead to significant drops in engagement and conversion rates._
 
 ### Key Performance Metrics That Matter
 

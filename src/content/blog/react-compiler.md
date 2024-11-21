@@ -1,6 +1,6 @@
 ---
 title: Optimizing React
-subtitle: Building for Performance
+subtitle: The React Compiler Revolution
 description: >-
   A deep dive into creating a custom React compiler, exploring compile-time
   optimizations, code transformations, and real-world performance improvements.
@@ -8,16 +8,13 @@ pubDate: '2023-07-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
 tags:
   - React
-  - Compiler
-  - Performance
+  - Compilers
   - JavaScript
   - Optimization
 author: Phineas
 ---
 
-### The React Compiler Revolution
-
-React's new compiler represents a paradigm shift in how we build React applications. By moving traditional runtime operations to build time, it promises significant performance improvements and a better developer experience.
+_React's new compiler represents a paradigm shift in how we build React applications. By moving traditional runtime operations to build time, it promises significant performance improvements and a better developer experience._
 
 ### Understanding the React Compiler
 

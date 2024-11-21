@@ -1,24 +1,21 @@
 ---
 title: WebAssembly Revolution
-subtitle: From Theory to Practice
+subtitle: The Promise of WebAssembly
 description: >-
   A practical exploration of WebAssembly's capabilities, from performance
   benefits to real-world implementations in gaming, image processing, and data
   analysis.
 pubDate: '2023-10-15T00:00:00.000Z'
-color: 'linear-gradient(to bottom right, #8E44AD, #9B59B6)'
+color: 'linear-gradient(to bottom right, #E74C3C, #C0392B)'
 tags:
   - WebAssembly
   - Performance
-  - Web Development
   - Rust
   - C++
 author: Phineas
 ---
 
-### The Promise of WebAssembly
-
-WebAssembly (Wasm) represents a paradigm shift in web development, bringing near-native performance to web applications.
+_WebAssembly (Wasm) represents a paradigm shift in web development, bringing near-native performance to web applications._
 
 ### Why WebAssembly Matters
 

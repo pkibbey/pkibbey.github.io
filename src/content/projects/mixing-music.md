@@ -1,23 +1,20 @@
 ---
 title: Digital Sound
-subtitle: Finding Peace in Mixing
+subtitle: The Therapy of Mixing Music
 description: >-
   How mixing music with Ableton became a therapeutic escape, blending technical
   precision with creative expression.
 pubDate: '2021-05-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #8E44AD, #9B59B6)'
 tags:
-  - Music Production
-  - Audio Engineering
-  - DSP
+  - Music
+  - Ableton
   - Sound Design
   - Digital Audio
 author: Phineas
 ---
 
-# The Therapy of Mixing Music
-
-There's something magical about diving into the world of music production and DJing with Ableton. For me, it’s not just about creating or mixing tracks—it's a deeply therapeutic experience. The act of listening intently to each layer of sound, analyzing how the kick drum interacts with the bassline, or how the hi-hats enhance the groove, feels like piecing together a puzzle.
+_There's something magical about diving into the world of music production and DJing with Ableton. For me, it’s not just about creating or mixing tracks—it's a deeply therapeutic experience. The act of listening intently to each layer of sound, analyzing how the kick drum interacts with the bassline, or how the hi-hats enhance the groove, feels like piecing together a puzzle._
 
 What I love most is the interplay of these elements. Each part of a track has its own purpose, yet they come together to create something far greater. When I’m in the zone, adjusting EQs or layering effects, time seems to fade away. It’s a creative escape where I can channel energy and emotions, transforming them into something tangible.
 

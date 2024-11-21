@@ -1,5 +1,5 @@
 ---
-import Link from "../../components/Link.astro";
+import Highlight from "../../components/Highlight.astro";
 import Section from "../../components/Section.astro";
 import NotableWorkItem from "./NotableWorkItem.astro";
 ---
@@ -9,27 +9,30 @@ import NotableWorkItem from "./NotableWorkItem.astro";
     <NotableWorkItem 
       imageProps={{ src:"/work/qualcomm.jpg" }}
       title="Qualcomm Website Redesign"
+      href="https://www.qualcomm.com"
     >
       <p>
-        Complete redesign for a global technology brand <Link target="_blank" href="https://www.qualcomm.com">Qualcomm</Link>.
+        Complete redesign for a global technology brand <Highlight>Qualcomm</Highlight>.
       </p>
     </NotableWorkItem>
       
     <NotableWorkItem 
       imageProps={{ src:"/work/lennd.png" }}
       title="Lennd Event Platform"
+      href="https://www.lennd.com"
     >
       <p>
-        React and React Native app for the event management platform <Link target="_blank" href="https://www.lennd.com">Lennd</Link>.
+        React and React Native app for the event management platform <Highlight>Lennd</Highlight>.
       </p>
     </NotableWorkItem>
 
     <NotableWorkItem 
       imageProps={{ src:"/work/monocle.jpg" }}
       title="Monocle Magazine"
+      href="https://www.monocle.com"
     >
       <p>
-        Responsive design for the global design magazine <Link target="_blank" href="https://www.monocle.com">Monocle</Link>.
+        Responsive design for the global design magazine <Highlight>Monocle</Highlight>.
       </p>
     </NotableWorkItem>
   </div>

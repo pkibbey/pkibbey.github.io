@@ -1,6 +1,6 @@
 ---
 title: Engineering Intelligence
-subtitle: Building Intelligent Systems at Scale
+subtitle: The AI Revolution in Software Engineering
 description: >-
   Exploring the challenges and best practices in building production-ready AI
   systems that can scale effectively.
@@ -16,9 +16,7 @@ tags:
 author: Phineas
 ---
 
-### The AI Revolution in Software Engineering
-
-The integration of AI into software engineering isn't just changing how we write code—it's fundamentally transforming our entire development workflow. From intelligent code completion to automated testing, AI is becoming an indispensable part of modern software development.
+_The integration of AI into software engineering isn't just changing how we write code—it's fundamentally transforming our entire development workflow. From intelligent code completion to automated testing, AI is becoming an indispensable part of modern software development._
 
 ### Key Areas of Impact
 

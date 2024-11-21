@@ -1,6 +1,6 @@
 ---
 title: AI Reviews Code
-subtitle: Beyond the Hype
+subtitle: The Initial AI Optimism
 description: >-
   Lessons learned from implementing AI code generation, and why thorough human
   review remains critical for catching hallucinations and ensuring quality.
@@ -14,8 +14,6 @@ tags:
   - Quality
 author: Phineas
 ---
-
-### The Initial AI Optimism
 
 When AI code generation tools first emerged, I was genuinely excited. The promise was compelling: faster development, reduced boilerplate, and more time to focus on architecture and design. The early results were impressive - watching an AI assistant scaffold an entire application structure or generate complex utility functions in seconds felt like witnessing the future of programming.
 

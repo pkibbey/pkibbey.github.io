@@ -1,21 +1,18 @@
 ---
 title: Edge Computing Evolves
-subtitle: The Future of Computing
+subtitle: The Rise of Edge Computing
 description: Building and deploying applications at the network edge
 pubDate: '2023-03-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #2C3E50, #34495E)'
 tags:
   - Edge Computing
-  - Performance
-  - Architecture
+  - Infrastructure
   - Cloud
   - Networks
 author: Phineas
 ---
 
-### The Rise of Edge Computing
-
-The traditional cloud computing model, while revolutionary, is showing its limitations in an era where milliseconds matter. Edge computing brings computation and data storage closer to where it's needed, reducing latency and enabling new types of applications that weren't possible before.
+_The traditional cloud computing model, while revolutionary, is showing its limitations in an era where milliseconds matter. Edge computing brings computation and data storage closer to where it's needed, reducing latency and enabling new types of applications that weren't possible before._
 
 ### Why Edge Computing Matters
 

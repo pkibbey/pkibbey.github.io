@@ -1,6 +1,6 @@
 ---
 title: Robot Soccer
-subtitle: Building an Autonomous Arduino Player
+subtitle: Building an Autonomous Football-Playing Arduino Robot
 description: >-
   Creating a football-playing robot with Arduino, computer vision, and a React
   Native control app that can play autonomously or be manually controlled.
@@ -15,9 +15,7 @@ tags:
 author: Phineas
 ---
 
-# Building an Autonomous Football-Playing Arduino Robot
-
-I've always been fascinated by the intersection of robotics and sports. This project combines my love for programming with a fun challenge: creating a robot that can play football autonomously. Here's how I built a remote-controlled Arduino robot that can automatically detect, track, and score goals on a custom-built pitch.
+_I've always been fascinated by the intersection of robotics and sports. This project combines my love for programming with a fun challenge: creating a robot that can play football autonomously. Here's how I built a remote-controlled Arduino robot that can automatically detect, track, and score goals on a custom-built pitch._
 
 ## The Challenge
 

@@ -4,12 +4,13 @@ import type { HTMLAttributes } from 'astro/types';
 interface Props {
   imageProps: HTMLAttributes<'img'>;
   title: string;
+  href: string;
 }
 
-const { imageProps, title } = Astro.props;
+const { imageProps, title, href } = Astro.props;
 ---
 
-<div class="h-full flex flex-col rounded-lg bg-white/50 dark:bg-gray-950/50 p-6">
+<a href={href} target="_blank" class="h-full flex flex-col rounded-lg bg-white/50 dark:bg-gray-950/50 p-6">
   <div class="relative h-30 mb-6 overflow-hidden rounded-md flex items-center justify-center p-4">
     <img 
       {...imageProps} 

@@ -1,23 +1,20 @@
 ---
 title: Social Network Pioneer
-subtitle: Co-Founding Faceparty
+subtitle: My Journey as a Co-Founder of Faceparty
 description: >-
   My journey co-founding one of the UK's first social networks in 2000, reaching
   millions of users and pioneering features that shaped modern social media.
 pubDate: '2022-08-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #3498DB, #2980B9)'
 tags:
-  - Computer Vision
-  - Game Development
-  - AR
+  - Social Media
+  - Startups
   - Real-time
   - WebGL
 author: Phineas
 ---
 
-# The Early Days of Social Networking: My Journey as a Co-Founder of Faceparty
-
-Long before Facebook became the dominant social platform, and even before MySpace established its early foothold in the digital world, there was Faceparty—one of the first social networks to capture the attention of millions. As one of the co-founders of Faceparty, I had a front-row seat to the exciting, chaotic, and sometimes surreal evolution of the early social web. Looking back, it’s amazing to see how much has changed—and how much we got right at the time.
+_Long before Facebook became the dominant social platform, and even before MySpace established its early foothold in the digital world, there was Faceparty—one of the first social networks to capture the attention of millions. As one of the co-founders of Faceparty, I had a front-row seat to the exciting, chaotic, and sometimes surreal evolution of the early social web. Looking back, it’s amazing to see how much has changed—and how much we got right at the time._
 
 ## What Was Faceparty?
 For those who may not remember (or weren’t around at the time), Faceparty was an online social network launched in 2000 in the UK. It began as a simple platform where people could connect with friends, share photos, chat, and create profiles. But what set Faceparty apart was the sense of community and fun that permeated everything we did. It wasn’t just about making connections; it was about creating an online space where people could be themselves, meet new people, and share the experiences of being young in the early days of the internet.

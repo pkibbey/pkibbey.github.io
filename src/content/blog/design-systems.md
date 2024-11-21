@@ -1,6 +1,6 @@
 ---
 title: Design at Scale
-subtitle: From Chaos to Consistency
+subtitle: The Dream of a Unified Design System  
 description: >-
   A journey through creating a unified design system from scratch, tackling
   challenges of framework compatibility, team adoption, and scalability.
@@ -15,8 +15,7 @@ tags:
 author: Phineas
 ---
 
-### The Dream of a Unified Design System  
-When I first embarked on the journey to create a design system for my company, it felt like tackling one of the most impactful challenges in frontend engineering. Our applications—spanning a mix of legacy and modern frameworks—were a chaotic patchwork of inconsistent styles, duplicated components, and hard-to-maintain code.  
+_When I first embarked on the journey to create a design system for my company, it felt like tackling one of the most impactful challenges in frontend engineering. Our applications—spanning a mix of legacy and modern frameworks—were a chaotic patchwork of inconsistent styles, duplicated components, and hard-to-maintain code._  
 
 The promise of a design system was clear:  
 1. **Consistency** across all products.  

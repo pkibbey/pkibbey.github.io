@@ -1,6 +1,6 @@
 ---
 title: Smart Living
-subtitle: Building at Level Home
+subtitle: The Challenge of Smart Home Development
 description: >-
   Architecting a monorepo solution for smart apartment control, focusing on
   real-time communication, design systems, and scalable deployment.
@@ -8,16 +8,13 @@ pubDate: '2023-05-20T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #27AE60, #2ECC71)'
 tags:
   - IoT
-  - Smart Home
-  - Security
+  - Architecture
   - Embedded
   - Automation
 author: Phineas
 ---
 
-### The Challenge of Smart Home Development
-
-Building applications for smart homes presents unique challenges that go beyond traditional web development. During my time at Level Home, I had the opportunity to architect a comprehensive solution for controlling smart apartment devices. Here's what I learned about creating effective smart home applications.
+_Building applications for smart homes presents unique challenges that go beyond traditional web development. During my time at Level Home, I had the opportunity to architect a comprehensive solution for controlling smart apartment devices. Here's what I learned about creating effective smart home applications._
 
 ### Choosing the Right Architecture
 

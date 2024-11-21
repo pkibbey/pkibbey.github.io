@@ -1,6 +1,6 @@
 ---
 title: Networks That Scale
-subtitle: Lessons in Scaling Faceparty
+subtitle: The Early Days of Social Networks
 description: >-
   Technical insights and hard-learned lessons from scaling one of the UK's first
   social networks to millions of users in the early 2000s.
@@ -15,9 +15,7 @@ tags:
 author: Phineas
 ---
 
-### The Early Days of Social Networks
-
-In the early 2000s, I had the unique opportunity to co-found one of the UK's first social networks, Faceparty. What started as an exciting venture quickly turned into a crash course in scaling web applications as we grew to serve 3 million users and became one of the UK's highest-traffic websites.
+_In the early 2000s, I had the unique opportunity to co-found one of the UK's first social networks, Faceparty. What started as an exciting venture quickly turned into a crash course in scaling web applications as we grew to serve 3 million users and became one of the UK's highest-traffic websites._
 
 ### The Scaling Challenge
 

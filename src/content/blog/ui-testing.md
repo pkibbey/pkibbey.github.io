@@ -1,21 +1,18 @@
 ---
 title: Better Testing
-subtitle: Modern Testing Strategies
+subtitle: "The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls"
 description: Effective approaches to testing modern user interfaces
 pubDate: '2023-04-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'
 tags:
   - Testing
-  - UI
-  - Automation
+  - Development
   - Frontend
   - QA
 author: Phineas
 ---
 
-# The Importance of Unit Testing and E2E Testing: Avoiding the Pitfalls
-
-In the world of software development, testing is a crucial part of ensuring that your code works as expected. Two common types of testing are unit testing and end-to-end (E2E) testing. Both have their own importance and can significantly improve the quality of your software. However, it's also important to recognize the potential pitfalls and avoid building yourself into a ditch.
+_In the world of software development, testing is a crucial part of ensuring that your code works as expected. Two common types of testing are unit testing and end-to-end (E2E) testing. Both have their own importance and can significantly improve the quality of your software. However, it's also important to recognize the potential pitfalls and avoid building yourself into a ditch._
 
 ## Unit Testing
 

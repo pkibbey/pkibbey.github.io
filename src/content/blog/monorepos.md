@@ -15,7 +15,7 @@ tags:
 author: Phineas
 ---
 
-In the world of web development, managing multiple projects and dependencies can quickly become a complex task. One solution that has gained popularity among developers is the use of a monorepo—a single repository that houses all the code for multiple projects. Here are some of the key benefits of using a monorepo to manage your web application.
+_In the world of web development, managing multiple projects and dependencies can quickly become a complex task. One solution that has gained popularity among developers is the use of a monorepo—a single repository that houses all the code for multiple projects. Here are some of the key benefits of using a monorepo to manage your web application._
 
 ## Unified Codebase
 A monorepo allows you to keep all your projects in a single repository, providing a unified codebase. This makes it easier to manage dependencies, share code between projects, and ensure consistency across your entire application. With a monorepo, you can avoid the hassle of synchronizing changes across multiple repositories.

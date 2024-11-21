@@ -13,7 +13,7 @@ tags:
 author: Phineas
 ---
 
-In the early days of web development, server-side rendering (SSR) was the norm. We started with PHP, where the server generated HTML and sent it to the client. This approach was simple and effective, but as web applications grew more complex, we sought ways to improve performance and user experience.
+_In the early days of web development, server-side rendering (SSR) was the norm. We started with PHP, where the server generated HTML and sent it to the client. This approach was simple and effective, but as web applications grew more complex, we sought ways to improve performance and user experience._
 
 ### The Shift to Client-Side Rendering
 

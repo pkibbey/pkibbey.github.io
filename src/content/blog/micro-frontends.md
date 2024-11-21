@@ -1,6 +1,6 @@
 ---
 title: Breaking Monoliths
-subtitle: Scaling Team Architecture
+subtitle: Understanding Micro-Frontends
 description: >-
   A comprehensive guide to implementing micro-frontend architecture for better
   team autonomy, scalability, and maintainability in large applications.
@@ -15,9 +15,7 @@ tags:
 author: Phineas
 ---
 
-### Understanding Micro-Frontends
-
-Micro-frontends extend the concepts of microservices to frontend development, allowing teams to build and deploy frontend components independently. This architectural approach has gained traction as organizations seek to scale their frontend development processes effectively.
+_Micro-frontends extend the concepts of microservices to frontend development, allowing teams to build and deploy frontend components independently. This architectural approach has gained traction as organizations seek to scale their frontend development processes effectively._
 
 ### Key Benefits
 

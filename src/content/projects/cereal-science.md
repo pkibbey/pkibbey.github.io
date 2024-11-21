@@ -1,6 +1,6 @@
 ---
 title: Engineering Breakfast
-subtitle: A Data-Driven Breakfast Guide
+subtitle: "A Fun, Flavorful Take on Cereal Reviews!"
 description: >-
   Building a fun and scientific cereal review platform that analyzes taste,
   texture, nutrition, and nostalgia factors of breakfast cereals.
@@ -8,16 +8,13 @@ pubDate: '2018-05-15T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #F1C40F, #F39C12)'
 tags:
   - Food Science
-  - Engineering
-  - Manufacturing
-  - Research
-  - Innovation
+  - Data Analysis
+  - Web Development
+  - Reviews
 author: Phineas
 ---
 
-# Introducing Cereal Science: A Fun, Flavorful Take on Cereal Reviews!
-
-If you’ve ever found yourself staring at a wall of cereal boxes in the grocery store, wondering which one to pick for your next breakfast, I’ve got something for you! I’m excited to introduce my latest project—Cereal Science, a website dedicated to the delightful (and sometimes quirky) world of cereal reviews.
+_If you’ve ever found yourself staring at a wall of cereal boxes in the grocery store, wondering which one to pick for your next breakfast, I’ve got something for you! I’m excited to introduce my latest project—Cereal Science, a website dedicated to the delightful (and sometimes quirky) world of cereal reviews._
 
 At Cereal Science, we take the science of cereal seriously—while also having a little fun with it. The idea came to me as I realized that choosing the perfect cereal is about more than just taste. There’s texture, nutritional value, nostalgia factor, and even how well the cereal holds up in milk. So, I decided to break it all down and rate cereals based on a variety of factors that every cereal lover (or skeptic) can appreciate.
 

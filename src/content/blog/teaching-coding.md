@@ -13,7 +13,7 @@ tags:
 author: Phineas
 ---
 
-This past summer, I had the incredible opportunity to work at Meta, where I taught a class of 40 students how to code. It was an experience that pushed me to my limits and taught me lessons I never expected. While I walked into the role with excitement and a love for coding, I left with a profound respect for the art of teaching—and the realization that it’s not a path I’d choose to take again.
+_This past summer, I had the incredible opportunity to work at Meta, where I taught a class of 40 students how to code. It was an experience that pushed me to my limits and taught me lessons I never expected. While I walked into the role with excitement and a love for coding, I left with a profound respect for the art of teaching—and the realization that it’s not a path I’d choose to take again._
 
 ### The Mental Load of Teaching
 From the very first day, it became clear that teaching is as much about adaptability as it is about knowledge. Every lesson required constant assessment and recalibration:  

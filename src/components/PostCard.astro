@@ -4,6 +4,7 @@ import Tag from './Tag.astro';
 import type { Post } from '../content/types';
 import TechIcon from './TechIcon.astro';
 import { calculateReadTime } from '../utils/readTime';
+import ProjectIcon from './ProjectIcon.astro';
 
 interface Props {
   post: Post;
@@ -19,6 +20,8 @@ const {
   color = 'linear-gradient(to right, #16a34a, #1d4ed8)',
 } = Astro.props;
 const { title, subtitle, pubDate, description, tags } = post.data;
+
+const Icon = post.collection === 'projects' ? ProjectIcon : TechIcon;
 
 // Calculate read time based on description and title since we don't have access to full content here
 const readTime = calculateReadTime(post.body);
@@ -58,7 +61,7 @@ const descriptionClasses = {
       </span>
     </div>
     <div class="flex mb-2 items-center space-y-0.5">
-      <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16 mr-4" : "h-8 w-8 mr-2"} />
+      <Icon color={color} class={variant === 'featured' ? "h-16 w-16 mr-4" : "h-8 w-8 mr-2"} />
       <div>
         <h3 class={`${titleClasses}`}>
           <div>{title}</div>

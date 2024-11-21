@@ -10,7 +10,7 @@ interface Props {
 const { imageProps, title, href } = Astro.props;
 ---
 
-<a href={href} target="_blank" class="h-full flex flex-col rounded-lg bg-white/50 dark:bg-gray-950/50 p-6">
+<a href={href} target="_blank" class="group h-full flex flex-col rounded-lg bg-white/50 dark:bg-gray-950/50 p-6">
   <div class="relative h-30 mb-6 overflow-hidden rounded-md flex items-center justify-center p-4">
     <img 
       {...imageProps} 
@@ -19,7 +19,7 @@ const { imageProps, title, href } = Astro.props;
       loading="lazy"
     />
   </div>
-  <h3 class="heading-3 mb-3 text-cyan-900 dark:text-cyan-100">
+  <h3 class="heading-3 mb-3 text-cyan-900 dark:text-cyan-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
     {title}
   </h3>
   <div class="text-content text-gray-900 dark:text-gray-200">

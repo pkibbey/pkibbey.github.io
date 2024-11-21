@@ -17,6 +17,8 @@ author: Phineas
 
 _As someone who has always been deeply passionate about technology and creativity, my career path has never been a straight line. In fact, I took a significant detour for four years when I decided to step away from web development to pursue something entirely different: professional portrait photography._
 
+## Taking a Break to explore Creativity
+
 This hiatus was a time of transformation, learning, and self-discovery. It was a chance to explore the artistic side of me that I had always felt drawn to but never fully embraced. Looking back, it wasn’t just a break from coding—it was an important chapter that helped me grow as both a developer and a creator. 
 
 In this blog post, I want to share the story of that four-year journey, the reasons behind my decision to step away from web development, and how it eventually brought me back with a new perspective.

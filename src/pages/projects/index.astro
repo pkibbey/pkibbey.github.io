@@ -46,7 +46,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
 
     <div class="mb-8">
       <h2 class="heading-2 mb-4">More Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         {otherPosts.map((post) => (
           <div class="space-y-3">
             <PostCard post={post} variant="default" baseUrl='/projects/' color={post.data.color} />

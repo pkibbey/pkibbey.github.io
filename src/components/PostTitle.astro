@@ -1,8 +1,10 @@
 ---
 import FormattedDate from './FormattedDate.astro';
+import ProjectIcon from './ProjectIcon.astro';
 import TechIcon from './TechIcon.astro';
 
 type Props = {
+  collection: string;
   title: string;
   subtitle: string;
   pubDate: Date;
@@ -12,13 +14,15 @@ type Props = {
   color: string;
 };
 
-const { title, subtitle, pubDate, updatedDate, author, slug, color } =
+const { title, subtitle, pubDate, updatedDate, author, collection, color } =
   Astro.props;
+
+const Icon = collection === 'projects' ? ProjectIcon : TechIcon;
 ---
 
 <div class="title pb-2 pt-4">
-  <div class="flex items-center mb-4">
-    <TechIcon color={color} class="h-24 w-24 mr-2" />
+  <div class="flex items-center">
+    <Icon color={color} class="h-16 w-16 mr-4" />
     <div class="flex flex-col justify-center flex-1">
       <h1 class="heading-1">{title}</h1>
       {subtitle && (
@@ -26,7 +30,7 @@ const { title, subtitle, pubDate, updatedDate, author, slug, color } =
       )}
     </div>
   </div>
-  <div class="mb-2 text-gray-500">
+  <div class="mt-4 mb-2 text-gray-500">
     <div class="flex items-center gap-2">
       <span>By {author}</span>
       <span class="text-gray-300 dark:text-gray-700">•</span>

@@ -11,30 +11,42 @@ const projectPosts = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-// Get random posts
-const randomProject =
-  projectPosts[Math.floor(Math.random() * projectPosts.length)];
-const randomPost = blogPosts[Math.floor(Math.random() * blogPosts.length)];
+// Get two random posts for each section
+function getRandomPosts(posts: typeof blogPosts | typeof projectPosts, count: number) {
+  const shuffled = [...posts].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+const randomProjects = getRandomPosts(projectPosts, 2);
+const randomPosts = getRandomPosts(blogPosts, 2);
 ---
 
-<div class="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12">
+<div class="grid sm:grid-cols-2 gap-8 md:gap-12 mb-12">
   <section class="group">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="heading-2">Recent Project</h2>
+      <h2 class="heading-2">Projects</h2>
       <Link href="/projects" class="text-content-sm transition-colors duration-300">
         View all projects →
       </Link>
     </div>
-    <PostCard post={randomProject} baseUrl="/projects/" variant="default" color={randomProject.data.color} />
+    <div class="flex flex-col gap-6">
+      {randomProjects.map((project) => (
+        <PostCard post={project} baseUrl="/projects/" variant="default" color={project.data.color} />
+      ))}
+    </div>
   </section>
 
   <section class="group">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="heading-2">Recent Blog</h2>
+      <h2 class="heading-2">Blog Posts</h2>
       <Link href="/tech-blog" class="text-content-sm transition-colors duration-300">
         Read more posts →
       </Link>
     </div>
-    <PostCard post={randomPost} baseUrl="/tech-blog/" variant="default" color={randomPost.data.color} />
+    <div class="flex flex-col gap-6">
+      {randomPosts.map((post) => (
+        <PostCard post={post} baseUrl="/tech-blog/" variant="default" color={post.data.color} />
+      ))}
+    </div>
   </section>
 </div>

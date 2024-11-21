@@ -12,13 +12,13 @@ interface Props {
 const { prevPost, nextPost, baseUrl, backText } = Astro.props;
 ---
 
-<nav class="flex justify-between items-center gap-8 h-9 mb-8 mt-4">
+<nav class="flex justify-between items-center gap-4 md:gap-8 h-9 mb-8 mt-4">
   <div class="flex-none">
     <NavigationLink baseUrl={baseUrl} direction="back">
       {backText}
     </NavigationLink>
   </div>
-  <div class="flex gap-8 items-center h-full">
+  <div class="flex gap-4 md:gap-8 items-center h-full">
     <NavigationLink post={prevPost} baseUrl={baseUrl} direction="prev" />
     <div class="h-full w-[1px] bg-gray-300 dark:bg-gray-700"></div>
     <NavigationLink post={nextPost} baseUrl={baseUrl} direction="next" />

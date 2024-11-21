@@ -17,7 +17,7 @@ author: Phineas
 
 _In the early 2000s, I had the unique opportunity to co-found one of the UK's first social networks, Faceparty. What started as an exciting venture quickly turned into a crash course in scaling web applications as we grew to serve 3 million users and became one of the UK's highest-traffic websites._
 
-### The Scaling Challenge
+## The Scaling Challenge
 
 When we first launched, the concept of handling millions of users was relatively unexplored territory. We faced numerous challenges:
 
@@ -26,7 +26,7 @@ When we first launched, the concept of handling millions of users was relatively
 3. **Content Delivery**: Serving user-generated content efficiently
 4. **Performance Optimization**: Maintaining responsiveness under load
 
-### Hardware Hurdles
+## Hardware Hurdles
 
 In the early 2000s, cloud computing wasn't an option. We had to tackle hardware challenges head-on:
 
@@ -35,7 +35,7 @@ In the early 2000s, cloud computing wasn't an option. We had to tackle hardware 
 - **Storage Solutions**: Managing growing data requirements
 - **Backup Systems**: Ensuring data reliability and recovery
 
-### Performance Solutions
+## Performance Solutions
 
 To maintain performance while serving millions of users, we implemented several innovative solutions:
 
@@ -54,7 +54,7 @@ To maintain performance while serving millions of users, we implemented several 
    - Optimizing static content delivery
    - Developing custom CDN solutions
 
-### Lessons in Scalability
+## Lessons in Scalability
 
 Key lessons learned from scaling a social network:
 
@@ -73,7 +73,7 @@ Key lessons learned from scaling a social network:
    - Graceful degradation when needed
    - Clear communication during issues
 
-### Technical Innovations
+## Technical Innovations
 
 We developed several innovative solutions:
 
@@ -82,7 +82,7 @@ We developed several innovative solutions:
 - Novel database partitioning strategies
 - Real-time notification systems
 
-### Crisis Management
+## Crisis Management
 
 Handling high traffic brought its share of challenges:
 
@@ -96,7 +96,7 @@ Handling high traffic brought its share of challenges:
    - Quick recovery procedures
    - Backup systems
 
-### Looking Back
+## Looking Back
 
 The experience of scaling one of the UK's first social networks provided invaluable lessons:
 
@@ -105,7 +105,7 @@ The experience of scaling one of the UK's first social networks provided invalua
 3. **User Focus**: Technical decisions should always consider user experience
 4. **Team Effort**: Success requires dedication and collaboration
 
-### Modern Relevance
+## Modern Relevance
 
 While technology has evolved significantly since then, many core principles remain relevant:
 
@@ -114,6 +114,6 @@ While technology has evolved significantly since then, many core principles rema
 - The value of monitoring and optimization
 - The critical nature of user experience
 
-### Conclusion
+## Conclusion
 
 Building and scaling one of the UK's first social networks was a challenging but rewarding experience. The lessons learned continue to be valuable in today's technology landscape, where scalability and performance remain critical concerns in web development.

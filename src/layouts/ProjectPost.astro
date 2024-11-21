@@ -4,6 +4,7 @@ import type { Post } from '../content/types';
 import ScrollProgress from '../components/ScrollProgress.astro';
 
 type Props = Post['data'] & {
+  collection: string;
   slug: string;
   prevPost: Post | null;
   nextPost: Post | null;
@@ -12,38 +13,12 @@ type Props = Post['data'] & {
     title: string;
   }>;
 };
-
-const {
-  title,
-  description,
-  author,
-  pubDate,
-  updatedDate,
-  color,
-  slug,
-  tags,
-  prevPost,
-  nextPost,
-  subtitle,
-  sections,
-} = Astro.props;
 ---
 
 <PostLayout
-  title={title}
-  description={description}
-  author={author}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  color={color}
+  {...Astro.props}
   baseUrl="/projects"
   backText="Projects"
-  slug={slug}
-  tags={tags}
-  prevPost={prevPost}
-  nextPost={nextPost}
-  subtitle={subtitle}
-  sections={sections}
 >
   <ScrollProgress />
   <slot />

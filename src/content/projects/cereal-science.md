@@ -16,6 +16,8 @@ author: Phineas
 
 _If you’ve ever found yourself staring at a wall of cereal boxes in the grocery store, wondering which one to pick for your next breakfast, I’ve got something for you! I’m excited to introduce my latest project—Cereal Science, a website dedicated to the delightful (and sometimes quirky) world of cereal reviews._
 
+## What Is Cereal Science?
+
 At Cereal Science, we take the science of cereal seriously—while also having a little fun with it. The idea came to me as I realized that choosing the perfect cereal is about more than just taste. There’s texture, nutritional value, nostalgia factor, and even how well the cereal holds up in milk. So, I decided to break it all down and rate cereals based on a variety of factors that every cereal lover (or skeptic) can appreciate.
 
 Each cereal is given a fun yet detailed review that includes:

@@ -17,6 +17,8 @@ author: Phineas
 
 _When I first embarked on the journey to create a design system for my company, it felt like tackling one of the most impactful challenges in frontend engineering. Our applications—spanning a mix of legacy and modern frameworks—were a chaotic patchwork of inconsistent styles, duplicated components, and hard-to-maintain code._  
 
+## The Dream of a Unified Design System
+
 The promise of a design system was clear:  
 1. **Consistency** across all products.  
 2. **Scalability** for future development.  
@@ -26,7 +28,7 @@ It was an ambitious goal, but one that seemed achievable with the right plan, to
 
 ---
 
-### Building the System: Success in the Small Wins  
+## Building the System: Success in the Small Wins  
 The first step was learning how to build a design system from scratch. This involved:  
 - **Research:** Studying successful systems like Material Design and Lightning Design System to understand their principles.  
 - **Tooling:** Selecting a component library framework (we went with Storybook) to host and document our components.  
@@ -37,7 +39,7 @@ It wasn’t easy, but the early wins were motivating. Teams appreciated the cons
 
 ---
 
-### Scaling the System: The Library for All Apps  
+## Scaling the System: The Library for All Apps  
 The next challenge was making the design system usable across both our legacy and future applications. This required building a component library that was:  
 1. **Framework-Agnostic:** Ensuring the components could be wrapped for React, Angular, and even plain JavaScript apps.  
 2. **Versioned and Modular:** Allowing teams to use only what they needed without pulling in unnecessary dependencies.  
@@ -47,7 +49,7 @@ It was no small feat, but we delivered a library that ticked all the boxes. I wa
 
 ---
 
-### The Fall: When the System Collapsed  
+## The Fall: When the System Collapsed  
 But then, cracks started to appear. The very pace of development that had necessitated a design system became its undoing.  
 
 1. **Speed Over Process:** Teams were moving too fast to bother aligning with the design system. Tight deadlines led to one-off solutions that bypassed our components entirely.  
@@ -59,7 +61,7 @@ What started as a centralized source of truth dissolved into the same chaos we h
 
 ---
 
-### Lessons Learned  
+## Lessons Learned  
 Reflecting on the experience, I’ve come to realize a few hard truths about building and maintaining a design system:  
 
 1. **A Design System is a Living Product**  

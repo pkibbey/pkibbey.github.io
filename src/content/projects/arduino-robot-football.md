@@ -37,140 +37,26 @@ The goal was to create a robot that could:
 
 ## Software Architecture
 
-### Mobile App (React Native)
-```typescript
-// Controller.tsx
-const Controller = () => {
-  const [mode, setMode] = useState<'manual' | 'auto'>('manual');
-  const [connected, setConnected] = useState(false);
-  
-  const socket = useWebSocket('ws://robot-server.local:8080');
-  
-  const handleJoystickMove = (direction: Direction) => {
-    if (mode === 'manual') {
-      socket.send(JSON.stringify({
-        type: 'MOVE',
-        direction
-      }));
-    }
-  };
+### Mobile App
+The mobile interface was built using React Native, featuring a clean and responsive design. The app includes a virtual joystick for manual control, a mode toggle switch between manual and autonomous operation, and a status indicator showing connection state. It communicates with the robot through WebSocket connections, sending real-time movement commands and receiving status updates.
 
-  return (
-    <View style={styles.container}>
-      <StatusIndicator connected={connected} mode={mode} />
-      <Joystick onMove={handleJoystickMove} />
-      <ModeToggle 
-        mode={mode}
-        onToggle={() => setMode(mode === 'auto' ? 'manual' : 'auto')}
-      />
-    </View>
-  );
-};
-```
+### Communication Server
+A Node.js server acts as the bridge between the mobile app and the robot. It manages WebSocket connections and handles serial communication with the Arduino. The server translates movement commands from the app into motor control instructions and manages the switching between manual and autonomous modes.
 
-### Server (Node.js + WebSocket)
-```typescript
-// server.ts
-import { WebSocketServer } from 'ws';
-import { SerialPort } from 'serialport';
+### Computer Vision System
+The vision system uses Python with OpenCV to process video frames from the Raspberry Pi camera. It employs HSV color space transformation to detect the orange football reliably. The system can track the ball's position in real-time by:
+- Converting camera frames to HSV color space
+- Applying color masking to isolate the ball
+- Using contour detection to find the ball's position
+- Sending coordinates to the robot through WebSocket connection
 
-const wss = new WebSocketServer({ port: 8080 });
-const arduino = new SerialPort('/dev/ttyACM0', { baudRate: 9600 });
-
-wss.on('connection', (ws) => {
-  ws.on('message', (data) => {
-    const message = JSON.parse(data.toString());
-    
-    if (message.type === 'MOVE') {
-      arduino.write(`${message.direction}\n`);
-    } else if (message.type === 'MODE') {
-      arduino.write(`MODE:${message.mode}\n`);
-    }
-  });
-});
-```
-
-### Computer Vision (Python + OpenCV)
-```python
-# vision.py
-import cv2
-import numpy as np
-from websockets import connect
-
-async def process_frame(frame):
-    # Convert to HSV for better ball detection
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-    
-    # Define orange ball color range
-    lower_orange = np.array([5, 100, 100])
-    upper_orange = np.array([15, 255, 255])
-    
-    # Create mask and find ball contour
-    mask = cv2.inRange(hsv, lower_orange, upper_orange)
-    contours, _ = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    
-    if contours:
-        largest = max(contours, key=cv2.contourArea)
-        ((x, y), radius) = cv2.minEnclosingCircle(largest)
-        return (x, y)
-    return None
-
-async def main():
-    cap = cv2.VideoCapture(0)
-    ws = await connect('ws://robot-server.local:8080')
-    
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-            
-        ball_pos = await process_frame(frame)
-        if ball_pos:
-            await ws.send(json.dumps({
-                'type': 'BALL_POSITION',
-                'position': ball_pos
-            }))
-```
-
-### Arduino Code
-```cpp
-// robot.ino
-#include <ESP8266WiFi.h>
-#include <WebSocketsClient.h>
-
-const int MOTOR_A1 = 2;
-const int MOTOR_A2 = 3;
-const int MOTOR_B1 = 4;
-const int MOTOR_B2 = 5;
-
-void setup() {
-  pinMode(MOTOR_A1, OUTPUT);
-  pinMode(MOTOR_A2, OUTPUT);
-  pinMode(MOTOR_B1, OUTPUT);
-  pinMode(MOTOR_B2, OUTPUT);
-  
-  Serial.begin(9600);
-  setupWiFi();
-}
-
-void loop() {
-  if (Serial.available() > 0) {
-    String command = Serial.readStringUntil('\n');
-    executeCommand(command);
-  }
-}
-
-void executeCommand(String command) {
-  if (command == "FORWARD") {
-    moveForward();
-  } else if (command == "LEFT") {
-    turnLeft();
-  } // ... more movement commands
-}
-
-### Project Overview
-
-Created an autonomous robot football team using Arduino-based robots with advanced computer vision capabilities and real-time strategy algorithms.
+### Robot Control System
+The Arduino code manages the robot's core functionality. It controls four DC motors through an L298N driver, accepting commands via serial communication. The system includes:
+- Motor control functions for all directions
+- Serial command parsing
+- WiFi connectivity through ESP8266
+- Smooth acceleration and deceleration
+- Precise turning algorithms
 
 ## The Result
 
@@ -181,7 +67,7 @@ The final robot can:
 - Be controlled precisely through the React Native app
 - Switch seamlessly between manual and autonomous modes
 
-The combination of React Native for the controller app, WebSockets for real-time communication, and computer vision for ball tracking created a responsive and reliable system. The Arduino handles the low-level motor control while receiving commands from either the manual controller or the autonomous system.
+The integration of React Native, WebSockets, computer vision, and Arduino creates a responsive and reliable system. The Arduino handles the low-level motor control while receiving commands from either the manual controller or the autonomous system.
 
 ## Challenges and Learnings
 

@@ -17,7 +17,7 @@ author: Phineas
 
 _After years of web development being confined to JavaScript's performance limitations, WebAssembly emerged as a game-changer. When I first started experimenting with it, the ability to run complex computations at near-native speed in the browser felt revolutionary. Through my journey from skepticism to adoption, I've discovered both its tremendous potential and practical limitations._
 
-### The Power of Native Speed
+## The Power of Native Speed
 
 WebAssembly brings unprecedented performance to the browser, opening doors that were previously closed to web applications.
 
@@ -27,7 +27,7 @@ WebAssembly brings unprecedented performance to the browser, opening doors that 
 - Reduces startup overhead
 - Enables parallel processing
 
-### Beyond JavaScript
+## Beyond JavaScript
 
 One of WebAssembly's greatest strengths is its language-agnostic nature. You can write high-performance code in your preferred language:
 
@@ -37,7 +37,7 @@ One of WebAssembly's greatest strengths is its language-agnostic nature. You can
 - AssemblyScript for TypeScript developers
 - Python through compilation tools
 
-### Real-World Impact
+## Real-World Impact
 
 I've implemented WebAssembly in production applications, with remarkable results:
 
@@ -47,7 +47,7 @@ I've implemented WebAssembly in production applications, with remarkable results
 - Smooth video filters and effects
 - Resource-intensive games in the browser
 
-### When to Use WebAssembly
+## When to Use WebAssembly
 
 Despite its power, WebAssembly isn't always the right choice. It shines in specific scenarios:
 
@@ -57,7 +57,7 @@ Despite its power, WebAssembly isn't always the right choice. It shines in speci
 - Real-time graphics and gaming
 - Scientific calculations
 
-### Practical Considerations
+## Practical Considerations
 
 Success with WebAssembly requires careful planning and understanding:
 

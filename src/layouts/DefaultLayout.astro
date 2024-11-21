@@ -16,27 +16,27 @@ const { title, description, slug, showArt = false } = Astro.props;
 const catArt = [
   {
     name: '',
-    art: `    |\\__/,|   (\`\\
-  _.|o o  |_   ) )
--(((---(((--------`,
+    art: `   /\`)    |,\\__/|
+  ( (    _|  o o|._
+-----------)))---)))------`,
   },
   {
     name: 'resume',
-    art: `       /\`)    |,\\__/|
-      ( (    _|  o o|._
----------------)))---)))------`,
+    art: `             (\`\\
+              ) )   |,\\__/|
+-------------------------------`,
   },
   {
     name: 'tech-blog',
-    art: `                       (\`\\
-                        ) )   |,\\__/|
------------------------------------------`,
+    art: `                      (\`\\
+                       ) )   |,\\__/|
+----------------------------------------`,
   },
   {
     name: 'projects',
-    art: `                            |\\__/,|   (\`\\
-                          _.|o o  |_   ) )
--------------------------(((---(((--------`,
+    art: `                          |\\__/,|   (\`\\
+                        _.|o o  |_   ) )
+-----------------------(((---(((--------`,
   },
 ];
 
@@ -94,12 +94,11 @@ const selectedArt = catArt.find((a) => a.name === slug)?.art || catArt[0].art;
 		
 		<main id="main-content" class="mx-auto py-8 md:px-8 min-h-stretch" tabindex="-1">
 			<div class="container max-w-4xl mx-auto prose-lg px-4 md:px-8">
-        {showArt && <ASCIIArt 
-          art={selectedArt}
-          class="font-mono text-gray-600 dark:text-gray-400 text-content-sm mt-6 select-none" 
-        />}
+        {showArt && <ASCIIArt art={selectedArt} class="mt-6" />}
 				<h1 class="heading-1 mb-8 mt-4 max-w-3xl">{title}</h1>
-				<slot />
+        <div class="px-2 md:px-4">
+  				<slot />
+        </div>
 			</div>
 		</main>
 

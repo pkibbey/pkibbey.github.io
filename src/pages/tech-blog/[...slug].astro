@@ -49,7 +49,7 @@ const sections = headings
   });
 ---
 
-<BlogPost {...post.data} slug={post.slug} prevPost={prevPost} nextPost={nextPost} sections={sections}>  
+<BlogPost {...post.data} slug={post.slug} collection={post.collection} prevPost={prevPost} nextPost={nextPost} sections={sections}>  
   <article class="max-w-4xl mx-auto">  
     <Content />
   </article>

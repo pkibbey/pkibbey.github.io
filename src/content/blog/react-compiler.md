@@ -16,27 +16,27 @@ author: Phineas
 
 _React's new compiler represents a paradigm shift in how we build React applications. By moving traditional runtime operations to build time, it promises significant performance improvements and a better developer experience._
 
-### Understanding the React Compiler
+## Understanding the React Compiler
 
-#### 1. Core Concepts
+### 1. Core Concepts
 - Compile-time optimizations
 - Automatic code transformations
 - Static analysis
 - Dead code elimination
 - Intelligent bundling
 
-#### 2. Key Benefits
+### 2. Key Benefits
 - Reduced bundle sizes
 - Faster initial page loads
 - Improved runtime performance
 - Better tree-shaking
 - Automatic optimizations
 
-### How It Works
+## How It Works
 
 The React compiler performs several sophisticated optimizations:
 
-#### 1. Component Analysis
+### 1. Component Analysis
 ```jsx
 // Before compilation
 function MyComponent({ items }) {
@@ -63,7 +63,7 @@ function MyComponent({ items }) {
 }
 ```
 
-#### 2. Automatic Optimizations
+### 2. Automatic Optimizations
 ```jsx
 // Before: Inefficient inline object creation
 function Component() {
@@ -85,7 +85,7 @@ function Component() {
 }
 ```
 
-### Real-World Impact
+## Real-World Impact
 
 In production applications, the compiler has shown impressive results:
 
@@ -101,9 +101,9 @@ In production applications, the compiler has shown impressive results:
    - Enhanced debugging capabilities
    - Improved build times
 
-### Implementation Strategy
+## Implementation Strategy
 
-#### 1. Preparing Your Codebase
+### 1. Preparing Your Codebase
 ```jsx
 // Compiler-friendly component structure
 const MyComponent = memo(function MyComponent({ data }) {
@@ -121,7 +121,7 @@ const MyComponent = memo(function MyComponent({ data }) {
 });
 ```
 
-#### 2. Build Configuration
+### 2. Build Configuration
 ```javascript
 // Example compiler configuration
 module.exports = {
@@ -140,29 +140,29 @@ module.exports = {
 };
 ```
 
-### Best Practices
+## Best Practices
 
-#### 1. Component Design
+### 1. Component Design
 - Keep components pure
 - Use proper memoization
 - Avoid unnecessary abstractions
 - Leverage compiler hints
 
-#### 2. Performance Optimization
+### 2. Performance Optimization
 - Enable all compiler features
 - Monitor bundle sizes
 - Profile runtime performance
 - Use compiler diagnostics
 
-#### 3. Development Workflow
+### 3. Development Workflow
 - Set up proper tooling
 - Use development modes
 - Implement testing strategy
 - Monitor build metrics
 
-### Common Patterns and Anti-patterns
+## Common Patterns and Anti-patterns
 
-#### Good Patterns
+### Good Patterns
 ```jsx
 // Compiler-friendly patterns
 const OptimizedList = memo(function OptimizedList({ items }) {
@@ -185,7 +185,7 @@ const OptimizedList = memo(function OptimizedList({ items }) {
 });
 ```
 
-#### Anti-patterns to Avoid
+### Anti-patterns to Avoid
 ```jsx
 // Compiler-unfriendly patterns
 function ProblematicComponent({ data }) {
@@ -205,7 +205,7 @@ function ProblematicComponent({ data }) {
 }
 ```
 
-### Future Developments
+## Future Developments
 
 The React compiler continues to evolve:
 - Enhanced static analysis
@@ -214,7 +214,7 @@ The React compiler continues to evolve:
 - Advanced code splitting
 - Automatic state optimization
 
-### Migration Guide
+## Migration Guide
 
 1. **Preparation**
    - Audit current codebase
@@ -234,7 +234,7 @@ The React compiler continues to evolve:
    - Measure improvements
    - Iterate based on data
 
-### Performance Monitoring
+## Performance Monitoring
 
 ```javascript
 // Example performance monitoring setup
@@ -249,13 +249,13 @@ const perfObserver = new PerformanceObserver((list) => {
 perfObserver.observe({ entryTypes: ['measure'] });
 ```
 
-### Key Takeaways
+## Key Takeaways
 
 1. The React compiler is a game-changer for performance
 2. Proper component design is crucial
 3. Monitoring and optimization are essential
 4. Migration should be gradual and measured
 
-### Conclusion
+## Conclusion
 
 The React compiler represents a significant advancement in React development, offering substantial performance improvements with minimal developer effort. As the technology matures, it will become an indispensable tool in building high-performance React applications. The key to success lies in understanding its capabilities and adapting our development practices to take full advantage of its optimizations.

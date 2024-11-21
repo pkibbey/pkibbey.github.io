@@ -7,12 +7,12 @@ interface Props {
 const { type = 'base', spacing = true } = Astro.props;
 
 const styles = {
-  tech: 'text-cyan-700 dark:text-cyan-400 font-semibold',
-  achievement: 'text-emerald-700 dark:text-emerald-400 font-semibold',
+  tech: 'text-grey-950 dark:text-grey-50 sm:text-cyan-700 sm:dark:text-cyan-400 font-semibold',
+  achievement: 'text-grey-950 dark:text-grey-50 sm:text-emerald-700 sm:dark:text-emerald-400 font-semibold',
   base: 'text-grey-950 dark:text-grey-50 font-semibold',
 };
 ---
 
-<span class={`${styles[type]} ${spacing ? 'inline-block' : 'inline'} decoration-2 underline-offset-2 transition-all`}>
+<strong class={`${styles[type]} ${spacing ? 'inline-block' : 'inline'} decoration-2 underline-offset-2 transition-all`}>
   <slot />
 </span>

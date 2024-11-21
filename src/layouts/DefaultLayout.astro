@@ -92,13 +92,11 @@ const selectedArt = catArt.find((a) => a.name === slug)?.art || catArt[0].art;
 
 		<Header />
 		
-		<main id="main-content" class="mx-auto py-8 md:px-8 min-h-stretch" tabindex="-1">
+		<main id="main-content" class="mx-auto md:py-8 md:px-8 min-h-stretch" tabindex="-1">
 			<div class="container max-w-4xl mx-auto prose-lg px-4 md:px-8">
         {showArt && <ASCIIArt art={selectedArt} class="mt-6" />}
 				<h1 class="heading-1 mb-8 mt-4 max-w-3xl">{title}</h1>
-        <div class="px-2 md:px-4">
-  				<slot />
-        </div>
+        <slot />
 			</div>
 		</main>
 

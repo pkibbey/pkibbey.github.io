@@ -24,8 +24,8 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
   showArt={true}
 >
   <section class="max-w-4xl mx-auto">
-    <div class="mb-12">
-      <div class="max-w-3xl">
+    <div class="mb-8 md:mb-12">
+      <div class="max-w-3xl px-2 md:px-4">
         <p class="text-content text-gray-900 dark:text-gray-200 mb-6">
           A curated portfolio showcasing my work in <Highlight>frontend development</Highlight>, 
           <Highlight>user experience design</Highlight>, and <Highlight>software architecture</Highlight>. 
@@ -36,7 +36,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
     </div>
 
     {featuredPost && (
-      <div class="mb-12">
+      <div class="mb-8 md:mb-12">
         <h2 class="heading-2 mb-4">Recent Project</h2>
         <div class="space-y-3">
           <PostCard post={featuredPost} variant="featured" baseUrl='/projects/' color={featuredPost.data.color} />
@@ -46,7 +46,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
 
     <div class="mb-8">
       <h2 class="heading-2 mb-4">More Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
         {otherPosts.map((post) => (
           <div class="space-y-3">
             <PostCard post={post} variant="default" baseUrl='/projects/' color={post.data.color} />

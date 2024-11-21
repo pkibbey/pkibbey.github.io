@@ -7,7 +7,7 @@ type Props = Post['data'] & {
   slug: string;
   prevPost: Post | null;
   nextPost: Post | null;
-  sections:  Array<{
+  sections: Array<{
     id: string;
     title: string;
   }>;
@@ -25,7 +25,7 @@ const {
   prevPost,
   nextPost,
   subtitle,
-  sections
+  sections,
 } = Astro.props;
 ---
 

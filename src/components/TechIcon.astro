@@ -4,7 +4,7 @@ interface Props {
   color: string;
 }
 
-const { class: className = "", color } = Astro.props;
+const { class: className = '', color } = Astro.props;
 const gradientId = `tech-icon-gradient-${Math.random().toString(36).substr(2, 9)}`;
 
 // Extract colors from linear-gradient string

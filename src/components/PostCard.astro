@@ -12,7 +12,12 @@ interface Props {
   color: string;
 }
 
-const { post, baseUrl, variant = 'default', color = 'linear-gradient(to right, #16a34a, #1d4ed8)' } = Astro.props;
+const {
+  post,
+  baseUrl,
+  variant = 'default',
+  color = 'linear-gradient(to right, #16a34a, #1d4ed8)',
+} = Astro.props;
 const { title, subtitle, pubDate, description, tags } = post.data;
 
 // Calculate read time based on description and title since we don't have access to full content here
@@ -31,17 +36,13 @@ const titleClasses = {
 }[variant];
 
 const subtitleClasses = {
-  default:
-    'text-content-small text-gray-500 dark:text-gray-400 line-clamp-1',
-  featured:
-    'text-content text-gray-500 dark:text-gray-400 line-clamp-1',
+  default: 'text-content-small text-gray-500 dark:text-gray-400 line-clamp-1',
+  featured: 'text-content text-gray-500 dark:text-gray-400 line-clamp-1',
 }[variant];
 
 const descriptionClasses = {
-  default:
-    'text-content text-gray-500 dark:text-gray-400 line-clamp-3',
-  featured:
-    'text-content text-gray-500 dark:text-gray-400 line-clamp-4',
+  default: 'text-content text-gray-500 dark:text-gray-400 line-clamp-3',
+  featured: 'text-content text-gray-500 dark:text-gray-400 line-clamp-4',
 }[variant];
 ---
 

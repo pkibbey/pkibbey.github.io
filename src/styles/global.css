@@ -68,7 +68,7 @@
     }
   }
 
- /* Text Content */
+  /* Text Content */
   .text-content {
     @apply text-lg leading-6;
   }
@@ -144,21 +144,21 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-4 {
     display: -webkit-box;
     -webkit-line-clamp: 4;

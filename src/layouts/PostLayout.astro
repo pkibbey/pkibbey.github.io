@@ -17,7 +17,7 @@ type Props = Post['data'] & {
   prevPost: Post | null;
   nextPost: Post | null;
   headings?: { depth: number; slug: string; text: string }[];
-  sections:  Array<{
+  sections: Array<{
     id: string;
     title: string;
   }>;
@@ -36,7 +36,7 @@ const {
   baseUrl,
   prevPost,
   nextPost,
-  sections
+  sections,
 } = Astro.props;
 
 // Get raw content for reading time calculation

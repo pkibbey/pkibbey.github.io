@@ -40,11 +40,11 @@ const { Content, headings } = await post.render();
 
 // Automatically generate sections from headings
 const sections = headings
-  .filter(({depth}) => depth < 4)
+  .filter(({ depth }) => depth < 4)
   .map((heading) => {
     return {
       id: heading.slug,
-      title: heading.text
+      title: heading.text,
     };
   });
 ---

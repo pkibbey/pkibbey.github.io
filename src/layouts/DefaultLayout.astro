@@ -92,9 +92,9 @@ const selectedArt = catArt.find(a => a.name === slug)?.art || catArt[0].art;
 			<div class="container max-w-4xl mx-auto prose-lg px-8">
         {showArt && <ASCIIArt 
           art={selectedArt}
-          class="font-mono text-gray-600 dark:text-gray-400 text-sm mt-6 leading-tight select-none" 
+          class="font-mono text-gray-600 dark:text-gray-400 text-content-sm mt-6 select-none" 
         />}
-				<h1 class="heading-1 mb-8 tracking-tight mt-4 leading-tight max-w-3xl">{title}</h1>
+				<h1 class="heading-1 mb-8 mt-4 max-w-3xl">{title}</h1>
 				<slot />
 			</div>
 		</main>

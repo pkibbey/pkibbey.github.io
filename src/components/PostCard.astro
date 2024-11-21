@@ -8,7 +8,7 @@ import { calculateReadTime } from '../utils/readTime';
 interface Props {
   post: Post;
   baseUrl: string;
-  variant?: 'default' | 'featured' | 'compact' | 'no-image';
+  variant?: 'default' | 'featured';
   color: string;
 }
 
@@ -16,47 +16,38 @@ const { post, baseUrl, variant = 'default', color = 'linear-gradient(to right, #
 const { title, subtitle, pubDate, description, tags } = post.data;
 
 // Calculate read time based on description and title since we don't have access to full content here
-const readTime = calculateReadTime(`${title} ${description || ''}`);
+const readTime = calculateReadTime(post.body);
 
 const containerClasses = {
   default: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-6',
   featured: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-6',
-  compact: 'group block',
-  'no-image': 'group block',
 }[variant];
 
 const titleClasses = {
   default:
-    'heading-4 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
+    'heading-3 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
   featured:
-    'heading-2 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300 leading-tight',
-  compact:
-    'heading-4 mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
-  'no-image':
-    'heading-4 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
+    'heading-2 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
 }[variant];
 
 const subtitleClasses = {
-  default: 'text-[0.9375rem] text-gray-500 dark:text-gray-400 line-clamp-1',
-  featured: 'text-[1.25rem] text-gray-500 dark:text-gray-400 line-clamp-1',
-  compact: 'hidden',
-  'no-image': 'text-[0.9375rem] text-gray-500 dark:text-gray-400 line-clamp-1',
+  default:
+    'text-content-small text-gray-500 dark:text-gray-400 line-clamp-1',
+  featured:
+    'text-content text-gray-500 dark:text-gray-400 line-clamp-1',
 }[variant];
 
 const descriptionClasses = {
   default:
-    'text-gray-500 dark:text-gray-400 text-md tracking-[-0.01em] line-clamp-2',
+    'text-content text-gray-500 dark:text-gray-400 line-clamp-3',
   featured:
-    'text-gray-500 dark:text-gray-400 text-[1.0625rem] leading-[1.75] tracking-[-0.01em] line-clamp-3',
-  compact: 'hidden',
-  'no-image':
-    'text-gray-500 dark:text-gray-400 text-[0.9375rem] leading-[1.75] tracking-[-0.01em] line-clamp-2',
+    'text-content text-gray-500 dark:text-gray-400 line-clamp-4',
 }[variant];
 ---
 
 <a href={`${baseUrl}${post.slug}`} class={containerClasses}>
   <div class="space-y-2">
-    <div class="flex items-center justify-between text-[0.8125rem] font-medium text-gray-400 dark:text-gray-400 tracking-wide">
+    <div class="flex items-center justify-between text-content-xs text-gray-400 dark:text-gray-400">
       <FormattedDate date={pubDate} />
       <span class="flex items-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -80,9 +71,9 @@ const descriptionClasses = {
   </div>
   {tags && tags.length > 0 && (
     <div class="flex flex-wrap gap-2 mt-4">
-      {tags.filter(tag => tag && tag.length > 0).map(tag => (
+      {/* {tags.filter(tag => tag && tag.length > 0).map(tag => (
         <Tag tag={tag} />
-      ))}
+      ))} */}
     </div>
   )}
 </a>

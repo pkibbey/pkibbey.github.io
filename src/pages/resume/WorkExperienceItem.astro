@@ -15,7 +15,7 @@ const { company, role, start, end } = Astro.props;
 <section class="group">
   <WorkExperienceDate start={start} end={end} />
   <WorkExperienceTitle company={company} role={role} />
-  <p class="pt-4 text-[1.0625rem] text-gray-700 dark:text-gray-200 leading-[1.75] tracking-[-0.01em] font-normal transition-colors">
+  <p class="pt-4 text-content text-gray-700 dark:text-gray-200 transition-colors">
     <slot/>
   </p>
 </section>

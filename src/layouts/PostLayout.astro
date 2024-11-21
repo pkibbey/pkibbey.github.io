@@ -12,13 +12,11 @@ import SidebarNav from '../components/SidebarNav.astro';
 
 type Props = Post['data'] & {
   slug: string;
-  color: string;
   backText: string;
   baseUrl: string;
   prevPost: Post | null;
   nextPost: Post | null;
   headings?: { depth: number; slug: string; text: string }[];
-  subtitle: string;
   sections:  Array<{
     id: string;
     title: string;

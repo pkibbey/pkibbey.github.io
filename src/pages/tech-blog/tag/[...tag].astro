@@ -71,7 +71,7 @@ const [featuredPost, ...otherPosts] = filteredPosts;
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {otherPosts.map((post) => (
-        <PostCard post={post} variant='compact' baseUrl='/tech-blog/' color={post.data.color}/>
+        <PostCard post={post} baseUrl='/tech-blog/' color={post.data.color}/>
       ))}
     </div>
   </section>

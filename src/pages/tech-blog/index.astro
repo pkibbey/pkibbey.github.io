@@ -37,7 +37,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
 
     {featuredPost && (
       <div class="mb-12">
-        <h2 class="heading-1 mb-4">Recent Post</h2>
+        <h2 class="heading-2 mb-4">Recent Post</h2>
         <div class="space-y-3">
           <PostCard post={featuredPost} variant="featured" baseUrl='/tech-blog/' color={featuredPost.data.color} />
         </div>
@@ -45,7 +45,7 @@ const otherPosts = posts.filter((_, index) => index !== randomIndex);
     )}
 
     <div class="mb-8">
-      <h2 class="heading-1 mb-4">More Posts</h2>
+      <h2 class="heading-2 mb-4">More Posts</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {otherPosts.map((post) => (
           <div class="space-y-3">

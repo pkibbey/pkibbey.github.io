@@ -59,9 +59,9 @@ const descriptionClasses = {
     <div class="flex mb-2 items-center space-y-0.5">
       <TechIcon color={color} class={variant === 'featured' ? "h-16 w-16 mr-4" : "h-8 w-8 mr-2"} />
       <div>
-        <h2 class={`${titleClasses}`}>
+        <h3 class={`${titleClasses}`}>
           <div>{title}</div>
-        </h2>
+        </h3>
         {subtitle && variant === 'featured' && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
     </div>

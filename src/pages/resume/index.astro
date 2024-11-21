@@ -1,12 +1,10 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-// import Education from './Education.astro';
 import Introduction from './Introduction.astro';
 import NotableWork from './NotableWork.astro';
 import Skills from './Skills.astro';
 import WorkExperience from './WorkExperience.astro';
 import SidebarNav from '../../components/SidebarNav.astro';
-import MoreContent from '../../components/MoreContent.astro';
 
 const sections = [
   { id: 'introduction', title: 'Introduction' },
@@ -36,9 +34,7 @@ const sections = [
       <div id="notable-work">
         <NotableWork />
       </div>
-      <!-- <Education /> -->
     </div>
     <SidebarNav sections={sections} />
   </div>
-  <MoreContent />
 </DefaultLayout>

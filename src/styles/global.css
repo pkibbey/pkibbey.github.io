@@ -24,6 +24,12 @@
 
 /* Custom styles */
 @layer base {
+  /* Scroll margin for anchor links */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* Adjust this value based on your header height */
+  }
+
   /* Focus outline for interactive elements */
   .focus-outline {
     @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;

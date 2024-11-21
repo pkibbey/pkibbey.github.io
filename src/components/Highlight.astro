@@ -4,7 +4,7 @@ interface Props {
   spacing?: boolean;
 }
 
-const { type = 'base', spacing = true } = Astro.props;
+const { type = 'base', spacing = false } = Astro.props;
 
 const styles = {
   tech: 'text-grey-950 dark:text-grey-50 sm:text-cyan-700 sm:dark:text-cyan-400 font-semibold',
@@ -13,6 +13,4 @@ const styles = {
 };
 ---
 
-<strong class={`${styles[type]} ${spacing ? 'inline-block' : 'inline'} decoration-2 underline-offset-2 transition-all`}>
-  <slot />
-</span>
+<strong class={`${styles[type]} ${spacing ? 'inline-block' : 'inline'} decoration-2 underline-offset-2 transition-all`}><slot /></span>

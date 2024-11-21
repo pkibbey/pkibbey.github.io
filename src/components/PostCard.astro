@@ -27,8 +27,8 @@ const Icon = post.collection === 'projects' ? ProjectIcon : TechIcon;
 const readTime = calculateReadTime(post.body);
 
 const containerClasses = {
-  default: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-4 md:p-6',
-  featured: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-4 md:p-6',
+  default: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-4 md:p-6 h-full',
+  featured: 'group block bg-white dark:bg-gray-950/50 rounded-lg p-4 md:p-6 h-full',
 }[variant];
 
 const titleClasses = {

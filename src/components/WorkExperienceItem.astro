@@ -7,15 +7,20 @@ interface Props {
   end: string;
   company: string;
   role: string;
+  id?: string;
 }
 
-const { company, role, start, end } = Astro.props;
+const { company, role, start, end, id } = Astro.props;
 ---
 
-<section class="group">
-  <WorkExperienceDate start={start} end={end} />
-  <WorkExperienceTitle company={company} role={role} />
-  <p class="pt-4 text-content text-gray-700 dark:text-gray-200 transition-colors">
+<div id={id} class="space-y-2">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+    <div class="flex flex-col">
+      <WorkExperienceTitle company={company} role={role} />
+    </div>
+    <WorkExperienceDate start={start} end={end} />
+  </div>
+  <p class="text-gray-600 dark:text-gray-400 text-content-secondary">
     <slot/>
   </p>
-</section>
+</div>

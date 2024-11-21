@@ -1,0 +1,46 @@
+---
+interface Props {
+  dates: {
+    start: string;
+    end: string;
+    id: string;
+  }[];
+}
+
+const { dates } = Astro.props;
+---
+
+<div class="hidden lg:block sticky top-8 h-fit">
+  <div id="scroll-date" class="text-2xl font-bold text-gray-900 dark:text-gray-100 transition-all">
+    {dates[0]?.end}
+  </div>
+</div>
+
+<script define:vars={{ dates }}>
+  const dateEl = document.getElementById('scroll-date');
+  const sections = dates.map(date => ({
+    el: document.getElementById(date.id),
+    date: date.end
+  }));
+
+  const updateDate = () => {
+    if (!dateEl) return;
+    
+    const scrollPosition = window.scrollY + 100; // Add offset to improve timing
+    
+    // Find the current section based on scroll position
+    for (const section of sections) {
+      if (!section.el) continue;
+      const rect = section.el.getBoundingClientRect();
+      if (rect.top <= 150) { // Adjust this value to change when the date updates
+        dateEl.textContent = section.date;
+      }
+    }
+  };
+
+  // Update on scroll
+  window.addEventListener('scroll', updateDate, { passive: true });
+  
+  // Initial update
+  updateDate();
+</script>

@@ -24,7 +24,7 @@ const ScrollDate = () => {
         const start = closestItem.querySelector('.text-gray-500')?.textContent;
         if (start) {
           // Get the start year
-          const year = start.split(' - ')[0].split(' ')[2];
+          const year = start.split(' - ')[1].split(' ')[1];
           setCurrentDate(year);
         }
       }
@@ -37,7 +37,7 @@ const ScrollDate = () => {
   }, []);
 
   return (
-    <div className="text-2xl text-right text-gray-900 dark:text-gray-100">
+    <div className="heading-4 text-right text-gray-900 dark:text-gray-100">
       ({currentDate})
     </div>
   );

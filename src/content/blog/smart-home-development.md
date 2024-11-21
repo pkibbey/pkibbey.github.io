@@ -1,6 +1,6 @@
 ---
 title: Smart Living
-subtitle: The Challenge of Smart Home Development
+subtitle: Smart Home Development
 description: >-
   Architecting a monorepo solution for smart apartment control, focusing on
   real-time communication, design systems, and scalable deployment.

@@ -83,11 +83,11 @@
   }
 
   .text-content-secondary {
-    @apply text-base leading-snug;
+    @apply text-lg leading-snug;
   }
 
   .text-content-small {
-    @apply text-sm leading-snug;
+    @apply text-base leading-snug;
   }
 
   .text-content-xs {

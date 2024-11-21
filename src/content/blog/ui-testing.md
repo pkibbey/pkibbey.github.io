@@ -1,6 +1,6 @@
 ---
 title: Better Testing
-subtitle: The Importance of Unit Testing and E2E Testing
+subtitle: The Importance of Testing
 description: Effective approaches to testing modern user interfaces
 pubDate: '2023-04-01T00:00:00.000Z'
 color: 'linear-gradient(to bottom right, #16A085, #1ABC9C)'

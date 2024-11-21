@@ -39,39 +39,41 @@ const titleClasses = {
 }[variant];
 
 const subtitleClasses = {
-  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-3',
-  featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-3',
+  default: 'text-content-small text-gray-500 dark:text-gray-400 line-clamp-3',
+  featured: 'text-content-small md:text-content-secondary text-gray-500 dark:text-gray-400 line-clamp-3',
 }[variant];
 
 const descriptionClasses = {
-  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-4',
+  default: 'text-content-small text-gray-500 dark:text-gray-400 line-clamp-3',
   featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-4',
 }[variant];
 ---
 
 <a href={`${baseUrl}${post.slug}`} class={containerClasses}>
   <div class="space-y-2">
-    <div class="flex items-center justify-between text-content-xs text-gray-400 dark:text-gray-400">
-      <FormattedDate date={pubDate} />
-      <span class="flex items-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        {readTime} min read
-      </span>
-    </div>
     <div class="flex mb-2 items-center space-y-0.5">
       <Icon color={color} class={variant === 'featured' ? "h-12 w-12 mr-4 md:h-16 md:w-16" : "h-8 w-8 mr-2"} />
       <div>
         <h3 class={`${titleClasses}`}>
           <div>{title}</div>
         </h3>
-        {subtitle && variant === 'featured' && <p class={subtitleClasses}>{subtitle}</p>}
+        {subtitle && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
     </div>
+    
     {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
       <p class={descriptionClasses}>{description}</p>
     }
+    <div class="flex pt-2 items-center gap-2 text-content-xs text-gray-400 dark:text-gray-400">
+      <FormattedDate date={pubDate} />
+      {' | '}
+      <div class="text-content-xs flex justify-end text-gray-500 dark:text-gray-400 items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        {readTime} min read
+      </div>
+    </div>
   </div>
   <!-- {tags && tags.length > 0 && (
     <div class="flex flex-wrap gap-2 mt-4">

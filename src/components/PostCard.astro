@@ -39,12 +39,12 @@ const titleClasses = {
 }[variant];
 
 const subtitleClasses = {
-  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-2',
-  featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-2',
+  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-3',
+  featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-3',
 }[variant];
 
 const descriptionClasses = {
-  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-2',
+  default: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-4',
   featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-4',
 }[variant];
 ---
@@ -61,7 +61,7 @@ const descriptionClasses = {
       </span>
     </div>
     <div class="flex mb-2 items-center space-y-0.5">
-      <Icon color={color} class={variant === 'featured' ? "h-16 w-16 mr-4" : "h-8 w-8 mr-2"} />
+      <Icon color={color} class={variant === 'featured' ? "h-12 w-12 mr-2 md:h-16 md:w-16 md:mr-4" : "h-8 w-8 mr-2"} />
       <div>
         <h3 class={`${titleClasses}`}>
           <div>{title}</div>
@@ -81,26 +81,3 @@ const descriptionClasses = {
     </div>
   )} -->
 </a>
-
-<style>
-  .line-clamp-1 {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>

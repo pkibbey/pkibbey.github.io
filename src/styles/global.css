@@ -87,11 +87,11 @@
   }
 
   .text-content-small {
-    @apply text-base leading-snug;
+    @apply text-base leading-normal;
   }
 
   .text-content-xs {
-    @apply text-xs leading-snug;
+    @apply text-xs leading-normal;
   }
 
   /* Headings */

@@ -1,6 +1,6 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-import Tag from './Tag.astro';
+// import Tag from './Tag.astro';
 import type { Post } from '../content/types';
 import TechIcon from './TechIcon.astro';
 import { calculateReadTime } from '../utils/readTime';
@@ -19,8 +19,7 @@ const {
   variant = 'default',
   color = 'linear-gradient(to right, #16a34a, #1d4ed8)',
 } = Astro.props;
-const { title, subtitle, pubDate, description, tags } = post.data;
-
+const { title, subtitle, pubDate, description } = post.data;
 const Icon = post.collection === 'projects' ? ProjectIcon : TechIcon;
 
 // Calculate read time based on description and title since we don't have access to full content here
@@ -33,36 +32,35 @@ const containerClasses = {
 
 const titleClasses = {
   default:
-    'heading-3 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
+    'heading-3 m-0 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
   featured:
     'heading-2 text-gray-700 dark:text-gray-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-all duration-300',
 }[variant];
 
 const subtitleClasses = {
-  default: 'text-content-small text-gray-500 dark:text-gray-400 line-clamp-3',
+  default: 'text-content-xs mt-[1px] text-gray-500 dark:text-gray-400 line-clamp-3',
   featured: 'text-content-small md:text-content-secondary text-gray-500 dark:text-gray-400 line-clamp-3',
 }[variant];
 
 const descriptionClasses = {
   default: 'text-content-small text-gray-500 dark:text-gray-400 line-clamp-3',
-  featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-4',
+  featured: 'text-content-small md:text-content text-gray-500 dark:text-gray-400 line-clamp-3',
 }[variant];
 ---
 
 <a href={`${baseUrl}${post.slug}`} class={containerClasses}>
   <div class="space-y-2">
-    <div class="flex mb-2 items-center space-y-0.5">
-      <Icon color={color} class={variant === 'featured' ? "h-12 w-12 mr-4 md:h-16 md:w-16" : "h-8 w-8 mr-2"} />
+    <div class="flex mb-2 items-center">
+      <Icon color={color} class={variant === 'featured' ? "h-12 w-12 mr-4 md:h-16 md:w-16" : "h-12 w-12 mr-3"} />
       <div>
         <h3 class={`${titleClasses}`}>
           <div>{title}</div>
         </h3>
         {subtitle && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
-    </div>
-    
+    </div>    
     {(variant === 'default' || variant === 'featured' || variant === 'no-image') && 
-      <p class={descriptionClasses}>{description}</p>
+      <p class={descriptionClasses}>{post.body.split('_')[1]}</p>
     }
     <div class="flex pt-2 items-center gap-2 text-content-xs text-gray-400 dark:text-gray-400">
       <FormattedDate date={pubDate} />

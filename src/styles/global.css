@@ -70,36 +70,36 @@
 
   /* Text Content */
   .text-content {
-    @apply text-lg leading-6;
+    @apply text-lg leading-snug;
   }
 
   .text-content-secondary {
-    @apply text-base leading-6;
+    @apply text-base leading-snug;
   }
 
   .text-content-small {
-    @apply text-sm leading-tight;
+    @apply text-sm leading-snug;
   }
 
   .text-content-xs {
-    @apply text-xs leading-tight;
+    @apply text-xs leading-snug;
   }
 
   /* Headings */
   .heading-1 {
-    @apply text-4xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl font-bold leading-snug;
   }
 
   .heading-2 {
-    @apply text-2xl font-semibold leading-tight;
+    @apply text-xl md:text-2xl font-semibold leading-snug;
   }
 
   .heading-3 {
-    @apply text-xl font-semibold leading-tight;
+    @apply text-lg md:text-xl font-semibold leading-snug;
   }
 
   .heading-4 {
-    @apply text-lg font-medium leading-tight;
+    @apply text-base md:text-lg font-medium leading-snug;
   }
 
   /* Tags */

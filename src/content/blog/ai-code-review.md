@@ -15,7 +15,7 @@ tags:
 author: Phineas
 ---
 
-When AI code generation tools first emerged, I was genuinely excited. The promise was compelling: faster development, reduced boilerplate, and more time to focus on architecture and design. The early results were impressive - watching an AI assistant scaffold an entire application structure or generate complex utility functions in seconds felt like witnessing the future of programming.
+_When AI code generation tools first emerged, I was genuinely excited. The promise was compelling: faster development, reduced boilerplate, and more time to focus on architecture and design. The early results were impressive - watching an AI assistant scaffold an entire application structure or generate complex utility functions in seconds felt like witnessing the future of programming._
 
 ### The Honeymoon Phase
 

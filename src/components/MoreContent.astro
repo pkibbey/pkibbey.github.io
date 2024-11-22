@@ -13,7 +13,10 @@ const projectPosts = (await getCollection('projects')).sort(
 );
 
 // Get two random posts for each section
-function getRandomPosts(posts: typeof blogPosts | typeof projectPosts, count: number) {
+function getRandomPosts(
+  posts: typeof blogPosts | typeof projectPosts,
+  count: number,
+) {
   const shuffled = [...posts].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }

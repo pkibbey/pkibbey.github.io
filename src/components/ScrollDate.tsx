@@ -13,7 +13,7 @@ const ScrollDate = () => {
       for (const item of workItems) {
         const rect = item.getBoundingClientRect();
         const distance = Math.abs(rect.top - viewportHeight / 3);
-        
+
         if (distance < closestDistance) {
           closestDistance = distance;
           closestItem = item;

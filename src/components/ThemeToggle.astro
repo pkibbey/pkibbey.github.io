@@ -98,21 +98,21 @@
     const label = document.getElementById('theme-toggle-label');
     if (label) {
       const labels = {
-        light: 'Use dark theme',
-        dark: 'Use system theme',
-        system: 'Use light theme'
+        light: 'night',
+        dark: 'system',
+        system: 'day'
       };
-      label.textContent = labels[newTheme];
+      label.textContent = `Use ${labels[newTheme]} theme`;
     }
 
     // Show theme message only if requested
     if (showMessage) {
       const messages = {
-        light: 'Light theme enabled',
-        dark: 'Dark theme enabled',
-        system: 'System theme enabled'
+        light: 'Day',
+        dark: 'Night',
+        system: 'System'
       };
-      showThemeMessage(messages[newTheme]);
+      showThemeMessage(`${messages[newTheme]} theme`);
       
       // Announce theme change to screen readers
       const announcement = document.createElement('div');

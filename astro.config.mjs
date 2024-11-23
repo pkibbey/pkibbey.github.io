@@ -11,7 +11,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://phineas-dev.github.io',
-  integrations: [mdx(), sitemap(), tailwind(), react()],
+  integrations: [mdx(), sitemap(), tailwind({ nesting: true }), react()],
   devToolbar: {
     enabled: false,
   },

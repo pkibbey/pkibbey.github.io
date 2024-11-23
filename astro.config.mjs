@@ -15,4 +15,10 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  build: {
+    inlineStylesheets: 'auto',
+    minify: true,
+    format: 'file',
+    assets: 'assets'
+  },
 });

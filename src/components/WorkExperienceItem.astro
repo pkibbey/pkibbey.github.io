@@ -4,13 +4,13 @@ import WorkExperienceTitle from './WorkExperienceTitle.astro';
 
 interface Props {
   start: string;
-  end: string;
+  end?: string;
   company: string;
   role: string;
   id?: string;
 }
 
-const { company, role, start, end, id } = Astro.props;
+const { company, role, start, end = '', id } = Astro.props;
 ---
 
 <div id={id} class="space-y-2">
@@ -20,7 +20,7 @@ const { company, role, start, end, id } = Astro.props;
     </div>
     <WorkExperienceDate start={start} end={end} />
   </div>
-  <p class="text-gray-600 dark:text-gray-400 text-content-secondary">
+  {Astro.slots.has('default') && <div class="text-gray-600 dark:text-gray-400 text-content-secondary">
     <slot/>
-  </p>
+  </div>}
 </div>

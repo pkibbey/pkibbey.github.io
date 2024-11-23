@@ -1,16 +1,18 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import Introduction from './Introduction.astro';
-import NotableWork from './NotableWork.astro';
+import NotableWorks from './NotableWorks.astro';
 import Skills from './Skills.astro';
 import WorkExperience from './WorkExperience.astro';
 import SidebarNav from '../../components/SidebarNav.astro';
+import Link from '../../components/Link.astro';
 
 const sections = [
   { id: 'introduction', title: 'Introduction' },
   { id: 'skills', title: 'Skills' },
   { id: 'experience', title: 'Experience' },
   { id: 'notable-work', title: 'Notable Work' },
+  { id: 'download', title: 'Download' },
 ];
 ---
 
@@ -32,7 +34,13 @@ const sections = [
         <WorkExperience />
       </div>
       <div id="notable-work">
-        <NotableWork />
+        <NotableWorks />
+      </div>
+      <div id="download" class="mt-8">
+        <h2 class="heading-2 mb-4">Download</h2>
+        <p class="text-lg leading-relaxed text-gray-900 dark:text-gray-200">
+          My resume can be <Link href="/resume.pdf" download="Phineas Kibbey - Resume"></a>downloaded as a PDF</Link>. Contact details are in the header of the resume. 
+        </p>
       </div>
     </div>
     <SidebarNav sections={sections} />

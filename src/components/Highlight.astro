@@ -1,17 +1,16 @@
 ---
 interface Props {
   type?: 'tech' | 'achievement';
-  spacing?: boolean;
 }
 
-const { type = 'base', spacing = false } = Astro.props;
+const { type = 'base' } = Astro.props;
 
 const styles = {
-  tech: 'text-grey-950 dark:text-grey-50 sm:text-cyan-700 sm:dark:text-cyan-400 font-semibold',
+  tech: 'text-grey-950 dark:text-grey-50 sm:text-cyan-700 sm:dark:text-cyan-400 font-semibold sm:font-normal',
   achievement:
-    'text-grey-950 dark:text-grey-50 sm:text-emerald-700 sm:dark:text-emerald-400 font-semibold',
+    'text-grey-950 dark:text-grey-50 sm:text-emerald-700 sm:dark:text-emerald-400 font-semibold sm:font-normal',
   base: 'text-grey-950 dark:text-grey-50 font-semibold',
 };
 ---
 
-<strong class={`${styles[type]} ${spacing ? 'inline-block' : 'inline'} decoration-2 underline-offset-2 transition-all`}><slot /></span>
+<span class={`${styles[type]} inline decoration-2 underline-offset-2 transition-all`}><slot /></span>

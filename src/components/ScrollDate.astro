@@ -16,7 +16,7 @@ const { dates } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ dates }}>
+<script define:vars={{ dates }} is:inline>
   const dateEl = document.getElementById('scroll-date');
   const sections = dates.map(date => ({
     el: document.getElementById(date.id),
@@ -25,8 +25,6 @@ const { dates } = Astro.props;
 
   const updateDate = () => {
     if (!dateEl) return;
-    
-    const scrollPosition = window.scrollY + 100; // Add offset to improve timing
     
     // Find the current section based on scroll position
     for (const section of sections) {

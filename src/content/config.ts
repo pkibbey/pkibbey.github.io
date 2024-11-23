@@ -1,4 +1,4 @@
-import { defineCollection, z, type CollectionEntry } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 
 // Define a linear gradient type
 const linearGradient = z.string().regex(/^linear-gradient\((.+)\)$/);

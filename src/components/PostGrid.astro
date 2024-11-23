@@ -2,6 +2,7 @@
 import type { Post } from '../content/types';
 import type { HTMLAttributes } from 'astro/types';
 import PostCard from './PostCard.astro';
+import LoadMore from './LoadMore.astro';
 
 interface Props extends HTMLAttributes<'div'> {
   posts: Post[];
@@ -9,12 +10,15 @@ interface Props extends HTMLAttributes<'div'> {
 }
 
 const { posts, baseUrl, class: className, ...props } = Astro.props;
+const initialPostsToShow = 6;
 ---
 
 <div class:list={["grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4", className]} {...props}>
-  {posts.map((post) => (
-    <div class="space-y-3">
+  {posts.map((post, index) => (
+    <div class:list={["space-y-3 post-item", index >= initialPostsToShow && "hidden"]}>
       <PostCard post={post} variant="default" baseUrl={baseUrl} color={post.data.color} />
     </div>
   ))}
 </div>
+
+<LoadMore initialPosts={initialPostsToShow} totalPosts={posts.length} />

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Link from './Link.astro';
-import PostCard from './PostCard.astro';
 import PostGrid from './PostGrid.astro';
 
 const blogPosts = (await getCollection('blog')).sort(

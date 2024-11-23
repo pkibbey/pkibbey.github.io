@@ -1,12 +1,12 @@
 ---
 import Highlight from '../../components/Highlight.astro';
 import Section from '../../components/Section.astro';
-import NotableWorkItem from '../../components/NotableWorkItem.astro';
+import NotableWork from '../../components/NotableWork.astro';
 ---
 
-<Section title="Notable Work">
+<Section title="Notable Works">
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 mb-12">
-    <NotableWorkItem 
+    <NotableWork 
       imageProps={{ src:"/work/qualcomm.jpg" }}
       title="Qualcomm Website Redesign"
       href="https://www.qualcomm.com"
@@ -14,9 +14,9 @@ import NotableWorkItem from '../../components/NotableWorkItem.astro';
       <p>
         Complete redesign for a global technology brand <Highlight>Qualcomm</Highlight>.
       </p>
-    </NotableWorkItem>
+    </NotableWork>
       
-    <NotableWorkItem 
+    <NotableWork 
       imageProps={{ src:"/work/lennd.png" }}
       title="Lennd Event Platform"
       href="https://www.lennd.com"
@@ -24,9 +24,9 @@ import NotableWorkItem from '../../components/NotableWorkItem.astro';
       <p>
         React and React Native app for the event management platform <Highlight>Lennd</Highlight>.
       </p>
-    </NotableWorkItem>
+    </NotableWork>
 
-    <NotableWorkItem 
+    <NotableWork 
       imageProps={{ src:"/work/monocle.jpg" }}
       title="Monocle Magazine"
       href="https://www.monocle.com"
@@ -34,6 +34,6 @@ import NotableWorkItem from '../../components/NotableWorkItem.astro';
       <p>
         Responsive design for the global design magazine <Highlight>Monocle</Highlight>.
       </p>
-    </NotableWorkItem>
+    </NotableWork>
   </div>
 </Section>

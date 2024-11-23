@@ -1,6 +1,5 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-// import Tag from './Tag.astro';
 import type { Post } from '../content/types';
 import TechIcon from './TechIcon.astro';
 import { calculateReadTime } from '../utils/readTime';
@@ -19,7 +18,7 @@ const {
   variant = 'default',
   color = 'linear-gradient(to right, #16a34a, #1d4ed8)',
 } = Astro.props;
-const { title, subtitle, pubDate, description } = post.data;
+const { title, subtitle, pubDate } = post.data;
 const Icon = post.collection === 'projects' ? ProjectIcon : TechIcon;
 
 // Calculate read time based on description and title since we don't have access to full content here
@@ -59,7 +58,7 @@ const descriptionClasses = {
       <Icon color={color} class={variant === 'featured' ? "h-12 w-12 mr-4 md:h-16 md:w-16" : "h-12 w-12 mr-3"} />
       <div>
         <h3 class={`${titleClasses}`}>
-          <div>{title}</div>
+          {title}
         </h3>
         {subtitle && <p class={subtitleClasses}>{subtitle}</p>}
       </div>
@@ -78,11 +77,4 @@ const descriptionClasses = {
       </div>
     </div>
   </div>
-  <!-- {tags && tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mt-4">
-      {tags.filter(tag => tag && tag.length > 0).map(tag => (
-        <Tag tag={tag} />
-      ))}
-    </div>
-  )} -->
 </a>

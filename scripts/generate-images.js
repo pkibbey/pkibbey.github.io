@@ -2,14 +2,9 @@ import { createWriteStream } from 'node:fs';
 import fs from 'node:fs/promises';
 import https from 'node:https';
 import path from 'node:path';
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { createClient } from 'pexels';
 import 'dotenv/config';
 import matter from 'gray-matter';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // You'll need to get this from https://www.pexels.com/api/
 const PEXELS_API_KEY = process.env.PEXELS_API_KEY;

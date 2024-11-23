@@ -4,6 +4,7 @@ import type { Post } from '../content/types';
 import TechIcon from './TechIcon.astro';
 import { calculateReadTime } from '../utils/readTime';
 import ProjectIcon from './ProjectIcon.astro';
+import ReadingTime from './ReadingTime.astro';
 
 interface Props {
   post: Post;
@@ -20,9 +21,6 @@ const {
 } = Astro.props;
 const { title, subtitle, pubDate } = post.data;
 const Icon = post.collection === 'projects' ? ProjectIcon : TechIcon;
-
-// Calculate read time based on description and title since we don't have access to full content here
-const readTime = calculateReadTime(post.body);
 
 const containerClasses = {
   default:
@@ -69,12 +67,7 @@ const descriptionClasses = {
     <div class="flex pt-2 items-center gap-2 text-content-xs text-gray-400 dark:text-gray-400">
       <FormattedDate date={pubDate} />
       {' | '}
-      <div class="text-content-xs flex justify-end text-gray-500 dark:text-gray-400 items-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        {readTime} min read
-      </div>
+      <ReadingTime content={post.body} size='xs' />
     </div>
   </div>
 </a>

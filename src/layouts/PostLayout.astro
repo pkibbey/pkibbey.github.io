@@ -62,7 +62,7 @@ const rawContent = await Astro.slots.render('default');
         <SidebarNav sections={sections} />
         <article class="px-2 md:px-4">
           <PostTitle collection={collection} title={title} subtitle={subtitle} pubDate={pubDate} updatedDate={updatedDate} author={author} slug={slug} color={color}>
-            <ReadingTime content={rawContent} className="mt-2" />
+            <ReadingTime content={rawContent} class="mt-2" size='small' />
           </PostTitle>
           <Markdown>
             <slot />

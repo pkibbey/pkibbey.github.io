@@ -1,25 +1,19 @@
-# Personal Blog & Portfolio
+# Personal Blog & Resume
 
-My personal website built with [Astro](https://astro.build), featuring my blog posts, projects, and resume.
+My personal website built with [NextJS](https://nextjs.org).
 Visit the live site at [phineas-dev.github.com](https://phineas-dev.github.com).
 
 ## Features
 
-- 🚀 Built with Astro for optimal performance
+- 🚀 Built with NextJS for optimal DX
 - 🎨 Clean, modern design with dark mode support
 - 📱 Fully responsive layout
-- 🐱 ASCII cat art that changes based on current section
-- 📝 Markdown-based content for easy writing
-- 🔍 Organized content structure for blog posts and projects
-- 📊 Reading time estimates
-- 🎯 Smooth navigation between posts
 
 ## Tech Stack
 
-- [Astro](https://astro.build) - Static Site Generator
+- [NextJS](https://nextjs.org) - UI Framework
 - [Tailwind CSS](https://tailwindcss.com) - Styling
 - [TypeScript](https://www.typescriptlang.org) - Type Safety
-- Markdown/MDX - Content Management
 
 ## Local Development
 

@@ -24,13 +24,11 @@ export default function RootLayout({
           <main
             id="main-content"
             tabIndex={-1}
-            className="mx-auto md:py-8 md:px-8 min-h-stretch"
+            className="container max-w-4xl mx-auto prose-lg px-4 md:px-8 min-h-stretch py-8"
           >
-            <div className="container max-w-4xl mx-auto prose-lg px-4 md:px-8">
-              <ASCIIArt className="mt-6" />
-              <h1 className="heading-1 mb-8 mt-4 max-w-3xl">title</h1>
-              {children}
-            </div>
+            <ASCIIArt className="mt-6" />
+            <h1 className="heading-1 mb-8 mt-4 max-w-3xl">title</h1>
+            {children}
           </main>
           <Footer />
         </div>

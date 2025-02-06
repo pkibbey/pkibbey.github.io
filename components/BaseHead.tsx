@@ -1,5 +1,8 @@
+'use client';
+
 import type React from 'react';
 import Head from 'next/head';
+import { usePathname } from 'next/navigation';
 
 interface Props {
   title: string;
@@ -7,12 +10,10 @@ interface Props {
 }
 
 const BaseHead: React.FC<Props> = ({ title, description }) => {
-  // Compute the canonical URL and current URL using browser globals.
-  const currentURL = typeof window !== 'undefined' ? window.location.href : '';
-  const canonicalURL =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}${window.location.pathname}`
-      : '';
+  const pathname = usePathname();
+
+  const canonicalURL = `${window.location.hostname}${pathname}`;
+  const currentURL = `${window.location.hostname}${pathname}`;
 
   return (
     <Head>

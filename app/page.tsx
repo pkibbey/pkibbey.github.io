@@ -9,14 +9,7 @@ export default function Page() {
           <p className="text-gray-900 dark:text-gray-200 mb-6 whitespace-pre-wrap">
             I specialize in creating modern web applications using{' '}
             <Highlight>React</Highlight>, <Highlight>TypeScript</Highlight>, and{' '}
-            <Highlight>Node.js</Highlight>. I've built everything from{' '}
-            <Highlight>high-traffic social networks</Highlight> to{' '}
-            <Highlight>enterprise-scale applications</Highlight>.
-          </p>
-          <p className="text-gray-900 dark:text-gray-200">
-            Currently available for new opportunities. View my{' '}
-            <Link href="/resume">Resume</Link> or check out my recent work
-            below.
+            <Highlight>Node.js</Highlight>.
           </p>
         </div>
       </section>

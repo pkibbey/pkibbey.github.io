@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/phineas-dev.github.com',
-  assetPrefix: '/phineas-dev.github.com/',
+  basePath: '',
+  assetPrefix: '',
 };
 
 module.exports = nextConfig;

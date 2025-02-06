@@ -69,7 +69,7 @@ const BaseHead: React.FC<Props> = ({ title, description }) => {
       <meta property="twitter:title" content={`${title} | Phineas-dev`} />
       <meta property="twitter:description" content={description} />
 
-      <link href="/dist/styles.css" rel="stylesheet" />
+      <link href="/out/styles.css" rel="stylesheet" />
     </Head>
   );
 };

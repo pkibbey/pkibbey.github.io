@@ -90,6 +90,10 @@
   }
 }
 
+/* * {
+  outline: 0.25px solid yellow;
+} */
+
 /* Custom styles */
 @layer base {
   /* Scroll margin for anchor links */

@@ -11,8 +11,8 @@ export default function SocialLinks() {
         <svg
           viewBox="0 0 16 16"
           aria-hidden="true"
-          width="32"
-          height="32"
+          width="24"
+          height="24"
           astro-icon="social/github"
         >
           <path
@@ -31,8 +31,8 @@ export default function SocialLinks() {
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          width="32"
-          height="32"
+          width="24"
+          height="24"
           astro-icon="social/linkedin"
         >
           <path

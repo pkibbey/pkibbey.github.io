@@ -1,6 +1,7 @@
 import type React from 'react';
 import HeaderLink from './HeaderLink';
 import MobileNav from './MobileNav';
+import SocialLinks from './SocialLinks';
 
 const Header: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const Header: React.FC = () => {
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/resume">Resume</HeaderLink>
           </div>
+          <SocialLinks />
         </nav>
       </header>
       <MobileNav />

@@ -7,7 +7,7 @@ function getTitle(pathname: string) {
     case '/resume':
       return 'Resume';
     default:
-      return 'Hi, Im Phineas';
+      return "Hi, I'm Phineas.";
   }
 }
 

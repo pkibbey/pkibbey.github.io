@@ -1,6 +1,5 @@
 import ASCIIArt from '@/components/ASCIIArt';
 import BaseHead from '@/components/BaseHead';
-import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PageTitle from '@/components/PageTitle';
 
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               {children}
             </div>
           </main>
-          <Footer />
         </div>
       </body>
     </html>

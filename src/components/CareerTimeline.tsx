@@ -30,7 +30,7 @@ export default function CareerTimeline() {
 							<p>{item.company}</p>
 							<p className="typography-small">{item.period}</p>
 						</div>
-						<div className={`typography-small mt-4`}>
+						<div className="mt-4">
 							<ul className="list-disc list-inside space-y-2">
 								{item.details.map((detail) => (
 									<li key={detail}>{detail}</li>

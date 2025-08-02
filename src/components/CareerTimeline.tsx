@@ -8,7 +8,7 @@ export default function CareerTimeline() {
 
 	return (
 		<section id="career">
-			<h2 className="typography-heading-2 mb-8 text-center">Career Journey</h2>
+			<h2 className="typography-heading-3 mb-8 text-center">Career Journey</h2>
 			<p className="typography-body text-center mb-12">
 				My career is a story of continuous adaptation and learning, from
 				co-founding one of the UK's first social networks to architecting
@@ -26,13 +26,11 @@ export default function CareerTimeline() {
 							className="cursor-pointer"
 							onClick={() => setActiveIndex(idx === activeIndex ? -1 : idx)}
 						>
-							<h3 className="typography-heading-3 text-lg font-bold">
-								{item.role}
-							</h3>
-							<p className="text-md font-medium">{item.company}</p>
-							<p className="text-sm">{item.period}</p>
+							<h3 className="typography-heading-5">{item.role}</h3>
+							<p>{item.company}</p>
+							<p className="typography-small">{item.period}</p>
 						</div>
-						<div className={`details mt-4`}>
+						<div className={`typography-small mt-4`}>
 							<ul className="list-disc list-inside space-y-2">
 								{item.details.map((detail) => (
 									<li key={detail}>{detail}</li>

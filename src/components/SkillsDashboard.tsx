@@ -96,7 +96,7 @@ export default function SkillsDashboard() {
 					</ChartContainer>
 				</div>
 				<div>
-					<h3 className="typography-heading-3 mb-4">Core Competencies</h3>
+					<h3 className="typography-heading-4 mb-4">Core Competencies</h3>
 					<div className="flex flex-wrap gap-3">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (

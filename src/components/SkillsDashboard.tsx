@@ -52,7 +52,7 @@ const chartConfig = {
 
 export default function SkillsDashboard() {
 	return (
-		<section id="skills">
+		<section id="skills" className="container max-w-2xl mx-auto">
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Skills Dashboard
 			</h2>

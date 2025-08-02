@@ -17,11 +17,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 						Skip to content
 					</a>
 					<Header />
-					<main
-						id="main-content"
-						tabIndex={-1}
-						className="container max-w-3xl mx-auto prose-lg px-4 min-h-stretch"
-					>
+					<main id="main-content" tabIndex={-1} className="px-4 min-h-stretch">
 						<div className="my-8">{children}</div>
 					</main>
 					<Footer />

@@ -7,14 +7,14 @@ export default function CareerTimeline() {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
-		<section id="career">
+		<section id="career" className="container max-w-2xl mx-auto">
 			<h2 className="typography-heading-3 mb-8 text-center">Career Journey</h2>
 			<p className="typography-body mb-8">
 				My career is a story of continuous adaptation and learning, from
 				co-founding one of the UK's first social networks to architecting
 				solutions for modern smart homes.
 			</p>
-			<div className="max-w-3xl mx-auto grid gap-8">
+			<div className="max-w-2xl mx-auto grid gap-8">
 				{timelineData.map((item, idx) => (
 					<div
 						key={item.role + item.company}

@@ -5,7 +5,7 @@ import { Badge } from "./ui/badge";
 
 export default function ProjectSpotlight() {
 	return (
-		<section id="projects">
+		<section id="projects" className="container max-w-5xl mx-auto">
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Project Spotlight
 			</h2>
@@ -15,7 +15,7 @@ export default function ProjectSpotlight() {
 				from large-scale rebrands to innovative event management platforms.
 			</p>
 			<div
-				className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
 				id="projects-container"
 			>
 				{projectsData.map((project) => (

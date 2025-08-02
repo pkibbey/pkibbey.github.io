@@ -9,7 +9,7 @@ export default function ProjectSpotlight() {
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Project Spotlight
 			</h2>
-			<p className="text-center mb-12">
+			<p className="mb-8">
 				Here are a few key projects that showcase my ability to lead
 				development, solve complex problems, and deliver high-impact results,
 				from large-scale rebrands to innovative event management platforms.

@@ -56,7 +56,7 @@ export default function SkillsDashboard() {
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Skills Dashboard
 			</h2>
-			<p className="text-center mb-12">
+			<p className="mb-8">
 				My technical expertise spans the full stack, with a deep focus on
 				creating modern, robust, and maintainable front-end systems. This
 				dashboard provides a visual overview of my core competencies.

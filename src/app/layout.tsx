@@ -8,11 +8,11 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang="en">
 			<BaseHead />
-			<body className="dark bg-[#040508]">
-				<div className="min-h-screen flex flex-col bg-gray-200 dark:bg-gray-900 text-gray-950 dark:text-gray-50 transition-colors duration-300">
+			<body>
+				<div className="min-h-screen flex flex-col transition-colors duration-300">
 					<a
 						href="#main-content"
-						className="sr-only focus:not-sr-only absolute top-0 left-0 w-full py-4 text-center text-white bg-cyan-500"
+						className="sr-only focus:not-sr-only absolute top-0 left-0 w-full py-4 text-center"
 					>
 						Skip to content
 					</a>

@@ -22,16 +22,16 @@ export default function MobileNav() {
 	return (
 		<div
 			id="mobile-nav"
-			className={`fixed inset-0 bg-white/90 dark:bg-black/90 backdrop-blur-md transition-all duration-300 ease-in-out z-50 sm:hidden flex flex-col ${isOpen ? "" : "translate-x-full"}`}
+			className={`fixed inset-0 backdrop-blur-md transition-all duration-300 ease-in-out z-50 sm:hidden flex flex-col ${isOpen ? "" : "translate-x-full"}`}
 		>
 			<div className="flex flex-col h-full">
-				<div className="flex justify-end p-2 border-b border-gray-100 dark:border-gray-900 backdrop-blur-xs bg-white/80 dark:bg-black/80 sticky top-0">
+				<div className="flex justify-end p-2 border-b backdrop-blur-xs sticky top-0">
 					<button
 						id="close-nav"
 						type="button"
 						aria-label="Close navigation menu"
 						onClick={toggleNav}
-						className="px-2 text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 active:bg-gray-100 dark:active:bg-gray-800/50 rounded-lg transition-colors"
+						className="px-2 hover:active:rounded-lg transition-colors"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function MobileNav() {
 				<nav className="flex flex-col items-stretch flex-1 gap-2 p-2">
 					<HeaderLink
 						href="#career"
-						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 active:bg-gray-100 dark:active:bg-gray-800/50"
+						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors hover:active:rounded-lg"
 						onClick={toggleNav}
 					>
 						<div className="flex items-center gap-3">
@@ -77,7 +77,7 @@ export default function MobileNav() {
 					</HeaderLink>
 					<HeaderLink
 						href="#skills"
-						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 active:bg-gray-100 dark:active:bg-gray-800/50"
+						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors hover:active:rounded-lg"
 						onClick={toggleNav}
 					>
 						<div className="flex items-center gap-3">
@@ -101,7 +101,7 @@ export default function MobileNav() {
 					</HeaderLink>
 					<HeaderLink
 						href="#projects"
-						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors text-gray-600 dark:text-gray-400 hover:text-cyan-700 dark:hover:text-cyan-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 active:bg-gray-100 dark:active:bg-gray-800/50"
+						className="text-lg font-medium text-left py-3 px-4 rounded-lg transition-colors hover:active:rounded-lg"
 						onClick={toggleNav}
 					>
 						<div className="flex items-center gap-3">

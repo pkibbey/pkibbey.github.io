@@ -6,7 +6,7 @@ import SocialLinks from "./SocialLinks";
 const Header: React.FC = () => {
 	return (
 		<>
-			<header className="bg-white/80 dark:bg-black/80 backdrop-blur-xs border-b border-gray-200 dark:border-gray-800">
+			<header className="backdrop-blur-xs border-b">
 				<nav className="container max-w-4xl mx-auto px-4 flex items-center justify-between gap-8">
 					<div className="flex items-center gap-6">
 						<h1 className="text-2xl font-bold">PK</h1>

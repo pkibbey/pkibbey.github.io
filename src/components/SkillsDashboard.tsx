@@ -82,29 +82,27 @@ const chartOptions = {
 
 export default function SkillsDashboard() {
 	return (
-		<section>
-			<h2 className="text-[2.25rem] font-bold text-gray-100 mb-8 text-center">
+		<section id="skills">
+			<h2 className="text-[2.25rem] font-bold mb-8 text-center">
 				Skills Dashboard
 			</h2>
-			<p className="text-center text-gray-300 mb-12">
+			<p className="text-center mb-12">
 				My technical expertise spans the full stack, with a deep focus on
 				creating modern, robust, and maintainable front-end systems. This
 				dashboard provides a visual overview of my core competencies.
 			</p>
 			<div className="grid md:grid-cols-2 gap-8 items-center">
-				<div className="relative w-full max-w-[500px] mx-auto h-[350px] max-h-[400px] bg-zinc-900 rounded-xl min-h-[350px] md:h-[400px]">
+				<div className="relative w-full max-w-[500px] mx-auto h-[350px] max-h-[400px] rounded-xl min-h-[350px] md:h-[400px]">
 					<Radar data={chartData} options={chartOptions} />
 				</div>
 				<div>
-					<h3 className="text-xl font-bold text-amber-400 mb-4">
-						Core Competencies
-					</h3>
+					<h3 className="text-xl font-bold mb-4">Core Competencies</h3>
 					<div className="flex flex-wrap gap-3">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (
 								<span
 									key={category + skill}
-									className="bg-zinc-800 text-sm font-medium px-3 py-1 rounded-full"
+									className="text-sm font-medium px-3 py-1 rounded-full"
 								>
 									{skill}
 								</span>

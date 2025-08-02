@@ -1,8 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import type React from "react";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { usePathname } from "next/navigation";
 
 type Props = AnchorHTMLAttributes<HTMLAnchorElement> & { children?: ReactNode };
 
@@ -13,7 +13,7 @@ const HeaderLink: React.FC<Props> = ({
 	...props
 }) => {
 	const pathname = usePathname();
-	const subpath = pathname.match(/[^\/]+/g);
+	const subpath = pathname.match(/[^/]+/g);
 	const isActive = href === pathname || href === `/${subpath?.[0]}`;
 
 	return (

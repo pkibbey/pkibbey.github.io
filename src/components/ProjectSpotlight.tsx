@@ -1,11 +1,11 @@
 "use client";
 
-import { projectsData } from "../data/projectsData";
+import { projectsData } from "../app/data/projectsData";
 
 export default function ProjectSpotlight() {
 	return (
 		<section>
-			<h2 className="section-title">Project Spotlight</h2>
+			<h2 className="text-3xl font-bold mb-8 text-center">Project Spotlight</h2>
 			<p className="text-center text-gray-600 mb-12">
 				Here are a few key projects that showcase my ability to lead
 				development, solve complex problems, and deliver high-impact results,
@@ -18,7 +18,7 @@ export default function ProjectSpotlight() {
 				{projectsData.map((project) => (
 					<div
 						key={project.title}
-						className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300"
+						className="bg-zinc-800 p-6 rounded-lg border border-zinc-700 shadow-sm hover:shadow-lg transition-shadow duration-300"
 					>
 						<h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
 						<p className="mt-2 text-gray-600">{project.description}</p>
@@ -35,31 +35,6 @@ export default function ProjectSpotlight() {
 					</div>
 				))}
 			</div>
-			<style jsx>{`
-        .section-title {
-          font-size: 2.25rem;
-          font-weight: 700;
-          color: #f3f4f6; /* gray-100 */
-          margin-bottom: 2rem;
-          text-align: center;
-        }
-        .bg-white {
-          background-color: #18181b !important;
-        }
-        .border-gray-200 {
-          border-color: #23272e !important;
-        }
-        .text-gray-800,
-        .text-gray-600 {
-          color: #e5e7eb !important;
-        }
-        .text-blue-800 {
-          color: #fbbf24 !important;
-        }
-        .bg-blue-100 {
-          background-color: #23272e !important;
-        }
-      `}</style>
 		</section>
 	);
 }

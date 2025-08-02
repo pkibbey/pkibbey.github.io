@@ -1,17 +1,16 @@
 "use client";
 
-import React from "react";
-import { skillsData } from "../data/skillsData";
-import { Radar } from "react-chartjs-2";
 import {
 	Chart as ChartJS,
-	RadialLinearScale,
-	PointElement,
-	LineElement,
 	Filler,
-	Tooltip,
 	Legend,
+	LineElement,
+	PointElement,
+	RadialLinearScale,
+	Tooltip,
 } from "chart.js";
+import { Radar } from "react-chartjs-2";
+import { skillsData } from "../app/data/skillsData";
 
 ChartJS.register(
 	RadialLinearScale,

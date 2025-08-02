@@ -1,4 +1,5 @@
 import BaseHead from "@/src/components/BaseHead";
+import Footer from "@/src/components/Footer";
 import Header from "@/src/components/Header";
 
 import "./global.css";
@@ -19,10 +20,11 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 					<main
 						id="main-content"
 						tabIndex={-1}
-						className="container max-w-4xl mx-auto prose-lg px-4 md:px-8 min-h-stretch"
+						className="container max-w-4xl mx-auto prose-lg px-4 min-h-stretch"
 					>
 						<div className="my-8">{children}</div>
 					</main>
+					<Footer />
 				</div>
 			</body>
 		</html>

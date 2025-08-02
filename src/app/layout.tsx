@@ -9,7 +9,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 		<html lang="en">
 			<BaseHead />
 			<body>
-				<div className="min-h-screen flex flex-col transition-colors duration-300">
+				<div className="min-h-screen flex flex-col transition-colors duration-300 dark:bg-gray-900 dark:text-gray-200">
 					<a
 						href="#main-content"
 						className="sr-only focus:not-sr-only absolute top-0 left-0 w-full py-4 text-center"

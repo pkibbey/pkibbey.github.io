@@ -75,7 +75,7 @@ export default function SkillsDashboard() {
 				dashboard provides a visual overview of my core competencies.
 			</p>
 			<div className="grid md:grid-cols-2 gap-8 items-center">
-				<div className="relative w-full max-w-[400px] mx-auto h-[300px] max-h-[350px] rounded-xl min-h-[300px] md:h-[400px]">
+				<div className="hidden sm:block relative w-full max-w-[400px] mx-auto h-[300px] max-h-[350px] rounded-xl min-h-[300px] md:h-[400px]">
 					<Radar data={chartData} options={chartOptions} />
 				</div>
 				<div>

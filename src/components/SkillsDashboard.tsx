@@ -53,7 +53,7 @@ const chartConfig = {
 export default function SkillsDashboard() {
 	return (
 		<section id="skills">
-			<h2 className="text-[2.25rem] font-bold mb-8 text-center">
+			<h2 className="typography-heading-2 mb-8 text-center">
 				Skills Dashboard
 			</h2>
 			<p className="text-center mb-12">
@@ -96,7 +96,7 @@ export default function SkillsDashboard() {
 					</ChartContainer>
 				</div>
 				<div>
-					<h3 className="text-xl font-bold mb-4">Core Competencies</h3>
+					<h3 className="typography-heading-3 mb-4">Core Competencies</h3>
 					<div className="flex flex-wrap gap-3">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (

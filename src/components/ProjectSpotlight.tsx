@@ -6,7 +6,9 @@ import { Badge } from "./ui/badge";
 export default function ProjectSpotlight() {
 	return (
 		<section id="projects">
-			<h2 className="text-3xl font-bold mb-8 text-center">Project Spotlight</h2>
+			<h2 className="typography-heading-2 mb-8 text-center">
+				Project Spotlight
+			</h2>
 			<p className="text-center mb-12">
 				Here are a few key projects that showcase my ability to lead
 				development, solve complex problems, and deliver high-impact results,
@@ -21,7 +23,7 @@ export default function ProjectSpotlight() {
 						key={project.title}
 						className="p-6 rounded-lg border shadow-sm hover:shadow-lg transition-shadow duration-300"
 					>
-						<h3 className="text-xl font-bold">{project.title}</h3>
+						<h3 className="typography-heading-3">{project.title}</h3>
 						<p className="mt-2">{project.description}</p>
 						<div className="mt-4 flex flex-wrap gap-2">
 							{project.tags.map((tag) => (

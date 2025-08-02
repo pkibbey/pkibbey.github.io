@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 			<nav className="container max-w-4xl mx-auto px-4 flex items-center justify-between gap-8">
 				<div className="flex items-center gap-6">
 					<a href="/">
-						<h1 className="text-2xl font-bold">PK</h1>
+						<h1 className="font-bold typography-heading-1">PK</h1>
 					</a>
 					<div className="hidden sm:flex items-center sm:gap-2 md:gap-4">
 						<HeaderLink href="#career">Career</HeaderLink>

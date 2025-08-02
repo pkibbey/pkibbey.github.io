@@ -1,4 +1,4 @@
-# Personal Blog & Resume
+# Resume
 
 My personal website built with [NextJS](https://nextjs.org).
 Visit the live site at [pkibbey.github.com](https://pkibbey.github.com).

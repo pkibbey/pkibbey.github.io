@@ -8,8 +8,8 @@ export default function CareerTimeline() {
 
 	return (
 		<section id="career">
-			<h2 className="text-3xl font-bold mb-8 text-center">Career Journey</h2>
-			<p className="text-center mb-12">
+			<h2 className="typography-heading-2 mb-8 text-center">Career Journey</h2>
+			<p className="typography-body text-center mb-12">
 				My career is a story of continuous adaptation and learning, from
 				co-founding one of the UK's first social networks to architecting
 				solutions for modern smart homes.
@@ -26,7 +26,9 @@ export default function CareerTimeline() {
 							className="cursor-pointer"
 							onClick={() => setActiveIndex(idx === activeIndex ? -1 : idx)}
 						>
-							<h3 className="text-lg font-bold">{item.role}</h3>
+							<h3 className="typography-heading-3 text-lg font-bold">
+								{item.role}
+							</h3>
 							<p className="text-md font-medium">{item.company}</p>
 							<p className="text-sm">{item.period}</p>
 						</div>

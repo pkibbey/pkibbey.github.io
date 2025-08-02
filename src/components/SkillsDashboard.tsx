@@ -1,67 +1,54 @@
 "use client";
 
 import {
-	Chart as ChartJS,
-	Filler,
-	Legend,
-	LineElement,
-	PointElement,
-	RadialLinearScale,
-	Tooltip,
-} from "chart.js";
-import { Radar } from "react-chartjs-2";
+	PolarAngleAxis,
+	PolarGrid,
+	PolarRadiusAxis,
+	Radar,
+	RadarChart,
+} from "recharts";
 import { skillsData } from "../app/data/skillsData";
+import { Badge } from "./ui/badge";
+import {
+	type ChartConfig,
+	ChartContainer,
+	ChartTooltip,
+	ChartTooltipContent,
+} from "./ui/chart";
 
-ChartJS.register(
-	RadialLinearScale,
-	PointElement,
-	LineElement,
-	Filler,
-	Tooltip,
-	Legend,
-);
-
-const chartData = {
-	labels: [
-		"Frontend",
-		"Backend",
-		"Leadership",
-		"Architecture",
-		"Testing",
-		"Design",
-	],
-	datasets: [
-		{
-			label: "Area of Expertise",
-			data: [9, 7, 8, 9, 8, 7],
-		},
-	],
-};
-
-const chartOptions = {
-	maintainAspectRatio: false,
-	scales: {
-		r: {
-			pointLabels: {
-				font: { size: 12 },
-			},
-			ticks: {
-				backdropColor: "transparent",
-				stepSize: 2,
-			},
-			min: 0,
-			max: 10,
-		},
+const chartData = [
+	{
+		area: "Frontend",
+		expertise: 9,
 	},
-	plugins: {
-		legend: {
-			display: false,
-		},
-		tooltip: {
-			borderWidth: 1,
-		},
+	{
+		area: "Backend",
+		expertise: 7,
 	},
-};
+	{
+		area: "Leadership",
+		expertise: 8,
+	},
+	{
+		area: "Architecture",
+		expertise: 9,
+	},
+	{
+		area: "Testing",
+		expertise: 8,
+	},
+	{
+		area: "Design",
+		expertise: 7,
+	},
+];
+
+const chartConfig = {
+	expertise: {
+		label: "Expertise Level=",
+		color: "hsl(var(--chart-1))",
+	},
+} satisfies ChartConfig;
 
 export default function SkillsDashboard() {
 	return (
@@ -75,20 +62,47 @@ export default function SkillsDashboard() {
 				dashboard provides a visual overview of my core competencies.
 			</p>
 			<div className="grid md:grid-cols-2 gap-8 items-center">
-				<div className="hidden sm:block relative w-full max-w-[400px] mx-auto h-[300px] max-h-[350px] rounded-xl min-h-[300px] md:h-[400px]">
-					<Radar data={chartData} options={chartOptions} />
+				<div>
+					<ChartContainer
+						config={chartConfig}
+						className="mx-auto aspect-square max-h-[400px]"
+					>
+						<RadarChart
+							data={chartData}
+							margin={{
+								top: 20,
+								right: 80,
+								bottom: 20,
+								left: 80,
+							}}
+						>
+							<ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+							<PolarAngleAxis dataKey="area" />
+							<PolarGrid />
+							<PolarRadiusAxis
+								angle={90}
+								domain={[0, 10]}
+								tick={false}
+								tickCount={6}
+							/>
+							<Radar
+								dataKey="expertise"
+								fill="var(--color-expertise)"
+								fillOpacity={0.3}
+								stroke="var(--color-expertise)"
+								strokeWidth={2}
+							/>
+						</RadarChart>
+					</ChartContainer>
 				</div>
 				<div>
 					<h3 className="text-xl font-bold mb-4">Core Competencies</h3>
 					<div className="flex flex-wrap gap-3">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (
-								<span
-									key={category + skill}
-									className="text-sm font-medium px-3 py-1 rounded-full"
-								>
+								<Badge key={category + skill} variant="outline">
 									{skill}
-								</span>
+								</Badge>
 							)),
 						)}
 					</div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { projectsData } from "../app/data/projectsData";
+import { Badge } from "./ui/badge";
 
 export default function ProjectSpotlight() {
 	return (
@@ -24,12 +25,9 @@ export default function ProjectSpotlight() {
 						<p className="mt-2">{project.description}</p>
 						<div className="mt-4 flex flex-wrap gap-2">
 							{project.tags.map((tag) => (
-								<span
-									key={tag}
-									className="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full"
-								>
+								<Badge key={tag} variant="outline">
 									{tag}
-								</span>
+								</Badge>
 							))}
 						</div>
 					</div>

@@ -4,7 +4,7 @@ import SkillsDashboard from "../components/SkillsDashboard";
 
 export default function ResumePage() {
 	return (
-		<div>
+		<div className="grid gap-16">
 			<CareerTimeline />
 			<SkillsDashboard />
 			<ProjectSpotlight />

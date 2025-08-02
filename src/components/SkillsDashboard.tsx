@@ -34,12 +34,6 @@ const chartData = {
 		{
 			label: "Area of Expertise",
 			data: [9, 7, 8, 9, 8, 7],
-			backgroundColor: "rgba(74, 85, 104, 0.2)",
-			borderColor: "rgba(45, 55, 72, 1)",
-			pointBackgroundColor: "rgba(45, 55, 72, 1)",
-			pointBorderColor: "#fff",
-			pointHoverBackgroundColor: "#fff",
-			pointHoverBorderColor: "rgba(45, 55, 72, 1)",
 		},
 	],
 };
@@ -48,14 +42,10 @@ const chartOptions = {
 	maintainAspectRatio: false,
 	scales: {
 		r: {
-			angleLines: { color: "rgba(243, 244, 246, 0.2)" }, // gray-100
-			grid: { color: "rgba(243, 244, 246, 0.15)" },
 			pointLabels: {
-				font: { size: 14 },
-				color: "#f3f4f6", // gray-100
+				font: { size: 12 },
 			},
 			ticks: {
-				color: "#fbbf24", // amber-400
 				backdropColor: "transparent",
 				stepSize: 2,
 			},
@@ -66,15 +56,8 @@ const chartOptions = {
 	plugins: {
 		legend: {
 			display: false,
-			labels: {
-				color: "#f3f4f6", // gray-100
-			},
 		},
 		tooltip: {
-			backgroundColor: "#23272e",
-			titleColor: "#fbbf24",
-			bodyColor: "#f3f4f6",
-			borderColor: "#fbbf24",
 			borderWidth: 1,
 		},
 	},
@@ -92,7 +75,7 @@ export default function SkillsDashboard() {
 				dashboard provides a visual overview of my core competencies.
 			</p>
 			<div className="grid md:grid-cols-2 gap-8 items-center">
-				<div className="relative w-full max-w-[500px] mx-auto h-[350px] max-h-[400px] rounded-xl min-h-[350px] md:h-[400px]">
+				<div className="relative w-full max-w-[400px] mx-auto h-[300px] max-h-[350px] rounded-xl min-h-[300px] md:h-[400px]">
 					<Radar data={chartData} options={chartOptions} />
 				</div>
 				<div>

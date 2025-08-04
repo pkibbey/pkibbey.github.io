@@ -8,7 +8,6 @@
 		"start": "vite preview",
 		"format": "biome format --write ./src",
 		"check": "biome check .",
-		"deploy": "vite build && touch dist/.nojekyll && git add dist/ && git commit -m \"Deploy\" && git subtree push --prefix dist origin gh-pages",
 		"knip": "knip"
 	},
 	"dependencies": {

@@ -2,8 +2,6 @@ import BaseHead from "../components/BaseHead";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-import "../global.css";
-
 export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang="en">

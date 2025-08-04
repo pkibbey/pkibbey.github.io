@@ -1,18 +1,11 @@
-"use client";
-
-import type React from "react";
-import Head from "next/head";
-
 export default function BaseHead() {
 	return (
-		<Head>
+		<>
 			{/* Global Metadata */}
 			<meta charSet="utf-8" />
 			<meta name="viewport" content="width=device-width,initial-scale=1" />
 			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 			{/* Set a default generator - adjust as needed */}
-			<meta name="generator" content="Next.js" />
-
 			{/* SEO */}
 			<title>Phineas Kibbey - Personal Website</title>
 			<meta
@@ -45,6 +38,6 @@ export default function BaseHead() {
 				type="font/ttf"
 				crossOrigin="anonymous"
 			/>
-		</Head>
+		</>
 	);
 }

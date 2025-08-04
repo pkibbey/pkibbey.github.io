@@ -1,5 +1,3 @@
-"use client";
-
 import { projectsData } from "../app/data/projectsData";
 import { Badge } from "./ui/badge";
 

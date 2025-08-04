@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { timelineData } from "../app/data/timelineData";
 

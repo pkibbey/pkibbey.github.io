@@ -3,6 +3,7 @@ export const skillsData = {
 	"Frameworks & Libraries": [
 		"Vue.js",
 		"React",
+		"Vite",
 		"Next.js",
 		"Node.js",
 		"Express",

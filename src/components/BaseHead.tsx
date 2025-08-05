@@ -19,23 +19,30 @@ export default function BaseHead() {
 			{/* Font preloads */}
 			<link
 				rel="preload"
-				href="/fonts/atkinson-regular.ttf"
+				href="/fonts/inter/Inter-Regular.woff2"
 				as="font"
-				type="font/ttf"
+				type="font/woff2"
 				crossOrigin="anonymous"
 			/>
 			<link
 				rel="preload"
-				href="/fonts/atkinson-bold.ttf"
+				href="/fonts/inter/Inter-Medium.woff2"
 				as="font"
-				type="font/ttf"
+				type="font/woff2"
 				crossOrigin="anonymous"
 			/>
 			<link
 				rel="preload"
-				href="/fonts/atkinson-italic.ttf"
+				href="/fonts/inter/Inter-SemiBold.woff2"
 				as="font"
-				type="font/ttf"
+				type="font/woff2"
+				crossOrigin="anonymous"
+			/>
+			<link
+				rel="preload"
+				href="/fonts/inter/Inter-Bold.woff2"
+				as="font"
+				type="font/woff2"
 				crossOrigin="anonymous"
 			/>
 		</>

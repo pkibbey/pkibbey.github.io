@@ -1,6 +1,6 @@
 import type React from "react";
-import HeaderLink from "./HeaderLink";
-import SocialLinks from "./SocialLinks";
+import HeaderLink from "@/components/HeaderLink";
+import SocialLinks from "@/components/SocialLinks";
 
 const Footer: React.FC = () => {
 	return (

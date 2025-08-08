@@ -1,8 +1,8 @@
 import type React from "react";
-import HeaderLink from "./HeaderLink";
+import HeaderLink from "@/components/HeaderLink";
 
-import SocialLinks from "./SocialLinks";
-import ThemeToggle from "./ThemeToggle";
+import SocialLinks from "@/components/SocialLinks";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header: React.FC = () => {
 	return (

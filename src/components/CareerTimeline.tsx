@@ -1,4 +1,15 @@
-const timelineData = [
+import { FpLogo, LevelLogo, LivePersonLogo, MetaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
+import { TimelineItem } from "@/components/TimelineItem";
+
+export interface TimelineItemData {
+	role: string;
+	company: string;
+	period: string;
+	details: string[];
+	logo?: React.ReactNode;
+}
+
+const timelineData: TimelineItemData[] = [
 	{
 		role: "Senior Software Engineer",
 		company: "Level Home",
@@ -10,6 +21,7 @@ const timelineData = [
 			"Achieved 80% code coverage with Jest, Vitest, and Playwright tests.",
 			"Reduced team technical debt by 70%, accelerating feature delivery.",
 		],
+		logo: <LevelLogo className="w-20" />
 	},
 	{
 		role: "Lead Instructor",
@@ -20,6 +32,7 @@ const timelineData = [
 			"Provided extensive online support, helping students achieve an 80% pass rate.",
 			"Continuously improved learning materials based on classroom feedback.",
 		],
+		logo: <MetaLogo className="w-20" />,
 	},
 	{
 		role: "Senior Fullstack Engineer",
@@ -31,6 +44,7 @@ const timelineData = [
 			"Mentored multiple team members, contributing to their professional promotion.",
 			"Developed secure API proxy servers using Node.js and Express.",
 		],
+		logo: <LivePersonLogo className="w-20" />,
 	},
 	{
 		role: "Senior Fullstack Engineer",
@@ -41,6 +55,7 @@ const timelineData = [
 			"Led the effort to replace the core video player, significantly improving performance.",
 			"Fixed high-priority UI bugs in a Chrome-based TV web app.",
 		],
+		logo: <VizioLogo className="w-20" />,	
 	},
 	{
 		role: "Business Owner / Co-founder",
@@ -51,47 +66,33 @@ const timelineData = [
 			"Pioneered solutions for high-volume traffic, developing a performant, distributed network.",
 			"Gained invaluable experience in product ideation, marketing, design, and large-scale event management.",
 		],
+		logo: <FpLogo className="w-20" />,
 	},
 	{
 		role: "Early Career",
 		company: "Various Agencies",
 		period: "1996 – 2015",
 		details: [
-			"Began my journey during the dawn of the web, building a deep, fundamental understanding of how the internet works.",
 			"Worked as a Frontend Engineer at Mirum, leading the Qualcomm.com redesign.",
 			"Developed a cross-platform mobile app using React Native at the startup Lennd.",
 			"Gained a BSc in Computer Science from Leicester University.",
 		],
+		logo: <QualcommLogo className="w-20" />
 	},
 ];
 
 export default function CareerTimeline() {
 	return (
 		<section id="career" className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-3 mb-8 text-center">Career Journey</h2>
-			<p className="typography-body mb-8">
+			<h2 className="typography-heading-3 mb-4">Career Journey</h2>
+			<p className="typography-body mb-4">
 				My career is a story of continuous adaptation and learning, from
 				co-founding one of the UK's first social networks to architecting
 				solutions for modern smart homes.
 			</p>
-			<div className="max-w-2xl mx-auto grid gap-8">
+			<div className="max-w-2xl mx-auto grid gap-4">
 				{timelineData.map((item) => (
-					<div
-						key={item.role + item.company}
-					>
-						<div>
-							<h3 className="typography-heading-5">{item.role}</h3>
-							<p>{item.company}</p>
-							<p className="typography-small">{item.period}</p>
-						</div>
-						<div className="mt-4">
-							<ul className="list-disc list-inside space-y-2">
-								{item.details.map((detail) => (
-									<li key={detail}>{detail}</li>
-								))}
-							</ul>
-						</div>
-					</div>
+					<TimelineItem key={item.role + item.company} {...item} />
 				))}
 			</div>
 		</section>

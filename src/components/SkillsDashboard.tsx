@@ -1,3 +1,5 @@
+"use client"
+
 import {
 	PolarAngleAxis,
 	PolarGrid,
@@ -5,13 +7,13 @@ import {
 	Radar,
 	RadarChart,
 } from "recharts";
-import { Badge } from "./ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
 	type ChartConfig,
 	ChartContainer,
 	ChartTooltip,
 	ChartTooltipContent,
-} from "./ui/chart";
+} from "@/components/ui/chart";
 
 const skillsData = {
 	Languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],

@@ -1,8 +1,8 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
 	"project": ["src/**/*.{ts,tsx}"],
-	"entry": ["src/main.tsx"],
-	"ignoreDependencies": ["autoprefixer", "tailwindcss", "postcss-load-config", "tw-animate-css", "@tailwindcss/typography"],
+	"entry": ["src/app/*.tsx"],
+	"ignoreDependencies": ["autoprefixer", "postcss-load-config", "tw-animate-css", "@tailwindcss/typography"],
 	"paths": {
 		"@/*": ["src/*"]
 	}

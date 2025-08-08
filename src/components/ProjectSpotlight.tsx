@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 const projectsData = [
 	{
-		title: "Qualcomm.com Redesign",
+		title: "Qualcomm Redesign",
 		description:
 			"Led the front-end development for a major website rebrand, migrating from Ember.js to React to enhance performance and maintainability.",
 		tags: ["React", "Ember.js", "JavaScript", "Leadership"],
@@ -32,7 +32,7 @@ const projectsData = [
 		tags: ["React", "React Native", "GraphQL", "Mobile"],
 	},
 	{
-		title: "Monocle.com",
+		title: "Monocle Magazine",
 		description:
 			"Developed the online presence for a global design magazine with a focus on meticulous detail and responsive design using an XML-based CMS.",
 		tags: ["CMS", "HTML/CSS", "Responsive Design"],

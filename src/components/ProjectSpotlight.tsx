@@ -38,7 +38,7 @@ export default function ProjectSpotlight() {
 				Project Spotlight
 			</h2>
 			<div
-				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+				className="grid sm:grid-cols-2 gap-6"
 				id="projects-container"
 			>
 				{projectsData.map((project) => (

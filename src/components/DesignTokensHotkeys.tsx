@@ -417,6 +417,7 @@ export default function DesignTokensHotkeys() {
       {/* Active overlay */}
   <div
         aria-live="polite"
+        aria-hidden="true"
         className={
           active
     ? "pointer-events-none fixed right-4 top-4 z-50 rounded-md border backdrop-blur-xs bg-card/90 px-3 py-2 shadow-sm text-sm"
@@ -475,6 +476,7 @@ export default function DesignTokensHotkeys() {
           className="absolute right-4 top-4 z-40 text-muted-foreground/70 hidden sm:block"
           style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
           role="note"
+          aria-hidden="true"
           title="Press Option (⌥) for design tweaks"
         >
           <span className="sr-only">Press Option for design tweaks</span>

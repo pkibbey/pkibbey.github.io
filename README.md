@@ -1,18 +1,18 @@
 # Resume
 
 
-My personal website built with [Vite](https://vitejs.dev).
+My personal website built with [NextJS](https://nextjs.org).
 Visit the live site at [pkibbey.github.com](https://pkibbey.github.com).
 
 ## Features
 
-- 🚀 Built with Vite for optimal DX
+- 🚀 Built with NextJS for optimal DX
 - 🎨 Clean, modern design with dark mode support
 - 📱 Fully responsive layout
 
 ## Tech Stack
 
-- [Vite](https://vitejs.dev) - Build Tool
+- [NextJS](https://nextjs.org) - Build Tool
 - [Tailwind CSS](https://tailwindcss.com) - Styling
 - [TypeScript](https://www.typescriptlang.org) - Type Safety
 

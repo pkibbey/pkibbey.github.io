@@ -40,15 +40,15 @@ const chartData = [
 	},
 	{
 		area: "Backend",
-		expertise: 7,
+		expertise: 6,
 	},
 	{
 		area: "Leadership",
-		expertise: 8,
+		expertise: 6,
 	},
 	{
 		area: "Architecture",
-		expertise: 9,
+		expertise: 8,
 	},
 	{
 		area: "Testing",
@@ -69,7 +69,7 @@ const chartConfig = {
 
 export default function SkillsDashboard() {
 	return (
-		<section id="skills" className="container max-w-2xl mx-auto">
+		<section id="skills" className="container max-w-2xl mx-auto px-4">
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Skills Dashboard
 			</h2>

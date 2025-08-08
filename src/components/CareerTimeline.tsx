@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const timelineData = [
 	{
 		role: "Senior Software Engineer",
@@ -69,7 +67,7 @@ const timelineData = [
 
 export default function CareerTimeline() {
 	return (
-		<section id="career" className="container max-w-2xl mx-auto">
+		<section id="career" className="container max-w-2xl mx-auto px-4">
 			<h2 className="typography-heading-3 mb-8 text-center">Career Journey</h2>
 			<p className="typography-body mb-8">
 				My career is a story of continuous adaptation and learning, from

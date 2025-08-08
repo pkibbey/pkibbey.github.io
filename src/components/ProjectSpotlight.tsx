@@ -41,7 +41,7 @@ const projectsData = [
 
 export default function ProjectSpotlight() {
 	return (
-		<section id="projects" className="container max-w-5xl mx-auto">
+		<section id="projects" className="container max-w-5xl mx-auto px-4">
 			<h2 className="typography-heading-2 mb-8 text-center">
 				Project Spotlight
 			</h2>

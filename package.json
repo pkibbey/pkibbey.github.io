@@ -3,10 +3,10 @@
 	"version": "0.2.0",
 	"url": "https://pkibbey.github.io",
 	"scripts": {
-		"dev": "vite",
-		"build": "vite-react-ssg build",
-		"preview": "vite preview",
-		"start": "vite preview",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "serve -s out -l 3000",
+		"preview": "serve -s out -l 3000",
 		"format": "biome format --write ./src",
 		"check": "biome check .",
 		"knip": "knip"
@@ -14,14 +14,14 @@
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.2.3",
 		"@types/react": "^19.1.9",
-		"@vitejs/plugin-react": "^4.7.0",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
+		"next": "^15.0.0",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
 		"recharts": "^2.15.4",
 		"tailwind-merge": "^3.3.1",
-		"vite": "^7.0.6"
+		"serve": "^14.2.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.1.3",
@@ -34,7 +34,6 @@
 		"postcss": "^8.5.6",
 		"tailwindcss": "^4.1.11",
 		"tw-animate-css": "^1.3.6",
-		"typescript": "^5.9.2",
-		"vite-react-ssg": "^0.8.8"
+		"typescript": "^5.9.2"
 	}
 }

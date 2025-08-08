@@ -1,11 +1,10 @@
 import type React from "react";
 import HeaderLink from "./HeaderLink";
 import SocialLinks from "./SocialLinks";
-import ThemeToggle from "./ThemeToggle";
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="backdrop-blur-xs border-t mt-auto">
+		<footer className="border-t">
 			<nav className="container max-w-5xl mx-auto px-4 flex items-center justify-between gap-8">
 				<div className="flex items-center gap-6">
 					<a href="/">
@@ -18,7 +17,6 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 				<div className="flex items-center gap-4">
-					<ThemeToggle />
 					<SocialLinks />
 				</div>
 			</nav>

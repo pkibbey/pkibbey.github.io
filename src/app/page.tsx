@@ -5,7 +5,7 @@ import SkillsDashboard from "@/components/SkillsDashboard";
 
 export default function Page() {
   return (
-    <div className="grid gap-16">
+    <div className="grid gap-12">
       <Hero />
       <CareerTimeline />
       <SkillsDashboard />

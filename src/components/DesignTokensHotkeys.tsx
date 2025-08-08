@@ -456,12 +456,12 @@ export default function DesignTokensHotkeys() {
             <span>Brightness</span>
             <span className="ml-2 text-muted-foreground">({currentShade})</span>
           </li>
-          <li className="flex items-center gap-2 text-muted-foreground">
+          <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">?</kbd>
             <span>Randomize</span>
           </li>
-          <li className="flex items-center gap-2 text-muted-foreground">
+          <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">R</kbd>
             <span>Reset</span>

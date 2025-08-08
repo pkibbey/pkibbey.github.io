@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Header: React.FC = () => {
 	return (
-		<header className="backdrop-blur-xs border-b">
+		<header className="border-b">
 			<nav className="container max-w-5xl mx-auto px-4 flex items-center justify-between gap-8">
 				<div className="flex items-center gap-6">
 					<a href="/">

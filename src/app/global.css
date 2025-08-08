@@ -227,5 +227,14 @@ html {
       text-neutral-50 text-neutral-100 text-neutral-200 text-neutral-300 text-neutral-400 text-neutral-500 text-neutral-600 text-neutral-700 text-neutral-800 text-neutral-900 text-neutral-950
       text-stone-50 text-stone-100 text-stone-200 text-stone-300 text-stone-400 text-stone-500 text-stone-600 text-stone-700 text-stone-800 text-stone-900 text-stone-950;
   }
+
+  /*
+    Safelist for Tailwind v4 text size variables
+    Ensures font-size variables are emitted even when sizes are only used via @apply
+    (e.g., in .typography-heading-* utilities), so audits like Lighthouse see explicit sizes.
+  */
+  .tw-text-size-vars-safelist {
+    @apply text-xs text-sm text-base text-lg text-xl text-2xl text-3xl text-4xl text-5xl text-6xl text-7xl text-8xl text-9xl;
+  }
 }
 

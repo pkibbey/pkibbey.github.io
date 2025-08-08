@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/chart";
 
 const skillsData = {
-	Languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],
+	Languages: ["TypeScript", "JavaScript", "HTML5", "CSS3"],
 	"Frameworks & Libraries": [
 		"Vue.js",
 		"React",
@@ -73,9 +73,9 @@ export default function SkillsDashboard() {
 	return (
 		<section className="container max-w-2xl mx-auto px-4">
 			<h2 className="typography-heading-2 mb-4">
-				Core Competencies
+				Skills & Expertise
 			</h2>
-			<div className="grid md:grid-cols-2 gap-4 items-center">
+			<div className="grid md:grid-cols-2 gap-6 items-center py-4">
 				<div>
 					<ChartContainer
 						config={chartConfig}
@@ -110,7 +110,7 @@ export default function SkillsDashboard() {
 					</ChartContainer>
 				</div>
 				<div>
-					<div className="flex flex-wrap gap-3">
+					<div className="flex flex-wrap gap-2">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (
 								<Badge key={category + skill} variant="outline">

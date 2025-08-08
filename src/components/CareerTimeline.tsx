@@ -1,4 +1,4 @@
-import { DysonLogo, FpLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
+import { BritishAirwaysLogo, DysonLogo, FpLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
 import { TimelineItem, type TimelineItemData } from "@/components/TimelineItem";
 
 const timelineData: TimelineItemData[] = [
@@ -69,14 +69,15 @@ const timelineData: TimelineItemData[] = [
 			"Developed a cross-platform mobile app using React Native at the startup Lennd.",
 			"Gained a BSc in Computer Science from Leicester University.",
 		],
-		logo: [
-			<QualcommLogo key="qualcomm-logo" className="w-20" />,
-			<DysonLogo key="dyson-logo" className="w-20" />,
-			<MaseratiLogo key="maserati-logo" className="w-20" />,
-			<MonocleLogo key="monocle-logo" className="w-20" />,
-			<NokiaLogo key="nokia-logo" className="w-20" />,
-			<MandsLogo key="mands-logo" className="w-20" />,
-		]
+		   logo: [
+			   <QualcommLogo key="qualcomm-logo" className="w-20" />,
+			   <DysonLogo key="dyson-logo" className="w-20" />,
+			   <MaseratiLogo key="maserati-logo" className="w-20" />,
+			   <MonocleLogo key="monocle-logo" className="w-20" />,
+			   <NokiaLogo key="nokia-logo" className="w-20" />,
+			   <MandsLogo key="mands-logo" className="w-20" />,
+			   <BritishAirwaysLogo key="britishairways-logo" className="w-20" />,
+		   ]
 	},
 ];
 

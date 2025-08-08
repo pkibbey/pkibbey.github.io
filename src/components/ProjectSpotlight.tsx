@@ -45,13 +45,12 @@ export default function ProjectSpotlight() {
 			<h2 className="typography-heading-2 mb-4">
 				Project Spotlight
 			</h2>
-			<p className="4">
-				Here are a few key projects that showcase my ability to lead
-				development, solve complex problems, and deliver high-impact results,
-				from large-scale rebrands to innovative event management platforms.
+			<p className="typography-caption mb-6">
+				A few key projects that showcase my ability to lead development, solve complex problems, and
+				deliver high-impact results, from large-scale rebrands to innovative event management platforms.
 			</p>
 			<div
-				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
 				id="projects-container"
 			>
 				{projectsData.map((project) => (

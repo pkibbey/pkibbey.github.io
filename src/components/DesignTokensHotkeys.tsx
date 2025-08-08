@@ -37,6 +37,23 @@ function isDarkTheme() {
   return document.documentElement.classList.contains("dark");
 }
 
+function getRandomInt(max: number) {
+  const n = Math.max(0, Math.floor(max));
+  if (n <= 1) return 0;
+  try {
+    // Prefer cryptographically strong random if available
+    const arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return arr[0] % n;
+  } catch {
+    return Math.floor(Math.random() * n);
+  }
+}
+
+function randomFromArray<T>(arr: T[]): T {
+  return arr[getRandomInt(arr.length)] as T;
+}
+
 // Tailwind v4 default color families (subset, ordered for cycling)
 const COLOR_FAMILIES = [
   "red",
@@ -76,6 +93,32 @@ function invertShadeIndex(idx: number) {
   const n = SHADES.length;
   const i = clamp(idx, 0, n - 1);
   return (n - 1) - i;
+}
+
+// Compute allowed shade indices for cycling based on theme
+function allowedShadeIndices(dark: boolean): number[] {
+  // dark theme: 50..500 (inclusive) -> indices 0..5
+  // light theme: 500..950 (inclusive) -> indices 5..10
+  const boundaryIndex = SHADES.indexOf(500);
+  if (boundaryIndex < 0) return SHADES.map((_, i) => i);
+  if (dark) return SHADES.map((_, i) => i).filter((i) => i <= boundaryIndex);
+  return SHADES.map((_, i) => i).filter((i) => i >= boundaryIndex);
+}
+
+function nearestAllowedShadeIndex(currentIndex: number, allowed: number[]): number {
+  if (allowed.includes(currentIndex)) return currentIndex;
+  // Fallback: pick allowed index with nearest actual shade value
+  const currentShade = SHADES[clamp(currentIndex, 0, SHADES.length - 1)];
+  let best = allowed[0] ?? 0;
+  let bestDiff = Math.abs(SHADES[best] - currentShade);
+  for (const i of allowed) {
+    const d = Math.abs(SHADES[i] - currentShade);
+    if (d < bestDiff) {
+      best = i;
+      bestDiff = d;
+    }
+  }
+  return best;
 }
 
 function defaultTokensForTheme(): Tokens {
@@ -239,10 +282,41 @@ export default function DesignTokensHotkeys() {
         } catch {}
       }
 
-      // Alt + F: cycle font family (Shift reverses direction)
-      if (e.altKey && e.code === "KeyF") {
+      console.log('e: ', e);
+
+      // Alt + ? : randomize tokens within acceptable ranges
+      if (e.altKey && e.code === "Slash") {
         e.preventDefault();
-        const direction = e.shiftKey ? -1 : 1;
+        const dark = isDarkTheme();
+        const allowed = allowedShadeIndices(dark);
+        const randFontIndex = getRandomInt(FONTS.length);
+        const randFamilyIndex = getRandomInt(COLOR_FAMILIES.length);
+        const randShadeIndex = randomFromArray(allowed);
+        const next: Tokens = {
+          fontIndex: randFontIndex,
+          colorFamilyIndex: randFamilyIndex,
+          shadeIndex: randShadeIndex,
+        };
+        setTokens(next);
+        applyTokens(next);
+        storeTokens(next);
+        try {
+          // eslint-disable-next-line no-console
+          console.debug(LOG_PREFIX, "randomize", {
+            theme: dark ? "dark" : "light",
+            font: FONTS[randFontIndex]?.name,
+            family: COLOR_FAMILIES[randFamilyIndex],
+            shade: SHADES[randShadeIndex],
+          });
+        } catch {}
+        return;
+      }
+
+      // Alt + ArrowUp/ArrowDown to change font family (existing behavior)
+      if (e.altKey && (e.code === "ArrowUp" || e.code === "ArrowDown")) {
+        e.preventDefault();
+        const direction = e.code === "ArrowDown" ? 1 : -1; // Down increases, Up decreases
+        // Cycle font family with wrap
         setTokens((t) => {
           const n = FONTS.length;
           const nextIndex = ((t.fontIndex + direction) % n + n) % n;
@@ -288,15 +362,22 @@ export default function DesignTokensHotkeys() {
       if (e.altKey && (e.code === "KeyB")) {
         e.preventDefault();
         const direction = e.shiftKey ? -1 : 1;
+        const dark = isDarkTheme();
         setTokens((t) => {
-          const n = SHADES.length;
-          const nextIndex = ((t.shadeIndex + direction) % n + n) % n;
+          const allowed = allowedShadeIndices(dark);
+          const pos = allowed.indexOf(t.shadeIndex);
+          const startPos = pos === -1 ? allowed.indexOf(nearestAllowedShadeIndex(t.shadeIndex, allowed)) : pos;
+          const n = allowed.length || SHADES.length;
+          const nextPos = ((startPos + direction) % n + n) % n;
+          const nextIndex = allowed[nextPos] ?? t.shadeIndex;
           const next: Tokens = { ...t, shadeIndex: nextIndex };
           applyTokens(next);
           storeTokens(next);
           try {
             // eslint-disable-next-line no-console
             console.debug(LOG_PREFIX, "brightness shade", {
+              theme: dark ? "dark" : "light",
+              allowed: allowed.map((i) => SHADES[i]),
               from: SHADES[t.shadeIndex],
               to: SHADES[nextIndex],
               direction,
@@ -377,6 +458,11 @@ export default function DesignTokensHotkeys() {
           </li>
           <li className="flex items-center gap-2 text-muted-foreground">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">?</kbd>
+            <span>Randomize</span>
+          </li>
+          <li className="flex items-center gap-2 text-muted-foreground">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">R</kbd>
             <span>Reset</span>
           </li>
@@ -386,15 +472,15 @@ export default function DesignTokensHotkeys() {
       {/* Minimal indicator when inactive */}
       {!active && (
         <div
-          className="fixed right-4 top-4 z-40 text-muted-foreground/70 hidden sm:block"
+          className="absolute right-4 top-4 z-40 text-muted-foreground/70 hidden sm:block"
           style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
           role="note"
           title="Press Option (⌥) for design tweaks"
         >
           <span className="sr-only">Press Option for design tweaks</span>
-          <span className="inline-flex items-center gap-1 rounded border bg-card/70 px-1.5 py-0.5 text-[10px] leading-none">
-            <kbd className="rounded border px-1 py-0.5 text-[10px]">⌥</kbd>
-            <span className="text-[10px] uppercase">Design tweaks</span>
+          <span className="inline-flex items-center gap-1 rounded border bg-card/70 px-2 py-1 text-[10px] leading-none">
+            Press <kbd className="rounded border px-1 py-0.5 text-base">⌥</kbd> for
+            <span className="text-[10px]">design tweaks</span>
           </span>
         </div>
       )}

@@ -121,7 +121,7 @@ html {
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: var(--font-body, 'Inter', Arial, Helvetica, sans-serif);
   }
 }
 

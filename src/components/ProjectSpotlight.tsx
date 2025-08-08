@@ -23,18 +23,6 @@ const projectsData = [
 		tags: ["Design Systems", "React", "Storybook", "Vue.js"],
 	},
 	{
-		title: "Vizio TV Platform",
-		description:
-			"Solved complex video streaming bugs and led the replacement of the core video player, dramatically improving performance on a React-based TV platform.",
-		tags: ["React", "Node.js", "Performance", "Video Streaming"],
-	},
-	{
-		title: "Lennd Event Management",
-		description:
-			"Built the core web and mobile applications for an event management system using React, React Native, and GraphQL.",
-		tags: ["React", "React Native", "GraphQL", "Mobile"],
-	},
-	{
 		title: "Monocle Magazine",
 		url: "https://monocle.com",
 		description:
@@ -50,28 +38,24 @@ export default function ProjectSpotlight() {
 				Project Spotlight
 			</h2>
 			<div
-				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+				className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
 				id="projects-container"
 			>
 				{projectsData.map((project) => (
 					<div
 						key={project.title}
-						className="p-5 rounded-lg border shadow-xs hover:shadow-md transition-shadow duration-300"
+						className="p-6 rounded-lg border shadow-xs hover:shadow-md transition-shadow duration-300"
 					>
 						<h3 className="typography-heading-6">
-							{project.url ? (
-								<a
-									href={project.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-secondary-foreground hover:underline"
-								>
-									{project.title}
-									<span className="sr-only"> — external link</span>
-								</a>
-							) : (
-								project.title
-							)}
+							<a
+								href={project.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-secondary-foreground hover:underline"
+							>
+								{project.title}
+								<span className="sr-only"> — external link</span>
+							</a>
 						</h3>
 						<p className="typography-small mt-2">{project.description}</p>
 						<div className="mt-4 flex flex-wrap gap-2">

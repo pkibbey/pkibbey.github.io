@@ -1,10 +1,27 @@
-<!-- filepath: /Users/phineas/Sites/pkibbey.github.io/assets/logo.svg -->
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Letter P with slight artistic flair -->
-  <text x="15" y="65" font-family="Georgia, serif" font-size="48" font-weight="600" fill="#1a1a1a" 
-        style="letter-spacing: 2px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">P</text>
-  
-  <!-- Letter K with matching style -->
-  <text x="55" y="65" font-family="Georgia, serif" font-size="48" font-weight="600" fill="#1a1a1a" 
-        style="letter-spacing: 2px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">K</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" shape-rendering="geometricPrecision" aria-hidden="true">
+      <title>PK</title>
+      <style>
+            :root { color-scheme: light dark; }
+            .bg { fill: #ffffff; }
+            .fg { fill: #111111; }
+            @media (prefers-color-scheme: dark) {
+                  .bg { fill: #0b0b0e; }
+                  .fg { fill: #f5f5f5; }
+            }
+      </style>
+      <!-- Rounded square background for crisp favicon rendering on any tab color -->
+      <rect class="bg" x="4" y="4" width="56" height="56" rx="12"/>
+      <!-- PK monogram: bold, grid-snapped geometry for small sizes -->
+      <g class="fg">
+            <!-- P -->
+            <rect x="16" y="16" width="8" height="32" rx="2"/>
+            <rect x="24" y="16" width="16" height="12" rx="2"/>
+            <!-- K -->
+            <rect x="40" y="16" width="8" height="32" rx="2"/>
+            <!-- Upper diagonal of K -->
+            <rect x="33" y="26" width="20" height="6" rx="2" transform="rotate(-45 33 26)"/>
+            <!-- Lower diagonal of K -->
+            <rect x="33" y="38" width="20" height="6" rx="2" transform="rotate(45 33 38)"/>
+      </g>
 </svg>

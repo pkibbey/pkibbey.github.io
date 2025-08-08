@@ -56,7 +56,7 @@ export default function ProjectSpotlight() {
 				{projectsData.map((project) => (
 					<div
 						key={project.title}
-						className="p-6 rounded-lg border shadow-sm hover:shadow-lg transition-shadow duration-300"
+						className="p-6 rounded-lg border shadow-xs hover:shadow-md transition-shadow duration-300"
 					>
 						<h3 className="typography-heading-5">{project.title}</h3>
 						<p className="typography-small mt-2">{project.description}</p>

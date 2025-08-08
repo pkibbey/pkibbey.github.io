@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import "./global.css";
 
 export const metadata: Metadata = {
-	title: "Phineas Kibbey - Personal Website",
+	title: "Phineas Kibbey",
 	description:
-		"Welcome to the personal website of Phineas Kibbey. Learn more about my projects, skills, and experience.",
+		"Portfolio and resume of Phineas Kibbey: projects, case studies, skills, and experience in product design and front-end engineering.",
 	icons: [{ rel: "icon", url: "/logo.svg" }],
 };
 

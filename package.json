@@ -5,14 +5,12 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "serve -s out -l 3000",
 		"format": "biome format --write ./src",
 		"check": "biome check .",
 		"knip": "knip"
 	},
 	"dependencies": {
 		"@radix-ui/react-accordion": "^1.2.11",
-		"@radix-ui/react-collapsible": "^1.1.11",
 		"@radix-ui/react-slot": "^1.2.3",
 		"@types/react": "^19.1.9",
 		"class-variance-authority": "^0.7.1",

@@ -239,11 +239,10 @@ export default function DesignTokensHotkeys() {
         } catch {}
       }
 
-      // Alt + ArrowUp/ArrowDown to change font family (existing behavior)
-      if (e.altKey && (e.code === "ArrowUp" || e.code === "ArrowDown")) {
+      // Alt + F: cycle font family (Shift reverses direction)
+      if (e.altKey && e.code === "KeyF") {
         e.preventDefault();
-        const direction = e.code === "ArrowDown" ? 1 : -1; // Down increases, Up decreases
-        // Cycle font family with wrap
+        const direction = e.shiftKey ? -1 : 1;
         setTokens((t) => {
           const n = FONTS.length;
           const nextIndex = ((t.fontIndex + direction) % n + n) % n;
@@ -339,7 +338,7 @@ export default function DesignTokensHotkeys() {
         aria-live="polite"
         className={
           active
-    ? "pointer-events-none fixed right-4 top-4 z-50 rounded-md border bg-card/90 px-3 py-2 shadow-sm text-sm"
+    ? "pointer-events-none fixed right-4 top-4 z-50 rounded-md border backdrop-blur-xs bg-card/90 px-3 py-2 shadow-sm text-sm"
             : "hidden"
         }
         style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
@@ -348,7 +347,8 @@ export default function DesignTokensHotkeys() {
         <ul className="space-y-1">
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-            <span>↑/↓ — Font</span>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">F</kbd>
+            <span>Font</span>
             <span className="ml-2 text-muted-foreground">({currentFont?.name})</span>
           </li>
           <li className="flex items-center gap-2">

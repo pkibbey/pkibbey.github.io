@@ -71,28 +71,23 @@ const chartConfig = {
 
 export default function SkillsDashboard() {
 	return (
-		<section id="skills" className="container max-w-2xl mx-auto px-4">
+		<section className="container max-w-2xl mx-auto px-4">
 			<h2 className="typography-heading-2 mb-4">
-				Skills Dashboard
+				Core Competencies
 			</h2>
-			<p className="4">
-				My technical expertise spans the full stack, with a deep focus on
-				creating modern, robust, and maintainable front-end systems. This
-				dashboard provides a visual overview of my core competencies.
-			</p>
 			<div className="grid md:grid-cols-2 gap-4 items-center">
 				<div>
 					<ChartContainer
 						config={chartConfig}
-						className="mx-auto aspect-square max-h-[400px]"
+						className="mx-auto"
 					>
 						<RadarChart
 							data={chartData}
 							margin={{
-								top: 20,
-								right: 80,
-								bottom: 20,
-								left: 80,
+								top: 10,
+								right: 20,
+								bottom: 10,
+								left: 10,
 							}}
 						>
 							<ChartTooltip cursor={false} content={<ChartTooltipContent />} />
@@ -115,7 +110,6 @@ export default function SkillsDashboard() {
 					</ChartContainer>
 				</div>
 				<div>
-					<h3 className="typography-heading-4 mb-4">Core Competencies</h3>
 					<div className="flex flex-wrap gap-3">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (

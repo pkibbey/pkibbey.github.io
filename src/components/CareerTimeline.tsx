@@ -1,13 +1,5 @@
-import { FpLogo, LevelLogo, LivePersonLogo, MetaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
-import { TimelineItem } from "@/components/TimelineItem";
-
-export interface TimelineItemData {
-	role: string;
-	company: string;
-	period: string;
-	details: string[];
-	logo?: React.ReactNode;
-}
+import { DysonLogo, FpLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
+import { TimelineItem, type TimelineItemData } from "@/components/TimelineItem";
 
 const timelineData: TimelineItemData[] = [
 	{
@@ -15,7 +7,7 @@ const timelineData: TimelineItemData[] = [
 		company: "Level Home",
 		period: "2022 – 2024",
 		details: [
-			"Architected a monorepo of Node.js, Next.js, and Remix apps for smart apartment device management.",
+			"Architected a monorepo of Node.js, Next.js, and Remix apps for smart apartment blocks.",
 			"Collaborated with UX to create a comprehensive Design System using Figma and React.",
 			"Mentored junior team members, improving code quality and fostering a growth mindset.",
 			"Achieved 80% code coverage with Jest, Vitest, and Playwright tests.",
@@ -28,9 +20,9 @@ const timelineData: TimelineItemData[] = [
 		company: "Meta University",
 		period: "2022 – 2023",
 		details: [
-			"Developed and delivered curriculum to teach React and Node.js to classes of 40 software engineers.",
+			"Taught React and Node.js to over 40 software engineer students.",
 			"Provided extensive online support, helping students achieve an 80% pass rate.",
-			"Continuously improved learning materials based on classroom feedback.",
+			"Developed curriculum and learning materials for continued education.",
 		],
 		logo: <MetaLogo className="w-20" />,
 	},
@@ -39,10 +31,10 @@ const timelineData: TimelineItemData[] = [
 		company: "LivePerson",
 		period: "2018 – 2022",
 		details: [
-			"Spearheaded development of four scalable web apps, using both React and Vue.js.",
-			"Built a robust Design System and Component Library with Storybook, React, and Web Components.",
+			"Spearheaded the development of four AI powered web apps, using both React and Vue.js.",
+			"Built a robust Design System and React Component Library with Storybook documentation.",
 			"Mentored multiple team members, contributing to their professional promotion.",
-			"Developed secure API proxy servers using Node.js and Express.",
+			"Developed secure API proxy servers for payment processing using Node.js.",
 		],
 		logo: <LivePersonLogo className="w-20" />,
 	},
@@ -51,9 +43,9 @@ const timelineData: TimelineItemData[] = [
 		company: "Vizio",
 		period: "2016 – 2018",
 		details: [
-			"Resolved critical production issues with Adaptive Video Streaming on a React/Node.js TV platform.",
-			"Led the effort to replace the core video player, significantly improving performance.",
-			"Fixed high-priority UI bugs in a Chrome-based TV web app.",
+			"Resolved critical video playback issues that affected thousands of production devices.",
+			"Led the effort to replace the core video player, improving playback performance by 30%.",
+			"Eliminated 100% of high-priority UI bugs in the React/Node.js based TV platform.",
 		],
 		logo: <VizioLogo className="w-20" />,	
 	},
@@ -77,14 +69,21 @@ const timelineData: TimelineItemData[] = [
 			"Developed a cross-platform mobile app using React Native at the startup Lennd.",
 			"Gained a BSc in Computer Science from Leicester University.",
 		],
-		logo: <QualcommLogo className="w-20" />
+		logo: [
+			<QualcommLogo key="qualcomm-logo" className="w-20" />,
+			<DysonLogo key="dyson-logo" className="w-20" />,
+			<MaseratiLogo key="maserati-logo" className="w-20" />,
+			<MonocleLogo key="monocle-logo" className="w-20" />,
+			<NokiaLogo key="nokia-logo" className="w-20" />,
+			<MandsLogo key="mands-logo" className="w-20" />,
+		]
 	},
 ];
 
 export default function CareerTimeline() {
 	return (
-		<section id="career" className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-5 mb-1">Career Journey</h2>
+		<section className="container max-w-2xl mx-auto px-4">
+			<h2 className="typography-heading-2 mb-4">Career Journey</h2>
 			<div className="max-w-2xl mx-auto grid gap-4">
 				{timelineData.map((item) => (
 					<TimelineItem key={item.role + item.company} {...item} />

@@ -9,7 +9,7 @@ const getSystemTheme = () => {
 		: "light";
 };
 
-const ThemeToggle: React.FC = () => {
+export default function ThemeToggle() {
 	const [theme, setTheme] = useState<string>("light");
 	const [mounted, setMounted] = useState(false);
 
@@ -91,5 +91,3 @@ const ThemeToggle: React.FC = () => {
 		</button>
 	);
 };
-
-export default ThemeToggle;

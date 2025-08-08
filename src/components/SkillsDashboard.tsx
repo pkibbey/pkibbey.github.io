@@ -72,15 +72,15 @@ const chartConfig = {
 export default function SkillsDashboard() {
 	return (
 		<section id="skills" className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-2 mb-8 text-center">
+			<h2 className="typography-heading-2 mb-4">
 				Skills Dashboard
 			</h2>
-			<p className="mb-8">
+			<p className="4">
 				My technical expertise spans the full stack, with a deep focus on
 				creating modern, robust, and maintainable front-end systems. This
 				dashboard provides a visual overview of my core competencies.
 			</p>
-			<div className="grid md:grid-cols-2 gap-8 items-center">
+			<div className="grid md:grid-cols-2 gap-4 items-center">
 				<div>
 					<ChartContainer
 						config={chartConfig}

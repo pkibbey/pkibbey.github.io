@@ -84,12 +84,7 @@ const timelineData: TimelineItemData[] = [
 export default function CareerTimeline() {
 	return (
 		<section id="career" className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-3 mb-4">Career Journey</h2>
-			<p className="typography-body mb-4">
-				My career is a story of continuous adaptation and learning, from
-				co-founding one of the UK's first social networks to architecting
-				solutions for modern smart homes.
-			</p>
+			<h2 className="typography-heading-5 mb-1">Career Journey</h2>
 			<div className="max-w-2xl mx-auto grid gap-4">
 				{timelineData.map((item) => (
 					<TimelineItem key={item.role + item.company} {...item} />

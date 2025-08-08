@@ -39,10 +39,6 @@ function isDarkTheme() {
 
 // Tailwind v4 default color families (subset, ordered for cycling)
 const COLOR_FAMILIES = [
-  "gray",
-  "zinc",
-  "neutral",
-  "stone",
   "red",
   "orange",
   "amber",
@@ -60,6 +56,11 @@ const COLOR_FAMILIES = [
   "fuchsia",
   "pink",
   "rose",
+  "slate",
+  "gray",
+  "zinc",
+  "neutral",
+  "stone",
 ] as const;
 
 // Standard Tailwind shade scale
@@ -68,6 +69,13 @@ const SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
 function colorVar(family: (typeof COLOR_FAMILIES)[number], shade: (typeof SHADES)[number]) {
   // Tailwind v4 exposes CSS variables like --color-red-500
   return `var(--color-${family}-${shade})`;
+}
+
+function invertShadeIndex(idx: number) {
+  // Mirror index around the center (e.g., 50 <-> 950, 300 <-> 700, 500 -> 500)
+  const n = SHADES.length;
+  const i = clamp(idx, 0, n - 1);
+  return (n - 1) - i;
 }
 
 function defaultTokensForTheme(): Tokens {
@@ -124,20 +132,31 @@ function applyTokens(tokens: Tokens) {
 
 export default function DesignTokensHotkeys() {
   const [active, setActive] = useState(false); // any supported modifier pressed
-  const [isLeftAltDown, setIsLeftAltDown] = useState(false);
-  const [isShiftDown, setIsShiftDown] = useState(false);
+  const [isAltDown, setIsAltDown] = useState(false);
   const [tokens, setTokens] = useState<Tokens>({ fontIndex: 0, colorFamilyIndex: 0, shadeIndex: 0 });
   const lastAppliedThemeIsDark = useRef<boolean | null>(null);
-  // No wheel/gesture state — using arrow keys only
+  const [isDark, setIsDark] = useState(false);
+  const tokensRef = useRef(tokens);
 
   // Load + apply on mount
   useEffect(() => {
-  const saved = readStored();
-  const initial = saved ?? defaultTokensForTheme();
+    // Initialize theme from localStorage or system preference
+    try {
+      const root = document.documentElement;
+      const stored = localStorage.getItem("theme");
+      const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const nextDark = stored ? stored === "dark" : prefersDark;
+      if (nextDark) root.classList.add("dark");
+      else root.classList.remove("dark");
+      lastAppliedThemeIsDark.current = nextDark;
+      setIsDark(nextDark);
+    } catch {}
+
+    const saved = readStored();
+    const initial = saved ?? defaultTokensForTheme();
     setTokens(initial);
     // apply immediately
     applyTokens(initial);
-    lastAppliedThemeIsDark.current = isDarkTheme();
     try {
       // eslint-disable-next-line no-console
       console.debug(LOG_PREFIX, "mount: initial", {
@@ -153,19 +172,30 @@ export default function DesignTokensHotkeys() {
       const dark = isDarkTheme();
       if (lastAppliedThemeIsDark.current !== dark) {
         lastAppliedThemeIsDark.current = dark;
-        applyTokens(tokens);
-        try {
-          // eslint-disable-next-line no-console
-          console.debug(LOG_PREFIX, "theme changed", { dark, tokens });
-        } catch {}
+        setIsDark(dark);
+        // Invert brightness shade whenever theme toggles
+        setTokens((t) => {
+          const nextShadeIndex = invertShadeIndex(t.shadeIndex);
+          const next = { ...t, shadeIndex: nextShadeIndex };
+          try {
+            // eslint-disable-next-line no-console
+            console.debug(LOG_PREFIX, "theme changed + invert shade", {
+              dark,
+              from: SHADES[t.shadeIndex],
+              to: SHADES[nextShadeIndex],
+            });
+          } catch {}
+          return next;
+        });
       }
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
-  }, [tokens]);
+  }, []);
 
   // Persist and apply whenever tokens change
   useEffect(() => {
+  tokensRef.current = tokens;
     storeTokens(tokens);
     applyTokens(tokens);
     try {
@@ -177,8 +207,25 @@ export default function DesignTokensHotkeys() {
   // Keyboard state (Alt/Shift tracking + arrow controls)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.code === "AltLeft") setIsLeftAltDown(true);
-      if (e.key === "Shift") setIsShiftDown(true);
+      // Track either Alt key and either Shift key
+      if (e.altKey || e.getModifierState?.("Alt")) setIsAltDown(true);
+  // shift is read from event where needed; no state required
+      // Alt + T: toggle theme dark/light
+      if (e.altKey && e.code === "KeyT") {
+        e.preventDefault();
+        const root = document.documentElement;
+        const currentlyDark = root.classList.contains("dark");
+        const nextDark = !currentlyDark;
+        if (nextDark) root.classList.add("dark");
+        else root.classList.remove("dark");
+        localStorage.setItem("theme", nextDark ? "dark" : "light");
+        setIsDark(nextDark);
+        try {
+          // eslint-disable-next-line no-console
+          console.debug(LOG_PREFIX, "toggle theme", { nextDark });
+        } catch {}
+        return;
+      }
       if (e.code === "KeyR" && e.altKey) {
         // Reset tokens
         e.preventDefault();
@@ -193,9 +240,9 @@ export default function DesignTokensHotkeys() {
       }
 
       // Alt + ArrowUp/ArrowDown to change font family (existing behavior)
-      if (e.altKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+      if (e.altKey && (e.code === "ArrowUp" || e.code === "ArrowDown")) {
         e.preventDefault();
-        const direction = e.key === "ArrowDown" ? 1 : -1; // Down increases, Up decreases
+        const direction = e.code === "ArrowDown" ? 1 : -1; // Down increases, Up decreases
         // Cycle font family with wrap
         setTokens((t) => {
           const n = FONTS.length;
@@ -217,7 +264,7 @@ export default function DesignTokensHotkeys() {
       }
 
       // Alt + C: cycle color family (Shift reverses direction)
-      if (e.altKey && (e.key === "c" || e.key === "C")) {
+      if (e.altKey && (e.code === "KeyC")) {
         e.preventDefault();
         const direction = e.shiftKey ? -1 : 1;
         setTokens((t) => {
@@ -239,7 +286,7 @@ export default function DesignTokensHotkeys() {
       }
 
       // Alt + B: cycle brightness shade (Shift reverses direction)
-      if (e.altKey && (e.key === "b" || e.key === "B")) {
+      if (e.altKey && (e.code === "KeyB")) {
         e.preventDefault();
         const direction = e.shiftKey ? -1 : 1;
         setTokens((t) => {
@@ -261,8 +308,8 @@ export default function DesignTokensHotkeys() {
       }
     };
     const onKeyUp = (e: KeyboardEvent) => {
-      if (e.code === "AltLeft") setIsLeftAltDown(false);
-      if (e.key === "Shift") setIsShiftDown(false);
+      // On any key up, reflect current modifier state
+      setIsAltDown(!!e.altKey);
     };
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("keyup", onKeyUp);
@@ -274,56 +321,83 @@ export default function DesignTokensHotkeys() {
 
   // Track overlay visibility
   useEffect(() => {
-    setActive(isLeftAltDown || (isLeftAltDown && isShiftDown));
-  }, [isLeftAltDown, isShiftDown]);
+    // Show overlay whenever Alt is held (with or without Shift)
+    setActive(isAltDown);
+  }, [isAltDown]);
 
   const currentFont = useMemo(() => FONTS[clamp(tokens.fontIndex, 0, FONTS.length - 1)], [tokens.fontIndex]);
   const currentFamily = COLOR_FAMILIES[clamp(tokens.colorFamilyIndex, 0, COLOR_FAMILIES.length - 1)];
   const currentShade = SHADES[clamp(tokens.shadeIndex, 0, SHADES.length - 1)];
   const currentFg = useMemo(() => colorVar(currentFamily, currentShade), [currentFamily, currentShade]);
+  const currentThemeLabel = isDark ? "Dark" : "Light";
 
-  // Legend overlay content
+  // Legend overlay content + minimal indicator when inactive
   return (
-    <div
-      aria-live="polite"
-      className={
-        active
-          ? "pointer-events-none absolute right-4 top-4 z-50 rounded-md border bg-card/90 backdrop-blur px-3 py-2 shadow-sm text-sm"
-          : "hidden"
-      }
-      style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
-    >
-      <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Design Tweaks</div>
-      <ul className="space-y-1">
-        <li className="flex items-center gap-2">
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-          <span>↑/↓ — Font</span>
-          <span className="ml-2 text-muted-foreground">({currentFont?.name})</span>
-        </li>
-        <li className="flex items-center gap-2">
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">C</kbd>
-          <span>Color</span>
-          <span className="ml-2 text-muted-foreground">({currentFamily})</span>
-        </li>
-        <li className="flex items-center gap-2">
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">B</kbd>
-          <span>Brightness</span>
-          <span className="ml-2 text-muted-foreground">({currentShade})</span>
-          <span
-            className="ml-2 inline-flex h-3 w-6 rounded border align-middle"
-            style={{ background: currentFg }}
-            aria-hidden="true"
-            title={`--color-${currentFamily}-${currentShade}`}
-          />
-        </li>
-        <li className="flex items-center gap-2 text-muted-foreground">
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-          <kbd className="rounded border px-1.5 py-0.5 text-[10px]">R</kbd>
-          <span>Reset</span>
-        </li>
-      </ul>
-    </div>
+    <>
+      {/* Active overlay */}
+  <div
+        aria-live="polite"
+        className={
+          active
+    ? "pointer-events-none fixed right-4 top-4 z-50 rounded-md border bg-card/90 px-3 py-2 shadow-sm text-sm"
+            : "hidden"
+        }
+        style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
+      >
+        <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Design Tweaks</div>
+        <ul className="space-y-1">
+          <li className="flex items-center gap-2">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <span>↑/↓ — Font</span>
+            <span className="ml-2 text-muted-foreground">({currentFont?.name})</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">T</kbd>
+            <span>Theme</span>
+            <span className="ml-2 text-muted-foreground">({currentThemeLabel})</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">C</kbd>
+            <span>Color</span>
+            <span className="ml-2 text-muted-foreground">({currentFamily})</span>
+            <span
+              className="ml-2 inline-flex h-3 w-6 rounded border align-middle"
+              style={{ background: currentFg }}
+              aria-hidden="true"
+              title={`--color-${currentFamily}-${currentShade}`}
+            />
+          </li>
+          <li className="flex items-center gap-2">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">B</kbd>
+            <span>Brightness</span>
+            <span className="ml-2 text-muted-foreground">({currentShade})</span>
+          </li>
+          <li className="flex items-center gap-2 text-muted-foreground">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">R</kbd>
+            <span>Reset</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Minimal indicator when inactive */}
+      {!active && (
+        <div
+          className="fixed right-4 top-4 z-40 text-muted-foreground/70 hidden sm:block"
+          style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
+          role="note"
+          title="Press Option (⌥) for design tweaks"
+        >
+          <span className="sr-only">Press Option for design tweaks</span>
+          <span className="inline-flex items-center gap-1 rounded border bg-card/70 px-1.5 py-0.5 text-[10px] leading-none">
+            <kbd className="rounded border px-1 py-0.5 text-[10px]">⌥</kbd>
+            <span className="text-[10px] uppercase">Design tweaks</span>
+          </span>
+        </div>
+      )}
+    </>
   );
 }

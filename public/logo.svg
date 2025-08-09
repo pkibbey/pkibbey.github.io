@@ -1,27 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" shape-rendering="geometricPrecision" aria-hidden="true">
-      <title>PK</title>
-      <style>
-            :root { color-scheme: light dark; }
-            .bg { fill: #ffffff; }
-            .fg { fill: #111111; }
-            @media (prefers-color-scheme: dark) {
-                  .bg { fill: #0b0b0e; }
-                  .fg { fill: #f5f5f5; }
-            }
-      </style>
-      <!-- Rounded square background for crisp favicon rendering on any tab color -->
-      <rect class="bg" x="4" y="4" width="56" height="56" rx="12"/>
-      <!-- PK monogram: bold, grid-snapped geometry for small sizes -->
-      <g class="fg">
-            <!-- P -->
-            <rect x="16" y="16" width="8" height="32" rx="2"/>
-            <rect x="24" y="16" width="16" height="12" rx="2"/>
-            <!-- K -->
-            <rect x="40" y="16" width="8" height="32" rx="2"/>
-            <!-- Upper diagonal of K -->
-            <rect x="33" y="26" width="20" height="6" rx="2" transform="rotate(-45 33 26)"/>
-            <!-- Lower diagonal of K -->
-            <rect x="33" y="38" width="20" height="6" rx="2" transform="rotate(45 33 38)"/>
-      </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="#00AEEF">
+    <rect x="10" y="10" width="16" height="16"/>
+    <rect x="26" y="18" width="16" height="16"/>
+    <rect x="18" y="34" width="16" height="16"/>
+    <rect x="38" y="30" width="16" height="16"/>
+  </g>
 </svg>

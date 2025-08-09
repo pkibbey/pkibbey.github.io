@@ -4,9 +4,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type Tokens = {
   fontIndex: number;
+  animationsEnabled: boolean; // user preference (still overridden by reduced motion)
 };
 
-const STORAGE_KEY = "designTokens:v5"; // v5: removed randomize hotkey
+const STORAGE_KEY = "designTokens:v7"; // v7: dynamic default animations (respect reduced motion)
 
 const FONTS = [
   { name: "Inter", value: "'Inter', Arial, Helvetica, sans-serif" },
@@ -32,14 +33,19 @@ function isDarkTheme() {
   return document.documentElement.classList.contains("dark");
 }
 
-function defaultTokensForTheme(): Tokens { return { fontIndex: 0 }; }
+function defaultTokensForTheme(): Tokens { return { fontIndex: 0, animationsEnabled: true }; }
 
 function readStored(): Tokens | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-  if (typeof parsed?.fontIndex === "number") return { fontIndex: parsed.fontIndex } as Tokens;
+    if (typeof parsed?.fontIndex === "number") {
+      return {
+        fontIndex: parsed.fontIndex,
+        animationsEnabled: !!parsed.animationsEnabled,
+      } as Tokens;
+    }
     return null;
   } catch {
     return null;
@@ -60,15 +66,21 @@ function applyTokens(tokens: Tokens) {
   // Apply font family via CSS variable so Tailwind can consume it in CSS
   const font = FONTS[clamp(tokens.fontIndex, 0, FONTS.length - 1)]?.value;
   if (font) root.style.setProperty("--font-body", font);
+  root.dataset.anim = tokens.animationsEnabled ? "on" : "off";
+  root.style.setProperty("--animations-enabled", tokens.animationsEnabled ? "1" : "0");
+  // Broadcast change for listeners (e.g. BoxReveal)
+  document.dispatchEvent(new CustomEvent("design-tokens:updated", { detail: { tokens } }));
 }
 
 export default function DesignTokensHotkeys() {
   const [active, setActive] = useState(false); // any supported modifier pressed
   const [isAltDown, setIsAltDown] = useState(false);
-  const [tokens, setTokens] = useState<Tokens>({ fontIndex: 0 });
+  // Initial placeholder; real value set on mount
+  const [tokens, setTokens] = useState<Tokens>({ fontIndex: 0, animationsEnabled: true });
   const lastAppliedThemeIsDark = useRef<boolean | null>(null);
   const [isDark, setIsDark] = useState(false);
   const tokensRef = useRef(tokens);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   // Load + apply on mount
   useEffect(() => {
@@ -84,11 +96,26 @@ export default function DesignTokensHotkeys() {
       setIsDark(nextDark);
     } catch {}
 
-    const saved = readStored();
-    const initial = saved ?? defaultTokensForTheme();
-    setTokens(initial);
-    // apply immediately
-    applyTokens(initial);
+    // Reduced motion preference
+    if (typeof window !== "undefined" && "matchMedia" in window) {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const apply = () => setReducedMotion(mq.matches);
+      apply();
+      mq.addEventListener?.("change", apply);
+      // cleanup
+      const cleanup = () => mq.removeEventListener?.("change", apply);
+      // Continue with tokens load
+  const saved = readStored();
+  const initial: Tokens = saved ?? { fontIndex: 0, animationsEnabled: !mq.matches };
+  setTokens(initial);
+  applyTokens({ ...initial, animationsEnabled: initial.animationsEnabled && !mq.matches });
+      return cleanup;
+    } else {
+      const saved = readStored();
+      const initial = saved ?? defaultTokensForTheme();
+      setTokens(initial);
+      applyTokens(initial);
+    }
   }, []);
 
   // Re-apply when theme toggles (external ThemeToggle changes .dark class)
@@ -104,12 +131,16 @@ export default function DesignTokensHotkeys() {
     return () => observer.disconnect();
   }, []);
 
-  // Persist and apply whenever tokens change
+  // Persist and apply whenever tokens or reduced motion change
   useEffect(() => {
     tokensRef.current = tokens;
     storeTokens(tokens);
-    applyTokens(tokens);
-  }, [tokens]);
+    const effective: Tokens = {
+      ...tokens,
+      animationsEnabled: tokens.animationsEnabled && !reducedMotion,
+    };
+    applyTokens(effective);
+  }, [tokens, reducedMotion]);
 
   // Keyboard state (Alt/Shift tracking + arrow controls)
   useEffect(() => {
@@ -129,12 +160,20 @@ export default function DesignTokensHotkeys() {
         setIsDark(nextDark);
         return;
       }
-      if (e.code === "KeyR" && e.altKey) {
-        // Reset tokens
+      // Alt + A: toggle animations
+      if (e.altKey && e.code === "KeyA") {
         e.preventDefault();
-        const reset = defaultTokensForTheme();
+        setTokens(t => ({ ...t, animationsEnabled: !t.animationsEnabled }));
+        return;
+      }
+      if (e.code === "KeyR" && e.altKey) {
+        // Reset tokens (font index to 0, animations based on current reduced motion preference)
+        e.preventDefault();
+        const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reset: Tokens = { fontIndex: 0, animationsEnabled: !prefersReduced };
         setTokens(reset);
-        applyTokens(reset);
+        // apply immediately with effective value (will also re-apply in effect)
+        applyTokens({ ...reset, animationsEnabled: reset.animationsEnabled && !prefersReduced });
         storeTokens(reset);
       }
 
@@ -174,6 +213,9 @@ export default function DesignTokensHotkeys() {
 
   const currentFont = useMemo(() => FONTS[clamp(tokens.fontIndex, 0, FONTS.length - 1)], [tokens.fontIndex]);
   const currentThemeLabel = isDark ? "Dark" : "Light";
+  const animationsLabel = reducedMotion
+    ? "Off (Reduced Motion)"
+    : tokens.animationsEnabled ? "On" : "Off";
 
   // Legend overlay content + minimal indicator when inactive
   return (
@@ -204,6 +246,12 @@ export default function DesignTokensHotkeys() {
           </li>
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">A</kbd>
+            <span>Animations</span>
+            <span className="ml-2 text-muted">({animationsLabel})</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">R</kbd>
             <span>Reset</span>
           </li>
@@ -220,7 +268,7 @@ export default function DesignTokensHotkeys() {
         >
           <span className="sr-only">Press Option for design tweaks</span>
           <span className="inline-flex items-center gap-1 rounded border bg-card/70 px-2 py-1 text-[10px] leading-none">
-            Press <kbd className="rounded border px-1 py-0.5 text-base">⌥</kbd> for
+            Press <kbd className="rounded border px-1 py-0.5 text-xs">⌥</kbd> for
             <span className="text-[10px]">design tweaks</span>
           </span>
         </div>

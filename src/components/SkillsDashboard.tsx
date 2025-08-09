@@ -14,6 +14,7 @@ import {
 	ChartTooltip,
 	ChartTooltipContent,
 } from "@/components/ui/chart";
+import { BoxReveal } from "./BoxReveal";
 
 const skillsData = {
 	Languages: ["TypeScript", "JavaScript", "HTML5", "CSS3"],
@@ -72,9 +73,11 @@ const chartConfig = {
 export default function SkillsDashboard() {
 	return (
 		<section className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-2 mb-6">
-				Skills & Expertise
-			</h2>
+			<BoxReveal direction="right">
+				<h2 className="typography-heading-2 mb-6">
+					Skills & Expertise
+				</h2>
+			</BoxReveal>
 			<div className="grid md:grid-cols-2 gap-6 items-center py-4">
 				<div>
 					<ChartContainer
@@ -113,9 +116,11 @@ export default function SkillsDashboard() {
 					<div className="flex flex-wrap gap-2">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (
-								<Badge key={category + skill} variant="default" className="font-mono">
-									{skill}
-								</Badge>
+								<BoxReveal key={category + skill} direction="right">
+									<Badge variant="default" className="font-mono">
+										{skill}
+									</Badge>
+								</BoxReveal>
 							)),
 						)}
 					</div>

@@ -1,5 +1,6 @@
 import { BritishAirwaysLogo, DysonLogo, FpLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
 import { TimelineItem, type TimelineItemData } from "@/components/TimelineItem";
+import { BoxReveal } from "./BoxReveal";
 
 const timelineData: TimelineItemData[] = [
 	{
@@ -89,10 +90,14 @@ const timelineData: TimelineItemData[] = [
 export default function CareerTimeline() {
 	return (
 		<section className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-2 mb-6">Career Journey</h2>
+			<BoxReveal direction="right">
+				<h2 className="typography-heading-2 mb-6">Career Journey</h2>
+			</BoxReveal>
 			<div className="max-w-2xl mx-auto grid gap-4">
 				{timelineData.map((item) => (
-					<TimelineItem key={item.role + item.company} {...item} />
+					<BoxReveal key={item.role + item.company} direction="right">
+						<TimelineItem  {...item} />
+					</BoxReveal>
 				))}
 			</div>
 		</section>

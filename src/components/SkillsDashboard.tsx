@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/chart";
 import { BoxReveal } from "./BoxReveal";
 
-const skillsData = {
+export const skillsData = {
 	Languages: ["TypeScript", "JavaScript", "HTML5", "CSS3"],
 	"Frameworks & Libraries": [
 		"Vue.js",

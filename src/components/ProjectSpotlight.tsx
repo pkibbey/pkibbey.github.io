@@ -1,8 +1,7 @@
-import { Badge } from "@/components/ui/badge";
 import { BoxReveal } from "./BoxReveal";
-import { ProjectItem } from "./ProjectItem";
+import { type Project, ProjectItem } from "./ProjectItem";
 
-const projectsData = [
+export const projectsData: Project[] = [
 	{
 		title: "Qualcomm Redesign",
 		url: "https://www.qualcomm.com",

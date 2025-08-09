@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 	title: "Phineas Kibbey",
 	description:
 		"Portfolio and resume of Phineas Kibbey: projects, case studies, skills, and experience in product design and front-end engineering.",
-	icons: [{ rel: "icon", url: '/logo.svg' }],
+	icons: [{ rel: "icon", url: '/favicon.svg' }],
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren) {

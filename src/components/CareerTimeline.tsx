@@ -2,7 +2,7 @@ import { BritishAirwaysLogo, DysonLogo, FpLogo, LevelLogo, LivePersonLogo, Mands
 import { TimelineItem, type TimelineItemData } from "@/components/TimelineItem";
 import { BoxReveal } from "./BoxReveal";
 
-const timelineData: TimelineItemData[] = [
+export const timelineData: TimelineItemData[] = [
 	{
 		role: "Senior Software Engineer",
 		company: "Level Home",
@@ -23,7 +23,7 @@ const timelineData: TimelineItemData[] = [
 		url: "www.meta.com",
 		period: "2022 – 2023",
 		details: [
-			"Taught React and Node.js to over 40 software engineer students.",
+			"Taught React and Node.js to over 100 software engineer students.",
 			"Provided extensive online support, helping students achieve an 80% pass rate.",
 			"Developed curriculum and learning materials for continued education.",
 		],
@@ -62,7 +62,7 @@ const timelineData: TimelineItemData[] = [
 		details: [
 			"Co-founded and built one of the UK's first social networks, scaling to 3 million users.",
 			"Pioneered solutions for high-volume traffic, developing a performant, distributed network.",
-			"Gained invaluable experience in product ideation, marketing, design, and large-scale event management.",
+			"On-site training in product ideation, marketing, design, and large-scale event management.",
 		],
 		logo: <FpLogo className="w-20" />,
 	},

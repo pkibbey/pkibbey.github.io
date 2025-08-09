@@ -5,12 +5,13 @@ import { LogoRotator } from "./LogoRotator";
 export interface TimelineItemData {
 	role: string;
 	company: string;
+	url?: string;
 	period: string;
 	details: string[];
 	logo?: React.ReactNode;
 }
 
-export function TimelineItem({ role, company, period, details, logo }: TimelineItemData) {
+export function TimelineItem({ role, company, period, details, logo, url }: TimelineItemData) {
 	const isLogoArray = Array.isArray(logo);
 
 	return (
@@ -19,9 +20,8 @@ export function TimelineItem({ role, company, period, details, logo }: TimelineI
 				<AccordionTrigger className="items-center cursor-pointer p-0 group">
 					<div className="flex items-center gap-4 cursor-pointer w-full">
 						<div className="flex-1">
-							<h3 className="typography-heading-6 group-hover:text-primary">{role}</h3>
-							<p className="outline-0!">{company}</p>
-							<p className="typography-small">{period}</p>
+							<h3 className="typography-heading-6 group-hover:underline">{role}</h3>
+							<p className="text-muted-foreground typography-small">{period}</p>
 						</div>
 						{logo && (
 							<div className="shrink-0">
@@ -30,7 +30,14 @@ export function TimelineItem({ role, company, period, details, logo }: TimelineI
 						)}
 					</div>
 				</AccordionTrigger>
-				<AccordionContent className="pl-2 py-2">
+				<AccordionContent className="py-2">
+					<div className="flex items-center pb-2 gap-2">
+						{url && (
+							<a href={`http://${url}`} target="_blank" rel="noopener noreferrer" className="text-primary">
+								{url}
+							</a>
+						)}
+					</div>
 					<ul className="space-y-1">
 						{details.map((detail) => (
 							<li key={detail} className="flex items-start gap-2">

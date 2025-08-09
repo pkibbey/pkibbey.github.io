@@ -5,6 +5,7 @@ const timelineData: TimelineItemData[] = [
 	{
 		role: "Senior Software Engineer",
 		company: "Level Home",
+		url: "www.level.co",
 		period: "2022 – 2024",
 		details: [
 			"Architected a monorepo of Node.js, Next.js, and Remix apps for smart apartment blocks.",
@@ -18,6 +19,7 @@ const timelineData: TimelineItemData[] = [
 	{
 		role: "Lead Instructor",
 		company: "Meta University",
+		url: "www.meta.com",
 		period: "2022 – 2023",
 		details: [
 			"Taught React and Node.js to over 40 software engineer students.",
@@ -29,6 +31,7 @@ const timelineData: TimelineItemData[] = [
 	{
 		role: "Senior Fullstack Engineer",
 		company: "LivePerson",
+		url: "www.liveperson.com",
 		period: "2018 – 2022",
 		details: [
 			"Spearheaded the development of four AI powered web apps, using both React and Vue.js.",
@@ -41,6 +44,7 @@ const timelineData: TimelineItemData[] = [
 	{
 		role: "Senior Fullstack Engineer",
 		company: "Vizio",
+		url: "www.vizio.com",
 		period: "2016 – 2018",
 		details: [
 			"Resolved critical video playback issues that affected thousands of production devices.",
@@ -52,6 +56,7 @@ const timelineData: TimelineItemData[] = [
 	{
 		role: "Business Owner / Co-founder",
 		company: "Faceparty",
+		url: "www.faceparty.com",
 		period: "2000 – 2004",
 		details: [
 			"Co-founded and built one of the UK's first social networks, scaling to 3 million users.",

@@ -4,12 +4,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type Tokens = {
   fontIndex: number;
-  // Tailwind color family index and shade index
-  colorFamilyIndex: number; // index into COLOR_FAMILIES
-  shadeIndex: number; // index into SHADES
 };
 
-const STORAGE_KEY = "designTokens:v2";
+const STORAGE_KEY = "designTokens:v5"; // v5: removed randomize hotkey
 
 const FONTS = [
   { name: "Inter", value: "'Inter', Arial, Helvetica, sans-serif" },
@@ -26,8 +23,6 @@ const FONTS = [
   },
 ];
 
-const LOG_PREFIX = "[DesignTokens]";
-
 function clamp(n: number, min: number, max: number) {
   return Math.min(max, Math.max(min, n));
 }
@@ -37,109 +32,14 @@ function isDarkTheme() {
   return document.documentElement.classList.contains("dark");
 }
 
-function getRandomInt(max: number) {
-  const n = Math.max(0, Math.floor(max));
-  if (n <= 1) return 0;
-  try {
-    // Prefer cryptographically strong random if available
-    const arr = new Uint32Array(1);
-    crypto.getRandomValues(arr);
-    return arr[0] % n;
-  } catch {
-    return Math.floor(Math.random() * n);
-  }
-}
-
-function randomFromArray<T>(arr: T[]): T {
-  return arr[getRandomInt(arr.length)] as T;
-}
-
-// Tailwind v4 default color families (subset, ordered for cycling)
-const COLOR_FAMILIES = [
-  "red",
-  "orange",
-  "amber",
-  "yellow",
-  "lime",
-  "green",
-  "emerald",
-  "teal",
-  "cyan",
-  "sky",
-  "blue",
-  "indigo",
-  "violet",
-  "purple",
-  "fuchsia",
-  "pink",
-  "rose",
-  "slate",
-  "gray",
-  "zinc",
-  "neutral",
-  "stone",
-] as const;
-
-// Standard Tailwind shade scale
-const SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const;
-
-function colorVar(family: (typeof COLOR_FAMILIES)[number], shade: (typeof SHADES)[number]) {
-  // Tailwind v4 exposes CSS variables like --color-red-500
-  return `var(--color-${family}-${shade})`;
-}
-
-function invertShadeIndex(idx: number) {
-  // Mirror index around the center (e.g., 50 <-> 950, 300 <-> 700, 500 -> 500)
-  const n = SHADES.length;
-  const i = clamp(idx, 0, n - 1);
-  return (n - 1) - i;
-}
-
-// Compute allowed shade indices for cycling based on theme
-function allowedShadeIndices(dark: boolean): number[] {
-  // dark theme: 50..500 (inclusive) -> indices 0..5
-  // light theme: 500..950 (inclusive) -> indices 5..10
-  const boundaryIndex = SHADES.indexOf(500);
-  if (boundaryIndex < 0) return SHADES.map((_, i) => i);
-  if (dark) return SHADES.map((_, i) => i).filter((i) => i <= boundaryIndex);
-  return SHADES.map((_, i) => i).filter((i) => i >= boundaryIndex);
-}
-
-function nearestAllowedShadeIndex(currentIndex: number, allowed: number[]): number {
-  if (allowed.includes(currentIndex)) return currentIndex;
-  // Fallback: pick allowed index with nearest actual shade value
-  const currentShade = SHADES[clamp(currentIndex, 0, SHADES.length - 1)];
-  let best = allowed[0] ?? 0;
-  let bestDiff = Math.abs(SHADES[best] - currentShade);
-  for (const i of allowed) {
-    const d = Math.abs(SHADES[i] - currentShade);
-    if (d < bestDiff) {
-      best = i;
-      bestDiff = d;
-    }
-  }
-  return best;
-}
-
-function defaultTokensForTheme(): Tokens {
-  const dark = isDarkTheme();
-  // Choose a sensible default: gray-900 on light, gray-50 on dark
-  const familyIndex = COLOR_FAMILIES.indexOf("gray");
-  const shadeIndex = SHADES.indexOf(dark ? 50 : 900);
-  return { fontIndex: 0, colorFamilyIndex: familyIndex < 0 ? 0 : familyIndex, shadeIndex: shadeIndex < 0 ? 0 : shadeIndex };
-}
+function defaultTokensForTheme(): Tokens { return { fontIndex: 0 }; }
 
 function readStored(): Tokens | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-    if (
-      typeof parsed?.fontIndex === "number" &&
-      typeof parsed?.colorFamilyIndex === "number" &&
-      typeof parsed?.shadeIndex === "number"
-    )
-      return parsed as Tokens;
+  if (typeof parsed?.fontIndex === "number") return { fontIndex: parsed.fontIndex } as Tokens;
     return null;
   } catch {
     return null;
@@ -160,23 +60,12 @@ function applyTokens(tokens: Tokens) {
   // Apply font family via CSS variable so Tailwind can consume it in CSS
   const font = FONTS[clamp(tokens.fontIndex, 0, FONTS.length - 1)]?.value;
   if (font) root.style.setProperty("--font-body", font);
-  // Apply foreground color using Tailwind color variables
-  const family = COLOR_FAMILIES[clamp(tokens.colorFamilyIndex, 0, COLOR_FAMILIES.length - 1)];
-  const shade = SHADES[clamp(tokens.shadeIndex, 0, SHADES.length - 1)];
-  const fg = colorVar(family, shade);
-  root.style.setProperty("--foreground", fg);
-  // Debug
-  try {
-    // eslint-disable-next-line no-console
-  const applied = getComputedStyle(root).getPropertyValue("--foreground").trim();
-  console.debug(LOG_PREFIX, "applyTokens", { tokens, font, fg, applied });
-  } catch {}
 }
 
 export default function DesignTokensHotkeys() {
   const [active, setActive] = useState(false); // any supported modifier pressed
   const [isAltDown, setIsAltDown] = useState(false);
-  const [tokens, setTokens] = useState<Tokens>({ fontIndex: 0, colorFamilyIndex: 0, shadeIndex: 0 });
+  const [tokens, setTokens] = useState<Tokens>({ fontIndex: 0 });
   const lastAppliedThemeIsDark = useRef<boolean | null>(null);
   const [isDark, setIsDark] = useState(false);
   const tokensRef = useRef(tokens);
@@ -200,13 +89,6 @@ export default function DesignTokensHotkeys() {
     setTokens(initial);
     // apply immediately
     applyTokens(initial);
-    try {
-      // eslint-disable-next-line no-console
-      console.debug(LOG_PREFIX, "mount: initial", {
-        initial,
-        dark: lastAppliedThemeIsDark.current,
-      });
-    } catch {}
   }, []);
 
   // Re-apply when theme toggles (external ThemeToggle changes .dark class)
@@ -216,20 +98,6 @@ export default function DesignTokensHotkeys() {
       if (lastAppliedThemeIsDark.current !== dark) {
         lastAppliedThemeIsDark.current = dark;
         setIsDark(dark);
-        // Invert brightness shade whenever theme toggles
-        setTokens((t) => {
-          const nextShadeIndex = invertShadeIndex(t.shadeIndex);
-          const next = { ...t, shadeIndex: nextShadeIndex };
-          try {
-            // eslint-disable-next-line no-console
-            console.debug(LOG_PREFIX, "theme changed + invert shade", {
-              dark,
-              from: SHADES[t.shadeIndex],
-              to: SHADES[nextShadeIndex],
-            });
-          } catch {}
-          return next;
-        });
       }
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
@@ -238,13 +106,9 @@ export default function DesignTokensHotkeys() {
 
   // Persist and apply whenever tokens change
   useEffect(() => {
-  tokensRef.current = tokens;
+    tokensRef.current = tokens;
     storeTokens(tokens);
     applyTokens(tokens);
-    try {
-      // eslint-disable-next-line no-console
-      console.debug(LOG_PREFIX, "tokens changed", tokens);
-    } catch {}
   }, [tokens]);
 
   // Keyboard state (Alt/Shift tracking + arrow controls)
@@ -252,7 +116,7 @@ export default function DesignTokensHotkeys() {
     const onKeyDown = (e: KeyboardEvent) => {
       // Track either Alt key and either Shift key
       if (e.altKey || e.getModifierState?.("Alt")) setIsAltDown(true);
-  // shift is read from event where needed; no state required
+      
       // Alt + T: toggle theme dark/light
       if (e.altKey && e.code === "KeyT") {
         e.preventDefault();
@@ -263,10 +127,6 @@ export default function DesignTokensHotkeys() {
         else root.classList.remove("dark");
         localStorage.setItem("theme", nextDark ? "dark" : "light");
         setIsDark(nextDark);
-        try {
-          // eslint-disable-next-line no-console
-          console.debug(LOG_PREFIX, "toggle theme", { nextDark });
-        } catch {}
         return;
       }
       if (e.code === "KeyR" && e.altKey) {
@@ -276,46 +136,12 @@ export default function DesignTokensHotkeys() {
         setTokens(reset);
         applyTokens(reset);
         storeTokens(reset);
-        try {
-          // eslint-disable-next-line no-console
-          console.debug(LOG_PREFIX, "reset", reset);
-        } catch {}
       }
 
-      console.log('e: ', e);
-
-      // Alt + ? : randomize tokens within acceptable ranges
-      if (e.altKey && e.code === "Slash") {
+      // Alt + F to change font family (existing behavior)
+      if (e.altKey && e.code === "KeyF") {
         e.preventDefault();
-        const dark = isDarkTheme();
-        const allowed = allowedShadeIndices(dark);
-        const randFontIndex = getRandomInt(FONTS.length);
-        const randFamilyIndex = getRandomInt(COLOR_FAMILIES.length);
-        const randShadeIndex = randomFromArray(allowed);
-        const next: Tokens = {
-          fontIndex: randFontIndex,
-          colorFamilyIndex: randFamilyIndex,
-          shadeIndex: randShadeIndex,
-        };
-        setTokens(next);
-        applyTokens(next);
-        storeTokens(next);
-        try {
-          // eslint-disable-next-line no-console
-          console.debug(LOG_PREFIX, "randomize", {
-            theme: dark ? "dark" : "light",
-            font: FONTS[randFontIndex]?.name,
-            family: COLOR_FAMILIES[randFamilyIndex],
-            shade: SHADES[randShadeIndex],
-          });
-        } catch {}
-        return;
-      }
-
-      // Alt + ArrowUp/ArrowDown to change font family (existing behavior)
-      if (e.altKey && (e.code === "ArrowUp" || e.code === "ArrowDown")) {
-        e.preventDefault();
-        const direction = e.code === "ArrowDown" ? 1 : -1; // Down increases, Up decreases
+        const direction = e.shiftKey ? -1 : 1;
         // Cycle font family with wrap
         setTokens((t) => {
           const n = FONTS.length;
@@ -323,69 +149,10 @@ export default function DesignTokensHotkeys() {
           const next: Tokens = { ...t, fontIndex: nextIndex };
           applyTokens(next);
           storeTokens(next);
-          try {
-            // eslint-disable-next-line no-console
-            console.debug(LOG_PREFIX, "font index", {
-              from: t.fontIndex,
-              to: nextIndex,
-              name: FONTS[nextIndex]?.name,
-              direction,
-            });
-          } catch {}
           return next;
         });
       }
 
-      // Alt + C: cycle color family (Shift reverses direction)
-      if (e.altKey && (e.code === "KeyC")) {
-        e.preventDefault();
-        const direction = e.shiftKey ? -1 : 1;
-        setTokens((t) => {
-          const n = COLOR_FAMILIES.length;
-          const nextIndex = ((t.colorFamilyIndex + direction) % n + n) % n;
-          const next: Tokens = { ...t, colorFamilyIndex: nextIndex };
-          applyTokens(next);
-          storeTokens(next);
-          try {
-            // eslint-disable-next-line no-console
-            console.debug(LOG_PREFIX, "color family", {
-              from: COLOR_FAMILIES[t.colorFamilyIndex],
-              to: COLOR_FAMILIES[nextIndex],
-              direction,
-            });
-          } catch {}
-          return next;
-        });
-      }
-
-      // Alt + B: cycle brightness shade (Shift reverses direction)
-      if (e.altKey && (e.code === "KeyB")) {
-        e.preventDefault();
-        const direction = e.shiftKey ? -1 : 1;
-        const dark = isDarkTheme();
-        setTokens((t) => {
-          const allowed = allowedShadeIndices(dark);
-          const pos = allowed.indexOf(t.shadeIndex);
-          const startPos = pos === -1 ? allowed.indexOf(nearestAllowedShadeIndex(t.shadeIndex, allowed)) : pos;
-          const n = allowed.length || SHADES.length;
-          const nextPos = ((startPos + direction) % n + n) % n;
-          const nextIndex = allowed[nextPos] ?? t.shadeIndex;
-          const next: Tokens = { ...t, shadeIndex: nextIndex };
-          applyTokens(next);
-          storeTokens(next);
-          try {
-            // eslint-disable-next-line no-console
-            console.debug(LOG_PREFIX, "brightness shade", {
-              theme: dark ? "dark" : "light",
-              allowed: allowed.map((i) => SHADES[i]),
-              from: SHADES[t.shadeIndex],
-              to: SHADES[nextIndex],
-              direction,
-            });
-          } catch {}
-          return next;
-        });
-      }
     };
     const onKeyUp = (e: KeyboardEvent) => {
       // On any key up, reflect current modifier state
@@ -406,9 +173,6 @@ export default function DesignTokensHotkeys() {
   }, [isAltDown]);
 
   const currentFont = useMemo(() => FONTS[clamp(tokens.fontIndex, 0, FONTS.length - 1)], [tokens.fontIndex]);
-  const currentFamily = COLOR_FAMILIES[clamp(tokens.colorFamilyIndex, 0, COLOR_FAMILIES.length - 1)];
-  const currentShade = SHADES[clamp(tokens.shadeIndex, 0, SHADES.length - 1)];
-  const currentFg = useMemo(() => colorVar(currentFamily, currentShade), [currentFamily, currentShade]);
   const currentThemeLabel = isDark ? "Dark" : "Light";
 
   // Legend overlay content + minimal indicator when inactive
@@ -438,29 +202,6 @@ export default function DesignTokensHotkeys() {
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">T</kbd>
             <span>Theme</span>
             <span className="ml-2 text-muted-foreground">({currentThemeLabel})</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">C</kbd>
-            <span>Color</span>
-            <span className="ml-2 text-muted-foreground">({currentFamily})</span>
-            <span
-              className="ml-2 inline-flex h-3 w-6 rounded border align-middle"
-              style={{ background: currentFg }}
-              aria-hidden="true"
-              title={`--color-${currentFamily}-${currentShade}`}
-            />
-          </li>
-          <li className="flex items-center gap-2">
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">B</kbd>
-            <span>Brightness</span>
-            <span className="ml-2 text-muted-foreground">({currentShade})</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
-            <kbd className="rounded border px-1.5 py-0.5 text-[10px]">?</kbd>
-            <span>Randomize</span>
           </li>
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>

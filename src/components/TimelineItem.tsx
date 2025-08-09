@@ -16,11 +16,11 @@ export function TimelineItem({ role, company, period, details, logo }: TimelineI
 	return (
 		<Accordion type="single" collapsible>
 			<AccordionItem value="item">
-				<AccordionTrigger className="items-center cursor-pointer p-0">
+				<AccordionTrigger className="items-center cursor-pointer p-0 group">
 					<div className="flex items-center gap-4 cursor-pointer w-full">
 						<div className="flex-1">
-							<h3 className="typography-heading-6">{role}</h3>
-							<p>{company}</p>
+							<h3 className="typography-heading-6 group-hover:text-primary">{role}</h3>
+							<p className="outline-0!">{company}</p>
 							<p className="typography-small">{period}</p>
 						</div>
 						{logo && (

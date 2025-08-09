@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	cloneElement,
 	isValidElement,
 	useCallback,
 	useEffect,
@@ -14,7 +15,9 @@ import {
  * - Respects reduced motion preference (no animation, just static first logo).
  */
 export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode[]; interval?: number; }) {
-	const [index, setIndex] = useState(0);
+	// REPLACE index state with linear internalIndex + instant jump flag
+	const [internalIndex, setInternalIndex] = useState(0);
+	const [isInstant, setIsInstant] = useState(false);
 	const [itemHeight, setItemHeight] = useState<number | null>(null);
 	const reducedMotionRef = useRef(false);
 	const listRef = useRef<HTMLDivElement | null>(null);
@@ -45,40 +48,64 @@ export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode
 		}
 	}, [measure]);
 
+	// Interval: advance without modulo; allow reaching clone at items.length
 	useEffect(() => {
 		if (!items?.length || items.length === 1) return;
 		if (reducedMotionRef.current) return;
-
 		const id = window.setInterval(() => {
-			setIndex((i) => (i + 1) % items.length);
+			setInternalIndex(i => i + 1);
 		}, Math.max(1200, interval));
 		return () => window.clearInterval(id);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [items?.length, interval]);
+
+	// Handle end-of-list seamless reset after transition (when hitting clone)
+	const onTransitionEnd = useCallback(() => {
+		if (!items?.length || items.length === 1) return;
+		if (internalIndex === items.length) {
+			// Jump back to 0 without animation
+			setIsInstant(true);
+			setInternalIndex(0);
+		}
+	}, [internalIndex, items]);
+
+	// Re-enable transition after the instant jump
+	useEffect(() => {
+		if (!isInstant) return;
+		const id = requestAnimationFrame(() => setIsInstant(false));
+		return () => cancelAnimationFrame(id);
+	}, [isInstant]);
 
 	if (!items?.length) return null;
 	if (items.length === 1 || reducedMotionRef.current) {
 		return <>{items[0]}</>;
 	}
 
-	const translateY = itemHeight ? -(index * itemHeight) : 0;
+	const first = items[0];
+	const clonedFirst = isValidElement(first)
+		? cloneElement(first, { key: `__loop-clone-${first.key ?? "0"}` })
+		: <span key="__loop-clone-0">{first as React.ReactNode}</span>;
+	const displayItems = items.length > 1 ? [...items, clonedFirst] : items;
+	const effectiveIndex = internalIndex % items.length;
+	const translateY = itemHeight ? -(internalIndex * itemHeight) : 0;
 
 	return (
-		<div className="relative overflow-hidden" style={itemHeight ? { height: itemHeight } : undefined}>
+		<div className="relative overflow-hidden h-12">
 			<div
 				ref={listRef}
-				className="flex flex-col transition-transform duration-500 ease-out will-change-transform"
+				className={`flex flex-col will-change-transform ${isInstant ? "" : "transition-transform duration-500 ease-out"}`}
 				style={{ transform: `translateY(${translateY}px)` }}
 				aria-live="off"
+				onTransitionEnd={onTransitionEnd}
 			>
-				{items.map((item, i) => {
+				{displayItems.map((item, i) => {
 					const k: React.Key = isValidElement(item) && item.key != null ? item.key : i;
+					const hidden = (i % items.length) !== effectiveIndex;
 					return (
 						<div
 							key={k}
-							className="flex items-center justify-center"
-							style={itemHeight ? { height: itemHeight } : undefined}
-							aria-hidden={i !== index}
+							className="flex items-center justify-center h-12"
+							aria-hidden={hidden}
 						>
 							{item}
 						</div>

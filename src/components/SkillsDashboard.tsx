@@ -72,7 +72,7 @@ const chartConfig = {
 export default function SkillsDashboard() {
 	return (
 		<section className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-2 mb-4">
+			<h2 className="typography-heading-2 mb-6">
 				Skills & Expertise
 			</h2>
 			<div className="grid md:grid-cols-2 gap-6 items-center py-4">
@@ -91,7 +91,7 @@ export default function SkillsDashboard() {
 							}}
 						>
 							<ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-							<PolarAngleAxis dataKey="area" />
+							<PolarAngleAxis dataKey="area" className="font-mono"/>
 							<PolarGrid />
 							<PolarRadiusAxis
 								angle={90}
@@ -113,7 +113,7 @@ export default function SkillsDashboard() {
 					<div className="flex flex-wrap gap-2">
 						{Object.entries(skillsData).map(([category, skills]) =>
 							skills.map((skill) => (
-								<Badge key={category + skill} variant="outline">
+								<Badge key={category + skill} variant="default" className="font-mono">
 									{skill}
 								</Badge>
 							)),

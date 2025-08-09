@@ -34,7 +34,7 @@ const projectsData = [
 export default function ProjectSpotlight() {
 	return (
 		<section className="container max-w-2xl mx-auto px-4">
-			<h2 className="typography-heading-2 mb-4">
+			<h2 className="typography-heading-2 mb-6">
 				Project Spotlight
 			</h2>
 			<div
@@ -51,8 +51,8 @@ export default function ProjectSpotlight() {
 								href={project.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-secondary-foreground hover:underline"
-							>
+								className="hover:underline"
+							>	
 								{project.title}
 								<span className="sr-only"> — external link</span>
 							</a>
@@ -60,7 +60,7 @@ export default function ProjectSpotlight() {
 						<p className="typography-small mt-2">{project.description}</p>
 						<div className="mt-4 flex flex-wrap gap-2">
 							{project.tags.map((tag) => (
-								<Badge key={tag} variant="outline">
+								<Badge key={tag} variant="outline" className="font-mono">
 									{tag}
 								</Badge>
 							))}

@@ -21,7 +21,7 @@ export function TimelineItem({ role, company, period, details, logo, url }: Time
 					<div className="flex items-center gap-4 cursor-pointer w-full">
 						<div className="flex-1">
 							<h3 className="typography-heading-6 group-hover:underline">{role}</h3>
-							<p className="text-muted-foreground typography-small">{period}</p>
+							<p className="text-muted typography-small">{period}</p>
 						</div>
 						{logo && (
 							<div className="shrink-0">

@@ -180,8 +180,7 @@ export default function DesignTokensHotkeys() {
     <>
       {/* Active overlay */}
   <div
-        aria-live="polite"
-        aria-hidden="true"
+        aria-live="polite"        
         className={
           active
     ? "pointer-events-none fixed right-4 top-4 z-50 rounded-md border backdrop-blur-xs bg-card/90 px-3 py-2 shadow-sm text-sm"
@@ -189,19 +188,19 @@ export default function DesignTokensHotkeys() {
         }
         style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
       >
-        <div className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Design Tweaks</div>
+        <div className="text-xs uppercase tracking-wide text-muted mb-1">Design Tweaks</div>
         <ul className="space-y-1">
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">F</kbd>
             <span>Font</span>
-            <span className="ml-2 text-muted-foreground">({currentFont?.name})</span>
+            <span className="ml-2 text-muted">({currentFont?.name})</span>
           </li>
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">T</kbd>
             <span>Theme</span>
-            <span className="ml-2 text-muted-foreground">({currentThemeLabel})</span>
+            <span className="ml-2 text-muted">({currentThemeLabel})</span>
           </li>
           <li className="flex items-center gap-2">
             <kbd className="rounded border px-1.5 py-0.5 text-[10px]">⌥</kbd>
@@ -214,10 +213,9 @@ export default function DesignTokensHotkeys() {
       {/* Minimal indicator when inactive */}
       {!active && (
         <div
-          className="absolute right-4 top-4 z-40 text-muted-foreground/70 hidden sm:block"
+          className="absolute right-4 top-4 z-40 text-muted hidden sm:block"
           style={{ fontFamily: "'Inter', Arial, Helvetica, sans-serif" }}
-          role="note"
-          aria-hidden="true"
+          role="note"          
           title="Press Option (⌥) for design tweaks"
         >
           <span className="sr-only">Press Option for design tweaks</span>

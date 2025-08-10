@@ -8,6 +8,20 @@ html {
   scroll-padding-top: 2rem;
 }
 
+/*
+  Global animation disable hook.
+  When design tokens toggle animations off we set <html data-anim="off">.
+  This forces all CSS transitions & animations to end immediately while preserving layout.
+*/
+html[data-anim="off"] * {
+  animation: none !important;
+  transition: none !important;
+  caret-color: auto; /* avoid caret disappearing in some browsers when forcing none */
+}
+html[data-anim="off"] .accordion-content,[data-anim="off"] .accordion-content { /* safety selectors */
+  --radix-accordion-content-height: auto !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

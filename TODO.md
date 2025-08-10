@@ -7,3 +7,5 @@ Create a PDF resume
 Apply for jobs
 
 Contact agents for temporary work and contract work
+
+Add degree to resume and website for career timeline

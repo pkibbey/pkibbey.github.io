@@ -82,7 +82,7 @@ export function BoxReveal({
         {children}
       </div>
       <span
-        className={`pointer-events-none absolute inset-0 bg-white will-change-transform ${transitionTransform} ${coverTransformClass}`}
+        className={`pointer-events-none absolute inset-0 bg-background will-change-transform ${transitionTransform} ${coverTransformClass}`}
         style={animationsActive ? { transitionDelay: `${delay}ms` } : undefined}
         aria-hidden="true"
       />

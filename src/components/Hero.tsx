@@ -3,6 +3,9 @@ import { BoxReveal } from './BoxReveal'
 export const userData = {
   name: "Phineas Kibbey",
   bio: "My story is one of continuous adaptation and learning, from co-founding one of the UK's first social networks to architecting solutions for modern smart homes.",
+  email: 'phineas.kibbey@gmail.com',
+  site: 'pkibbey.github.io',
+  location: 'Paris (Relocating from Seattle, WA)'
 }
 
 export default function Hero() {

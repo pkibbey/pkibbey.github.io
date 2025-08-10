@@ -89,7 +89,7 @@ async function generateResume({ output = 'resume.pdf' }: Options = {}) {
   const spacing = {
     afterHeading1: 2,
     afterCaption: 16,
-    sectionTop: 16,
+    sectionTop: 12,
     sectionGapTight: 8,
     skillLineGap: 0,
   } as const;
@@ -98,6 +98,16 @@ async function generateResume({ output = 'resume.pdf' }: Options = {}) {
   styledText(doc, userData.name, type.heading1, { color: '#111', marginBottom: spacing.afterHeading1 });
   // Bio (caption style)
   styledText(doc, userData.bio, type.caption, { color: '#333', marginBottom: spacing.afterCaption });
+
+  // Contact line: email • site • location
+  const contactParts = [
+    { text: userData.email, style: type.small, color: '#0a4d8c', link: `mailto:${userData.email}` },
+    { text: '  •  ', style: type.small, color: '#999' },
+    { text: userData.site, style: type.small, color: '#0a4d8c', link: userData.site.startsWith('http') ? userData.site : `https://${userData.site}` },
+    { text: '  •  ', style: type.small, color: '#999' },
+    { text: userData.location, style: type.small, color: '#555' }
+  ];
+  multiStyledLine(doc, contactParts, { marginBottom: 4 });
 
   section(doc, 'Skills & Expertise', { type, spacing });
   Object.entries(skillsData as Record<string, string[]>).forEach(([category, skills]) => {
@@ -198,7 +208,7 @@ function bullet(doc: PDFKit.PDFDocument, text: string, style: TextStyle) {
 // Renders a single line composed of multiple styled segments sequentially.
 function multiStyledLine(
   doc: PDFKit.PDFDocument,
-  parts: { text: string; style: TextStyle; color?: string }[],
+  parts: { text: string; style: TextStyle; color?: string; link?: string }[],
   opts: { marginBottom?: number } = {}
 ) {
   const startY = doc.y;
@@ -207,7 +217,7 @@ function multiStyledLine(
     doc.fontSize(part.style.size);
     const lineGap = Math.max(0, part.style.lineHeight - part.style.size);
     const characterSpacing = typeof part.style.tracking === 'number' ? part.style.size * part.style.tracking : 0;
-    doc.fillColor(part.color || '#000').text(part.text, { continued: idx < parts.length - 1, lineGap, // @ts-ignore
+    doc.fillColor(part.color || '#000').text(part.text, { continued: idx < parts.length - 1, lineGap, link: part.link, // @ts-ignore
       characterSpacing });
   });
   // Ensure correct vertical advance if shortest style lineHeight differs

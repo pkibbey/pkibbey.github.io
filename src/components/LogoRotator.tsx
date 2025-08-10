@@ -20,13 +20,30 @@ export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode
 	const [isInstant, setIsInstant] = useState(false);
 	const [itemHeight, setItemHeight] = useState<number | null>(null);
 	const reducedMotionRef = useRef(false);
+	const animationsEnabledRef = useRef(true);
 	const listRef = useRef<HTMLDivElement | null>(null);
 
-	// Determine reduced motion once on mount (SSR-safe)
+	// Determine reduced motion & listen for design token animation toggle
 	useEffect(() => {
 		if (typeof window !== "undefined" && "matchMedia" in window) {
 			const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
 			reducedMotionRef.current = mq.matches;
+			const onChange = () => { reducedMotionRef.current = mq.matches; };
+			mq.addEventListener?.("change", onChange);
+		}
+		if (typeof document !== 'undefined') {
+			const root = document.documentElement;
+			animationsEnabledRef.current = root.dataset.anim !== 'off';
+			const handler = (e: Event) => {
+				const detail = (e as CustomEvent).detail?.tokens;
+				if (detail && typeof detail.animationsEnabled === 'boolean') {
+					animationsEnabledRef.current = detail.animationsEnabled;
+				} else {
+					animationsEnabledRef.current = root.dataset.anim !== 'off';
+				}
+			};
+			document.addEventListener('design-tokens:updated', handler as EventListener);
+			return () => document.removeEventListener('design-tokens:updated', handler as EventListener);
 		}
 	}, []);
 
@@ -51,7 +68,7 @@ export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode
 	// Interval: advance without modulo; allow reaching clone at items.length
 	useEffect(() => {
 		if (!items?.length || items.length === 1) return;
-		if (reducedMotionRef.current) return;
+		if (reducedMotionRef.current || !animationsEnabledRef.current) return;
 		const id = window.setInterval(() => {
 			setInternalIndex(i => i + 1);
 		}, Math.max(1200, interval));
@@ -77,7 +94,7 @@ export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode
 	}, [isInstant]);
 
 	if (!items?.length) return null;
-	if (items.length === 1 || reducedMotionRef.current) {
+	if (items.length === 1 || reducedMotionRef.current || !animationsEnabledRef.current) {
 		return <>{items[0]}</>;
 	}
 
@@ -93,7 +110,7 @@ export function LogoRotator({ items, interval = 2000 }: { items: React.ReactNode
 		<div className="relative overflow-hidden h-12">
 			<div
 				ref={listRef}
-				className={`flex flex-col will-change-transform ${isInstant ? "" : "transition-transform duration-500 ease-out"}`}
+				className={`flex flex-col will-change-transform ${isInstant || !animationsEnabledRef.current ? "" : "transition-transform duration-500 ease-out"}`}
 				style={{ transform: `translateY(${translateY}px)` }}
 				aria-live="off"
 				onTransitionEnd={onTransitionEnd}

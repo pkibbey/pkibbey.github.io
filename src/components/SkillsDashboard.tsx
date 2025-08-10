@@ -39,7 +39,7 @@ export const skillsData = {
 const chartData = [
 	{
 		area: "Frontend",
-		expertise: 9,
+		expertise: 10,
 	},
 	{
 		area: "Backend",
@@ -66,7 +66,7 @@ const chartData = [
 const chartConfig = {
 	expertise: {
 		label: "Expertise Level=",
-		color: "hsl(var(--chart-1))",
+		color: "var(--primary)",
 	},
 } satisfies ChartConfig;
 
@@ -85,28 +85,19 @@ export default function SkillsDashboard() {
 						className="mx-auto"
 					>
 						<RadarChart
-							data={chartData}
-							margin={{
-								top: 10,
-								right: 20,
-								bottom: 10,
-								left: 10,
-							}}
+							data={chartData}							
+							outerRadius="80%"
 						>
 							<ChartTooltip cursor={false} content={<ChartTooltipContent />} />
 							<PolarAngleAxis dataKey="area" className="font-mono"/>
 							<PolarGrid />
-							<PolarRadiusAxis
-								angle={90}
-								domain={[0, 10]}
-								tick={false}
-								tickCount={6}
-							/>
+							{/* Explicit radius axis so max value (10) maps to outerRadius; red, smaller tick labels */}
+							<PolarRadiusAxis domain={[0, 10]} angle={90} tick={false} />
 							<Radar
 								dataKey="expertise"
-								fill="var(--color-expertise)"
+								fill={chartConfig.expertise.color}
 								fillOpacity={0.3}
-								stroke="var(--color-expertise)"
+								stroke={chartConfig.expertise.color}
 								strokeWidth={2}
 							/>
 						</RadarChart>

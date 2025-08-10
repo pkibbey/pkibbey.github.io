@@ -33,7 +33,6 @@ html[data-anim="off"] .accordion-content,[data-anim="off"] .accordion-content { 
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
 }
 
 :root {
@@ -47,7 +46,6 @@ html[data-anim="off"] .accordion-content,[data-anim="off"] .accordion-content { 
   --accent-foreground: var(--color-gray-900);
   --border: var(--color-gray-200);
   --ring: var(--color-gray-500);
-  --chart-1: var(--color-amber-500);
 }
 
 .dark {
@@ -61,7 +59,6 @@ html[data-anim="off"] .accordion-content,[data-anim="off"] .accordion-content { 
   --accent-foreground: var(--color-gray-50);
   --border: var(--color-gray-800);
   --ring: var(--color-gray-300);
-  --chart-1: var(--color-violet-500);
 }
 
 @layer base {

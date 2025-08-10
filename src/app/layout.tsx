@@ -13,7 +13,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				{/* Pre-hydration theme init to avoid white flash */}
+				<script>{`(()=>{try{var d=document.documentElement;var s=localStorage.getItem('theme');var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;var dark=s? s==='dark': m;dark?d.classList.add('dark'):d.classList.remove('dark');d.style.colorScheme=dark?'dark':'light';}catch(e){}})();`}</script>
+			</head>
 			<body className="typography-body">
 				<div className="min-h-screen flex flex-col">
 					<Header />

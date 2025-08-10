@@ -15,7 +15,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang="en">
 			<body className="typography-body">
-				<div className="min-h-screen flex flex-col transition-colors duration-300 bg-background text-foreground">
+				<div className="min-h-screen flex flex-col">
 					<Header />
 					<main className="my-8">
 						{children}

@@ -1,10 +1,10 @@
-import { BritishAirwaysLogo, DysonLogo, FpLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo, VizioLogo } from "@/components/logos";
+import { BritishAirwaysLogo, DysonLogo, FpLogo, LeicesterLogo, LevelLogo, LivePersonLogo, MandsLogo, MaseratiLogo, MetaLogo, MonocleLogo, NokiaLogo, QualcommLogo } from "@/components/logos";
 import { TimelineItem, type TimelineItemData } from "@/components/TimelineItem";
 import { BoxReveal } from "./BoxReveal";
 
 export const timelineData: TimelineItemData[] = [
 	{
-		role: "Senior Software Engineer",
+		role: "Senior Fullstack Engineer",
 		company: "Level Home",
 		url: "www.level.co",
 		period: "2022 – 2024",
@@ -18,7 +18,7 @@ export const timelineData: TimelineItemData[] = [
 		logo: <LevelLogo className="w-20" />
 	},
 	{
-		role: "Lead Instructor",
+		role: "Senior Lead Instructor",
 		company: "Meta University",
 		url: "www.meta.com",
 		period: "2022 – 2023",
@@ -43,16 +43,46 @@ export const timelineData: TimelineItemData[] = [
 		logo: <LivePersonLogo className="w-20" />,
 	},
 	{
-		role: "Senior Fullstack Engineer",
-		company: "Vizio",
-		url: "www.vizio.com",
-		period: "2016 – 2018",
+		role: "Senior Frontend Engineer",
+		company: "Qualcomm",
+		url: "www.qualcomm.com",
+		period: "2013 – 2016",
 		details: [
-			"Resolved critical video playback issues that affected thousands of production devices.",
-			"Led the effort to replace the core video player, improving playback performance by 30%.",
-			"Eliminated 100% of high-priority UI bugs in the React/Node.js based TV platform.",
+			"Led front-end work on the Qualcomm.com redesign while partnering with Mirum.",
+			"Improved site performance, responsiveness, and accessibility across devices."
 		],
-		logo: <VizioLogo className="w-20" />,	
+		logo: <QualcommLogo className="w-20" />,
+	},
+	{
+		role: "Frontend Engineer",
+		company: "Monocle Magazine",
+		url: "www.monocle.com",
+		period: "2013",
+		details: [
+			"Developed the online presence for a global design magazine.",
+			"Focused on meticulous UI detail, responsive design, and an XML-based CMS integration.",
+		],
+		logo: <MonocleLogo className="w-20" />,
+	},
+	{
+		role: "Frontend Developer",
+		company: "Maserati",
+		url: "www.maserati.com",
+		period: "2006",
+		details: [
+			"Contract work on marketing and product microsites, focusing on responsive UI and image-heavy layouts.",
+		],
+		logo: <MaseratiLogo className="w-20" />,
+	},
+	{
+		role: "Web Developer",
+		company: "British Airways",
+		url: "www.britishairways.com",
+		period: "2005",
+		details: [
+			"Contract work on customer-facing airline web experiences, focusing on accessibility and stability at scale.",
+		],
+		logo: <BritishAirwaysLogo className="w-20" />,
 	},
 	{
 		role: "Business Owner / Co-founder",
@@ -67,23 +97,37 @@ export const timelineData: TimelineItemData[] = [
 		logo: <FpLogo className="w-20" />,
 	},
 	{
-		role: "Early Career",
-		company: "Various Agencies",
-		period: "1996 – 2015",
+		role: "Web Designer",
+		company: "Nokia",
+		url: "www.nokia.com",
+		period: "2000",
 		details: [
-			"Worked as a Frontend Engineer at Mirum, leading the Qualcomm.com redesign.",
-			"Developed a cross-platform mobile app using React Native at the startup Lennd.",
-			"Gained a BSc in Computer Science from Leicester University.",
+			"Worked on mobile and web interface projects, emphasizing cross-device compatibility and performant assets.",
 		],
-		   logo: [
-			   <QualcommLogo key="qualcomm-logo" className="w-20" />,
-			   <DysonLogo key="dyson-logo" className="w-20" />,
-			   <MaseratiLogo key="maserati-logo" className="w-20" />,
-			   <MonocleLogo key="monocle-logo" className="w-20" />,
-			   <NokiaLogo key="nokia-logo" className="w-20" />,
-			   <MandsLogo key="mands-logo" className="w-20" />,
-			   <BritishAirwaysLogo key="britishairways-logo" className="w-20" />,
-		   ]
+		logo: <NokiaLogo className="w-20" />,
+	},
+	{
+		role: "Web Designer",
+		company: "Dyson",
+		url: "www.dyson.com",
+		period: "1999",
+		details: [
+			"My first web development role, inspired by the web and the entrepreneurial spirit of James Dyson.",
+			"Worked on early web projects and site maintenance, learning HTML, CSS, and JavaScript."
+		],
+		logo: <DysonLogo className="w-20" />,
+	},
+	{
+		role: "BSc Computer Science",
+		company: "University of Leicester",
+		period: "1996 – 1999",
+		details: [
+			"Studied object-oriented and functional programming paradigms and languages.",
+			"Covered system design and software architecture principles.",
+			"Learned database fundamentals including relational and non-relational systems.",
+			"Explored parallel and concurrent computing concepts and practical techniques."
+		],
+		logo: <LeicesterLogo className="w-20" />
 	},
 ];
 

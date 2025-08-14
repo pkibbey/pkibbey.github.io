@@ -1,5 +1,4 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { LogoRotator } from "./LogoRotator";
 
 // Add types and a presentational component for timeline items
 export interface TimelineItemData {
@@ -11,8 +10,7 @@ export interface TimelineItemData {
 	logo?: React.ReactNode;
 }
 
-export function TimelineItem({ role, company, period, details, logo, url }: TimelineItemData) {
-	const isLogoArray = Array.isArray(logo);
+export function TimelineItem({ role, period, details, logo, url }: TimelineItemData) {
 
 	return (
 		<Accordion type="single" collapsible>
@@ -25,7 +23,7 @@ export function TimelineItem({ role, company, period, details, logo, url }: Time
 						</div>
 						{logo && (
 							<div className="shrink-0">
-								{isLogoArray ? <LogoRotator items={logo as React.ReactNode[]} /> : logo}
+								{logo}
 							</div>
 						)}
 					</div>

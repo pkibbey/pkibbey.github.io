@@ -3,6 +3,7 @@
 export { default as BritishAirwaysLogo } from './BritishAirwaysLogo'
 export { default as DysonLogo } from './DysonLogo'
 export { default as FpLogo } from './FpLogo'
+export { default as LeicesterLogo } from './LeicesterLogo'
 export { default as LevelLogo } from './LevelLogo'
 export { default as LivePersonLogo } from './LivePersonLogo'
 export { default as MandsLogo } from './MandsLogo'

@@ -87,27 +87,33 @@ async function generateResume({ output = 'resume.pdf' }: Options = {}) {
   } as const;
 
   const spacing = {
-    afterHeading1: 2,
+    afterHeading1: 8,
     afterCaption: 16,
-    sectionTop: 12,
+    sectionTop: 16,
     sectionGapTight: 8,
     skillLineGap: 0,
   } as const;
 
   // Name (heading-1 style)
   styledText(doc, userData.name, type.heading1, { color: '#111', marginBottom: spacing.afterHeading1 });
+
   // Bio (caption style)
   styledText(doc, userData.bio, type.caption, { color: '#333', marginBottom: spacing.afterCaption });
 
   // Contact line: email • site • location
   const contactParts = [
-    { text: userData.email, style: type.small, color: '#0a4d8c', link: `mailto:${userData.email}` },
-    { text: '  •  ', style: type.small, color: '#999' },
-    { text: userData.site, style: type.small, color: '#0a4d8c', link: userData.site.startsWith('http') ? userData.site : `https://${userData.site}` },
-    { text: '  •  ', style: type.small, color: '#999' },
-    { text: userData.location, style: type.small, color: '#555' }
+    {
+      text: userData.site,
+      style: type.small,
+      color: "#0a4d8c",
+      link: userData.site.startsWith("http")
+        ? userData.site
+        : `https://${userData.site}`,
+    },
+    { text: "  •  ", style: type.small, color: "#999" },
+    { text: userData.location, style: type.small, color: "#555" },
   ];
-  multiStyledLine(doc, contactParts, { marginBottom: 4 });
+  multiStyledLine(doc, contactParts, { marginBottom: 8 });
 
   section(doc, 'Skills & Expertise', { type, spacing });
   Object.entries(skillsData as Record<string, string[]>).forEach(([category, skills]) => {
@@ -127,7 +133,7 @@ async function generateResume({ output = 'resume.pdf' }: Options = {}) {
     }
     addExactSpace(doc, 10);
   });
-  section(doc, 'Selected Projects', { type, spacing });
+  section(doc, 'Project Spotlight', { type, spacing });
   (projectsData as unknown as { title: string; url: string; description: string; tags?: string[] }[]).forEach(p => {
   styledText(doc, p.title, type.projectTitle, { color: '#111', marginBottom: 2, link: p.url });
     styledText(doc, p.description, type.body, { color: '#333', marginBottom: 2 });
@@ -175,8 +181,16 @@ function bullet(doc: PDFKit.PDFDocument, text: string, style: TextStyle) {
   const baseX = doc.page.margins.left;
   const bulletOffset = 4;     // distance from left margin to bullet center horizontally
   const textIndent = 14;      // start of text block relative to left margin
-  const y = doc.y;
+  let y = doc.y;
   const lineHeight = style.lineHeight;
+
+  // Ensure there's room for at least the first line of bullet text on this page
+  // to avoid drawing the bullet on one page and flowing the text to the next.
+  const availableHeight = doc.page.height - doc.page.margins.bottom - y;
+  if (availableHeight <= lineHeight + 0.5) {
+    doc.addPage();
+    y = doc.y; // reset y after page break
+  }
 
   // Draw bullet (radius proportional to font size for visual balance)
   doc.save();
